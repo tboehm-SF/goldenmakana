@@ -169,6 +169,21 @@
 <!-- ═══ End Salesforce Personalization ═══ -->
 <!-- Qualified -->
 <script>
+// ── Open Qualified chat ──
+function openQualifiedChat() {
+  if (window.qualified && typeof window.qualified === 'function') {
+    window.qualified('showMessenger');
+  } else {
+    console.log('Qualified is loading...');
+    // Retry after a short delay if Qualified hasn't loaded yet
+    setTimeout(() => {
+      if (window.qualified && typeof window.qualified === 'function') {
+        window.qualified('showMessenger');
+      }
+    }, 500);
+  }
+}
+
 (function(w,q){w['QualifiedObject']=q;w[q]=w[q]||function(){
 (w[q].q=w[q].q||[]).push(arguments)};})(window,'qualified')
 </script>

@@ -922,6 +922,21 @@ html { scroll-behavior: smooth; }
 
 <!-- ═══════════ SCRIPTS ═══════════ -->
 <script>
+// ── Open Qualified chat ──
+function openQualifiedChat() {
+  if (window.qualified && typeof window.qualified === 'function') {
+    window.qualified('showMessenger');
+  } else {
+    console.log('Qualified is loading...');
+    // Retry after a short delay if Qualified hasn't loaded yet
+    setTimeout(() => {
+      if (window.qualified && typeof window.qualified === 'function') {
+        window.qualified('showMessenger');
+      }
+    }, 500);
+  }
+}
+
 // ── Mobile menu ──
 document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');
