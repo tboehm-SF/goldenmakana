@@ -172,16 +172,26 @@
 <script>
 // ── Open Qualified chat ──
 function openQualifiedChat() {
+  // Try multiple Qualified API methods
   if (window.qualified && typeof window.qualified === 'function') {
+    // Method 1: showMessenger (most common)
     window.qualified('showMessenger');
+  } else if (window.qualified && window.qualified.messenger) {
+    // Method 2: Direct messenger API
+    window.qualified.messenger.show();
+  } else if (window.qualified && window.qualified.show) {
+    // Method 3: Direct show method
+    window.qualified.show();
   } else {
-    console.log('Qualified is loading...');
-    // Retry after a short delay if Qualified hasn't loaded yet
+    console.log('Qualified is loading... waiting...');
+    // Retry after Qualified loads
     setTimeout(() => {
       if (window.qualified && typeof window.qualified === 'function') {
         window.qualified('showMessenger');
+      } else if (window.qualified) {
+        console.log('Qualified object:', window.qualified);
       }
-    }, 500);
+    }, 1000);
   }
 }
 
