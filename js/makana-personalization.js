@@ -1,0 +1,1 @@
+{"id":"/js/makana-personalization.js","path":"/js/makana-personalization.js","sha":"f00089ce618c93344345545e7706eebc386b0b95","mime_type":"application/javascript","size":18341,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}

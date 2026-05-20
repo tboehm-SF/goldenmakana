@@ -1,0 +1,1 @@
+{"id":"/js/makana-init.js","path":"/js/makana-init.js","sha":"16f6692d7397b6dd3c512fa67846905927345406","mime_type":"application/javascript","size":11896,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}

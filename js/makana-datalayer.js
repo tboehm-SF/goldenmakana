@@ -1,0 +1,1 @@
+{"id":"/js/makana-datalayer.js","path":"/js/makana-datalayer.js","sha":"5b2257f10ea5a2ccdae7025b8b48301679086b9e","mime_type":"application/javascript","size":19209,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
