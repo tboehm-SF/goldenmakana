@@ -1384,6 +1384,12 @@
     </div>
   </footer>
 
+<!-- ═══════════ QUALIFIED CHAT FAB ═══════════ -->
+<button id="qualifiedFab" class="qualified-fab" onclick="openQualifiedChat()" aria-label="Open chat">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+</button>
+
+
   <!-- ========== COOKIE CONSENT BANNER ========== -->
   <div id="cookieConsent" class="cookie-banner fixed bottom-0 left-0 right-0 z-[9999] p-4" style="pointer-events:auto">
     <div class="max-w-5xl mx-auto bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-black/[0.04] p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -1601,14 +1607,7 @@ function handleHcpLogin(e) {
 
 
 
-  <div class="quick-actions" id="quickActions">
-    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Quick Actions</p>
-    <button class="q-action" onclick="chatAction('Learn about IMMUNEXIS')">Learn about IMMUNEXIS&reg;</button>
-    <button class="q-action" onclick="chatAction('Find clinical trials')">Find clinical trials</button>
-    <button class="q-action" onclick="chatAction('Talk to a representative')">Talk to a representative</button>
-    <button class="q-action" onclick="chatAction('View product safety info')">View product safety info</button>
-  </div>
-</div>
+  
 
 
 </body>
