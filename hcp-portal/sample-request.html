@@ -1,1 +1,941 @@
-{"id":"/hcp-portal/sample-request.html","path":"/hcp-portal/sample-request.html","sha":"d3fd08a04564a2172cc1ff905a28ac9dab4c3fd7","mime_type":"text/html","size":56711,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Samples | HCP Portal | Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+</style>
+<style>
+*, *::before, *::after { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; }
+.glass-nav { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); background: rgba(255,255,255,0.72); }
+.glass-nav.scrolled { background: rgba(255,255,255,0.92); box-shadow: 0 0.5px 0 rgba(0,0,0,0.08); }
+.card-modern { transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.card-modern:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.gradient-text { background: linear-gradient(135deg, #6BBFAB 0%, #9B8EC4 50%, #4A4063 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: transparent; }
+.resource-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer; }
+.resource-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(74,64,99,0.1); border-color: rgba(74,64,99,0.15); }
+.portal-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+
+/* Product card styles */
+.product-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.product-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: rgba(74,64,99,0.12); }
+.product-card.selected { border-color: #6BBFAB; box-shadow: 0 0 0 2px rgba(107,191,171,0.15), 0 8px 32px rgba(107,191,171,0.1); }
+
+/* Quantity selector */
+.qty-btn { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; transition: all 0.2s; cursor: pointer; border: 1px solid rgba(0,0,0,0.1); background: #fff; color: #4A4063; }
+.qty-btn:hover { background: #4A4063; color: #fff; border-color: #4A4063; }
+.qty-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.qty-btn:disabled:hover { background: #fff; color: #4A4063; border-color: rgba(0,0,0,0.1); }
+
+/* Add to request button states */
+.btn-add { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.btn-add.added { background: #6BBFAB !important; border-color: #6BBFAB !important; color: #fff !important; }
+
+/* History status badges */
+.status-delivered { background: #ecfdf5; color: #059669; }
+.status-transit { background: #eff6ff; color: #2563eb; }
+.status-processing { background: #fef3c7; color: #d97706; }
+
+/* Modal overlay */
+.modal-overlay { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-content { background: #fff; border-radius: 24px; padding: 40px; max-width: 440px; width: 90%; transform: scale(0.95) translateY(10px); transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.modal-overlay.active .modal-content { transform: scale(1) translateY(0); }
+
+/* Summary panel */
+.summary-panel { position: sticky; top: 80px; }
+
+/* Table row hover */
+.history-row { transition: background 0.2s; }
+.history-row:hover { background: rgba(74,64,99,0.02); }
+</style>
+
+<!-- Salesforce c360a Beacon & Tracking -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="/js/makana-datalayer.js"></script>
+<script src="/js/makana-init.js"></script>
+<script src="/js/makana-sitemap.js"></script>
+<script src="/js/makana-personalization.js"></script>
+<script src="/js/makana-leadgen.js"></script>
+<script defer src="/js/makana-contact.js"></script>
+</head>
+<body class="bg-warm font-sans text-slate-brand">
+
+<!-- AUTH GATE -->
+<script>
+(function() {
+  var stored = localStorage.getItem('makana_user');
+  if (!stored) {
+    window.location.href = '/?gateway=hcp';
+    return;
+  }
+  try {
+    var user = JSON.parse(stored);
+    if (!user.email) { window.location.href = '/?gateway=hcp'; return; }
+    window.__hcpUser = user;
+  } catch(e) {
+    window.location.href = '/?gateway=hcp';
+  }
+})();
+</script>
+
+<!-- NAVIGATION -->
+<header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-14">
+      <div class="flex items-center gap-4">
+        <a class="shrink-0" href="/">
+          <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8">
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <span class="portal-badge bg-primary/8 text-primary">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0012 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+          HCP Portal
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/hcp-portal" class="flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-primary transition px-3 py-2 rounded-lg hover:bg-primary/5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/></svg>
+          Back to Portal
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <div id="userAvatar" class="flex items-center gap-2">
+          <span id="userInitial" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6BBFAB,#4A4063);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600"></span>
+        </div>
+        <button onclick="showLogoutModal()" class="text-xs text-gray-400 hover:text-red-500 transition font-medium">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-24 pb-10 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
+  <div class="absolute inset-0 opacity-30">
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(107,191,171,0.2) 0%,transparent 70%);filter:blur(50px);top:-100px;right:-50px;"></div>
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(155,142,196,0.15) 0%,transparent 70%);filter:blur(40px);bottom:-150px;left:-50px;"></div>
+  </div>
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-white/50 text-xs mb-4">
+      <a href="/hcp-portal" class="hover:text-white/80 transition">Portal</a>
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      <span class="text-white/80">Request Samples</span>
+    </nav>
+    <div class="flex items-center gap-3 mb-3">
+      <span class="portal-badge bg-white/15 text-white/90 text-[10px]">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+        Secure Session
+      </span>
+      <span class="portal-badge bg-white/10 text-white/70 text-[10px]">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21"/></svg>
+        Sample Program
+      </span>
+    </div>
+    <h1 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Request Samples</h1>
+    <p class="text-white/60 text-sm mt-2 max-w-xl">Order product samples for your practice. Verified HCPs receive complimentary samples with delivery in 2-3 business days.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid lg:grid-cols-3 gap-8">
+
+      <!-- LEFT: Product cards (2 columns within the 2/3 space) -->
+      <div class="lg:col-span-2">
+        <h2 class="reveal text-xl font-bold text-slate-brand tracking-tight mb-5">Available Products</h2>
+        <div class="grid sm:grid-cols-2 gap-4" id="productGrid">
+
+          <!-- Product 1: IMMUNEXIS IX-200 150mg Prefilled Syringe -->
+          <div class="reveal product-card p-5" id="product-ix200-syringe" data-product-id="IX200-PFS" data-product-name="IMMUNEXIS IX-200 150mg/mL Prefilled Syringe">
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-sm font-bold">Ix</span>
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-sm font-bold text-slate-brand leading-tight">IMMUNEXIS<sup class="text-[8px]">&reg;</sup> IX-200</h3>
+                <p class="text-[10px] text-gray-400 truncate">150mg/mL Prefilled Syringe</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 mb-4">
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3"/></svg>
+                <span>IL-31 Receptor Antagonist</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21"/></svg>
+                <span>Sample pack: 2 prefilled syringes</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                <span>Refrigerated, 2-8&deg;C</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <label class="text-[10px] text-gray-400 font-medium">Qty:</label>
+                <button class="qty-btn" onclick="adjustQty('IX200-PFS', -1)" aria-label="Decrease quantity">&minus;</button>
+                <span class="text-sm font-semibold text-slate-brand w-5 text-center" id="qty-IX200-PFS">1</span>
+                <button class="qty-btn" onclick="adjustQty('IX200-PFS', 1)" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn-add text-xs font-semibold px-4 py-2 rounded-xl border border-primary text-primary hover:bg-primary hover:text-white" onclick="toggleProduct('IX200-PFS', this)">
+                Add to Request
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 2: IMMUNEXIS IX-200 300mg Autoinjector -->
+          <div class="reveal reveal-d1 product-card p-5" id="product-ix200-auto" data-product-id="IX200-AI" data-product-name="IMMUNEXIS IX-200 300mg/2mL Autoinjector">
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-sm font-bold">Ix</span>
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-sm font-bold text-slate-brand leading-tight">IMMUNEXIS<sup class="text-[8px]">&reg;</sup> IX-200</h3>
+                <p class="text-[10px] text-gray-400 truncate">300mg/2mL Autoinjector</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 mb-4">
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3"/></svg>
+                <span>IL-31 Receptor Antagonist</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21"/></svg>
+                <span>Sample pack: 1 autoinjector</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                <span>Refrigerated, 2-8&deg;C</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <label class="text-[10px] text-gray-400 font-medium">Qty:</label>
+                <button class="qty-btn" onclick="adjustQty('IX200-AI', -1)" aria-label="Decrease quantity">&minus;</button>
+                <span class="text-sm font-semibold text-slate-brand w-5 text-center" id="qty-IX200-AI">1</span>
+                <button class="qty-btn" onclick="adjustQty('IX200-AI', 1)" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn-add text-xs font-semibold px-4 py-2 rounded-xl border border-primary text-primary hover:bg-primary hover:text-white" onclick="toggleProduct('IX200-AI', this)">
+                Add to Request
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3: CARDIOGUARD CG-50 50mg -->
+          <div class="reveal reveal-d2 product-card p-5" id="product-cg50" data-product-id="CG50-TAB" data-product-name="CARDIOGUARD CG-50 50mg Tablets">
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-secondary-dark flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-sm font-bold">Cg</span>
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-sm font-bold text-slate-brand leading-tight">CARDIOGUARD<sup class="text-[8px]">&reg;</sup> CG-50</h3>
+                <p class="text-[10px] text-gray-400 truncate">50mg Tablets, 30-count</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 mb-4">
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3"/></svg>
+                <span>Dual PCSK9/Lp(a) Inhibitor</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21"/></svg>
+                <span>Sample pack: 30-day supply (30 tablets)</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                <span>Room temperature, &le;25&deg;C</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <label class="text-[10px] text-gray-400 font-medium">Qty:</label>
+                <button class="qty-btn" onclick="adjustQty('CG50-TAB', -1)" aria-label="Decrease quantity">&minus;</button>
+                <span class="text-sm font-semibold text-slate-brand w-5 text-center" id="qty-CG50-TAB">1</span>
+                <button class="qty-btn" onclick="adjustQty('CG50-TAB', 1)" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn-add text-xs font-semibold px-4 py-2 rounded-xl border border-secondary text-secondary hover:bg-secondary hover:text-white" onclick="toggleProduct('CG50-TAB', this)">
+                Add to Request
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 4: CARDIOGUARD CG-100 100mg -->
+          <div class="reveal reveal-d3 product-card p-5" id="product-cg100" data-product-id="CG100-TAB" data-product-name="CARDIOGUARD CG-100 100mg Tablets">
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-secondary-dark flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-sm font-bold">Cg</span>
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-sm font-bold text-slate-brand leading-tight">CARDIOGUARD<sup class="text-[8px]">&reg;</sup> CG-100</h3>
+                <p class="text-[10px] text-gray-400 truncate">100mg Tablets, 30-count</p>
+              </div>
+            </div>
+            <div class="space-y-1.5 mb-4">
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3"/></svg>
+                <span>Dual PCSK9/Lp(a) Inhibitor</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21"/></svg>
+                <span>Sample pack: 30-day supply (30 tablets)</span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] text-gray-500">
+                <svg class="w-3.5 h-3.5 text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+                <span>Room temperature, &le;25&deg;C</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <label class="text-[10px] text-gray-400 font-medium">Qty:</label>
+                <button class="qty-btn" onclick="adjustQty('CG100-TAB', -1)" aria-label="Decrease quantity">&minus;</button>
+                <span class="text-sm font-semibold text-slate-brand w-5 text-center" id="qty-CG100-TAB">1</span>
+                <button class="qty-btn" onclick="adjustQty('CG100-TAB', 1)" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn-add text-xs font-semibold px-4 py-2 rounded-xl border border-secondary text-secondary hover:bg-secondary hover:text-white" onclick="toggleProduct('CG100-TAB', this)">
+                Add to Request
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: Request Summary Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="summary-panel">
+          <div class="reveal stat-card p-6">
+            <div class="flex items-center gap-2 mb-5">
+              <div class="w-8 h-8 bg-primary/8 rounded-lg flex items-center justify-center">
+                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+              </div>
+              <h3 class="text-sm font-bold text-slate-brand">Request Summary</h3>
+            </div>
+
+            <!-- Selected items list -->
+            <div id="summaryItems" class="space-y-0 mb-5">
+              <div id="summaryEmpty" class="text-center py-6">
+                <div class="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21"/></svg>
+                </div>
+                <p class="text-xs text-gray-400">No items selected</p>
+                <p class="text-[10px] text-gray-300 mt-1">Add products from the left to get started</p>
+              </div>
+            </div>
+
+            <!-- Delivery Address -->
+            <div id="deliverySection" class="border-t border-gray-100 pt-4 mb-5" style="display:none;">
+              <h4 class="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3">Delivery Address</h4>
+              <div class="bg-warm-dark rounded-xl p-3.5">
+                <p id="deliveryName" class="text-xs font-semibold text-slate-brand"></p>
+                <p id="deliveryPractice" class="text-[11px] text-gray-500 mt-0.5">Makana Health Medical Group</p>
+                <p id="deliveryAddr" class="text-[11px] text-gray-400 mt-0.5">1200 Medical Center Dr, Suite 400<br>San Francisco, CA 94143</p>
+                <button class="text-[10px] text-primary font-semibold mt-2 hover:underline">Edit address</button>
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <button id="submitBtn" onclick="submitRequest()" disabled class="w-full py-3 rounded-xl text-sm font-semibold transition-all duration-300 bg-gray-100 text-gray-400 cursor-not-allowed">
+              Submit Request
+            </button>
+            <p class="text-[10px] text-gray-300 text-center mt-2">Orders are typically processed within 24 hours</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE REQUEST HISTORY -->
+<section class="pb-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="reveal text-xl font-bold text-slate-brand tracking-tight mb-5">Sample Request History</h2>
+    <div class="reveal stat-card overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-gray-100">
+              <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Request Date</th>
+              <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Items</th>
+              <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Status</th>
+              <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Tracking</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="history-row border-b border-gray-50 cursor-pointer" onclick="trackHistoryClick('SR-2026-0412')">
+              <td class="px-5 py-4">
+                <p class="text-xs font-semibold text-slate-brand">Apr 2, 2026</p>
+                <p class="text-[10px] text-gray-400">SR-2026-0412</p>
+              </td>
+              <td class="px-5 py-4">
+                <p class="text-xs text-gray-600">IMMUNEXIS<sup class="text-[7px]">&reg;</sup> IX-200 (150mg PFS) &times; 2</p>
+                <p class="text-[10px] text-gray-400 mt-0.5">CARDIOGUARD<sup class="text-[7px]">&reg;</sup> CG-50 (50mg) &times; 1</p>
+              </td>
+              <td class="px-5 py-4">
+                <span class="portal-badge status-delivered text-[10px]">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Delivered
+                </span>
+              </td>
+              <td class="px-5 py-4">
+                <p class="text-xs text-primary font-medium hover:underline">1Z999AA10123456784</p>
+                <p class="text-[10px] text-gray-400">Delivered Apr 5</p>
+              </td>
+            </tr>
+            <tr class="history-row border-b border-gray-50 cursor-pointer" onclick="trackHistoryClick('SR-2026-0389')">
+              <td class="px-5 py-4">
+                <p class="text-xs font-semibold text-slate-brand">Mar 18, 2026</p>
+                <p class="text-[10px] text-gray-400">SR-2026-0389</p>
+              </td>
+              <td class="px-5 py-4">
+                <p class="text-xs text-gray-600">CARDIOGUARD<sup class="text-[7px]">&reg;</sup> CG-100 (100mg) &times; 3</p>
+              </td>
+              <td class="px-5 py-4">
+                <span class="portal-badge status-transit text-[10px]">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375m11.25 0H18.75m-1.5-4.5h4.125c.621 0 1.125-.504 1.125-1.125V11.25c0-2.234-1.317-4.16-3.22-5.04L15.94 4.5H12"/></svg>
+                  In Transit
+                </span>
+              </td>
+              <td class="px-5 py-4">
+                <p class="text-xs text-primary font-medium hover:underline">1Z999AA10198765432</p>
+                <p class="text-[10px] text-gray-400">Est. delivery Apr 12</p>
+              </td>
+            </tr>
+            <tr class="history-row cursor-pointer" onclick="trackHistoryClick('SR-2026-0401')">
+              <td class="px-5 py-4">
+                <p class="text-xs font-semibold text-slate-brand">Apr 9, 2026</p>
+                <p class="text-[10px] text-gray-400">SR-2026-0401</p>
+              </td>
+              <td class="px-5 py-4">
+                <p class="text-xs text-gray-600">IMMUNEXIS<sup class="text-[7px]">&reg;</sup> IX-200 (300mg AI) &times; 1</p>
+              </td>
+              <td class="px-5 py-4">
+                <span class="portal-badge status-processing text-[10px]">
+                  <svg class="w-3 h-3 animate-spin" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>
+                  Processing
+                </span>
+              </td>
+              <td class="px-5 py-4">
+                <p class="text-[11px] text-gray-400">Awaiting fulfillment</p>
+                <p class="text-[10px] text-gray-300">Est. ship Apr 11</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY INFORMATION -->
+<section class="pb-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <!-- Delivery Timelines -->
+      <div class="reveal stat-card p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 bg-secondary/8 rounded-lg flex items-center justify-center">
+            <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand">Delivery Information</h3>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-[10px] font-bold text-secondary">1</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">Order Processing</p>
+              <p class="text-[11px] text-gray-400">Within 24 hours of submission</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-[10px] font-bold text-secondary">2</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">Fulfillment & Shipping</p>
+              <p class="text-[11px] text-gray-400">1-2 business days after approval</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-[10px] font-bold text-secondary">3</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">Standard Delivery</p>
+              <p class="text-[11px] text-gray-400">2-3 business days via UPS Healthcare</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span class="text-[10px] font-bold text-secondary">4</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">Cold-Chain Products</p>
+              <p class="text-[11px] text-gray-400">IMMUNEXIS<sup class="text-[8px]">&reg;</sup> shipped in insulated packaging with temperature monitoring</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-blue-50 rounded-xl p-3 mt-4">
+          <p class="text-[11px] text-blue-600"><strong>Expedited shipping</strong> is available for urgent clinical needs. Contact your Makana field representative or call 1-800-MAKANA-RX.</p>
+        </div>
+      </div>
+
+      <!-- Important Notice -->
+      <div class="reveal reveal-d1 stat-card p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
+            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand">Important Notice</h3>
+        </div>
+        <div class="space-y-3 text-[11px] text-gray-500 leading-relaxed">
+          <p>The Makana Health Sample Program is available <strong class="text-slate-brand">exclusively to licensed healthcare professionals</strong> with a valid DEA number and active state medical license.</p>
+          <p>All sample requests are processed in accordance with <strong class="text-slate-brand">21 CFR Part 203</strong> (Prescription Drug Marketing Act) and applicable state regulations governing the distribution of prescription drug samples.</p>
+          <p>Samples are intended for complimentary distribution to patients in the normal course of medical practice. Resale or diversion of samples is prohibited under federal law.</p>
+          <p>By submitting a request, you certify that:</p>
+          <ul class="space-y-1.5 ml-3">
+            <li class="flex items-start gap-2">
+              <svg class="w-3 h-3 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <span>You hold a valid, unrestricted license to prescribe in your state</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-3 h-3 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <span>Samples will be dispensed only to your patients at no charge</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-3 h-3 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <span>You will maintain records of sample receipt and distribution</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-3 h-3 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <span>Storage conditions will be maintained per product labeling</span>
+            </li>
+          </ul>
+          <p class="text-[10px] text-gray-400 mt-2">Maximum 3 sample packs per product per request. Limit of 12 requests per calendar year per HCP. Program subject to change without notice.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content text-center" onclick="event.stopPropagation()">
+    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-5">
+      <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    </div>
+    <h3 class="text-lg font-bold text-slate-brand mb-2">Request Submitted</h3>
+    <p class="text-sm text-gray-500 mb-1">Your sample request has been received and is being processed.</p>
+    <p id="modalRequestId" class="text-xs font-semibold text-primary mb-4"></p>
+    <div class="bg-warm-dark rounded-xl p-4 text-left mb-5">
+      <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-2">
+        <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Estimated processing: 24 hours
+      </div>
+      <div class="flex items-center gap-2 text-[11px] text-gray-500 mb-2">
+        <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375"/></svg>
+        Estimated delivery: 2-3 business days
+      </div>
+      <div class="flex items-center gap-2 text-[11px] text-gray-500">
+        <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        Confirmation sent to your email
+      </div>
+    </div>
+    <button onclick="closeModal()" class="w-full py-3 rounded-xl text-sm font-semibold bg-primary text-white hover:bg-primary-dark transition">
+      Done
+    </button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-6 brightness-0 invert opacity-50">
+        <span class="text-xs text-white/30">HCP Portal</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 text-[11px] text-white/25">
+        <a href="/privacy" class="hover:text-white/50 transition">Privacy</a><span>|</span>
+        <a href="/terms" class="hover:text-white/50 transition">Terms</a><span>|</span>
+        <a href="/hcp-portal" class="hover:text-white/50 transition">HCP Portal</a><span>|</span>
+        <a href="/" class="hover:text-white/50 transition">Main Site</a>
+      </div>
+      <p class="text-[11px] text-white/20">&copy; 2026 Makana Health. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// ── Glass nav scroll ──
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+// ── Reveal on scroll ──
+var revObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { revObs.observe(el); });
+
+// ── Contact lookup handled by makana-contact.js ──
+// (Also populates #deliveryName with real name from Salesforce)
+
+// ── Identity stitching on page load ──
+(function() {
+  if (typeof SalesforceInteractions !== 'undefined' && window.__hcpUser) {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Sample Request View' },
+      user: { attributes: { eventType: 'identity', emailAddress: window.__hcpUser.email } }
+    });
+  }
+  if (window.makanaDataLayer && window.__hcpUser) {
+    window.makanaDataLayer.push({
+      event: 'identity', action: 'hcp_portal_sample_request',
+      label: 'HCP Portal: Sample Request',
+      user: { attributes: { emailAddress: window.__hcpUser.email } }
+    });
+  }
+})();
+
+// ── Product catalog state ──
+var productCatalog = {
+  'IX200-PFS': { name: 'IMMUNEXIS\u00AE IX-200 (150mg/mL PFS)', shortName: 'IX-200 150mg PFS', brand: 'immunexis' },
+  'IX200-AI':  { name: 'IMMUNEXIS\u00AE IX-200 (300mg/2mL AI)',  shortName: 'IX-200 300mg AI',  brand: 'immunexis' },
+  'CG50-TAB':  { name: 'CARDIOGUARD\u00AE CG-50 (50mg)',         shortName: 'CG-50 50mg',        brand: 'cardioguard' },
+  'CG100-TAB': { name: 'CARDIOGUARD\u00AE CG-100 (100mg)',       shortName: 'CG-100 100mg',      brand: 'cardioguard' }
+};
+
+var selectedProducts = {};
+var quantities = { 'IX200-PFS': 1, 'IX200-AI': 1, 'CG50-TAB': 1, 'CG100-TAB': 1 };
+
+// ── Quantity selector ──
+function adjustQty(productId, delta) {
+  var current = quantities[productId] || 1;
+  var newVal = Math.max(1, Math.min(3, current + delta));
+  quantities[productId] = newVal;
+  var el = document.getElementById('qty-' + productId);
+  if (el) el.textContent = newVal;
+
+  // Update summary if product is already selected
+  if (selectedProducts[productId]) {
+    selectedProducts[productId].qty = newVal;
+    renderSummary();
+  }
+}
+
+// ── Toggle product selection ──
+function toggleProduct(productId, btnEl) {
+  var card = btnEl.closest('.product-card');
+
+  if (selectedProducts[productId]) {
+    // Remove from selection
+    delete selectedProducts[productId];
+    card.classList.remove('selected');
+    btnEl.classList.remove('added');
+    btnEl.innerHTML = 'Add to Request';
+
+    // Track removal
+    if (window.makanaDataLayer) {
+      window.makanaDataLayer.push({
+        event: 'sample_request_remove',
+        category: 'HCP_PORTAL',
+        action: 'remove_from_request',
+        label: productCatalog[productId].name,
+        product_id: productId
+      });
+    }
+  } else {
+    // Add to selection
+    selectedProducts[productId] = {
+      id: productId,
+      name: productCatalog[productId].name,
+      shortName: productCatalog[productId].shortName,
+      brand: productCatalog[productId].brand,
+      qty: quantities[productId]
+    };
+    card.classList.add('selected');
+    btnEl.classList.add('added');
+    btnEl.innerHTML = '<svg class="w-4 h-4 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Added';
+
+    // Track addition
+    if (window.makanaDataLayer) {
+      window.makanaDataLayer.push({
+        event: 'sample_request_add',
+        category: 'HCP_PORTAL',
+        action: 'add_to_request',
+        label: productCatalog[productId].name,
+        product_id: productId,
+        quantity: quantities[productId]
+      });
+    }
+    if (typeof SalesforceInteractions !== 'undefined') {
+      SalesforceInteractions.sendEvent({
+        interaction: { name: 'HCP Sample Add: ' + productCatalog[productId].shortName, eventType: 'custom' }
+      });
+    }
+  }
+
+  renderSummary();
+}
+
+// ── Render request summary ──
+function renderSummary() {
+  var container = document.getElementById('summaryItems');
+  var emptyState = document.getElementById('summaryEmpty');
+  var deliverySection = document.getElementById('deliverySection');
+  var submitBtn = document.getElementById('submitBtn');
+  var keys = Object.keys(selectedProducts);
+
+  if (keys.length === 0) {
+    // Show empty state
+    if (emptyState) emptyState.style.display = '';
+    if (deliverySection) deliverySection.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.className = 'w-full py-3 rounded-xl text-sm font-semibold transition-all duration-300 bg-gray-100 text-gray-400 cursor-not-allowed';
+
+    // Remove any item elements
+    var existingItems = container.querySelectorAll('.summary-item');
+    existingItems.forEach(function(el) { el.remove(); });
+    return;
+  }
+
+  // Hide empty state, show delivery
+  if (emptyState) emptyState.style.display = 'none';
+  if (deliverySection) deliverySection.style.display = '';
+  submitBtn.disabled = false;
+  submitBtn.className = 'w-full py-3 rounded-xl text-sm font-semibold transition-all duration-300 bg-primary text-white hover:bg-primary-dark cursor-pointer hover:shadow-lg';
+
+  // Remove old items
+  var existingItems = container.querySelectorAll('.summary-item');
+  existingItems.forEach(function(el) { el.remove(); });
+
+  // Render items
+  keys.forEach(function(id) {
+    var item = selectedProducts[id];
+    var div = document.createElement('div');
+    div.className = 'summary-item flex items-center justify-between py-2.5 border-b border-gray-50';
+
+    var brandColor = item.brand === 'immunexis' ? '#4A4063' : '#6BBFAB';
+    var brandBg = item.brand === 'immunexis' ? 'rgba(74,64,99,0.08)' : 'rgba(107,191,171,0.08)';
+
+    div.innerHTML =
+      '<div class="flex items-center gap-2 min-w-0">' +
+        '<div style="width:28px;height:28px;border-radius:8px;background:' + brandBg + ';display:flex;align-items:center;justify-content:center;flex-shrink:0">' +
+          '<span style="font-size:9px;font-weight:700;color:' + brandColor + '">' + (item.brand === 'immunexis' ? 'Ix' : 'Cg') + '</span>' +
+        '</div>' +
+        '<div class="min-w-0">' +
+          '<p class="text-[11px] font-semibold text-slate-brand truncate">' + item.shortName + '</p>' +
+          '<p class="text-[10px] text-gray-400">Qty: ' + item.qty + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<button onclick="removeFromSummary(\'' + id + '\')" class="text-gray-300 hover:text-red-400 transition flex-shrink-0 ml-2" title="Remove">' +
+        '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>' +
+      '</button>';
+
+    container.appendChild(div);
+  });
+}
+
+// ── Remove from summary (triggers toggle) ──
+function removeFromSummary(productId) {
+  // Find the button for this product and toggle it off
+  var cards = document.querySelectorAll('.product-card');
+  cards.forEach(function(card) {
+    if (card.dataset && card.dataset.productId === productId) {
+      var btn = card.querySelector('.btn-add');
+      if (btn) toggleProduct(productId, btn);
+    }
+  });
+
+  // Fallback: if card not found by dataset, remove directly
+  if (selectedProducts[productId]) {
+    delete selectedProducts[productId];
+    renderSummary();
+  }
+}
+
+// ── Submit request ──
+function submitRequest() {
+  var keys = Object.keys(selectedProducts);
+  if (keys.length === 0) return;
+
+  var submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<svg class="w-4 h-4 inline-block mr-1.5 animate-spin -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg>Processing...';
+  submitBtn.className = 'w-full py-3 rounded-xl text-sm font-semibold transition-all duration-300 bg-primary/70 text-white cursor-wait';
+
+  // Build order items for tracking
+  var orderItems = keys.map(function(id) {
+    return { product_id: id, name: selectedProducts[id].name, quantity: selectedProducts[id].qty };
+  });
+
+  // Track submit
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'sample_request_submit',
+      category: 'HCP_PORTAL',
+      action: 'submit_request',
+      label: 'Sample Request Submitted',
+      items: orderItems,
+      total_items: keys.length
+    });
+  }
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Sample Request Submitted', eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+
+  // Simulate server delay
+  setTimeout(function() {
+    // Generate request ID
+    var reqId = 'SR-2026-' + String(Math.floor(Math.random() * 9000) + 1000);
+    document.getElementById('modalRequestId').textContent = 'Request ID: ' + reqId;
+
+    // Show modal
+    document.getElementById('successModal').classList.add('active');
+
+    // Reset form
+    selectedProducts = {};
+    quantities = { 'IX200-PFS': 1, 'IX200-AI': 1, 'CG50-TAB': 1, 'CG100-TAB': 1 };
+
+    // Reset all product cards
+    document.querySelectorAll('.product-card').forEach(function(card) {
+      card.classList.remove('selected');
+      var btn = card.querySelector('.btn-add');
+      if (btn) {
+        btn.classList.remove('added');
+        btn.innerHTML = 'Add to Request';
+      }
+    });
+    document.querySelectorAll('[id^="qty-"]').forEach(function(el) { el.textContent = '1'; });
+
+    renderSummary();
+
+    submitBtn.innerHTML = 'Submit Request';
+    submitBtn.className = 'w-full py-3 rounded-xl text-sm font-semibold transition-all duration-300 bg-gray-100 text-gray-400 cursor-not-allowed';
+    submitBtn.disabled = true;
+  }, 2000);
+}
+
+// ── Close modal ──
+function closeModal(e) {
+  if (e && e.target && !e.target.classList.contains('modal-overlay')) return;
+  document.getElementById('successModal').classList.remove('active');
+}
+
+// ── Track history row clicks ──
+function trackHistoryClick(requestId) {
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'sample_history_click',
+      category: 'HCP_PORTAL',
+      action: 'view_request_history',
+      label: requestId
+    });
+  }
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Sample History View: ' + requestId, eventType: 'custom' }
+    });
+  }
+}
+
+// ── Logout Modal ──
+function showLogoutModal() {
+  document.getElementById('logoutModal').classList.remove('hidden');
+  document.getElementById('logoutModal').classList.add('flex');
+  setTimeout(function() {
+    document.getElementById('logoutPanel').style.opacity = '1';
+    document.getElementById('logoutPanel').style.transform = 'scale(1) translateY(0)';
+  }, 10);
+}
+function hideLogoutModal() {
+  var panel = document.getElementById('logoutPanel');
+  panel.style.opacity = '0';
+  panel.style.transform = 'scale(0.95) translateY(8px)';
+  setTimeout(function() {
+    document.getElementById('logoutModal').classList.add('hidden');
+    document.getElementById('logoutModal').classList.remove('flex');
+  }, 200);
+}
+function hcpLogout() {
+  // Track logout event
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'hcp_logout',
+      category: 'HCP_PORTAL',
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Logout', eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  // Clear all session data
+  localStorage.removeItem('makana_user');
+  sessionStorage.removeItem('makana_contact');
+  window.__hcpUser = null;
+  window.__hcpContact = null;
+  window.location.href = '/?gateway=hcp';
+}
+</script>
+
+<!-- ═══════════ LOGOUT CONFIRMATION MODAL ═══════════ -->
+<div id="logoutModal" class="hidden fixed inset-0 z-[9998] items-center justify-center bg-black/40 backdrop-blur-sm" onclick="hideLogoutModal()">
+  <div id="logoutPanel" onclick="event.stopPropagation()" style="opacity:0;transform:scale(0.95) translateY(8px);transition:all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);" class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 max-w-sm w-full mx-4">
+    <div class="flex items-center justify-center w-14 h-14 bg-red-50 rounded-2xl mx-auto mb-5">
+      <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
+    </div>
+    <h3 class="text-lg font-bold text-slate-brand text-center mb-2">Sign out of HCP Portal?</h3>
+    <p class="text-sm text-gray-400 text-center mb-6">You'll need to sign in again to access clinical resources and your portal dashboard.</p>
+    <div class="flex gap-3">
+      <button onclick="hideLogoutModal()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-xl transition">Cancel</button>
+      <button onclick="hcpLogout()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-white bg-red-500 hover:bg-red-600 rounded-xl transition">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
