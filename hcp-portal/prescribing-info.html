@@ -1,1 +1,945 @@
-{"id":"/hcp-portal/prescribing-info.html","path":"/hcp-portal/prescribing-info.html","sha":"49b0055703764f0d063779f5d4b870e874741913","mime_type":"text/html","size":60912,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prescribing Information | HCP Portal | Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+</style>
+<style>
+*, *::before, *::after { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; }
+.glass-nav { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); background: rgba(255,255,255,0.72); }
+.glass-nav.scrolled { background: rgba(255,255,255,0.92); box-shadow: 0 0.5px 0 rgba(0,0,0,0.08); }
+.card-modern { transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.card-modern:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.gradient-text { background: linear-gradient(135deg, #6BBFAB 0%, #9B8EC4 50%, #4A4063 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: transparent; }
+.resource-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer; }
+.resource-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(74,64,99,0.1); border-color: rgba(74,64,99,0.15); }
+.portal-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+
+/* Prescribing Info specific styles */
+.pi-section { border-left: 3px solid transparent; padding-left: 0; transition: border-color 0.3s, padding-left 0.3s, background 0.3s; }
+.pi-section:hover { border-left-color: #6BBFAB; padding-left: 12px; background: rgba(107,191,171,0.03); }
+.dosing-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.dosing-table thead th { background: #F5F5F7; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: #4A4063; padding: 10px 14px; text-align: left; }
+.dosing-table thead th:first-child { border-radius: 10px 0 0 0; }
+.dosing-table thead th:last-child { border-radius: 0 10px 0 0; }
+.dosing-table tbody td { font-size: 12px; padding: 10px 14px; border-bottom: 1px solid rgba(0,0,0,0.04); color: #1D1D1F; }
+.dosing-table tbody tr:last-child td { border-bottom: none; }
+.dosing-table tbody tr:hover td { background: rgba(107,191,171,0.04); }
+.section-toggle { cursor: pointer; user-select: none; }
+.section-toggle .toggle-icon { transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.section-toggle.open .toggle-icon { transform: rotate(180deg); }
+.collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s; opacity: 0; }
+.collapsible-content.expanded { max-height: 3000px; opacity: 1; }
+.safety-alert-card { border-left: 3px solid; transition: all 0.3s; }
+.safety-alert-card:hover { transform: translateX(4px); }
+.download-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 12px; font-size: 12px; font-weight: 600; transition: all 0.3s; }
+.download-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.product-tab { padding: 10px 20px; font-size: 13px; font-weight: 600; border-radius: 12px 12px 0 0; cursor: pointer; transition: all 0.3s; border: 1px solid transparent; border-bottom: none; }
+.product-tab.active { background: #fff; color: #4A4063; border-color: rgba(0,0,0,0.06); }
+.product-tab:not(.active) { color: rgba(255,255,255,0.6); }
+.product-tab:not(.active):hover { color: rgba(255,255,255,0.9); }
+</style>
+
+<!-- Salesforce c360a Beacon & Tracking -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="/js/makana-datalayer.js"></script>
+<script src="/js/makana-init.js"></script>
+<script src="/js/makana-sitemap.js"></script>
+<script src="/js/makana-personalization.js"></script>
+<script src="/js/makana-leadgen.js"></script>
+<script defer src="/js/makana-contact.js"></script>
+</head>
+<body class="bg-warm font-sans text-slate-brand">
+
+<!-- ═══════════ AUTH GATE ═══════════ -->
+<script>
+(function() {
+  var stored = localStorage.getItem('makana_user');
+  if (!stored) {
+    window.location.href = '/?gateway=hcp';
+    return;
+  }
+  try {
+    var user = JSON.parse(stored);
+    if (!user.email) { window.location.href = '/?gateway=hcp'; return; }
+    window.__hcpUser = user;
+  } catch(e) {
+    window.location.href = '/?gateway=hcp';
+  }
+})();
+</script>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-14">
+      <div class="flex items-center gap-4">
+        <a class="shrink-0" href="/">
+          <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8">
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <span class="portal-badge bg-primary/8 text-primary">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+          HCP Portal
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/hcp-portal" class="flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-primary transition px-3 py-2 rounded-lg hover:bg-primary/5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/></svg>
+          Back to Portal
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <div id="userAvatar" class="flex items-center gap-2">
+          <span id="userInitial" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6BBFAB,#4A4063);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600"></span>
+        </div>
+        <button onclick="showLogoutModal()" class="text-xs text-gray-400 hover:text-red-500 transition font-medium">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ HERO / BREADCRUMB ═══════════ -->
+<section class="pt-24 pb-10 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
+  <div class="absolute inset-0 opacity-30">
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(107,191,171,0.2) 0%,transparent 70%);filter:blur(50px);top:-100px;right:-50px;"></div>
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(155,142,196,0.15) 0%,transparent 70%);filter:blur(40px);bottom:-150px;left:-50px;"></div>
+  </div>
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-white/50 mb-4">
+      <a href="/hcp-portal" class="hover:text-white/80 transition">Portal</a>
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      <span class="text-white/80">Prescribing Information</span>
+    </nav>
+    <div class="flex items-center gap-3 mb-3">
+      <span class="portal-badge bg-white/15 text-white/90 text-[10px]">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+        Secure Session
+      </span>
+      <span class="portal-badge bg-white/10 text-white/70 text-[10px]">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Last updated: April 8, 2026
+      </span>
+    </div>
+    <h1 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Prescribing Information</h1>
+    <p class="text-white/60 text-sm mt-2 max-w-2xl">Complete prescribing information, dosing guidelines, safety data, and medication guides for all Makana Health approved products. For healthcare professionals only.</p>
+  </div>
+</section>
+
+<!-- ═══════════ PRODUCT CARDS ═══════════ -->
+<section class="py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Main content: 2 product cards -->
+      <div class="lg:col-span-2 space-y-8">
+
+        <!-- ── IMMUNEXIS ── -->
+        <div class="reveal stat-card overflow-hidden" id="immunexis-card">
+          <!-- Product Header -->
+          <div class="p-6 pb-4 border-b border-gray-100">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-xl font-bold">Ix</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h2 class="text-xl font-bold text-slate-brand">IMMUNEXIS<sup class="text-xs">&reg;</sup></h2>
+                  <span class="portal-badge bg-green-50 text-green-600 text-[10px]">FDA Approved</span>
+                  <span class="portal-badge bg-primary/8 text-primary text-[10px]">NDA 214-837</span>
+                </div>
+                <p class="text-xs text-gray-400 mt-0.5">makanaximab-vkrt | IL-31 Receptor Antagonist | 150 mg/mL Solution for Injection</p>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-4">
+              <button onclick="trackDownload('immunexis_full_pi')" class="download-btn bg-primary/8 text-primary hover:bg-primary/15">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Full PI (PDF)
+              </button>
+              <button onclick="trackDownload('immunexis_med_guide')" class="download-btn bg-secondary/8 text-secondary-dark hover:bg-secondary/15">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                Medication Guide
+              </button>
+            </div>
+          </div>
+
+          <!-- Indication & Usage -->
+          <div class="pi-section m-6 mb-0 rounded-xl">
+            <div class="section-toggle open flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-primary uppercase tracking-wide">1. Indications &amp; Usage</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content expanded px-1 pb-3">
+              <p class="text-xs text-gray-600 leading-relaxed">IMMUNEXIS is an interleukin-31 receptor antagonist indicated for the treatment of <strong>moderate-to-severe atopic dermatitis</strong> in adults and pediatric patients aged 6 years and older whose disease is not adequately controlled with topical prescription therapies or when those therapies are not advisable.</p>
+              <p class="text-xs text-gray-600 leading-relaxed mt-2">IMMUNEXIS can be used with or without topical corticosteroids. Avoid use with other immunosuppressant agents.</p>
+              <div class="mt-3 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                <p class="text-[11px] text-amber-800 font-medium">Limitation of Use: IMMUNEXIS has not been studied and is not recommended for use in combination with other biologic immunomodulators.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dosage & Administration -->
+          <div class="pi-section m-6 mb-0 rounded-xl">
+            <div class="section-toggle open flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-primary uppercase tracking-wide">2. Dosage &amp; Administration</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content expanded px-1 pb-3">
+              <p class="text-xs text-gray-600 leading-relaxed mb-3">Administer by subcutaneous injection. Rotate injection sites (abdomen, thigh, upper arm). Do not inject into skin that is tender, bruised, erythematous, or indurated.</p>
+              <div class="overflow-x-auto rounded-xl border border-gray-100">
+                <table class="dosing-table">
+                  <thead>
+                    <tr>
+                      <th>Patient Population</th>
+                      <th>Body Weight</th>
+                      <th>Loading Dose</th>
+                      <th>Maintenance Dose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Adults (18+ yr)</td>
+                      <td>All weights</td>
+                      <td>600 mg (2 x 300 mg) SC on Day 1</td>
+                      <td>300 mg SC every 2 weeks</td>
+                    </tr>
+                    <tr>
+                      <td>Adolescents (12-17 yr)</td>
+                      <td>&ge; 60 kg</td>
+                      <td>600 mg (2 x 300 mg) SC on Day 1</td>
+                      <td>300 mg SC every 2 weeks</td>
+                    </tr>
+                    <tr>
+                      <td>Adolescents (12-17 yr)</td>
+                      <td>30 to &lt; 60 kg</td>
+                      <td>300 mg SC on Day 1</td>
+                      <td>150 mg SC every 2 weeks</td>
+                    </tr>
+                    <tr>
+                      <td>Pediatric (6-11 yr)</td>
+                      <td>&ge; 30 kg</td>
+                      <td>300 mg SC on Day 1</td>
+                      <td>150 mg SC every 2 weeks</td>
+                    </tr>
+                    <tr>
+                      <td>Pediatric (6-11 yr)</td>
+                      <td>15 to &lt; 30 kg</td>
+                      <td>300 mg SC on Day 1</td>
+                      <td>150 mg SC every 4 weeks</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-2 italic">Refer to full PI for administration instructions with prefilled syringe and autoinjector devices.</p>
+            </div>
+          </div>
+
+          <!-- Warnings & Precautions -->
+          <div class="pi-section m-6 mb-0 rounded-xl">
+            <div class="section-toggle flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-primary uppercase tracking-wide">5. Warnings &amp; Precautions</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content px-1 pb-3">
+              <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Hypersensitivity Reactions:</strong> Angioedema, urticaria, and serum sickness-like reactions reported. Discontinue immediately if clinically significant reaction occurs. Do not re-administer.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Conjunctivitis &amp; Keratitis:</strong> Observed in 8.7% of patients in CLARITY trials. Advise patients to report new onset or worsening eye symptoms. Consider ophthalmological evaluation.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Eosinophilic Conditions:</strong> Patients with pre-existing helminth infections should be treated before initiating therapy. Monitor for vasculitic rash, worsening pulmonary symptoms, or cardiac complications.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Risk of Infection:</strong> Do not administer live vaccines during treatment or within 16 weeks after discontinuation. Evaluate patients presenting with sustained fever or signs of systemic infection.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Arthralgia:</strong> Joint pain reported in 3.2% of patients. Most cases mild to moderate and did not require discontinuation.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Adverse Reactions -->
+          <div class="pi-section m-6 rounded-xl">
+            <div class="section-toggle flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-primary uppercase tracking-wide">6. Adverse Reactions</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content px-1 pb-3">
+              <p class="text-xs text-gray-600 leading-relaxed mb-3">The most common adverse reactions (&ge;5% and greater than placebo) in adults from the pooled CLARITY-1 and CLARITY-2 trials (N=1,891):</p>
+              <div class="overflow-x-auto rounded-xl border border-gray-100">
+                <table class="dosing-table">
+                  <thead>
+                    <tr>
+                      <th>Adverse Reaction</th>
+                      <th>IMMUNEXIS (N=1,264)</th>
+                      <th>Placebo (N=627)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Injection site reactions</td>
+                      <td>15.3%</td>
+                      <td>6.8%</td>
+                    </tr>
+                    <tr>
+                      <td>Nasopharyngitis</td>
+                      <td>11.2%</td>
+                      <td>8.1%</td>
+                    </tr>
+                    <tr>
+                      <td>Conjunctivitis</td>
+                      <td>8.7%</td>
+                      <td>2.1%</td>
+                    </tr>
+                    <tr>
+                      <td>Upper respiratory tract infection</td>
+                      <td>7.4%</td>
+                      <td>5.9%</td>
+                    </tr>
+                    <tr>
+                      <td>Headache</td>
+                      <td>5.8%</td>
+                      <td>4.2%</td>
+                    </tr>
+                    <tr>
+                      <td>Arthralgia</td>
+                      <td>3.2%</td>
+                      <td>1.8%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-2 italic">Immunogenicity: Treatment-emergent anti-drug antibodies detected in 4.6% of patients. Neutralizing antibodies observed in 0.8%. No clinically meaningful impact on efficacy or safety.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── CARDIOGUARD ── -->
+        <div class="reveal reveal-d1 stat-card overflow-hidden" id="cardioguard-card">
+          <!-- Product Header -->
+          <div class="p-6 pb-4 border-b border-gray-100">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary to-secondary-dark flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-xl font-bold">Cg</span>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h2 class="text-xl font-bold text-slate-brand">CARDIOGUARD<sup class="text-xs">&reg;</sup></h2>
+                  <span class="portal-badge bg-green-50 text-green-600 text-[10px]">FDA Approved</span>
+                  <span class="portal-badge bg-secondary/8 text-secondary-dark text-[10px]">BLA 761-294</span>
+                </div>
+                <p class="text-xs text-gray-400 mt-0.5">cerivostatin-mkna | Dual PCSK9/Lp(a) Inhibitor | 140 mg/mL &amp; 280 mg/mL Prefilled Syringe</p>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-4">
+              <button onclick="trackDownload('cardioguard_full_pi')" class="download-btn bg-secondary/8 text-secondary-dark hover:bg-secondary/15">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                Full PI (PDF)
+              </button>
+              <button onclick="trackDownload('cardioguard_med_guide')" class="download-btn bg-primary/8 text-primary hover:bg-primary/15">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                Medication Guide
+              </button>
+            </div>
+          </div>
+
+          <!-- Indication & Usage -->
+          <div class="pi-section m-6 mb-0 rounded-xl">
+            <div class="section-toggle open flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-secondary-dark uppercase tracking-wide">1. Indications &amp; Usage</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content expanded px-1 pb-3">
+              <p class="text-xs text-gray-600 leading-relaxed">CARDIOGUARD is a first-in-class dual PCSK9 and lipoprotein(a) inhibitor indicated:</p>
+              <ul class="mt-2 space-y-1.5 text-xs text-gray-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 flex-shrink-0"></span>
+                  <span>As an adjunct to diet and maximally tolerated statin therapy for the treatment of adults with <strong>heterozygous familial hypercholesterolemia (HeFH)</strong> or <strong>clinical atherosclerotic cardiovascular disease (ASCVD)</strong> who require additional lowering of LDL-C and/or Lp(a).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 flex-shrink-0"></span>
+                  <span>To reduce the risk of <strong>myocardial infarction, stroke, and coronary revascularization</strong> in adults with established ASCVD and elevated Lp(a) (&ge;50 mg/dL).</span>
+                </li>
+              </ul>
+              <div class="mt-3 bg-blue-50 border border-blue-200 rounded-lg p-3">
+                <p class="text-[11px] text-blue-800 font-medium">Limitation of Use: The effect of CARDIOGUARD on cardiovascular morbidity and mortality in patients without established ASCVD has not been determined. CARDIOGUARD has not been studied in patients with homozygous familial hypercholesterolemia (HoFH).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dosage & Administration -->
+          <div class="pi-section m-6 mb-0 rounded-xl">
+            <div class="section-toggle open flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-secondary-dark uppercase tracking-wide">2. Dosage &amp; Administration</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content expanded px-1 pb-3">
+              <p class="text-xs text-gray-600 leading-relaxed mb-3">Administer by subcutaneous injection into the abdomen, thigh, or upper arm. Obtain baseline LDL-C and Lp(a) levels before initiation.</p>
+              <div class="overflow-x-auto rounded-xl border border-gray-100">
+                <table class="dosing-table">
+                  <thead>
+                    <tr>
+                      <th>Indication</th>
+                      <th>Starting Dose</th>
+                      <th>Titration</th>
+                      <th>Maximum Dose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>HeFH / ASCVD (LDL-C primary goal)</td>
+                      <td>140 mg SC every 2 weeks <em>or</em> 420 mg SC monthly</td>
+                      <td>Assess LDL-C at 4-8 weeks; if LDL-C not at goal, increase to 280 mg Q2W</td>
+                      <td>280 mg every 2 weeks</td>
+                    </tr>
+                    <tr>
+                      <td>ASCVD + elevated Lp(a) (&ge;50 mg/dL)</td>
+                      <td>280 mg SC every 2 weeks</td>
+                      <td>Assess Lp(a) at 12 weeks; continue if &ge;25% reduction achieved</td>
+                      <td>280 mg every 2 weeks</td>
+                    </tr>
+                    <tr>
+                      <td>Combined LDL-C + Lp(a) reduction</td>
+                      <td>280 mg SC every 2 weeks</td>
+                      <td>Assess both markers at 8-12 weeks</td>
+                      <td>280 mg every 2 weeks</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-2 italic">CARDIOGUARD should be used in conjunction with maximally tolerated statin therapy. Refrigerate prefilled syringes at 2-8&deg;C. Allow to reach room temperature (20-25&deg;C) for 30-45 minutes before administration.</p>
+            </div>
+          </div>
+
+          <!-- Warnings & Precautions -->
+          <div class="pi-section m-6 mb-0 rounded-xl">
+            <div class="section-toggle flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-secondary-dark uppercase tracking-wide">5. Warnings &amp; Precautions</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content px-1 pb-3">
+              <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Hypersensitivity Reactions:</strong> Hypersensitivity reactions including pruritus, rash, urticaria, and rare cases of anaphylaxis reported. Discontinue if serious reaction occurs.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Hepatotoxicity:</strong> ALT/AST elevations &gt;3x ULN observed in 1.4% of patients (vs. 0.6% placebo). Monitor liver function tests at baseline, 12 weeks, and periodically thereafter. Discontinue if persistent elevations occur.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Myalgia/Rhabdomyolysis:</strong> Risk may be increased when used concomitantly with high-dose statins. Advise patients to promptly report unexplained muscle pain, tenderness, or weakness, particularly if accompanied by malaise or fever. Obtain CK levels if myopathy suspected.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Neurocognitive Events:</strong> Cognitive impairment (e.g., memory loss, confusion) reported in 1.1% of patients. Long-term neurocognitive effects not fully established. Consider assessment if symptoms develop.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                  <span><strong>Pregnancy:</strong> Based on mechanism of action, CARDIOGUARD may cause fetal harm. Advise females of reproductive potential to use effective contraception during treatment and for 5 months after the last dose.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Adverse Reactions -->
+          <div class="pi-section m-6 rounded-xl">
+            <div class="section-toggle flex items-center justify-between py-3 px-1" onclick="toggleSection(this)">
+              <h3 class="text-sm font-bold text-secondary-dark uppercase tracking-wide">6. Adverse Reactions</h3>
+              <svg class="w-4 h-4 text-gray-400 toggle-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </div>
+            <div class="collapsible-content px-1 pb-3">
+              <p class="text-xs text-gray-600 leading-relaxed mb-3">The most common adverse reactions (&ge;3% and greater than placebo) from the AEGIS-CV trial (N=8,242):</p>
+              <div class="overflow-x-auto rounded-xl border border-gray-100">
+                <table class="dosing-table">
+                  <thead>
+                    <tr>
+                      <th>Adverse Reaction</th>
+                      <th>CARDIOGUARD (N=4,121)</th>
+                      <th>Placebo (N=4,121)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Injection site reactions</td>
+                      <td>9.8%</td>
+                      <td>5.1%</td>
+                    </tr>
+                    <tr>
+                      <td>Nasopharyngitis</td>
+                      <td>6.2%</td>
+                      <td>5.4%</td>
+                    </tr>
+                    <tr>
+                      <td>Myalgia</td>
+                      <td>5.1%</td>
+                      <td>3.7%</td>
+                    </tr>
+                    <tr>
+                      <td>Influenza-like illness</td>
+                      <td>4.3%</td>
+                      <td>3.1%</td>
+                    </tr>
+                    <tr>
+                      <td>Back pain</td>
+                      <td>3.6%</td>
+                      <td>2.8%</td>
+                    </tr>
+                    <tr>
+                      <td>Urinary tract infection</td>
+                      <td>3.2%</td>
+                      <td>2.5%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-2 italic">In the AEGIS-CV trial (median follow-up 3.4 years), CARDIOGUARD demonstrated a 34% relative risk reduction in MACE (HR 0.66; 95% CI 0.58-0.75; p&lt;0.001) compared to placebo, both on background statin therapy. Lp(a) was reduced by a median of 72% from baseline.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── DRUG INTERACTIONS ── -->
+        <div class="reveal reveal-d2 stat-card overflow-hidden" id="drug-interactions">
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-11 h-11 bg-accent/8 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold text-slate-brand">Drug Interactions Quick Reference</h2>
+                <p class="text-[11px] text-gray-400">Summary of clinically significant drug interactions for Makana products</p>
+              </div>
+            </div>
+
+            <!-- IMMUNEXIS Interactions -->
+            <h3 class="text-xs font-bold text-primary uppercase tracking-wide mb-3">IMMUNEXIS Drug Interactions</h3>
+            <div class="space-y-2 mb-6">
+              <div class="flex items-start gap-3 bg-warm-dark rounded-xl p-3.5">
+                <span class="portal-badge bg-red-50 text-red-600 text-[9px] flex-shrink-0 mt-0.5">Avoid</span>
+                <div>
+                  <p class="text-xs font-semibold text-slate-brand">Live Vaccines</p>
+                  <p class="text-[11px] text-gray-500 leading-relaxed">Avoid concurrent use. Live vaccines should not be given during treatment or within 16 weeks after discontinuation. Non-live vaccines may be administered.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 bg-warm-dark rounded-xl p-3.5">
+                <span class="portal-badge bg-amber-50 text-amber-600 text-[9px] flex-shrink-0 mt-0.5">Caution</span>
+                <div>
+                  <p class="text-xs font-semibold text-slate-brand">CYP450 Substrates (Narrow Therapeutic Index)</p>
+                  <p class="text-[11px] text-gray-500 leading-relaxed">IL-31 inhibition may normalize CYP450 activity. Monitor warfarin, theophylline, and cyclosporine levels upon initiation or discontinuation. Dose adjustments may be needed.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 bg-warm-dark rounded-xl p-3.5">
+                <span class="portal-badge bg-amber-50 text-amber-600 text-[9px] flex-shrink-0 mt-0.5">Caution</span>
+                <div>
+                  <p class="text-xs font-semibold text-slate-brand">Other Immunosuppressants</p>
+                  <p class="text-[11px] text-gray-500 leading-relaxed">Not studied in combination with other systemic immunosuppressants (e.g., cyclosporine, methotrexate, azathioprine). Increased immunosuppression risk. Use not recommended.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARDIOGUARD Interactions -->
+            <h3 class="text-xs font-bold text-secondary-dark uppercase tracking-wide mb-3">CARDIOGUARD Drug Interactions</h3>
+            <div class="space-y-2">
+              <div class="flex items-start gap-3 bg-warm-dark rounded-xl p-3.5">
+                <span class="portal-badge bg-amber-50 text-amber-600 text-[9px] flex-shrink-0 mt-0.5">Monitor</span>
+                <div>
+                  <p class="text-xs font-semibold text-slate-brand">High-Dose Statins (Atorvastatin &ge;80 mg, Rosuvastatin &ge;40 mg)</p>
+                  <p class="text-[11px] text-gray-500 leading-relaxed">Increased risk of myalgia and rhabdomyolysis. Monitor CK levels. Consider dose reduction of statin if CK exceeds 5x ULN.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 bg-warm-dark rounded-xl p-3.5">
+                <span class="portal-badge bg-amber-50 text-amber-600 text-[9px] flex-shrink-0 mt-0.5">Monitor</span>
+                <div>
+                  <p class="text-xs font-semibold text-slate-brand">Warfarin &amp; Direct Oral Anticoagulants</p>
+                  <p class="text-[11px] text-gray-500 leading-relaxed">No direct PK interaction identified, but patients on anticoagulants should have routine INR/anti-Xa monitoring maintained. Lp(a) reduction may independently affect thrombotic pathways.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 bg-warm-dark rounded-xl p-3.5">
+                <span class="portal-badge bg-green-50 text-green-600 text-[9px] flex-shrink-0 mt-0.5">No Interaction</span>
+                <div>
+                  <p class="text-xs font-semibold text-slate-brand">Ezetimibe, Fibrates, PCSK9 mAb Monotherapies</p>
+                  <p class="text-[11px] text-gray-500 leading-relaxed">No clinically significant interactions observed. CARDIOGUARD may be co-administered with ezetimibe. Avoid co-administration with other PCSK9-targeting therapies (mechanistic overlap, no additive benefit demonstrated).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── SIDEBAR ── -->
+      <div class="lg:col-span-1 space-y-6">
+
+        <!-- Safety Alerts -->
+        <div class="reveal reveal-d2 stat-card p-6">
+          <div class="flex items-center gap-2 mb-5">
+            <div class="w-9 h-9 bg-red-50 rounded-xl flex items-center justify-center">
+              <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+            </div>
+            <h3 class="text-sm font-bold text-slate-brand">Safety Alerts</h3>
+          </div>
+
+          <div class="space-y-3">
+            <!-- Alert 1 -->
+            <div class="safety-alert-card bg-red-50/50 rounded-xl p-3.5 border-red-300" onclick="trackClick('safety_alert_immunexis_pediatric')">
+              <div class="flex items-center gap-1.5 mb-1.5">
+                <span class="portal-badge bg-red-100 text-red-700 text-[9px]">Urgent</span>
+                <span class="text-[10px] text-gray-400">April 5, 2026</span>
+              </div>
+              <h4 class="text-xs font-semibold text-slate-brand leading-snug">IMMUNEXIS: Updated Pediatric Dosing &mdash; Weight-Based Adjustment</h4>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Revised recommendations for patients 6-11 years, 15 to &lt;30 kg. Maintenance dose frequency changed from Q2W to Q4W based on CLARITY-PED post-marketing data.</p>
+              <a href="#" class="text-[11px] text-red-600 font-semibold mt-2 inline-block hover:underline" onclick="trackClick('safety_alert_immunexis_pediatric_detail')">Read full communication &rarr;</a>
+            </div>
+
+            <!-- Alert 2 -->
+            <div class="safety-alert-card bg-amber-50/50 rounded-xl p-3.5 border-amber-300" onclick="trackClick('safety_alert_cardioguard_hepatic')">
+              <div class="flex items-center gap-1.5 mb-1.5">
+                <span class="portal-badge bg-amber-100 text-amber-700 text-[9px]">Important</span>
+                <span class="text-[10px] text-gray-400">March 22, 2026</span>
+              </div>
+              <h4 class="text-xs font-semibold text-slate-brand leading-snug">CARDIOGUARD: Hepatic Monitoring Guidance Update</h4>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">FDA-mandated label update: LFT monitoring now recommended at baseline, 12 weeks, 24 weeks, and annually thereafter. Previous guidance omitted the 24-week checkpoint.</p>
+              <a href="#" class="text-[11px] text-amber-600 font-semibold mt-2 inline-block hover:underline" onclick="trackClick('safety_alert_cardioguard_hepatic_detail')">Read full communication &rarr;</a>
+            </div>
+
+            <!-- Alert 3 -->
+            <div class="safety-alert-card bg-blue-50/50 rounded-xl p-3.5 border-blue-300" onclick="trackClick('safety_alert_immunexis_pregnancy')">
+              <div class="flex items-center gap-1.5 mb-1.5">
+                <span class="portal-badge bg-blue-100 text-blue-700 text-[9px]">Informational</span>
+                <span class="text-[10px] text-gray-400">March 10, 2026</span>
+              </div>
+              <h4 class="text-xs font-semibold text-slate-brand leading-snug">IMMUNEXIS: Pregnancy Registry &mdash; Interim Results Available</h4>
+              <p class="text-[11px] text-gray-500 mt-1 leading-relaxed">Interim analysis of the CLARITY-PREG registry (N=347) showed no increased risk of major congenital malformations. Full results expected Q3 2026. Registry remains open for enrollment.</p>
+              <a href="#" class="text-[11px] text-blue-600 font-semibold mt-2 inline-block hover:underline" onclick="trackClick('safety_alert_immunexis_pregnancy_detail')">Read full communication &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="reveal reveal-d3 stat-card p-6">
+          <h3 class="text-sm font-bold text-slate-brand mb-4">Quick Links</h3>
+          <div class="space-y-2">
+            <a href="#immunexis-card" class="flex items-center gap-3 p-3 rounded-xl hover:bg-primary/5 transition group" onclick="trackClick('quick_link_immunexis')">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-[10px] font-bold">Ix</span>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-brand group-hover:text-primary transition">IMMUNEXIS PI</p>
+                <p class="text-[10px] text-gray-400">IL-31 Receptor Antagonist</p>
+              </div>
+            </a>
+            <a href="#cardioguard-card" class="flex items-center gap-3 p-3 rounded-xl hover:bg-secondary/5 transition group" onclick="trackClick('quick_link_cardioguard')">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-secondary to-secondary-dark flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-[10px] font-bold">Cg</span>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-brand group-hover:text-secondary-dark transition">CARDIOGUARD PI</p>
+                <p class="text-[10px] text-gray-400">Dual PCSK9/Lp(a) Inhibitor</p>
+              </div>
+            </a>
+            <a href="#drug-interactions" class="flex items-center gap-3 p-3 rounded-xl hover:bg-accent/5 transition group" onclick="trackClick('quick_link_interactions')">
+              <div class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-brand group-hover:text-accent transition">Drug Interactions</p>
+                <p class="text-[10px] text-gray-400">Cross-product reference</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Medical Information Contact -->
+        <div class="reveal reveal-d4 stat-card p-6">
+          <h3 class="text-sm font-bold text-slate-brand mb-3">Medical Information</h3>
+          <p class="text-xs text-gray-500 leading-relaxed mb-4">For product-specific medical inquiries, adverse event reporting, or to request additional clinical data, contact our Medical Affairs team.</p>
+          <div class="space-y-2.5">
+            <div class="flex items-center gap-2.5">
+              <div class="w-7 h-7 bg-primary/8 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              </div>
+              <div>
+                <p class="text-[10px] text-gray-400">Phone</p>
+                <p class="text-xs font-semibold text-slate-brand">1-800-MAKANA-1 (1-800-625-2621)</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <div class="w-7 h-7 bg-secondary/8 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5 text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+              </div>
+              <div>
+                <p class="text-[10px] text-gray-400">Email</p>
+                <p class="text-xs font-semibold text-slate-brand">medinfo@makanahealth.com</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <div class="w-7 h-7 bg-accent/8 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-[10px] text-gray-400">Availability</p>
+                <p class="text-xs font-semibold text-slate-brand">Mon&ndash;Fri, 8 AM&ndash;8 PM ET</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-4 border-t border-gray-100">
+            <p class="text-[10px] text-gray-400 leading-relaxed">To report suspected adverse reactions, contact Makana Health at 1-800-625-2621 or FDA MedWatch at <a href="https://www.fda.gov/medwatch" class="text-primary hover:underline">www.fda.gov/medwatch</a> or call 1-800-FDA-1088.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ ISI (Important Safety Information) Banner ═══════════ -->
+<section class="py-8 bg-warm-dark border-t border-gray-200">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal">
+      <div class="flex items-center gap-2 mb-3">
+        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+        <h2 class="text-sm font-bold text-slate-brand uppercase tracking-wide">Important Safety Information</h2>
+      </div>
+      <div class="text-xs text-gray-600 leading-relaxed space-y-2">
+        <p><strong>IMMUNEXIS (makanaximab-vkrt):</strong> Contraindicated in patients with known hypersensitivity to makanaximab-vkrt or any excipient. Serious hypersensitivity reactions, including anaphylaxis, have been reported. Conjunctivitis and keratitis have been reported; advise patients to report new or worsening eye symptoms. Do not administer live vaccines. Evaluate patients presenting with persistent fever or signs of infection.</p>
+        <p><strong>CARDIOGUARD (cerivostatin-mkna):</strong> Contraindicated in patients with a history of serious hypersensitivity to cerivostatin-mkna or any excipient. Monitor hepatic transaminases at baseline and as clinically indicated. Myalgia and rhabdomyolysis risk increases with concomitant high-dose statin use. Not recommended during pregnancy; females of reproductive potential should use effective contraception.</p>
+        <p class="text-gray-400 italic">These highlights do not include all the information needed to use IMMUNEXIS and CARDIOGUARD safely and effectively. See full prescribing information for each product. Revised: 04/2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-6 brightness-0 invert opacity-50">
+        <span class="text-xs text-white/30">HCP Portal</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 text-[11px] text-white/25">
+        <a href="/privacy" class="hover:text-white/50 transition">Privacy</a><span>|</span>
+        <a href="/terms" class="hover:text-white/50 transition">Terms</a><span>|</span>
+        <a href="/hcp-portal" class="hover:text-white/50 transition">HCP Portal</a><span>|</span>
+        <a href="/" class="hover:text-white/50 transition">Main Site</a>
+      </div>
+      <p class="text-[11px] text-white/20">&copy; 2026 Makana Health. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+// ── Glass nav scroll ──
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+// ── Reveal on scroll ──
+var revObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { revObs.observe(el); });
+
+// ── Contact lookup handled by makana-contact.js ──
+
+// ── Section toggle (collapsible) ──
+function toggleSection(el) {
+  var content = el.nextElementSibling;
+  var isOpen = el.classList.contains('open');
+
+  if (isOpen) {
+    el.classList.remove('open');
+    content.classList.remove('expanded');
+  } else {
+    el.classList.add('open');
+    content.classList.add('expanded');
+  }
+
+  // Track section expansion
+  var sectionTitle = el.querySelector('h3') ? el.querySelector('h3').textContent.trim() : 'unknown';
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'click',
+      action: 'hcp_prescribing_section_' + (isOpen ? 'collapse' : 'expand'),
+      label: sectionTitle,
+      category: 'HCP_PORTAL'
+    });
+  }
+}
+
+// ── Track PDF downloads ──
+function trackDownload(docName) {
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP PI Download: ' + docName, eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'click',
+      action: 'hcp_prescribing_download',
+      label: docName,
+      category: 'HCP_PORTAL',
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+}
+
+// ── Track general clicks ──
+function trackClick(action) {
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP PI Click: ' + action, eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'click',
+      action: 'hcp_prescribing_' + action,
+      label: action,
+      category: 'HCP_PORTAL'
+    });
+  }
+}
+
+// ── Identity stitching on page load ──
+(function() {
+  // Salesforce Interactions SDK
+  if (typeof SalesforceInteractions !== 'undefined' && window.__hcpUser) {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Prescribing Info View' },
+      user: { attributes: { eventType: 'identity', emailAddress: window.__hcpUser.email } }
+    });
+  }
+
+  // Data layer identity event
+  if (window.makanaDataLayer && window.__hcpUser) {
+    window.makanaDataLayer.push({
+      event: 'identity',
+      action: 'hcp_portal_prescribing_info',
+      label: 'HCP Portal: Prescribing Information',
+      user: { attributes: { emailAddress: window.__hcpUser.email } }
+    });
+  }
+
+  // Page view tracking
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Prescribing Information', eventType: 'pageView' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'page_view',
+      category: 'HCP_PORTAL',
+      page_type: 'hcp_prescribing_info',
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+})();
+
+// ── Logout Modal ──
+function showLogoutModal() {
+  document.getElementById('logoutModal').classList.remove('hidden');
+  document.getElementById('logoutModal').classList.add('flex');
+  setTimeout(function() {
+    document.getElementById('logoutPanel').style.opacity = '1';
+    document.getElementById('logoutPanel').style.transform = 'scale(1) translateY(0)';
+  }, 10);
+}
+function hideLogoutModal() {
+  var panel = document.getElementById('logoutPanel');
+  panel.style.opacity = '0';
+  panel.style.transform = 'scale(0.95) translateY(8px)';
+  setTimeout(function() {
+    document.getElementById('logoutModal').classList.add('hidden');
+    document.getElementById('logoutModal').classList.remove('flex');
+  }, 200);
+}
+function hcpLogout() {
+  // Track logout event
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'hcp_logout',
+      category: 'HCP_PORTAL',
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Logout', eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  // Clear all session data
+  localStorage.removeItem('makana_user');
+  sessionStorage.removeItem('makana_contact');
+  window.__hcpUser = null;
+  window.__hcpContact = null;
+  window.location.href = '/?gateway=hcp';
+}
+</script>
+
+<!-- ═══════════ LOGOUT CONFIRMATION MODAL ═══════════ -->
+<div id="logoutModal" class="hidden fixed inset-0 z-[9998] items-center justify-center bg-black/40 backdrop-blur-sm" onclick="hideLogoutModal()">
+  <div id="logoutPanel" onclick="event.stopPropagation()" style="opacity:0;transform:scale(0.95) translateY(8px);transition:all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);" class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 max-w-sm w-full mx-4">
+    <div class="flex items-center justify-center w-14 h-14 bg-red-50 rounded-2xl mx-auto mb-5">
+      <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
+    </div>
+    <h3 class="text-lg font-bold text-slate-brand text-center mb-2">Sign out of HCP Portal?</h3>
+    <p class="text-sm text-gray-400 text-center mb-6">You'll need to sign in again to access clinical resources and your portal dashboard.</p>
+    <div class="flex gap-3">
+      <button onclick="hideLogoutModal()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-xl transition">Cancel</button>
+      <button onclick="hcpLogout()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-white bg-red-500 hover:bg-red-600 rounded-xl transition">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

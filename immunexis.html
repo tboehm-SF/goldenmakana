@@ -1,1 +1,2648 @@
-{"id":"/immunexis.html","path":"/immunexis.html","sha":"83a6cb73d0ec5372f0c89edc177cfffd858fcb90","mime_type":"text/html","size":192306,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMMUNEXIS® — Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+}
+</style>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; }
+
+/* ═══════════════ GLASS NAV ═══════════════ */
+.glass-nav { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); background: rgba(255,255,255,0.72); }
+.glass-nav.scrolled { background: rgba(255,255,255,0.92); box-shadow: 0 0.5px 0 rgba(0,0,0,0.08); }
+.mega-menu { opacity:0; visibility:hidden; transform:translateY(8px); transition:all .25s cubic-bezier(.4,0,.2,1); }
+.nav-item:hover .mega-menu { opacity:1; visibility:visible; transform:translateY(0); }
+
+/* ═══════════════ REVEAL ═══════════════ */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity .8s cubic-bezier(.25,.46,.45,.94), transform .8s cubic-bezier(.25,.46,.45,.94); }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-delay-1 { transition-delay:.1s; } .reveal-delay-2 { transition-delay:.2s; } .reveal-delay-3 { transition-delay:.3s; } .reveal-delay-4 { transition-delay:.4s; }
+
+/* ═══════════════ HERO ═══════════════ */
+.hero-mesh { background:linear-gradient(135deg,#2D2640 0%,#4A4063 30%,#352D47 60%,#1D1D1F 100%); }
+.hero-orb-1 { position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(107,191,171,.15) 0%,transparent 70%); filter:blur(40px); top:-100px; right:-100px; animation:float 20s ease-in-out infinite; }
+.hero-orb-2 { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(155,142,196,.12) 0%,transparent 70%); filter:blur(40px); bottom:-150px; left:-50px; animation:float 25s ease-in-out infinite reverse; }
+.hero-orb-3 { position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle,rgba(107,191,171,.08) 0%,transparent 70%); filter:blur(30px); top:40%; left:30%; animation:float 18s ease-in-out infinite 3s; }
+@keyframes float { 0%,100%{transform:translate(0,0)} 33%{transform:translate(30px,-20px)} 66%{transform:translate(-20px,15px)} }
+
+/* ═══════════════ GRADIENT TEXT ═══════════════ */
+.gradient-text { background:linear-gradient(135deg,#6BBFAB 0%,#9B8EC4 50%,#4A4063 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.gradient-text-hero { background:linear-gradient(135deg,#ffffff 0%,rgba(255,255,255,.7) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+/* ═══════════════ CARDS ═══════════════ */
+.card-modern { transition:transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s cubic-bezier(.25,.46,.45,.94); }
+.card-modern:hover { transform:scale(1.02) translateY(-2px); box-shadow:0 20px 60px rgba(0,0,0,.08); }
+.pill-btn { transition:all .3s cubic-bezier(.25,.46,.45,.94); }
+.pill-btn:hover { transform:scale(1.03); }
+
+/* ═══════════════ DRUG CARDS ═══════════════ */
+.drug-card { border-top:3px solid var(--color-primary); transition:transform .25s ease, box-shadow .25s ease; }
+.drug-card:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(74,64,99,.12); }
+.drug-card.teal { border-top-color:var(--color-secondary); }
+.drug-card.gray { border-top-color:#c8cdd6; }
+
+/* ═══════════════ GLASS CARDS ═══════════════ */
+.glass-card { background:rgba(255,255,255,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.9); box-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 2px 12px rgba(124,111,160,.07); }
+.glass-card:hover { box-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 12px 32px rgba(124,111,160,.18), 0 0 0 2px var(--color-primary); transform:translateY(-3px); }
+.glass-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--color-primary),var(--color-secondary)); border-radius:14px 14px 0 0; }
+
+/* ═══════════════ STAT COUNTERS ═══════════════ */
+.stat-num { font-size:clamp(40px,5vw,60px); font-weight:800; line-height:1.15; font-family:Georgia,serif; background:linear-gradient(135deg,var(--color-primary),var(--color-secondary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+/* ═══════════════ CHART ═══════════════ */
+#efficacyChart { display:block; width:100%; }
+#chartTooltip { position:absolute; background:#1a1f2e; color:#fff; font-size:12px; font-weight:600; padding:6px 11px; border-radius:8px; pointer-events:none; white-space:nowrap; opacity:0; transition:opacity .15s; box-shadow:0 4px 14px rgba(0,0,0,.25); transform:translate(-50%,-100%); margin-top:-10px; }
+#chartTooltip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:#1a1f2e; }
+
+/* ═══════════════ SAFETY TABS ═══════════════ */
+.safety-tab { transition:color .25s ease, background .2s ease; position:relative; }
+.safety-tab:hover { color:var(--color-primary); background:rgba(74,64,99,.04); }
+.safety-tab.active { color:var(--color-primary); }
+.tab-ink { position:absolute; bottom:-2px; height:3px; background:linear-gradient(90deg,var(--color-primary),var(--color-secondary)); border-radius:2px 2px 0 0; transition:left .3s cubic-bezier(.4,0,.2,1), width .3s cubic-bezier(.4,0,.2,1); pointer-events:none; }
+.s-panel { display:none; }
+.s-panel.active { display:flex; flex-direction:column; gap:24px; }
+
+/* ═══════════════ AE TABLE ═══════════════ */
+.safe-row { opacity:0; transform:translateX(-12px); transition:opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1); }
+.safe-row.row-visible { opacity:1; transform:translateX(0); }
+
+/* ═══════════════ FAB ORB ═══════════════ */
+.fab-orb { position:fixed; bottom:32px; right:32px; width:68px; height:68px; border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:600; background:#0b0818; box-shadow:inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08), 0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35), 0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08); animation:orbPulse 2.8s ease-out infinite; transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s; will-change:transform; }
+.fab-orb::before { content:''; position:absolute; top:9px; left:11px; z-index:2; width:22px; height:13px; background:radial-gradient(ellipse,rgba(255,255,255,.45) 0%,rgba(255,255,255,0) 100%); border-radius:50%; pointer-events:none; }
+.fab-orb:hover { transform:scale(1.11) translateY(-3px); box-shadow:inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08), 0 16px 44px rgba(124,111,160,.75), 0 4px 14px rgba(76,170,143,.5), 0 0 0 1px rgba(255,255,255,.15), 0 0 70px rgba(124,111,160,.3); }
+.fab-orb svg { width:26px; height:26px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)) drop-shadow(0 0 8px rgba(255,255,255,.2)); position:relative; z-index:1; }
+.fab-orb.hidden { opacity:0; pointer-events:none; animation:none; }
+@keyframes orbPulse {
+  0%   { box-shadow:inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08), 0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35), 0 0 0 0 rgba(124,111,160,.6); }
+  70%  { box-shadow:inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08), 0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35), 0 0 0 22px rgba(124,111,160,0); }
+  100% { box-shadow:inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08), 0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35), 0 0 0 0 rgba(124,111,160,0); }
+}
+
+/* ═══════════════ CHAT OVERLAY ═══════════════ */
+.chat-overlay { position:fixed; top:0; left:0; right:0; bottom:0; z-index:700; display:flex; transform:translateX(-110%) scale(.98); transition:transform .55s cubic-bezier(.22,1,.36,1); pointer-events:none; box-shadow:4px 0 32px rgba(0,0,0,.18); will-change:transform; }
+.chat-overlay.open { transform:translateX(0) scale(1); pointer-events:all; }
+.chat-overlay.expanded .chat-content-slot { flex:1; }
+
+/* Chat Panel */
+.chat-sidebar { width:320px; flex-shrink:0; background:rgba(255,255,255,.82); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-right:1px solid rgba(255,255,255,.25); display:flex; flex-direction:column; height:100%; z-index:2; }
+.chat-hdr { background:#4a5263; padding:16px 18px; display:flex; align-items:center; gap:12px; flex-shrink:0; }
+.chat-av { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,var(--color-primary),var(--color-secondary)); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; flex-shrink:0; }
+.online-dot { width:9px; height:9px; background:var(--color-secondary); border-radius:50%; margin-left:auto; flex-shrink:0; animation:onlinePulse 2s ease-in-out infinite; }
+@keyframes onlinePulse { 0%,100%{box-shadow:0 0 0 0 rgba(76,170,143,.5)} 50%{box-shadow:0 0 0 5px rgba(76,170,143,0)} }
+
+.msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; }
+.msg { display:flex; gap:9px; align-items:flex-end; }
+.msg.u { flex-direction:row-reverse; }
+.bubble { max-width:88%; padding:11px 14px; border-radius:14px; font-size:13px; line-height:1.6; animation:bubbleIn .28s cubic-bezier(.22,1,.36,1) both; }
+.bubble.a { background:#f5f5f7; color:#1a1f2e; border-bottom-left-radius:3px; }
+.bubble.u { background:#4a5263; color:#fff; border-bottom-right-radius:3px; }
+.mav { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,var(--color-primary),var(--color-secondary)); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:#fff; font-weight:700; }
+@keyframes bubbleIn { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+.typing { display:flex; align-items:center; gap:5px; padding:4px 2px; }
+.typing span { width:7px; height:7px; border-radius:50%; background:var(--color-primary); animation:dotPulse 1s ease-in-out infinite; }
+.typing span:nth-child(2) { background:color-mix(in srgb,var(--color-primary) 50%,var(--color-secondary)); animation-delay:.18s; }
+.typing span:nth-child(3) { background:var(--color-secondary); animation-delay:.36s; }
+@keyframes dotPulse { 0%,100%{transform:scale(1);opacity:.5} 50%{transform:scale(1.5);opacity:1} }
+
+.quick-btns .opt { background:#fff; border:1px solid #e2e5eb; border-radius:20px; padding:9px 14px; font-size:13px; color:#4a5263; cursor:pointer; font-weight:500; text-align:left; transition:background .15s, border-color .15s, transform .15s, box-shadow .15s; font-family:inherit; display:flex; align-items:center; justify-content:space-between; width:100%; }
+.quick-btns .opt::after { content:'→'; font-size:12px; color:var(--color-primary); opacity:0; transform:translateX(-6px); transition:opacity .2s, transform .2s; }
+.quick-btns .opt:hover { background:#f5f5f7; border-color:var(--color-primary); transform:translateX(3px); box-shadow:0 2px 12px rgba(124,111,160,.12); }
+.quick-btns .opt:hover::after { opacity:1; transform:translateX(0); }
+.quick-btns.hidden-btns { display:none; }
+
+.chat-input { flex:1; background:#f5f5f7; border:1px solid #e2e5eb; border-radius:20px; padding:10px 16px; font-size:13px; color:#4a5263; outline:none; font-family:inherit; transition:border-color .2s, box-shadow .2s; }
+.chat-input:focus { border-color:var(--color-primary); box-shadow:0 0 0 4px rgba(124,111,160,.12); }
+.chat-send { width:38px; height:38px; border-radius:50%; background:#4a5263; border:none; cursor:pointer; color:#fff; font-size:16px; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:background .15s, transform .15s; }
+.chat-send:hover { background:var(--color-primary); }
+.chat-send:active { transform:scale(.88); }
+
+/* ═══════════════ CONTENT ZONE ═══════════════ */
+.chat-content-slot { flex:0; position:relative; overflow:hidden; min-width:0; background:#f5f5f7; transition:flex .6s cubic-bezier(.22,1,.36,1); }
+.chat-overlay.expanded .chat-content-slot { flex:1; }
+.cz-wrap { position:absolute; top:0; left:0; right:0; bottom:0; display:flex; flex-direction:column; overflow:hidden; opacity:0; pointer-events:none; transform:translateX(32px); transition:opacity .35s cubic-bezier(.4,0,.2,1), transform .35s cubic-bezier(.4,0,.2,1); background:#f5f5f7; will-change:transform, opacity; }
+.cz-wrap.visible { opacity:1; pointer-events:all; transform:translateX(0); }
+.cz-wrap.slide-out { opacity:0; transform:translateX(-32px); }
+.cz { flex:1; overflow-y:auto; overflow-x:clip; display:flex; flex-direction:column; }
+
+/* CZ Header */
+.cz-hdr { background:#4a5263; padding:36px 56px 30px; position:relative; overflow:hidden; flex-shrink:0; }
+.cz-hdr::before { content:''; position:absolute; top:-60px; right:-60px; width:320px; height:320px; background:rgba(124,111,160,.15); border-radius:50%; }
+.cz-hdr::after { content:''; position:absolute; bottom:-40px; right:140px; width:190px; height:190px; background:rgba(76,170,143,.12); border-radius:50%; }
+
+/* CZ Badge shimmer */
+@keyframes badgeShimmer { 0%,100%{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 4px 16px rgba(0,0,0,.12),0 0 0 1px rgba(124,111,160,.2)} 50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 4px 16px rgba(0,0,0,.12),0 0 0 1px rgba(76,170,143,.5)} }
+
+/* CZ Body */
+.cz-body { padding:36px 56px 52px; display:flex; flex-direction:column; gap:28px; flex:1; background:radial-gradient(ellipse at 80% 0%,rgba(124,111,160,.06) 0%,transparent 60%), radial-gradient(ellipse at 20% 100%,rgba(76,170,143,.05) 0%,transparent 55%); }
+.cz-section-head { font-size:16px; font-weight:700; color:#1a1f2e; letter-spacing:.02em; padding-left:14px; border-left:3px solid transparent; border-image:linear-gradient(180deg,var(--color-primary),var(--color-secondary)) 1; }
+
+/* Skeleton */
+@keyframes skeletonPulse { 0%,100%{opacity:.45} 50%{opacity:.9} }
+.sk-wrap { display:flex; flex-direction:column; gap:28px; padding:36px 56px; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .2s; }
+.sk-wrap.visible { opacity:1; }
+.sk-row { height:14px; border-radius:6px; background:linear-gradient(90deg,#e2e5eb,rgba(255,255,255,.6),#e2e5eb); animation:skeletonPulse 1.4s ease-in-out infinite; }
+.sk-row.wide { width:60%; } .sk-row.med { width:40%; } .sk-row.full { width:100%; }
+.sk-card-row { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.sk-card { height:140px; border-radius:14px; background:linear-gradient(90deg,#e2e5eb,rgba(255,255,255,.6),#e2e5eb); animation:skeletonPulse 1.4s ease-in-out infinite; }
+.sk-card:nth-child(2) { animation-delay:.15s; } .sk-card:nth-child(3) { animation-delay:.3s; }
+.sk-chart { height:200px; border-radius:14px; background:linear-gradient(90deg,#e2e5eb,rgba(255,255,255,.6),#e2e5eb); animation:skeletonPulse 1.4s ease-in-out infinite; animation-delay:.1s; }
+
+/* Warning Boxes */
+.warn-box { background:#fff8e6; border:1.5px solid #f0d080; }
+.warn-box:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(240,208,128,.35), 0 0 0 2px #e8a020; }
+.nowarn-box { background:#edf8f4; border:1.5px solid #a0dfc8; }
+.nowarn-box:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(76,170,143,.25), 0 0 0 2px var(--color-secondary); }
+
+/* Close btn */
+#xBtn { position:absolute; top:14px; right:14px; z-index:999; width:32px; height:32px; border-radius:50%; border:none; background:rgba(74,82,99,.7); color:#fff; font-size:17px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s, transform .25s cubic-bezier(.34,1.56,.64,1); box-shadow:0 2px 8px rgba(0,0,0,.2); }
+#xBtn:hover { background:rgba(255,255,255,.38); transform:rotate(90deg) scale(1.1); }
+
+/* Persistent switch */
+#persistentBtns { display:flex; flex-direction:column; gap:8px; max-height:0; overflow:hidden; opacity:0; pointer-events:none; transition:opacity .3s ease, max-height .3s ease; padding:0 16px; }
+#persistentBtns.visible { max-height:160px; opacity:1; pointer-events:all; padding:14px 16px; border-top:1px solid #f0f2f5; }
+
+/* ═══════════════ MODAL ═══════════════ */
+.modal-backdrop { background:rgba(0,0,0,.4); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+.modal-content { animation:modalIn .3s cubic-bezier(.25,.46,.45,.94); }
+@keyframes modalIn { from{opacity:0;transform:scale(.95) translateY(10px)} to{opacity:1;transform:scale(1) translateY(0)} }
+
+/* Cookie */
+.cookie-banner { animation:slideUp .5s cubic-bezier(.25,.46,.45,.94) 1.5s both; }
+@keyframes slideUp { from{transform:translateY(100%);opacity:0} to{transform:translateY(0);opacity:1} }
+
+/* Scrollbar */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:linear-gradient(180deg,var(--color-primary),var(--color-secondary)); border-radius:4px; }
+
+/* CZ Meta items reveal */
+.cz-mi { opacity:0; transform:translateY(8px); transition:opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1); }
+.cz-mi.visible { opacity:1; transform:translateY(0); }
+
+/* CTAs row fade in */
+#ctasRow, #isiRow { opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1); }
+#ctasRow.in, #isiRow.in { opacity:1; transform:translateY(0); }
+
+/* Zone flash */
+@keyframes zoneFlash { 0%{opacity:.35} 100%{opacity:0} }
+.zone-flash { position:absolute; inset:0; background:#fff; pointer-events:none; z-index:10; animation:zoneFlash .35s ease-out forwards; }
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media(max-width:1100px) { .cz-hdr,.cz-body { padding-left:32px; padding-right:32px; } }
+@media(max-width:860px) { .chat-sidebar { width:260px; } }
+
+
+/* ═══ GATEWAY PORTAL ═══ */
+.gw-overlay { position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:1rem; }
+.gw-overlay.open { display:flex; }
+.gw-backdrop { position:absolute; inset:0; background:rgba(29,29,31,.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); animation:gwFadeIn .3s ease; }
+@keyframes gwFadeIn { from{opacity:0} to{opacity:1} }
+.gw-modal { position:relative; z-index:1; width:100%; max-width:880px; max-height:92vh; overflow-y:auto; background:#fff; border-radius:28px; box-shadow:0 40px 120px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.1); animation:gwSlideIn .4s cubic-bezier(.22,1,.36,1); }
+@keyframes gwSlideIn { from{opacity:0;transform:scale(.93) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.gw-hero { position:relative; background:linear-gradient(135deg,#2D2640 0%,#4A4063 40%,#3a6b5e 100%); padding:2.5rem 2.5rem 3rem; border-radius:28px 28px 0 0; overflow:hidden; }
+.gw-hero::before { content:''; position:absolute; top:-40%; right:-15%; width:460px; height:460px; background:radial-gradient(circle,rgba(107,191,171,.2) 0%,transparent 70%); border-radius:50%; }
+.gw-hero::after { content:''; position:absolute; bottom:-60%; left:-10%; width:380px; height:380px; background:radial-gradient(circle,rgba(155,142,196,.15) 0%,transparent 70%); border-radius:50%; }
+.gw-close { position:absolute; top:1.25rem; right:1.25rem; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .2s; z-index:2; }
+.gw-close:hover { background:rgba(255,255,255,.25); transform:scale(1.1); }
+.gw-close svg { width:16px; height:16px; color:#fff; }
+.gw-body { padding:2rem 2.5rem 2.5rem; }
+.portal-card { position:relative; border-radius:20px; padding:2rem; border:1.5px solid #e5e7eb; transition:all .35s cubic-bezier(.25,.46,.45,.94); cursor:pointer; overflow:hidden; background:#fff; }
+.portal-card::before { content:''; position:absolute; inset:0; border-radius:20px; opacity:0; transition:opacity .35s; }
+.portal-card:hover { transform:translateY(-4px); border-color:transparent; }
+.portal-card.hcp-card:hover { box-shadow:0 20px 60px rgba(74,64,99,.15),0 0 0 1.5px rgba(74,64,99,.2); }
+.portal-card.hcp-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(74,64,99,.03),rgba(155,142,196,.05)); }
+.portal-card.patient-card:hover { box-shadow:0 20px 60px rgba(107,191,171,.15),0 0 0 1.5px rgba(107,191,171,.25); }
+.portal-card.patient-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(107,191,171,.03),rgba(107,191,171,.06)); }
+.portal-icon-wrap { width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+.portal-icon-wrap.hcp { background:linear-gradient(135deg,#4A4063,#6B5B8A); box-shadow:0 4px 14px rgba(74,64,99,.25); }
+.portal-icon-wrap.patient { background:linear-gradient(135deg,#6BBFAB,#4A9B87); box-shadow:0 4px 14px rgba(107,191,171,.25); }
+.portal-icon-wrap svg { width:24px; height:24px; color:#fff; }
+.feature-check { display:flex; align-items:center; gap:.5rem; padding:.35rem 0; }
+.feature-check .check-icon { width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.feature-check .check-icon.hcp { background:rgba(74,64,99,.08); color:#4A4063; }
+.feature-check .check-icon.patient { background:rgba(107,191,171,.1); color:#4A9B87; }
+.feature-check .check-icon svg { width:10px; height:10px; }
+.portal-btn { display:flex; align-items:center; justify-content:center; gap:.5rem; width:100%; padding:.85rem 1.5rem; border-radius:14px; font-size:.8125rem; font-weight:600; border:none; cursor:pointer; transition:all .25s; margin-top:1.5rem; }
+.portal-btn.hcp { background:#4A4063; color:#fff; }
+.portal-btn.hcp:hover { background:#2D2640; box-shadow:0 8px 24px rgba(74,64,99,.3); transform:scale(1.02); }
+.portal-btn.patient { background:#fff; color:#4A9B87; border:1.5px solid #6BBFAB; }
+.portal-btn.patient:hover { background:#ecfdf5; box-shadow:0 8px 24px rgba(107,191,171,.2); transform:scale(1.02); }
+.portal-btn svg { width:16px; height:16px; }
+.hcp-email-step { display:none; animation:gwFadeIn .3s ease; }
+.hcp-email-step.active { display:block; }
+.gw-input { width:100%; padding:.85rem 1.25rem; border-radius:14px; border:1.5px solid #e5e7eb; font-size:.875rem; background:#fafafa; transition:all .2s; outline:none; }
+.gw-input:focus { border-color:#9B8EC4; box-shadow:0 0 0 3px rgba(155,142,196,.12); background:#fff; }
+.gw-nav-btn { position:relative; display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,rgba(74,64,99,.06),rgba(107,191,171,.06)); border:1px solid rgba(74,64,99,.1); cursor:pointer; transition:all .25s; }
+.gw-nav-btn:hover { background:linear-gradient(135deg,rgba(74,64,99,.12),rgba(107,191,171,.12)); border-color:rgba(74,64,99,.2); transform:scale(1.08); box-shadow:0 4px 14px rgba(74,64,99,.12); }
+.gw-nav-btn svg { width:16px; height:16px; }
+.gw-img-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; margin-top:1.5rem; }
+.gw-img-thumb { border-radius:12px; overflow:hidden; aspect-ratio:3/4; position:relative; cursor:pointer; transition:all .3s; border:2px solid transparent; }
+.gw-img-thumb:hover { transform:scale(1.03); border-color:rgba(107,191,171,.3); box-shadow:0 8px 24px rgba(0,0,0,.1); }
+.gw-img-thumb img { width:100%; height:100%; object-fit:cover; }
+
+/* ═══ FAB ORB (Agentforce-style) ═══ */
+.fab-orb {
+  position:fixed; bottom:32px; right:32px; width:64px; height:64px; border-radius:50%;
+  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:600; background:#0b0818;
+  box-shadow: inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08),
+    0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35),
+    0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08);
+  animation:orb-pulse 2.8s ease-out infinite;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+}
+.fab-orb::before { content:''; position:absolute; top:8px; left:10px; width:20px; height:12px; background:radial-gradient(ellipse,rgba(255,255,255,.4) 0%,transparent 100%); border-radius:50%; pointer-events:none; z-index:2; }
+.fab-orb:hover { transform:scale(1.12) translateY(-3px); box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 16px 44px rgba(124,111,160,.75),0 4px 14px rgba(76,170,143,.5),0 5px 14px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.15),0 0 70px rgba(124,111,160,.3); }
+.fab-orb svg { width:24px; height:24px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
+@keyframes orb-pulse {
+  0%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,.6);}
+  70%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 22px rgba(124,111,160,0);}
+  100%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,0);}
+}
+.fab-orb.hidden { opacity:0; pointer-events:none; animation:none; }
+
+/* ═══ CHAT PANEL ═══ */
+.chat-panel { position:fixed; bottom:32px; right:32px; width:380px; max-height:580px; z-index:700;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-radius:24px; box-shadow:0 32px 80px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.5);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform:scale(.92) translateY(20px); opacity:0; pointer-events:none;
+  transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+}
+.chat-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+
+.chat-hdr { background:linear-gradient(135deg,#4A4063,#352D47); padding:20px 22px; display:flex; align-items:center; gap:12px; }
+.chat-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#9B8EC4,#6BBFAB); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; }
+.online-dot { width:9px; height:9px; background:#6BBFAB; border-radius:50%; margin-left:auto; animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{box-shadow:0 0 0 0 rgba(107,191,171,.5)} 50%{box-shadow:0 0 0 5px rgba(107,191,171,0)} }
+
+.chat-msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; max-height:320px; }
+.msg-bubble { max-width:85%; padding:12px 16px; border-radius:18px; font-size:13px; line-height:1.6; animation:bubble-in .3s cubic-bezier(.22,1,.36,1) both; }
+.msg-bubble.bot { background:#f0f0f5; color:#1D1D1F; border-bottom-left-radius:4px; align-self:flex-start; }
+.msg-bubble.user { background:#4A4063; color:#fff; border-bottom-right-radius:4px; align-self:flex-end; }
+@keyframes bubble-in { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+.typing-dots { display:flex; gap:5px; padding:8px 14px; }
+.typing-dots span { width:7px; height:7px; border-radius:50%; background:#9B8EC4; animation:dot-pulse 1s ease-in-out infinite; }
+.typing-dots span:nth-child(2) { animation-delay:.18s; background:#7FAAB4; }
+.typing-dots span:nth-child(3) { animation-delay:.36s; background:#6BBFAB; }
+@keyframes dot-pulse { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+.quick-actions { padding:14px 18px; border-top:1px solid rgba(0,0,0,.04); display:flex; flex-direction:column; gap:8px; }
+.q-action { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:10px 16px; font-size:13px; color:#4A4063; cursor:pointer; font-weight:500; text-align:left; transition:all .2s; display:flex; justify-content:space-between; align-items:center; }
+.q-action::after { content:'\2192'; color:#9B8EC4; opacity:0; transform:translateX(-6px); transition:all .2s; }
+.q-action:hover { border-color:#9B8EC4; background:#faf9ff; transform:translateX(3px); box-shadow:0 2px 12px rgba(155,142,196,.12); }
+.q-action:hover::after { opacity:1; transform:translateX(0); }
+
+</style>
+
+<!-- ═══════════ ASTRO CLINICAL EVIDENCE VIEWER — SCOPED CSS ═══════════ -->
+<style>
+/* ── Astro Button — Clean floating character ── */
+@keyframes astroFloat {
+  0%, 100% { transform:translateY(0); }
+  50% { transform:translateY(-6px); }
+}
+@keyframes astroGlow {
+  0%, 100% { filter:drop-shadow(0 4px 16px rgba(124,111,160,.45)) drop-shadow(0 0 24px rgba(155,142,196,.2)); }
+  50% { filter:drop-shadow(0 6px 20px rgba(124,111,160,.65)) drop-shadow(0 0 36px rgba(155,142,196,.35)); }
+}
+#astroBtn {
+  position:fixed; left:24px; bottom:32px; z-index:600;
+  width:80px; height:80px;
+  background:none !important; border:none !important; border-radius:0 !important;
+  cursor:pointer; padding:0;
+  animation:astroFloat 3.5s ease-in-out infinite;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:none !important;
+}
+#astroBtn img, #astroBtn svg {
+  width:80px; height:auto;
+  animation:astroGlow 3s ease-in-out infinite;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1), filter .3s ease;
+}
+#astroBtn:hover { transform:scale(1.15) translateY(-4px) !important; animation-play-state:paused; }
+#astroBtn:hover img, #astroBtn:hover svg { filter:drop-shadow(0 8px 28px rgba(124,111,160,.8)) drop-shadow(0 0 48px rgba(155,142,196,.5)) !important; }
+#astroBtn::after {
+  content:'Explore Evidence';
+  position:absolute; bottom:-8px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg, #7c6fa0, #4caa8f);
+  color:#fff; font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  padding:3px 10px; border-radius:10px; white-space:nowrap;
+  opacity:0; transition:opacity .25s ease, bottom .25s ease;
+  pointer-events:none;
+}
+#astroBtn:hover::after { opacity:1; bottom:-14px; }
+
+/* ── Overlay Container — Innovative Glass Design ── */
+#astroOverlay {
+  position:fixed; inset:0; z-index:1000;
+  display:none; opacity:0;
+  transition:opacity .45s cubic-bezier(.4,0,.2,1);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+#astroOverlay.ao-visible { display:flex; }
+#astroOverlay.ao-open { opacity:1; }
+
+/* Backdrop — deeper blur with gradient tint */
+#astroOverlay .ao-backdrop {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(45,38,64,.75) 0%, rgba(26,31,46,.7) 50%, rgba(29,29,31,.8) 100%);
+  backdrop-filter:blur(12px) saturate(150%); -webkit-backdrop-filter:blur(12px) saturate(150%);
+}
+
+/* Inner layout — fills viewport with rounded inner frame */
+#astroOverlay .ao-inner {
+  position:relative; z-index:1; display:flex; width:calc(100% - 40px); height:calc(100% - 40px);
+  margin:20px; border-radius:20px; overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.08), inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+/* ── Scoped vars ── */
+#astroOverlay {
+  --ao-nav-h:0px;
+  --ao-chat-w:320px;
+  --ao-slate:#4a5263;
+  --ao-purple:#7c6fa0;
+  --ao-teal:#4caa8f;
+  --ao-bg:#f5f5f7;
+  --ao-border:#e2e5eb;
+  --ao-dark:#1a1f2e;
+  --ao-muted:#8a92a0;
+  --ao-subtle:#c8cdd6;
+  --ao-line:#f0f2f5;
+  --ao-text-muted:#6b7280;
+  --ao-purple-dark:#6a5f8e;
+  --ao-slate-dark:#3a4153;
+  --ao-border-mid:#bfc5cf;
+  --ao-glass-bg:rgba(255,255,255,.72);
+  --ao-glass-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 2px 12px rgba(124,111,160,.07);
+  --ao-glass-hover:inset 0 1px 0 rgba(255,255,255,.8), 0 12px 32px rgba(124,111,160,.22), 0 0 0 2px var(--ao-purple);
+  --ao-ease-spring:cubic-bezier(.22,1,.36,1);
+  --ao-ease-out:cubic-bezier(.4,0,.2,1);
+  --ao-ease-bounce:cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ── Chat Panel ── */
+#astroOverlay .ao-chat-panel {
+  width:var(--ao-chat-w); flex-shrink:0;
+  background:linear-gradient(180deg, rgba(250,250,252,.95) 0%, rgba(245,245,247,.98) 100%);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  border-right:1px solid rgba(124,111,160,.1);
+  display:flex; flex-direction:column; height:100%; z-index:2;
+}
+#astroOverlay .ao-chat-hdr { background:linear-gradient(135deg, #2D2640, #4A4063); padding:18px 20px; display:flex; align-items:center; gap:12px; flex-shrink:0; }
+#astroOverlay .ao-chat-av { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,var(--ao-purple),var(--ao-teal)); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; flex-shrink:0; }
+#astroOverlay .ao-chat-hdr-info h4 { font-size:15px; font-weight:600; color:#fff; line-height:1.2; margin:0; }
+#astroOverlay .ao-chat-hdr-info p { font-size:11px; color:rgba(255,255,255,.5); margin:0; }
+#astroOverlay .ao-online-dot { width:9px; height:9px; background:var(--ao-teal); border-radius:50%; margin-left:auto; flex-shrink:0; animation:ao-onlinePulse 2s ease-in-out infinite; }
+@keyframes ao-onlinePulse { 0%,100%{box-shadow:0 0 0 0 rgba(76,170,143,.5)} 50%{box-shadow:0 0 0 5px rgba(76,170,143,0)} }
+
+#astroOverlay .ao-msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; }
+#astroOverlay .ao-msg { display:flex; gap:9px; align-items:flex-end; }
+#astroOverlay .ao-msg.u { flex-direction:row-reverse; }
+#astroOverlay .ao-bubble { max-width:88%; padding:11px 14px; border-radius:14px; font-size:13px; line-height:1.6; animation:ao-bubbleIn .28s var(--ao-ease-spring) both; }
+#astroOverlay .ao-bubble.a { background:var(--ao-bg); color:var(--ao-dark); border-bottom-left-radius:3px; }
+#astroOverlay .ao-bubble.u { background:var(--ao-slate); color:#fff; border-bottom-right-radius:3px; }
+#astroOverlay .ao-mav { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,var(--ao-purple),var(--ao-teal)); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:#fff; font-weight:700; }
+@keyframes ao-bubbleIn { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+#astroOverlay .ao-typing { display:flex; align-items:center; gap:5px; padding:4px 2px; }
+#astroOverlay .ao-typing span { width:7px; height:7px; border-radius:50%; background:var(--ao-purple); animation:ao-dotPulse 1s ease-in-out infinite; }
+#astroOverlay .ao-typing span:nth-child(2) { background:color-mix(in srgb, var(--ao-purple) 50%, var(--ao-teal)); animation-delay:.18s; }
+#astroOverlay .ao-typing span:nth-child(3) { background:var(--ao-teal); animation-delay:.36s; }
+@keyframes ao-dotPulse { 0%,100%{transform:scale(1);opacity:.5} 50%{transform:scale(1.5);opacity:1} }
+
+#astroOverlay .ao-quick-btns { padding:14px 16px; border-top:1px solid var(--ao-line); display:flex; flex-direction:column; gap:8px; flex-shrink:0; }
+#astroOverlay .ao-quick-btns.hidden-btns { display:none; }
+#astroOverlay .ao-qa-label { font-size:10px; font-weight:700; color:var(--ao-muted); text-transform:uppercase; letter-spacing:.1em; margin-bottom:2px; }
+#astroOverlay .ao-opt { background:#fff; border:1px solid var(--ao-border); border-radius:20px; padding:9px 14px; font-size:13px; color:var(--ao-slate); cursor:pointer; font-weight:500; text-align:left; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s; font-family:inherit; display:flex; align-items:center; justify-content:space-between; will-change:transform; width:100%; }
+#astroOverlay .ao-opt::after { content:'\2192'; font-size:12px; color:var(--ao-purple); opacity:0; transform:translateX(-6px); transition:opacity .2s,transform .2s; }
+#astroOverlay .ao-opt:hover { background:var(--ao-bg); border-color:var(--ao-purple); transform:translateX(3px); box-shadow:0 2px 12px rgba(124,111,160,.12); }
+#astroOverlay .ao-opt:hover::after { opacity:1; transform:translateX(0); }
+
+#astroOverlay .ao-chat-input-row { padding:12px 14px; border-top:1px solid var(--ao-border); display:flex; gap:9px; flex-shrink:0; }
+#astroOverlay .ao-chat-input { flex:1; background:var(--ao-bg); border:1px solid var(--ao-border); border-radius:20px; padding:10px 16px; font-size:13px; color:var(--ao-slate); outline:none; font-family:inherit; transition:border-color .2s,box-shadow .2s; }
+#astroOverlay .ao-chat-input:focus { border-color:var(--ao-purple); box-shadow:0 0 0 4px rgba(124,111,160,.12); }
+#astroOverlay .ao-chat-send { width:38px; height:38px; border-radius:50%; background:var(--ao-slate); border:none; cursor:pointer; color:#fff; font-size:16px; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:background .15s,transform .15s; position:relative; overflow:hidden; }
+#astroOverlay .ao-chat-send:hover { background:var(--ao-purple); }
+#astroOverlay .ao-chat-send:active { transform:scale(.88); }
+
+/* ── Persistent switch buttons ── */
+#astroOverlay .ao-persist-btns { display:flex; flex-direction:column; gap:8px; max-height:0; overflow:hidden; opacity:0; pointer-events:none; transition:opacity .3s ease,max-height .3s ease; padding:0 16px; }
+#astroOverlay .ao-persist-btns.visible { max-height:160px; opacity:1; pointer-events:all; padding:14px 16px; border-top:1px solid var(--ao-line); }
+
+/* ── Content Zone ── */
+#astroOverlay .ao-content-slot { flex:1; position:relative; overflow:hidden; min-width:0; background:var(--ao-bg); }
+#astroOverlay .ao-cz-wrap { position:absolute; top:0; left:0; right:0; bottom:0; display:flex; flex-direction:column; overflow:hidden; opacity:0; pointer-events:none; transform:translateX(32px); transition:opacity .35s var(--ao-ease-out),transform .35s var(--ao-ease-out); background:var(--ao-bg); will-change:transform,opacity; }
+#astroOverlay .ao-cz-wrap.visible { opacity:1; pointer-events:all; transform:translateX(0); }
+#astroOverlay .ao-cz-wrap.slide-out { opacity:0; transform:translateX(-32px); }
+#astroOverlay .ao-cz-wrap.closing { opacity:0; transform:translateY(8px); transition:opacity .25s ease,transform .25s ease; }
+#astroOverlay .ao-cz { flex:1; overflow-y:auto; overflow-x:clip; display:flex; flex-direction:column; }
+
+/* CZ Header */
+#astroOverlay .ao-cz-hdr { background:linear-gradient(135deg, #2D2640 0%, #4A4063 40%, #3a3555 70%, #1a1625 100%); padding:36px 56px 30px; position:relative; overflow:hidden; flex-shrink:0; }
+#astroOverlay .ao-cz-hdr::before { content:''; position:absolute; top:-80px; right:-80px; width:380px; height:380px; background:radial-gradient(circle,rgba(155,142,196,.2) 0%,transparent 70%); border-radius:50%; animation:astroFloat 8s ease-in-out infinite; }
+#astroOverlay .ao-cz-hdr::after { content:''; position:absolute; bottom:-50px; left:20%; width:240px; height:240px; background:radial-gradient(circle,rgba(107,191,171,.15) 0%,transparent 70%); border-radius:50%; animation:astroFloat 10s ease-in-out infinite reverse; }
+#astroOverlay .ao-cz-logo { margin-bottom:20px; position:relative; }
+#astroOverlay .ao-cz-logo img { height:36px; width:auto; }
+#astroOverlay .ao-cz-eyebrow { font-size:12px; font-weight:700; color:rgba(255,255,255,.5); letter-spacing:.2em; text-transform:uppercase; margin-bottom:8px; position:relative; }
+#astroOverlay .ao-cz-title-row { display:flex; justify-content:space-between; align-items:flex-start; position:relative; }
+#astroOverlay .ao-cz-drug { font-size:42px; font-weight:700; color:#fff; letter-spacing:-.02em; line-height:1.1; }
+#astroOverlay .ao-cz-drug sup { font-size:20px; font-weight:500; vertical-align:super; }
+#astroOverlay .ao-cz-trial { font-size:17px; color:rgba(255,255,255,.65); margin-top:6px; }
+@keyframes ao-badgeShimmer {
+  0%,100%{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 4px 16px rgba(0,0,0,.12),0 0 0 1px rgba(124,111,160,.2)}
+  50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 4px 16px rgba(0,0,0,.12),0 0 0 1px rgba(76,170,143,.5)}
+}
+#astroOverlay .ao-cz-badge { background:rgba(255,255,255,.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.25); border-radius:14px; padding:14px 24px; text-align:center; flex-shrink:0; animation:ao-badgeShimmer 3s ease-in-out infinite; }
+#astroOverlay .ao-cz-badge-n { font-size:30px; font-weight:800; color:#fff; font-family:Georgia,serif; }
+#astroOverlay .ao-cz-badge-lbl { font-size:10px; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.12em; margin-top:2px; }
+#astroOverlay .ao-cz-meta { display:flex; margin-top:24px; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); position:relative; }
+#astroOverlay .ao-cz-ml { font-size:10px; color:rgba(255,255,255,.4); text-transform:uppercase; letter-spacing:.1em; margin-bottom:5px; }
+#astroOverlay .ao-cz-mv { font-size:15px; color:rgba(255,255,255,.9); font-weight:500; line-height:1.4; }
+#astroOverlay .ao-cz-mi { flex:1; padding:0 24px; border-right:1px solid rgba(255,255,255,.1); opacity:0; transform:translateY(8px); transition:opacity .45s var(--ao-ease-spring),transform .45s var(--ao-ease-spring); }
+#astroOverlay .ao-cz-mi.visible { opacity:1; transform:translateY(0); }
+#astroOverlay .ao-cz-mi:first-child { padding-left:0; }
+#astroOverlay .ao-cz-mi:last-child { border-right:none; }
+
+/* CZ Body */
+#astroOverlay .ao-cz-body { padding:36px 56px 52px; display:flex; flex-direction:column; gap:28px; flex:1; background:linear-gradient(180deg, #fafafa 0%, #f5f5f7 100%); position:relative; }
+#astroOverlay .ao-cz-body::before { content:''; position:absolute; top:0; left:0; right:0; height:120px; background:linear-gradient(180deg, rgba(124,111,160,.04), transparent); pointer-events:none; }
+#astroOverlay .ao-cz-section-head { font-size:16px; font-weight:700; color:var(--ao-dark); letter-spacing:.02em; padding-left:16px; border-left:4px solid transparent; border-image:linear-gradient(180deg,var(--ao-purple),var(--ao-teal)) 1; flex-shrink:0; position:relative; }
+
+/* Card hover */
+#astroOverlay .ao-card-hover { transition:transform .2s ease,box-shadow .2s ease; will-change:transform,box-shadow; }
+#astroOverlay .ao-card-hover:hover { transform:translateY(-3px); box-shadow:var(--ao-glass-hover); }
+
+/* ── Stat Cards ── */
+#astroOverlay .ao-stat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+#astroOverlay .ao-sc { background:#fff; border:1px solid rgba(124,111,160,.08); box-shadow:0 2px 16px rgba(124,111,160,.06); border-radius:16px; padding:24px 22px 18px; position:relative; overflow:hidden; display:flex; flex-direction:column; gap:6px; transition:transform .25s ease, box-shadow .25s ease; }
+#astroOverlay .ao-sc:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(124,111,160,.15), 0 0 0 1px rgba(124,111,160,.12); }
+#astroOverlay .ao-sc::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--ao-purple),var(--ao-teal)); }
+#astroOverlay .ao-sc-lbl { font-size:11px; font-weight:700; color:var(--ao-muted); letter-spacing:.1em; text-transform:uppercase; margin-top:2px; }
+#astroOverlay .ao-sc-num { font-size:60px; font-weight:800; line-height:1.15; font-family:Georgia,serif; background:linear-gradient(135deg,var(--ao-purple),var(--ao-teal)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+#astroOverlay .ao-sc-num .unit { font-size:26px; font-weight:700; font-family:'Segoe UI',sans-serif; }
+#astroOverlay .ao-sc-desc { font-size:14px; color:var(--ao-slate); line-height:1.45; }
+#astroOverlay .ao-sc-sub { font-size:13px; color:var(--ao-muted); padding-top:8px; margin-top:6px; border-top:1px solid var(--ao-line); }
+#astroOverlay .ao-sc-sub b { font-size:15px; }
+#astroOverlay .ao-sc-pv { font-size:12px; color:var(--ao-muted); font-style:italic; }
+
+/* ── Chart ── */
+#astroOverlay .ao-chart-card { background:#fff; border:1px solid rgba(124,111,160,.08); box-shadow:0 2px 16px rgba(124,111,160,.06); border-radius:16px; padding:24px 22px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease; }
+#astroOverlay .ao-chart-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(124,111,160,.14), 0 0 0 1px rgba(124,111,160,.1); }
+#astroOverlay .ao-chart-title { font-size:18px; font-weight:700; color:var(--ao-dark); margin-bottom:6px; }
+#astroOverlay .ao-chart-desc { font-size:13px; color:var(--ao-muted); margin-bottom:20px; line-height:1.5; }
+#astroOverlay .ao-chart-wrap { position:relative; width:100%; }
+#astroOverlay .ao-chart-wrap canvas { display:block; width:100%; }
+#astroOverlay .ao-chart-legend { display:flex; gap:28px; margin-top:14px; }
+#astroOverlay .ao-legend-item { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--ao-slate); font-weight:500; }
+#astroOverlay .ao-legend-line { width:24px; height:3px; background:var(--ao-purple); border-radius:2px; }
+#astroOverlay .ao-legend-dash { width:24px; height:0; border-top:2.5px dashed var(--ao-subtle); }
+#astroOverlay .ao-chart-note { font-size:12px; color:var(--ao-muted); font-style:italic; margin-top:8px; }
+#astroOverlay .ao-chart-tooltip { position:absolute; background:var(--ao-dark); color:#fff; font-size:12px; font-weight:600; padding:6px 11px; border-radius:8px; pointer-events:none; white-space:nowrap; opacity:0; transition:opacity .15s; box-shadow:0 4px 14px rgba(0,0,0,.25); transform:translate(-50%,-100%); margin-top:-10px; }
+#astroOverlay .ao-chart-tooltip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:var(--ao-dark); }
+
+/* ── Study Design ── */
+#astroOverlay .ao-study { background:var(--ao-glass-bg); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.9); box-shadow:var(--ao-glass-shadow); border-radius:14px; padding:24px 22px; display:flex; gap:18px; position:relative; overflow:hidden; }
+#astroOverlay .ao-si { font-size:22px; flex-shrink:0; margin-top:2px; }
+#astroOverlay .ao-sl { font-size:12px; font-weight:700; color:var(--ao-teal); text-transform:uppercase; letter-spacing:.1em; margin-bottom:5px; }
+#astroOverlay .ao-st { font-size:14px; color:var(--ao-slate); line-height:1.7; }
+
+/* ── CTAs ── */
+#astroOverlay .ao-ctas-static { display:flex; gap:14px; flex-wrap:wrap; flex-shrink:0; }
+#astroOverlay .ao-cta1 { background:linear-gradient(135deg, #4A4063, #2D2640); color:#fff; border:none; padding:14px 28px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:all .25s ease; box-shadow:0 4px 14px rgba(74,64,99,.25); }
+#astroOverlay .ao-cta1:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(74,64,99,.35); }
+#astroOverlay .ao-cta2 { background:transparent; color:var(--ao-purple); border:1.5px solid rgba(124,111,160,.25); padding:14px 28px; border-radius:12px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:all .25s ease; }
+#astroOverlay .ao-cta2:hover { background:rgba(124,111,160,.06); border-color:rgba(124,111,160,.4); transform:translateY(-2px); }
+
+#astroOverlay .ao-ctasRow, #astroOverlay .ao-isiRow { opacity:0; transform:translateY(12px); transition:opacity .5s ease,transform .5s var(--ao-ease-spring); }
+#astroOverlay .ao-ctasRow.in, #astroOverlay .ao-isiRow.in { opacity:1; transform:translateY(0); }
+#astroOverlay .ao-isi { font-size:11px; color:var(--ao-text-muted); line-height:1.75; padding-top:14px; border-top:1px solid var(--ao-border); }
+
+/* ── Skeleton shimmer ── */
+@keyframes ao-skeletonPulse { 0%,100%{opacity:.45} 50%{opacity:.9} }
+#astroOverlay .ao-sk-wrap { display:flex; flex-direction:column; gap:28px; padding:36px 56px; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .2s; }
+#astroOverlay .ao-sk-wrap.visible { opacity:1; }
+#astroOverlay .ao-sk-row { height:14px; border-radius:6px; background:linear-gradient(90deg,var(--ao-border),rgba(255,255,255,.6),var(--ao-border)); background-size:200% 100%; animation:ao-skeletonPulse 1.4s ease-in-out infinite; }
+#astroOverlay .ao-sk-row.wide { width:60%; } #astroOverlay .ao-sk-row.med { width:40%; } #astroOverlay .ao-sk-row.full { width:100%; }
+#astroOverlay .ao-sk-card-row { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+#astroOverlay .ao-sk-card { height:140px; border-radius:14px; background:linear-gradient(90deg,var(--ao-border),rgba(255,255,255,.6),var(--ao-border)); background-size:200% 100%; animation:ao-skeletonPulse 1.4s ease-in-out infinite; }
+#astroOverlay .ao-sk-card:nth-child(2) { animation-delay:.15s; } #astroOverlay .ao-sk-card:nth-child(3) { animation-delay:.3s; }
+#astroOverlay .ao-sk-chart { height:200px; border-radius:14px; background:linear-gradient(90deg,var(--ao-border),rgba(255,255,255,.6),var(--ao-border)); background-size:200% 100%; animation:ao-skeletonPulse 1.4s ease-in-out infinite; animation-delay:.1s; }
+
+@keyframes ao-shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+#astroOverlay .ao-opt.shimmer { background:linear-gradient(90deg,#fff 0%,#f0edf7 40%,#fff 60%,#fff 100%); background-size:200% auto; animation:ao-shimmer 1.4s ease forwards; }
+
+/* ── Safety Zone ── */
+#astroOverlay .ao-s-panel { display:none; padding:36px 56px 52px; flex-direction:column; gap:28px; flex-shrink:0; background:radial-gradient(ellipse at 80% 0%,rgba(124,111,160,.06) 0%,transparent 60%),radial-gradient(ellipse at 20% 100%,rgba(76,170,143,.05) 0%,transparent 55%); }
+#astroOverlay .ao-s-panel.active { display:flex; }
+
+#astroOverlay .ao-no-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; flex-shrink:0; }
+#astroOverlay .ao-no-card { background:var(--ao-glass-bg); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.9); box-shadow:var(--ao-glass-shadow); border-radius:14px; padding:24px 22px; display:flex; flex-direction:column; gap:6px; position:relative; overflow:hidden; }
+#astroOverlay .ao-no-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--ao-purple),var(--ao-teal)); }
+#astroOverlay .ao-no-tag { font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--ao-teal); }
+#astroOverlay .ao-no-title { font-size:14px; font-weight:700; color:var(--ao-dark); line-height:1.3; }
+#astroOverlay .ao-no-body { font-size:12px; color:var(--ao-slate); line-height:1.6; }
+
+/* ── AE Table ── */
+#astroOverlay .ao-safe-table-wrap { background:var(--ao-glass-bg); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.9); box-shadow:var(--ao-glass-shadow); border-radius:14px; overflow:hidden; flex-shrink:0; position:relative; }
+#astroOverlay .ao-safe-table-head { background:var(--ao-slate); display:grid; grid-template-columns:2fr 1fr 1fr; }
+#astroOverlay .ao-sth-period { padding:14px 20px; }
+#astroOverlay .ao-sth-divider { border-left:1px solid rgba(255,255,255,.15); }
+#astroOverlay .ao-sth-period-label { font-size:10px; font-weight:700; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:.1em; margin-bottom:3px; }
+#astroOverlay .ao-sth-period-name { font-size:13px; font-weight:700; color:#fff; }
+#astroOverlay .ao-sth-period-name.sm { font-size:12px; font-weight:500; }
+#astroOverlay .ao-safe-row { display:grid; grid-template-columns:2fr 1fr 1fr; border-bottom:1px solid var(--ao-bg); transition:background .15s ease,opacity .45s ease,transform .45s var(--ao-ease-spring); opacity:0; transform:translateX(-12px); }
+#astroOverlay .ao-safe-row.row-visible { opacity:1; transform:translateX(0); }
+#astroOverlay .ao-safe-row:hover { background:rgba(124,111,160,.08); }
+#astroOverlay .ao-safe-row:nth-child(odd) { background:#f5f0fa; }
+#astroOverlay .ao-safe-row:nth-child(odd):hover { background:rgba(124,111,160,.14); }
+#astroOverlay .ao-safe-row-label { padding:12px 20px; font-size:13px; color:var(--ao-slate); font-weight:500; display:flex; align-items:center; }
+#astroOverlay .ao-safe-row-val { padding:12px 20px; font-size:14px; font-weight:700; display:flex; align-items:center; }
+#astroOverlay .ao-sv-imm, #astroOverlay .ao-sv-good { color:var(--ao-teal); }
+#astroOverlay .ao-sv-pbo { color:var(--ao-muted); }
+#astroOverlay .ao-sv-zero { color:var(--ao-subtle); font-size:18px; font-weight:400; }
+#astroOverlay .ao-class-effect { font-size:11px; color:var(--ao-muted); font-weight:400; }
+
+/* ── Warning Boxes ── */
+#astroOverlay .ao-warn-box { background:#fff8e6; border:1.5px solid #f0d080; border-radius:14px; padding:24px 22px; display:flex; gap:14px; align-items:flex-start; position:relative; overflow:hidden; }
+#astroOverlay .ao-warn-box:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(240,208,128,.35),0 0 0 2px #e8a020; }
+#astroOverlay .ao-warn-title { font-size:13px; font-weight:700; color:#7a5800; margin-bottom:4px; }
+#astroOverlay .ao-warn-body { font-size:12px; color:#5a4200; line-height:1.65; }
+#astroOverlay .ao-nowarn-box { background:#edf8f4; border:1.5px solid #a0dfc8; border-radius:14px; padding:24px 22px; display:flex; gap:14px; align-items:flex-start; position:relative; overflow:hidden; }
+#astroOverlay .ao-nowarn-box:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(76,170,143,.25),0 0 0 2px var(--ao-teal); }
+#astroOverlay .ao-nowarn-title { font-size:13px; font-weight:700; color:#1a6b4a; margin-bottom:4px; }
+#astroOverlay .ao-nowarn-body { font-size:12px; color:#1a5a3e; line-height:1.65; }
+#astroOverlay .ao-warn-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+
+/* ── Safety Tabs ── */
+#astroOverlay .ao-safety-tabs { display:flex; background:linear-gradient(90deg, rgba(124,111,160,.04), rgba(107,191,171,.03)); padding:0 40px; border-bottom:1px solid rgba(124,111,160,.1); flex-shrink:0; position:relative; gap:4px; }
+#astroOverlay .ao-s-tab { flex:1; padding:14px 12px; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ao-muted); background:none; border:none; cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-1px; transition:all .25s ease; font-family:inherit; position:relative; border-radius:8px 8px 0 0; }
+#astroOverlay .ao-s-tab:hover { color:var(--ao-purple); background:rgba(124,111,160,.06); }
+#astroOverlay .ao-s-tab.active { color:var(--ao-purple); background:rgba(124,111,160,.05); }
+#astroOverlay .ao-tab-ink { position:absolute; bottom:-2px; height:3px; background:linear-gradient(90deg,var(--ao-purple),var(--ao-teal)); border-radius:2px 2px 0 0; transition:left .3s var(--ao-ease-out),width .3s var(--ao-ease-out); pointer-events:none; }
+
+/* ── Timeline ── */
+#astroOverlay .ao-tl-desc { margin-top:20px; font-size:13px; color:var(--ao-slate); line-height:1.75; padding-top:16px; border-top:1px solid var(--ao-line); }
+#astroOverlay .ao-tl-wrap { background:var(--ao-glass-bg); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.9); box-shadow:var(--ao-glass-shadow); border-radius:14px; padding:24px 22px; position:relative; overflow:hidden; }
+#astroOverlay .ao-tl-title { font-size:15px; font-weight:700; color:var(--ao-dark); margin-bottom:20px; }
+
+/* ── Modal (scoped) ── */
+#astroOverlay .ao-modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1100; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .25s; }
+#astroOverlay .ao-modal-backdrop.open { opacity:1; pointer-events:all; }
+#astroOverlay .ao-modal { background:#fff; border-radius:16px; padding:36px 40px; max-width:420px; width:90%; box-shadow:0 24px 64px rgba(0,0,0,.2); transform:translateY(16px) scale(.97); transition:transform .35s var(--ao-ease-bounce); }
+#astroOverlay .ao-modal-backdrop.open .ao-modal { transform:translateY(0) scale(1); }
+#astroOverlay .ao-modal-icon { width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,var(--ao-purple),var(--ao-teal)); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:18px; }
+#astroOverlay .ao-modal-title { font-size:18px; font-weight:700; color:var(--ao-dark); margin-bottom:8px; }
+#astroOverlay .ao-modal-body { font-size:14px; color:var(--ao-slate); line-height:1.65; margin-bottom:24px; }
+#astroOverlay .ao-modal-actions { display:flex; gap:10px; }
+#astroOverlay .ao-modal-btn-primary { flex:1; background:var(--ao-slate); color:#fff; border:none; padding:12px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:background .15s; }
+#astroOverlay .ao-modal-btn-primary:hover { background:var(--ao-purple); }
+#astroOverlay .ao-modal-btn-secondary { flex:1; background:transparent; color:var(--ao-slate); border:1.5px solid var(--ao-border); padding:12px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit; transition:background .15s; }
+#astroOverlay .ao-modal-btn-secondary:hover { background:var(--ao-bg); }
+
+/* ── Close button ── */
+#astroOverlay .ao-close-btn { position:absolute; top:20px; right:20px; z-index:999; width:40px; height:40px; border-radius:12px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.08); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:rgba(255,255,255,.8); font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .25s var(--ao-ease-bounce); box-shadow:0 2px 8px rgba(0,0,0,.15); }
+#astroOverlay .ao-close-btn:hover { background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.3); color:#fff; transform:rotate(90deg) scale(1.08); box-shadow:0 4px 16px rgba(124,111,160,.3); }
+
+/* ── Zone flash ── */
+@keyframes ao-zoneFlash { 0%{opacity:.35} 100%{opacity:0} }
+#astroOverlay .ao-zone-flash { position:absolute; inset:0; background:#fff; pointer-events:none; z-index:10; animation:ao-zoneFlash .35s ease-out forwards; }
+
+/* ── Avatar speaking ── */
+@keyframes ao-avatarSpeak { 0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(124,111,160,0)} 40%{transform:scale(1.12);box-shadow:0 0 0 5px rgba(124,111,160,.2)} }
+#astroOverlay .ao-mav.speaking { animation:ao-avatarSpeak .5s ease-out; }
+
+/* ── Send button ripple ── */
+@keyframes ao-sendRipple { 0%{transform:scale(0);opacity:.5} 100%{transform:scale(3.5);opacity:0} }
+#astroOverlay .ao-send-ripple { position:absolute; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.4); pointer-events:none; animation:ao-sendRipple .5s ease-out forwards; }
+
+/* ── Responsive ── */
+@media(max-width:1100px) { #astroOverlay .ao-stat-grid{grid-template-columns:repeat(2,1fr)} #astroOverlay .ao-cz-hdr,#astroOverlay .ao-cz-body{padding-left:32px;padding-right:32px} }
+@media(max-width:860px) { #astroOverlay { --ao-chat-w:260px; } }
+
+/* ── Scrollbar for overlay ── */
+#astroOverlay ::-webkit-scrollbar { width:4px; }
+#astroOverlay ::-webkit-scrollbar-track { background:transparent; }
+#astroOverlay ::-webkit-scrollbar-thumb { background:linear-gradient(180deg,var(--ao-purple),var(--ao-teal)); border-radius:4px; }
+
+/* sup ref */
+#astroOverlay .ao-sup-ref { font-size:10px; vertical-align:super; }
+</style>
+
+<!-- ═══ Salesforce Personalization — Data Cloud Web SDK ═══ -->
+<!-- Data Cloud Website Connector: Makana_Health_Website (494741f1-8288-47b0-bc0e-e60e66c23cc8) -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="js/makana-datalayer.js"></script>
+<script src="js/makana-init.js"></script>
+<script src="js/makana-sitemap.js"></script>
+<script src="js/makana-personalization.js"></script>
+<script src="js/makana-leadgen.js"></script>
+<!-- ═══ End Salesforce Personalization ═══ -->
+</head>
+<body class="font-sans text-slate-brand bg-white antialiased">
+
+<!-- ==================== COOKIE CONSENT ==================== -->
+<div id="cookieConsent" class="cookie-banner fixed bottom-0 left-0 right-0 z-[9999] p-4" style="pointer-events:auto">
+  <div class="max-w-5xl mx-auto bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 p-6 flex flex-col md:flex-row items-start md:items-center gap-4">
+    <div class="flex-1">
+      <p class="text-sm font-semibold text-slate-brand mb-1">We value your privacy</p>
+      <p class="text-xs text-gray-400 leading-relaxed">We use cookies to enhance your experience, analyze site traffic, and for marketing purposes. By continuing, you agree to our use of cookies.</p>
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+      <button onclick="acceptCookies('essential')" class="px-4 py-2 text-xs font-medium text-gray-500 hover:text-gray-700 transition">Essential Only</button>
+      <button onclick="acceptCookies('all')" class="px-5 py-2.5 bg-primary text-white text-xs font-semibold rounded-full hover:bg-primary-dark transition">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="glass-nav fixed top-0 w-full z-50 border-b border-black/5" id="mainNav">
+  <div class="max-w-[1200px] mx-auto px-6 h-12 flex items-center justify-between">
+    <a class='flex items-center gap-3' href='/'>
+      <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-1">
+      <div class="nav-item relative px-3 py-4">
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-slate-brand transition' href='/products'>Medicines</a>
+      </div>
+      <div class="nav-item relative px-3 py-4">
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-slate-brand transition' href='/research'>Science</a>
+      </div>
+      <div class="nav-item relative px-3 py-4">
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-slate-brand transition' href='/patients'>Patients</a>
+      </div>
+      <div class="nav-item relative px-3 py-4">
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-slate-brand transition' href='/about'>About</a>
+      </div>
+      <div class="nav-item relative px-3 py-4">
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-slate-brand transition' href='/hcp'>HCP Portal</a>
+      </div>
+      <button onclick="openGateway()" class="gw-nav-btn ml-2" title="Portal Gateway">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero-mesh relative min-h-[520px] flex items-center overflow-hidden pt-12">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-orb-3"></div>
+  <div class="max-w-[1200px] mx-auto px-6 py-24 lg:py-32 relative z-10">
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white/70 text-[11px] font-semibold backdrop-blur-sm">Immunology</span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary/20 text-secondary text-[11px] font-semibold backdrop-blur-sm">FDA Approved</span>
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-[1.05] mb-3">
+        IMMUNEXIS<sup class="text-2xl align-super">®</sup>
+      </h1>
+      <p class="text-xl lg:text-2xl text-secondary font-medium mb-4">(atopic dermatitis)</p>
+      <p class="text-white/60 text-base lg:text-lg leading-relaxed max-w-xl mb-8">A targeted biologic therapy for moderate-to-severe atopic dermatitis in pediatric patients aged 6–17 who have not responded to topical treatments.</p>
+      <div class="flex flex-wrap gap-3">
+        <button data-leadgen="med-info-request" class="pill-btn inline-flex items-center px-7 py-3 bg-primary text-white font-semibold rounded-full text-sm shadow-lg shadow-primary/30 hover:bg-primary-light transition">
+          View Prescribing Information
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </button>
+        <button data-leadgen="med-info-request" class="pill-btn inline-flex items-center px-7 py-3 border border-white/25 text-white/80 font-medium rounded-full text-sm hover:bg-white/10 transition">
+          Download Clinical Summary
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KEY CLINICAL HIGHLIGHTS ==================== -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-secondary font-medium text-sm tracking-[0.15em] uppercase mb-4">Clinical Evidence</p>
+      <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">CLARITY Phase 3 Trial</h2>
+      <p class="reveal text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">Pivotal 52-week, randomized, double-blind, placebo-controlled study in 487 pediatric patients with moderate-to-severe atopic dermatitis.</p>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mb-14">
+      <div class="reveal card-modern bg-white rounded-3xl p-8 border border-gray-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
+        <p class="text-[11px] font-bold text-gray-400 tracking-widest uppercase mb-3">EASI-75 at Week 16</p>
+        <p class="stat-num" data-target="74">0</p>
+        <p class="text-[11px] text-gray-400 mt-0.5">%</p>
+        <p class="text-sm text-gray-500 leading-relaxed mt-3">≥75% improvement in Eczema Area and Severity Index at Week 16</p>
+        <div class="mt-4 pt-4 border-t border-gray-100">
+          <p class="text-sm text-gray-400"><span class="font-bold text-base">16%</span> Placebo</p>
+          <p class="text-xs text-gray-400 italic mt-1">p&lt;0.001 vs placebo</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1 card-modern bg-white rounded-3xl p-8 border border-gray-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
+        <p class="text-[11px] font-bold text-gray-400 tracking-widest uppercase mb-3">EASI-75 at Week 52</p>
+        <p class="stat-num" data-target="71">0</p>
+        <p class="text-[11px] text-gray-400 mt-0.5">%</p>
+        <p class="text-sm text-gray-500 leading-relaxed mt-3">Durable response maintained through end of study extension period</p>
+        <div class="mt-4 pt-4 border-t border-gray-100">
+          <p class="text-sm text-gray-400"><span class="font-bold text-base">13%</span> Placebo</p>
+          <p class="text-xs text-gray-400 italic mt-1">p&lt;0.001 vs placebo</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2 card-modern bg-white rounded-3xl p-8 border border-gray-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary"></div>
+        <p class="text-[11px] font-bold text-gray-400 tracking-widest uppercase mb-3">IGA 0/1 at Week 16</p>
+        <p class="stat-num" data-target="58">0</p>
+        <p class="text-[11px] text-gray-400 mt-0.5">%</p>
+        <p class="text-sm text-gray-500 leading-relaxed mt-3">Clear or almost clear skin at Week 16 (co-primary endpoint)</p>
+        <div class="mt-4 pt-4 border-t border-gray-100">
+          <p class="text-sm text-gray-400"><span class="font-bold text-base">14%</span> Placebo</p>
+          <p class="text-xs text-gray-400 italic mt-1">p&lt;0.001 vs placebo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="reveal card-modern bg-white rounded-3xl p-8 lg:p-10 border border-gray-100 mb-14" id="chartContainer">
+      <h3 class="text-xl font-bold text-slate-brand mb-2">EASI-75 Response Over Time</h3>
+      <p class="text-sm text-gray-400 mb-6">Proportion of patients achieving ≥75% improvement in EASI score — Week 4 through Week 52</p>
+      <div class="relative">
+        <canvas id="efficacyChart"></canvas>
+        <div id="chartTooltip"></div>
+      </div>
+      <div class="flex gap-7 mt-4">
+        <div class="flex items-center gap-2 text-sm text-gray-500 font-medium"><div class="w-6 h-[3px] rounded bg-primary"></div>IMMUNEXIS</div>
+        <div class="flex items-center gap-2 text-sm text-gray-500 font-medium"><div class="w-6 h-0 border-t-[2.5px] border-dashed border-gray-300"></div>Placebo</div>
+      </div>
+      <p class="text-xs text-gray-400 italic mt-3">EASI-75 rates: 32% (Wk4) → 55% (Wk8) → 74% (Wk16) → 71% (Wk52) · p&lt;0.001 vs placebo at all timepoints</p>
+    </div>
+
+    <!-- Study Design -->
+    <div class="reveal card-modern bg-white rounded-3xl p-8 lg:p-10 border border-gray-100">
+      <div class="flex items-start gap-4 mb-6">
+        <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-xl shrink-0">🔬</div>
+        <div>
+          <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Study Design</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Randomized, double-blind, placebo-controlled study evaluating IMMUNEXIS in pediatric patients aged 6–17 with moderate-to-severe atopic dermatitis (IGA ≥3). 16-week induction + 36-week open-label extension period.</p>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <svg width="100%" viewBox="0 0 700 180" class="block min-w-[600px]" style="font-family:'Inter',sans-serif;">
+          <rect x="0" y="55" width="90" height="70" rx="8" fill="#4A4063"/>
+          <text x="45" y="78" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(255,255,255,0.55)" letter-spacing="1">RANDOMIZED</text>
+          <text x="45" y="96" text-anchor="middle" font-size="14" font-weight="800" fill="white">2:1</text>
+          <text x="45" y="112" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.7)">n=487</text>
+          <text x="100" y="44" font-size="12" font-weight="700" fill="#4A4063">IMMUNEXIS 300 mg Q4W</text>
+          <text x="100" y="58" font-size="10" fill="#8a92a0">(n=325)</text>
+          <line x1="100" y1="75" x2="695" y2="75" stroke="#4A4063" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="100" cy="75" r="6" fill="#4A4063" stroke="white" stroke-width="2"/>
+          <circle cx="195" cy="75" r="5" fill="#4A4063" stroke="white" stroke-width="2"/>
+          <circle cx="385" cy="75" r="6" fill="#4A4063" stroke="white" stroke-width="2"/>
+          <circle cx="540" cy="75" r="5" fill="#4A4063" stroke="white" stroke-width="2"/>
+          <circle cx="660" cy="75" r="5" fill="#4A4063" stroke="white" stroke-width="2"/>
+          <circle cx="695" cy="75" r="6" fill="#4A4063" stroke="white" stroke-width="2"/>
+          <text x="100" y="118" font-size="12" font-weight="600" fill="#1a1f2e">Placebo</text>
+          <text x="160" y="118" font-size="10" fill="#8a92a0">(n=162)</text>
+          <line x1="100" y1="133" x2="385" y2="133" stroke="#c8cdd6" stroke-width="3.5" stroke-dasharray="6,4"/>
+          <line x1="385" y1="133" x2="695" y2="133" stroke="#6BBFAB" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="100" cy="133" r="5" fill="#c8cdd6" stroke="white" stroke-width="2"/>
+          <polygon points="382,127 394,133 382,139" fill="#6BBFAB"/>
+          <text x="390" y="120" font-size="9.5" font-weight="700" fill="#6BBFAB">→ Switch to IMMUNEXIS</text>
+          <circle cx="695" cy="133" r="5" fill="#6BBFAB" stroke="white" stroke-width="2"/>
+          <line x1="100" y1="160" x2="695" y2="160" stroke="#e2e5eb" stroke-width="1.5"/>
+          <line x1="100" y1="157" x2="100" y2="163" stroke="#8a92a0" stroke-width="1.5"/>
+          <text x="100" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5263">Wk 0</text>
+          <line x1="195" y1="157" x2="195" y2="163" stroke="#e2e5eb" stroke-width="1"/>
+          <text x="195" y="174" text-anchor="middle" font-size="11" fill="#8a92a0">Wk 4</text>
+          <line x1="385" y1="157" x2="385" y2="163" stroke="#8a92a0" stroke-width="1.5"/>
+          <text x="385" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5263">Wk 16</text>
+          <line x1="540" y1="157" x2="540" y2="163" stroke="#e2e5eb" stroke-width="1"/>
+          <text x="540" y="174" text-anchor="middle" font-size="11" fill="#8a92a0">Wk 28</text>
+          <line x1="660" y1="157" x2="660" y2="163" stroke="#e2e5eb" stroke-width="1"/>
+          <text x="660" y="174" text-anchor="middle" font-size="11" fill="#8a92a0">Wk 40</text>
+          <line x1="695" y1="157" x2="695" y2="163" stroke="#8a92a0" stroke-width="1.5"/>
+          <text x="695" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5263">Wk 52</text>
+          <text x="242" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8a92a0" letter-spacing="0.5">PERIOD A — DOUBLE-BLIND</text>
+          <text x="540" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8a92a0" letter-spacing="0.5">PERIOD B — OPEN-LABEL</text>
+          <line x1="385" y1="142" x2="385" y2="155" stroke="#d0d4db" stroke-width="1" stroke-dasharray="3,2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SAFETY & TOLERABILITY ==================== -->
+<section class="py-20 lg:py-28 bg-warm" id="safetySection">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-primary font-medium text-sm tracking-[0.15em] uppercase mb-4">Safety Profile</p>
+      <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">Safety & Tolerability</h2>
+      <p class="reveal text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">CLARITY Phase 3 safety data at Week 16 and Week 52 in 487 pediatric patients.</p>
+    </div>
+
+    <!-- Safety Highlight Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="reveal card-modern bg-white rounded-3xl p-8 border border-gray-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-secondary-light"></div>
+        <p class="text-xs font-bold text-secondary tracking-widest uppercase mb-3">No requirement</p>
+        <h3 class="text-base font-bold text-slate-brand mb-2">Routine Lab Monitoring</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">No routine blood work required — unlike JAK inhibitors and methotrexate, reducing burden for pediatric patients and families.</p>
+      </div>
+      <div class="reveal reveal-delay-1 card-modern bg-white rounded-3xl p-8 border border-gray-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-secondary-light"></div>
+        <p class="text-xs font-bold text-secondary tracking-widest uppercase mb-3">No increased risk</p>
+        <h3 class="text-base font-bold text-slate-brand mb-2">Serious Infections</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">IL-4/IL-13 blockade preserves innate immune defenses. Serious infection rate numerically lower than placebo through Week 52.</p>
+      </div>
+      <div class="reveal reveal-delay-2 card-modern bg-white rounded-3xl p-8 border border-gray-100 relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary to-secondary-light"></div>
+        <p class="text-xs font-bold text-secondary tracking-widest uppercase mb-3">No restriction</p>
+        <h3 class="text-base font-bold text-slate-brand mb-2">Live Vaccines</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">No contraindication to live vaccines — critical for pediatric vaccination schedules, unlike systemic immunosuppressants.</p>
+      </div>
+    </div>
+
+    <!-- AE Table -->
+    <div class="reveal card-modern bg-white rounded-3xl border border-gray-100 overflow-hidden mb-10" id="aeTable">
+      <div class="bg-primary-dark grid grid-cols-[2fr_1fr_1fr]">
+        <div class="p-4 pl-6">
+          <p class="text-[10px] font-bold text-white/50 uppercase tracking-wider mb-1">Week 16 · Double-blind period</p>
+          <p class="text-sm font-bold text-white">IMMUNEXIS vs Placebo</p>
+        </div>
+        <div class="p-4 border-l border-white/15">
+          <p class="text-[10px] font-bold text-white/50 uppercase tracking-wider mb-1">IMMUNEXIS</p>
+          <p class="text-xs font-medium text-white/80">(n=325) % (n)</p>
+        </div>
+        <div class="p-4 border-l border-white/15">
+          <p class="text-[10px] font-bold text-white/50 uppercase tracking-wider mb-1">Placebo</p>
+          <p class="text-xs font-medium text-white/80">(n=162) % (n)</p>
+        </div>
+      </div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Serious AEs</div><div class="p-3 text-sm font-bold text-secondary">2.1% (7)</div><div class="p-3 text-sm font-bold text-gray-400">2.8% (5)</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 bg-primary/[.03] hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Any infection</div><div class="p-3 text-sm font-bold text-secondary">11.4% (37)</div><div class="p-3 text-sm font-bold text-gray-400">11.7% (19)</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Any serious infection</div><div class="p-3 text-sm font-bold text-secondary">0.6% (2)</div><div class="p-3 text-sm font-bold text-gray-400">1.2% (2)</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 bg-primary/[.03] hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Active TB</div><div class="p-3 text-lg text-gray-300">0</div><div class="p-3 text-lg text-gray-300">0</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Any malignancy</div><div class="p-3 text-lg text-gray-300">0</div><div class="p-3 text-lg text-gray-300">0</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 bg-primary/[.03] hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">IBD</div><div class="p-3 text-lg text-gray-300">0</div><div class="p-3 text-lg text-gray-300">0</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Depression / anxiety</div><div class="p-3 text-lg text-gray-300">0</div><div class="p-3 text-lg text-gray-300">0</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 bg-primary/[.03] hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Conjunctivitis <span class="text-[11px] text-gray-400 font-normal">(class effect)</span></div><div class="p-3 text-sm font-bold text-primary">9.2% (30)</div><div class="p-3 text-sm font-bold text-gray-400">3.1% (5)</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Injection site reaction <span class="text-[11px] text-gray-400 font-normal">(class effect)</span></div><div class="p-3 text-sm font-bold text-primary">18.2% (59)</div><div class="p-3 text-sm font-bold text-gray-400">7.4% (12)</div></div>
+      <div class="safe-row grid grid-cols-[2fr_1fr_1fr] hover:bg-primary/5 transition-colors"><div class="p-3 pl-6 text-sm text-gray-600 font-medium">Discontinuation due to AE</div><div class="p-3 text-sm font-bold text-secondary">1.8% (6)</div><div class="p-3 text-sm font-bold text-gray-400">2.2% (4)</div></div>
+    </div>
+
+    <!-- Warnings -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="reveal card-modern warn-box rounded-3xl p-8 flex gap-4 items-start transition-all duration-300">
+        <span class="text-2xl shrink-0">⚠️</span>
+        <div>
+          <h4 class="text-sm font-bold text-amber-800 mb-2">Warnings & Precautions Include</h4>
+          <p class="text-sm text-amber-700 leading-relaxed">Hypersensitivity reactions · Infections — evaluate for TB prior to initiation · Tuberculosis screening required · Immunizations — update vaccines per guidelines before starting therapy</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1 card-modern nowarn-box rounded-3xl p-8 flex gap-4 items-start transition-all duration-300">
+        <span class="text-2xl shrink-0">✅</span>
+        <div>
+          <h4 class="text-sm font-bold text-emerald-800 mb-2">No Labeled Warnings or Precautions on:</h4>
+          <p class="text-sm text-emerald-700 leading-relaxed"><strong>Malignancy</strong> · <strong>IBD</strong> · <strong>Depression or Suicidality</strong> · <strong>Candidiasis</strong> · <strong>Hepatotoxicity</strong> · <strong>Thrombosis or MACE</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal text-center">
+      <p class="text-xs text-gray-400 leading-relaxed max-w-3xl mx-auto">
+        <sup>1</sup>CLARITY: Children's Long-term Atopic dermatitis Response ITY trial. AE=adverse event · IBD=inflammatory bowel disease · TB=tuberculosis. Data from CLARITY Phase 3 (double-blind period). Conjunctivitis and injection site reactions are class-effect AEs. No routine lab monitoring required. IMMUNEXIS [Prescribing Information]. For healthcare professional use only.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRODUCT PORTFOLIO ==================== -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-accent font-medium text-sm tracking-[0.15em] uppercase mb-4">Product Portfolio</p>
+      <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">Immunology & Dermatology</h2>
+      <p class="reveal text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">Our commitment to advancing treatment for immune-mediated skin diseases.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal drug-card bg-white rounded-2xl p-6 border border-gray-100 cursor-default">
+        <h3 class="text-sm font-bold text-slate-brand mb-2">IMMUNEXIS®</h3>
+        <p class="text-xs text-gray-500 leading-relaxed mb-3">IL-4/IL-13 receptor antagonist for pediatric atopic dermatitis</p>
+        <span class="inline-block bg-secondary/10 text-secondary text-[10px] font-bold px-3 py-1 rounded-full">Atopic Dermatitis · Ages 6–17</span>
+      </div>
+      <div class="reveal reveal-delay-1 drug-card teal bg-white rounded-2xl p-6 border border-gray-100 cursor-default">
+        <h3 class="text-sm font-bold text-slate-brand mb-2">VELORIN®</h3>
+        <p class="text-xs text-gray-500 leading-relaxed mb-3">PDE4 inhibitor for mild-to-moderate plaque psoriasis in adults</p>
+        <span class="inline-block bg-secondary/10 text-secondary text-[10px] font-bold px-3 py-1 rounded-full">Psoriasis · Adults</span>
+      </div>
+      <div class="reveal reveal-delay-2 drug-card gray bg-white rounded-2xl p-6 border border-gray-100 cursor-default">
+        <h3 class="text-sm font-bold text-slate-brand mb-2">DURAXIS®</h3>
+        <p class="text-xs text-gray-500 leading-relaxed mb-3">Long-acting corticosteroid for chronic urticaria management</p>
+        <span class="inline-block bg-gray-100 text-gray-500 text-[10px] font-bold px-3 py-1 rounded-full">Urticaria · Adults</span>
+      </div>
+      <div class="reveal reveal-delay-3 drug-card gray bg-white rounded-2xl p-6 border border-gray-100 cursor-default">
+        <h3 class="text-sm font-bold text-slate-brand mb-2">NEXAPRIL®</h3>
+        <p class="text-xs text-gray-500 leading-relaxed mb-3">Novel JAK1 inhibitor for moderate rheumatoid arthritis</p>
+        <span class="inline-block bg-gray-100 text-gray-500 text-[10px] font-bold px-3 py-1 rounded-full">Rheumatoid Arthritis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HCP RESOURCES ==================== -->
+<section class="py-20 lg:py-28 bg-warm">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-secondary font-medium text-sm tracking-[0.15em] uppercase mb-4">For Healthcare Professionals</p>
+      <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">HCP Resources</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal card-modern bg-white rounded-3xl p-8 border border-gray-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-lg shrink-0">📋</div>
+        <div>
+          <h4 class="text-sm font-bold text-slate-brand mb-1">CLARITY Phase 3 — Full Results</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">52-week efficacy and safety data from the pivotal pediatric trial.</p>
+          <a href="#" data-leadgen="med-info-request" class="text-secondary text-xs font-semibold mt-3 inline-block hover:underline">Request Access →</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1 card-modern bg-white rounded-3xl p-8 border border-gray-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-lg shrink-0">💊</div>
+        <div>
+          <h4 class="text-sm font-bold text-slate-brand mb-1">Dosing & Administration Guide</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">Weight-based dosing calculator and subcutaneous injection guidance.</p>
+          <a href="#" data-leadgen="med-info-request" class="text-secondary text-xs font-semibold mt-3 inline-block hover:underline">View Guide →</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2 card-modern bg-white rounded-3xl p-8 border border-gray-100 flex items-start gap-4">
+        <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-lg shrink-0">🧬</div>
+        <div>
+          <h4 class="text-sm font-bold text-slate-brand mb-1">Mechanism of Action</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">Animated IL-4/IL-13 pathway and receptor binding visualization.</p>
+          <a href="#" data-leadgen="med-info-request" class="text-secondary text-xs font-semibold mt-3 inline-block hover:underline">Watch Animation →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PATIENT ACCESS ==================== -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal bg-gradient-to-br from-primary-dark to-primary rounded-[2rem] overflow-hidden">
+      <div class="grid lg:grid-cols-2">
+        <div class="p-12 lg:p-16 flex flex-col justify-center">
+          <p class="text-white/50 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Patient Support</p>
+          <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight mb-6">IMMUNEXIS<sup class="text-lg">®</sup> Access Programs</h2>
+          <p class="text-white/60 leading-relaxed mb-6">Every patient who needs IMMUNEXIS should be able to access it. Our Makana CareConnect program provides:</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-secondary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-white/70">$0 co-pay for eligible commercially insured patients</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-secondary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-white/70">Free medicine for qualifying uninsured or underinsured patients</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-secondary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-white/70">Dedicated pediatric nurse case managers & 24/7 caregiver support line</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-secondary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm text-white/70">At-home injection training and ongoing adherence support</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-3">
+            <a class='pill-btn inline-flex items-center px-7 py-3 bg-white text-slate-brand font-semibold rounded-full text-sm hover:bg-white/90 transition' href='/patients'>Patient Resources</a>
+            <a href="tel:18006252584" class="pill-btn inline-flex items-center px-7 py-3 border border-white/25 text-white/80 font-medium rounded-full text-sm hover:bg-white/10 transition">Call 1-800-MAKANA-RX</a>
+          </div>
+        </div>
+        <div class="bg-white/5 flex items-center justify-center p-12 lg:p-16">
+          <div class="text-center max-w-xs">
+            <div class="grid grid-cols-2 gap-5 mb-6">
+              <div class="bg-white/10 backdrop-blur rounded-2xl p-5"><p class="text-3xl font-bold text-white">42K</p><p class="text-[11px] text-white/50 mt-1">Patients on<br>IMMUNEXIS</p></div>
+              <div class="bg-white/10 backdrop-blur rounded-2xl p-5"><p class="text-3xl font-bold text-secondary">$0</p><p class="text-[11px] text-white/50 mt-1">Co-pay for<br>Eligible Patients</p></div>
+              <div class="bg-white/10 backdrop-blur rounded-2xl p-5"><p class="text-3xl font-bold text-accent-light">96%</p><p class="text-[11px] text-white/50 mt-1">Coverage<br>Rate</p></div>
+              <div class="bg-white/10 backdrop-blur rounded-2xl p-5"><p class="text-3xl font-bold text-secondary-light">24/7</p><p class="text-[11px] text-white/50 mt-1">Caregiver<br>Support</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ISI BANNER ==================== -->
+<section class="py-16 bg-warm-dark border-t border-gray-100">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal">
+      <h3 class="text-lg font-bold text-slate-brand mb-4">Important Safety Information</h3>
+      <div class="text-xs text-gray-500 leading-relaxed space-y-3">
+        <p><strong>INDICATIONS AND USAGE:</strong> IMMUNEXIS® is indicated for the treatment of moderate-to-severe atopic dermatitis in patients aged 6 to 17 years whose disease is not adequately controlled with topical prescription therapies or when those therapies are not advisable. IMMUNEXIS can be used with or without topical corticosteroids.</p>
+        <p><strong>CONTRAINDICATIONS:</strong> Known hypersensitivity to IMMUNEXIS or any of its excipients.</p>
+        <p><strong>WARNINGS AND PRECAUTIONS:</strong> Hypersensitivity reactions including anaphylaxis and angioedema have been reported. If a clinically significant hypersensitivity reaction occurs, institute appropriate therapy and discontinue IMMUNEXIS. Pre-treatment evaluation for tuberculosis infection is recommended. Monitor for signs and symptoms of infection. Patients should receive all age-appropriate vaccinations before initiating treatment.</p>
+        <p><strong>ADVERSE REACTIONS:</strong> The most common adverse reactions (incidence ≥5%) are injection site reactions and conjunctivitis.</p>
+        <p class="text-gray-400">Please see Full Prescribing Information for IMMUNEXIS®. For healthcare professional use only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8 w-auto mb-5 brightness-0 invert">
+        <p class="text-sm text-white/40 leading-relaxed">Reimagining medicine through science, technology, and compassion.</p>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-[0.15em] uppercase text-white/60 mb-4">Our Medicines</h4>
+        <ul class="space-y-2">
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/products'>Product Portfolio</a></li>
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/pipeline'>Pipeline</a></li>
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/clinical-trials'>Clinical Trials</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-[0.15em] uppercase text-white/60 mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/hcp'>HCP Portal</a></li>
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/patients'>Patient Resources</a></li>
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/contact'>Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-[0.15em] uppercase text-white/60 mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/about'>About Makana</a></li>
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/careers'>Careers</a></li>
+          <li><a class='text-sm text-white/40 hover:text-white transition' href='/news'>Newsroom</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-white/30">© 2026 Makana Health. All rights reserved. IMMUNEXIS® is a registered trademark of Makana Health.</p>
+      <div class="flex gap-6">
+        <a class='text-xs text-white/30 hover:text-white transition' href='/privacy'>Privacy</a>
+        <a href="/terms" class="text-xs text-white/30 hover:text-white transition">Terms</a>
+        <button onclick="reopenCookies()" class="text-xs text-white/30 hover:text-white transition">Cookie Preferences</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== AGENTFORCE CHAT FAB ==================== -->
+<button class="fab-orb" id="fabOrb" onclick="openChat()" aria-label="Open IMMUNEXIS assistant">
+  <canvas id="orbCanvas" width="68" height="68" style="position:absolute;top:0;left:0;border-radius:50%;pointer-events:none;"></canvas>
+  <svg viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+</button>
+
+<!-- ==================== CHAT OVERLAY ==================== -->
+<div class="chat-overlay" id="chatOverlay">
+  <button onclick="closeChat()" title="Close" id="xBtn" aria-label="Close assistant">✕</button>
+
+  <div class="chat-sidebar">
+    <div class="chat-hdr">
+      <div class="chat-av">M</div>
+      <div class="flex-1"><h4 class="text-[15px] font-semibold text-white leading-tight">Makana Assistant</h4><p class="text-[11px] text-white/50">Powered by Agentforce</p></div>
+      <div class="online-dot"></div>
+    </div>
+    <div class="msgs" id="msgs">
+      <div class="msg"><div class="mav">M</div><div class="bubble a">Hello! I can help you explore clinical evidence and prescribing information for IMMUNEXIS. What would you like to know?</div></div>
+    </div>
+    <div class="quick-btns" id="quickBtns" style="padding:14px 16px;border-top:1px solid #f0f2f5;display:flex;flex-direction:column;gap:8px;">
+      <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Suggested questions</p>
+      <button class="opt" onclick="triggerDemo('What clinical trial data supports IMMUNEXIS with pediatric patients?')">Clinical trial data for pediatric patients</button>
+      <button class="opt" onclick="triggerDemo('Safety &amp; tolerability profile')">Safety &amp; tolerability profile</button>
+      <button class="opt" onclick="triggerDemo('Long-term durability data')">Long-term durability data</button>
+    </div>
+    <div id="persistentBtns">
+      <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Switch view</p>
+      <button class="opt" onclick="triggerDemo('What clinical trial data supports IMMUNEXIS with pediatric patients?')">📊 Efficacy data</button>
+      <button class="opt" onclick="triggerDemo('What is the safety and tolerability profile for IMMUNEXIS?')">🛡️ Safety profile</button>
+    </div>
+    <div style="padding:12px 14px;border-top:1px solid #e2e5eb;display:flex;gap:9px;">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask about IMMUNEXIS…" aria-label="Ask about IMMUNEXIS" onkeydown="if(event.key==='Enter')sendMsg()">
+      <button class="chat-send" onclick="sendMsg()" aria-label="Send message">↑</button>
+    </div>
+  </div>
+
+  <div class="chat-content-slot">
+    <!-- Efficacy Zone -->
+    <div class="cz-wrap" id="czEfficacy">
+      <div class="sk-wrap" id="czSkeleton">
+        <div class="sk-row wide"></div>
+        <div class="sk-card-row"><div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div></div>
+        <div class="sk-chart"></div>
+        <div class="sk-row med"></div><div class="sk-row full"></div>
+      </div>
+      <div class="cz">
+        <div class="cz-hdr">
+          <div class="mb-5 relative"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-9 w-auto brightness-0 invert"></div>
+          <p class="text-xs font-bold text-white/50 tracking-widest uppercase mb-2 relative">Clinical Evidence</p>
+          <div class="flex justify-between items-start relative">
+            <div>
+              <p class="text-[42px] font-bold text-white tracking-tight leading-none">IMMUNEXIS<sup class="text-xl">®</sup></p>
+              <p class="text-[17px] text-white/65 mt-1.5">CLARITY<sup class="text-[10px] align-super">1</sup> Phase 3 Trial</p>
+            </div>
+            <div class="bg-white/12 backdrop-blur-sm border border-white/25 rounded-[14px] px-6 py-3.5 text-center shrink-0" style="animation:badgeShimmer 3s ease-in-out infinite;">
+              <p class="text-[30px] font-extrabold text-white font-serif">n=<span id="badgeNum">487</span></p>
+              <p class="text-[10px] text-white/50 uppercase tracking-wider mt-0.5">Patients</p>
+            </div>
+          </div>
+          <div class="flex mt-6 pt-5 border-t border-white/12 relative">
+            <div class="cz-mi flex-1 px-6 border-r border-white/10 first:pl-0 last:border-r-0"><p class="text-[10px] text-white/40 uppercase tracking-wider mb-1">Population</p><p class="text-[15px] text-white/90 font-medium">Pediatric patients aged 6–17</p></div>
+            <div class="cz-mi flex-1 px-6 border-r border-white/10"><p class="text-[10px] text-white/40 uppercase tracking-wider mb-1">Duration</p><p class="text-[15px] text-white/90 font-medium">52 weeks</p></div>
+            <div class="cz-mi flex-1 px-6"><p class="text-[10px] text-white/40 uppercase tracking-wider mb-1">Primary Endpoint</p><p class="text-[15px] text-white/90 font-medium">IGA 0/1 at Week 16</p></div>
+          </div>
+        </div>
+        <div class="cz-body">
+          <div class="cz-section-head" id="czSecEfficacy" style="opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s;">Key Efficacy Outcomes — CLARITY Phase 3</div>
+          <div class="grid grid-cols-3 gap-[18px]">
+            <div class="glass-card rounded-[14px] p-6 relative overflow-hidden transition-all duration-200" id="czSc0" style="opacity:0;transform:translateY(20px);">
+              <p class="text-[11px] font-bold text-gray-400 tracking-widest uppercase mt-1">EASI-75 at Week 16</p>
+              <p class="stat-num"><span id="czN0">0</span><span class="text-2xl font-bold font-sans">%</span></p>
+              <p class="text-sm text-gray-500 leading-relaxed">≥75% improvement in EASI at Week 16</p>
+              <div class="pt-2 mt-2 border-t border-gray-100"><p class="text-sm text-gray-400"><b>16%</b> Placebo</p><p class="text-xs text-gray-400 italic">p&lt;0.001</p></div>
+            </div>
+            <div class="glass-card rounded-[14px] p-6 relative overflow-hidden transition-all duration-200" id="czSc1" style="opacity:0;transform:translateY(20px);">
+              <p class="text-[11px] font-bold text-gray-400 tracking-widest uppercase mt-1">EASI-75 at Week 52</p>
+              <p class="stat-num"><span id="czN1">0</span><span class="text-2xl font-bold font-sans">%</span></p>
+              <p class="text-sm text-gray-500 leading-relaxed">Durable response through extension</p>
+              <div class="pt-2 mt-2 border-t border-gray-100"><p class="text-sm text-gray-400"><b>13%</b> Placebo</p><p class="text-xs text-gray-400 italic">p&lt;0.001</p></div>
+            </div>
+            <div class="glass-card rounded-[14px] p-6 relative overflow-hidden transition-all duration-200" id="czSc2" style="opacity:0;transform:translateY(20px);">
+              <p class="text-[11px] font-bold text-gray-400 tracking-widest uppercase mt-1">IGA 0/1 at Week 16</p>
+              <p class="stat-num"><span id="czN2">0</span><span class="text-2xl font-bold font-sans">%</span></p>
+              <p class="text-sm text-gray-500 leading-relaxed">Clear or almost clear skin</p>
+              <div class="pt-2 mt-2 border-t border-gray-100"><p class="text-sm text-gray-400"><b>14%</b> Placebo</p><p class="text-xs text-gray-400 italic">p&lt;0.001</p></div>
+            </div>
+          </div>
+          <div class="glass-card rounded-[14px] p-6 relative overflow-hidden transition-all duration-200" id="czChartCard" style="opacity:0;transform:translateY(20px);">
+            <h3 class="text-lg font-bold text-slate-brand mb-1">EASI-75 Response Over Time</h3>
+            <p class="text-sm text-gray-400 mb-5">Week 4 through Week 52</p>
+            <div class="relative"><canvas id="czChart"></canvas><div id="czTooltip" style="position:absolute;background:#1a1f2e;color:#fff;font-size:12px;font-weight:600;padding:6px 11px;border-radius:8px;pointer-events:none;white-space:nowrap;opacity:0;transition:opacity .15s;box-shadow:0 4px 14px rgba(0,0,0,.25);transform:translate(-50%,-100%);margin-top:-10px;"></div></div>
+            <div class="flex gap-7 mt-4">
+              <div class="flex items-center gap-2 text-sm text-gray-500 font-medium"><div class="w-6 h-[3px] rounded bg-primary"></div>IMMUNEXIS</div>
+              <div class="flex items-center gap-2 text-sm text-gray-500 font-medium"><div class="w-6 h-0 border-t-[2.5px] border-dashed border-gray-300"></div>Placebo</div>
+            </div>
+            <p class="text-xs text-gray-400 italic mt-3">32% (Wk4) → 55% (Wk8) → 74% (Wk16) → 71% (Wk52)</p>
+          </div>
+          <div class="flex gap-3.5 flex-wrap" id="ctasRow">
+            <button data-leadgen="med-info-request" class="px-7 py-3.5 bg-[#4a5263] text-white rounded-lg text-sm font-semibold hover:bg-primary-dark transition">↓ Download Full Study Results</button>
+            <button class="px-7 py-3.5 border border-gray-200 text-gray-600 rounded-lg text-sm font-semibold hover:bg-gray-50 transition" onclick="triggerDemo('What is the safety and tolerability profile for IMMUNEXIS?')">Safety & tolerability ❯</button>
+          </div>
+          <p class="text-[11px] text-gray-400 leading-relaxed pt-3.5 border-t border-gray-200" id="isiRow"><sup>1</sup>CLARITY: Children's Long-term Atopic dermatitis Response ITY trial. IMMUNEXIS [Prescribing Information]. For healthcare professional use only.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safety Zone -->
+    <div class="cz-wrap" id="czSafety">
+      <div class="cz">
+        <div class="cz-hdr">
+          <div class="mb-5 relative"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-9 w-auto brightness-0 invert"></div>
+          <p class="text-xs font-bold text-white/50 tracking-widest uppercase mb-2 relative">Safety & Tolerability</p>
+          <div class="flex justify-between items-start relative">
+            <div>
+              <p class="text-[42px] font-bold text-white tracking-tight leading-none">IMMUNEXIS<sup class="text-xl">®</sup></p>
+              <p class="text-[17px] text-white/65 mt-1.5">CLARITY<sup class="text-[10px] align-super">1</sup> Phase 3 — Safety Data</p>
+            </div>
+            <div class="bg-white/12 backdrop-blur-sm border border-white/25 rounded-[14px] px-6 py-3.5 text-center shrink-0" style="animation:badgeShimmer 3s ease-in-out infinite;">
+              <p class="text-[30px] font-extrabold text-white font-serif">n=<span id="safetyBadge">487</span></p>
+              <p class="text-[10px] text-white/50 uppercase tracking-wider mt-0.5">Patients</p>
+            </div>
+          </div>
+          <div class="flex mt-6 pt-5 border-t border-white/12 relative">
+            <div class="cz-mi flex-1 px-6 border-r border-white/10 first:pl-0"><p class="text-[10px] text-white/40 uppercase tracking-wider mb-1">Population</p><p class="text-[15px] text-white/90 font-medium">Pediatric patients aged 6–17</p></div>
+            <div class="cz-mi flex-1 px-6 border-r border-white/10"><p class="text-[10px] text-white/40 uppercase tracking-wider mb-1">Double-blind period</p><p class="text-[15px] text-white/90 font-medium">16 weeks</p></div>
+            <div class="cz-mi flex-1 px-6"><p class="text-[10px] text-white/40 uppercase tracking-wider mb-1">Total follow-up</p><p class="text-[15px] text-white/90 font-medium">52 weeks</p></div>
+          </div>
+        </div>
+        <div class="cz-body">
+          <div class="grid grid-cols-3 gap-[18px]">
+            <div class="glass-card rounded-[14px] p-6 relative overflow-hidden transition-all duration-200"><p class="text-xs font-bold text-secondary tracking-widest uppercase">No requirement</p><h4 class="text-sm font-bold text-slate-brand mt-2 mb-1">Routine Lab Monitoring</h4><p class="text-xs text-gray-500 leading-relaxed">No routine blood work required — unlike JAK inhibitors and methotrexate.</p></div>
+            <div class="glass-card rounded-[14px] p-6 relative overflow-hidden transition-all duration-200"><p class="text-xs font-bold text-secondary tracking-widest uppercase">No increased risk</p><h4 class="text-sm font-bold text-slate-brand mt-2 mb-1">Serious Infections</h4><p class="text-xs text-gray-500 leading-relaxed">IL-4/IL-13 blockade preserves innate immune defenses.</p></div>
+            <div class="glass-card rounded-[14px] p-6 relative overflow-hidden transition-all duration-200"><p class="text-xs font-bold text-secondary tracking-widest uppercase">No restriction</p><h4 class="text-sm font-bold text-slate-brand mt-2 mb-1">Live Vaccines</h4><p class="text-xs text-gray-500 leading-relaxed">No contraindication — critical for pediatric schedules.</p></div>
+          </div>
+          <div class="cz-section-head">Adverse Events of Interest</div>
+          <div class="glass-card rounded-[14px] overflow-hidden relative" id="czAeTable">
+            <div class="bg-[#4a5263] grid grid-cols-[2fr_1fr_1fr]">
+              <div class="p-3.5 pl-5"><p class="text-[10px] font-bold text-white/50 uppercase tracking-wider mb-0.5">Week 16 · Double-blind</p><p class="text-xs font-bold text-white">IMMUNEXIS vs Placebo</p></div>
+              <div class="p-3.5 border-l border-white/15"><p class="text-[10px] font-bold text-white/50 uppercase tracking-wider mb-0.5">IMMUNEXIS</p><p class="text-xs text-white/80">(n=325)</p></div>
+              <div class="p-3.5 border-l border-white/15"><p class="text-[10px] font-bold text-white/50 uppercase tracking-wider mb-0.5">Placebo</p><p class="text-xs text-white/80">(n=162)</p></div>
+            </div>
+            <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 hover:bg-primary/5"><div class="p-3 pl-5 text-[13px] text-gray-600 font-medium">Serious AEs</div><div class="p-3 text-sm font-bold text-secondary">2.1% (7)</div><div class="p-3 text-sm font-bold text-gray-400">2.8% (5)</div></div>
+            <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 bg-primary/[.03] hover:bg-primary/5"><div class="p-3 pl-5 text-[13px] text-gray-600 font-medium">Any infection</div><div class="p-3 text-sm font-bold text-secondary">11.4% (37)</div><div class="p-3 text-sm font-bold text-gray-400">11.7% (19)</div></div>
+            <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 hover:bg-primary/5"><div class="p-3 pl-5 text-[13px] text-gray-600 font-medium">Conjunctivitis</div><div class="p-3 text-sm font-bold text-primary">9.2% (30)</div><div class="p-3 text-sm font-bold text-gray-400">3.1% (5)</div></div>
+            <div class="safe-row grid grid-cols-[2fr_1fr_1fr] border-b border-gray-50 bg-primary/[.03] hover:bg-primary/5"><div class="p-3 pl-5 text-[13px] text-gray-600 font-medium">Injection site reaction</div><div class="p-3 text-sm font-bold text-primary">18.2% (59)</div><div class="p-3 text-sm font-bold text-gray-400">7.4% (12)</div></div>
+            <div class="safe-row grid grid-cols-[2fr_1fr_1fr] hover:bg-primary/5"><div class="p-3 pl-5 text-[13px] text-gray-600 font-medium">Discontinuation due to AE</div><div class="p-3 text-sm font-bold text-secondary">1.8% (6)</div><div class="p-3 text-sm font-bold text-gray-400">2.2% (4)</div></div>
+          </div>
+          <div class="flex gap-3.5 flex-wrap">
+            <button data-leadgen="med-info-request" class="px-7 py-3.5 bg-[#4a5263] text-white rounded-lg text-sm font-semibold hover:bg-primary-dark transition">↓ Download Full Safety Report</button>
+            <button class="px-7 py-3.5 border border-gray-200 text-gray-600 rounded-lg text-sm font-semibold hover:bg-gray-50 transition" onclick="switchToEfficacy()">Efficacy data ❯</button>
+          </div>
+          <p class="text-[11px] text-gray-400 leading-relaxed pt-3.5 border-t border-gray-200"><sup>1</sup>CLARITY Phase 3. Conjunctivitis and injection site reactions are class-effect AEs. IMMUNEXIS [Prescribing Information].</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MODAL ==================== -->
+<div class="modal-backdrop fixed inset-0 z-[800] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-250" id="reqModal">
+  <div class="modal-content bg-white rounded-2xl p-10 max-w-md w-[90%] shadow-2xl">
+    <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center text-2xl mb-5">📋</div>
+    <h3 class="text-xl font-bold text-slate-brand mb-2" id="modalTitle">Request Document</h3>
+    <p class="text-sm text-gray-500 leading-relaxed mb-6" id="modalBody">This document is available to registered healthcare providers.</p>
+    <div class="flex gap-3">
+      <button data-leadgen="info-request" class="flex-1 px-5 py-3 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primary-dark transition">Request Access</button>
+      <button onclick="closeModal()" class="flex-1 px-5 py-3 border border-gray-200 text-gray-600 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// DOM CACHE
+// ═══════════════════════════════════════════
+var $fab = document.getElementById('fabOrb');
+var $overlay = document.getElementById('chatOverlay');
+var $msgs = document.getElementById('msgs');
+var $quickBtns = document.getElementById('quickBtns');
+var $persistBtns = document.getElementById('persistentBtns');
+var $chatInput = document.getElementById('chatInput');
+var $czEfficacy = document.getElementById('czEfficacy');
+var $czSafety = document.getElementById('czSafety');
+var $czSkeleton = document.getElementById('czSkeleton');
+var $reqModal = document.getElementById('reqModal');
+var $orbCanvas = document.getElementById('orbCanvas');
+
+// ═══ EASING ═══
+function easeInOut(t) { return t < .5 ? 2*t*t : -1+(4-2*t)*t; }
+function easeIn(t) { return t*t*t; }
+
+// ═══════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════
+var revealObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold:0.12 });
+document.querySelectorAll('.reveal').forEach(function(el, i) {
+  el.style.transitionDelay = el.style.transitionDelay || (Math.min(i*0.05, 0.4) + 's');
+  revealObs.observe(el);
+});
+
+// ═══════════════════════════════════════════
+// STAT COUNTER ANIMATION (main page)
+// ═══════════════════════════════════════════
+function animateCounter(el, target, dur, from) {
+  var start = null, fromVal = from || 0;
+  function step(ts) {
+    if(!start) start = ts;
+    var p = Math.min((ts-start)/dur, 1);
+    el.textContent = Math.round(fromVal + (target-fromVal)*easeInOut(p));
+    if(p < 1) requestAnimationFrame(step); else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+
+var statObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if(e.isIntersecting) {
+      var t = parseInt(e.target.dataset.target);
+      if(t) animateCounter(e.target, t, 1200);
+      statObs.unobserve(e.target);
+    }
+  });
+}, { threshold:0.3 });
+document.querySelectorAll('.stat-num').forEach(function(el) { statObs.observe(el); });
+
+// ═══════════════════════════════════════════
+// MAIN PAGE CHART
+// ═══════════════════════════════════════════
+var immunexis = [32,55,74,71], placebo = [7,11,16,13], weeks = ['Week 4','Week 8','Week 16','Week 52'];
+var mainChartProgress = 0, mainChartRAF = null;
+
+function drawMainChart(canvas, progress, tooltip) {
+  if(!canvas) return;
+  var dpr = window.devicePixelRatio||1;
+  var W = canvas.width/dpr, H = canvas.height/dpr;
+  var ctx = canvas.getContext('2d');
+  ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr,dpr); ctx.clearRect(0,0,W,H);
+  var padL=68,padR=20,padT=28,padB=40, cw=W-padL-padR, ch=H-padT-padB, yScale=ch/90;
+  [0,25,50,75].forEach(function(v) {
+    var y = padT+ch-v*yScale;
+    ctx.beginPath(); ctx.moveTo(padL,y); ctx.lineTo(padL+cw,y);
+    ctx.strokeStyle=v===0?'#e2e5eb':'#f0f2f5'; ctx.lineWidth=v===0?1.5:1; ctx.setLineDash(v===0?[]:[5,6]); ctx.stroke(); ctx.setLineDash([]);
+    ctx.font='12px Inter,sans-serif'; ctx.fillStyle='#8a92a0'; ctx.textAlign='right'; ctx.fillText(v+'%',padL-10,y+4.5);
+  });
+  var xS=padL+24, xE=padL+cw-24;
+  var xPos = weeks.map(function(_,i){ return xS+(i/(weeks.length-1))*(xE-xS); });
+  ctx.font='12px Inter,sans-serif'; ctx.fillStyle='#4a5263'; ctx.textAlign='center';
+  weeks.forEach(function(w,i){ ctx.fillText(w,xPos[i],H-8); });
+  var segs=weeks.length-1, drawn=progress*segs;
+  var immPts=immunexis.map(function(v,i){return{x:xPos[i],y:padT+ch-v*yScale}});
+  var plaPts=placebo.map(function(v,i){return{x:xPos[i],y:padT+ch-v*yScale}});
+
+  function drawLine(p,color,dash,lw){
+    ctx.strokeStyle=color;ctx.lineWidth=lw;ctx.lineJoin='round';ctx.lineCap='round';ctx.setLineDash(dash);
+    ctx.beginPath();ctx.moveTo(p[0].x,p[0].y);
+    for(var i=0;i<segs;i++){var sp=Math.max(0,Math.min(1,drawn-i));if(sp<=0)break;ctx.lineTo(p[i].x+(p[i+1].x-p[i].x)*sp,p[i].y+(p[i+1].y-p[i].y)*sp);}
+    ctx.stroke();ctx.setLineDash([]);
+  }
+  // Fill
+  ctx.save();
+  var grad=ctx.createLinearGradient(0,padT,0,padT+ch);grad.addColorStop(0,'rgba(74,64,99,0.16)');grad.addColorStop(1,'rgba(74,64,99,0)');ctx.fillStyle=grad;
+  ctx.beginPath();ctx.moveTo(immPts[0].x,padT+ch);ctx.lineTo(immPts[0].x,immPts[0].y);
+  for(var i=0;i<segs;i++){var sp=Math.max(0,Math.min(1,drawn-i));if(sp<=0)break;ctx.lineTo(immPts[i].x+(immPts[i+1].x-immPts[i].x)*sp,immPts[i].y+(immPts[i+1].y-immPts[i].y)*sp);}
+  var ls=Math.floor(Math.min(drawn,segs-.001)),lsp=Math.max(0,Math.min(1,drawn-ls)),lx=immPts[ls].x+(ls<segs?(immPts[ls+1].x-immPts[ls].x)*lsp:0);
+  ctx.lineTo(lx,padT+ch);ctx.closePath();ctx.fill();ctx.restore();
+
+  drawLine(plaPts,'#c8cdd6',[7,6],2);
+  drawLine(immPts,'#4A4063',[],3.5);
+
+  immPts.forEach(function(pt,i){
+    var a=Math.max(0,Math.min(1,(drawn-i+.2)/.2));if(a<=0)return;ctx.globalAlpha=a;
+    ctx.shadowColor='rgba(74,64,99,0.35)';ctx.shadowBlur=10;ctx.beginPath();ctx.arc(pt.x,pt.y,7,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#4A4063';ctx.lineWidth=3;ctx.stroke();ctx.shadowBlur=0;
+    ctx.font='bold 14px Inter,sans-serif';ctx.fillStyle='#1a1f2e';ctx.textAlign='center';ctx.fillText(immunexis[i]+'%',pt.x,pt.y-16);ctx.globalAlpha=1;
+  });
+  plaPts.forEach(function(pt,i){
+    var a=Math.max(0,Math.min(1,(drawn-i+.2)/.2))*.65;if(a<=0)return;ctx.globalAlpha=a;
+    ctx.beginPath();ctx.arc(pt.x,pt.y,5,0,Math.PI*2);ctx.fillStyle='#c8cdd6';ctx.fill();ctx.globalAlpha=1;
+  });
+}
+
+function sizeMainChart() {
+  var c = document.getElementById('efficacyChart'); if(!c) return;
+  var dpr = window.devicePixelRatio||1, w = c.parentElement.offsetWidth, h = Math.round(w*.38);
+  c.style.width=w+'px'; c.style.height=h+'px'; c.width=w*dpr; c.height=h*dpr;
+}
+
+var mainChartFired = false;
+var mainChartObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if(e.isIntersecting && !mainChartFired) {
+      mainChartFired = true;
+      sizeMainChart();
+      var start=null, dur=1600;
+      function step(ts){if(!start)start=ts;mainChartProgress=easeInOut(Math.min((ts-start)/dur,1));drawMainChart(document.getElementById('efficacyChart'),mainChartProgress);if(ts-start<dur)requestAnimationFrame(step);}
+      requestAnimationFrame(step);
+      mainChartObs.unobserve(e.target);
+    }
+  });
+}, { threshold:0.2 });
+var chartEl = document.getElementById('chartContainer');
+if(chartEl) mainChartObs.observe(chartEl);
+
+// Chart tooltip (main page)
+(function(){
+  var tip=document.getElementById('chartTooltip'), canvas=document.getElementById('efficacyChart');
+  if(!tip||!canvas)return;
+  var padL=68,padR=20,padT=28,padB=40,xPosC=null;
+  function gx(){if(xPosC)return xPosC;var dpr=window.devicePixelRatio||1,W=canvas.width/dpr,cw=W-padL-padR,xS=padL+24,xE=padL+cw-24;xPosC=weeks.map(function(_,i){return xS+(i/(weeks.length-1))*(xE-xS)});return xPosC;}
+  window.addEventListener('resize',function(){xPosC=null;sizeMainChart();if(mainChartFired)drawMainChart(canvas,mainChartProgress)});
+  canvas.addEventListener('mousemove',function(e){
+    if(mainChartProgress<1){tip.style.opacity='0';return}
+    var r=canvas.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,dpr=window.devicePixelRatio||1,W=canvas.width/dpr,H=canvas.height/dpr,ch=H-padT-padB,yS=ch/90,xP=gx();
+    var hit=null,minD=18;
+    weeks.forEach(function(w,i){var px=xP[i]*(r.width/W),py=(padT+ch-immunexis[i]*yS)*(r.height/H),d=Math.sqrt((mx-px)*(mx-px)+(my-py)*(my-py));if(d<minD){hit={w:w,i:immunexis[i],p:placebo[i],px:px,py:py};minD=d}});
+    if(hit){tip.innerHTML='<span style="color:#6BBFAB">'+hit.i+'%</span> IMMUNEXIS · <span style="color:#8a92a0">'+hit.p+'%</span> Placebo · '+hit.w;tip.style.left=hit.px+'px';tip.style.top=hit.py+'px';tip.style.opacity='1'}else{tip.style.opacity='0'}
+  });
+  canvas.addEventListener('mouseleave',function(){tip.style.opacity='0'});
+})();
+
+// ═══════════════════════════════════════════
+// AE TABLE ROW REVEAL
+// ═══════════════════════════════════════════
+var aeTableObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if(e.isIntersecting) {
+      var rows = e.target.querySelectorAll('.safe-row');
+      rows.forEach(function(r,i) { setTimeout(function(){ r.classList.add('row-visible'); }, i*55); });
+      aeTableObs.unobserve(e.target);
+    }
+  });
+}, { threshold:0.15 });
+var aeT = document.getElementById('aeTable'); if(aeT) aeTableObs.observe(aeT);
+
+// ═══════════════════════════════════════════
+// NAV SCROLL
+// ═══════════════════════════════════════════
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+// ═══════════════════════════════════════════
+// COOKIE
+// ═══════════════════════════════════════════
+  // Cookie consent with 365-day expiration
+  function acceptCookies(type) {
+    document.getElementById('cookieConsent').style.display = 'none';
+    localStorage.setItem('makana_cookies', JSON.stringify({ type: type, timestamp: Date.now() }));
+  }
+  function reopenCookies() {
+    const banner = document.getElementById('cookieConsent');
+    banner.style.display = '';
+    banner.style.animation = 'slideUp 0.3s ease both';
+  }
+  // Auto-hide if accepted within 365 days
+  (function() {
+    var stored = localStorage.getItem('makana_cookies');
+    if (stored) {
+      try {
+        var data = JSON.parse(stored);
+        if (data.timestamp && (Date.now() - data.timestamp < 365 * 24 * 60 * 60 * 1000)) {
+          document.getElementById('cookieConsent').style.display = 'none';
+        } else {
+          localStorage.removeItem('makana_cookies');
+        }
+      } catch(e) {
+        // Legacy string value — remove and re-show banner
+        localStorage.removeItem('makana_cookies');
+      }
+    }
+  })();
+
+// ═══════════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════════
+function openModal(title,body) {
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalBody').textContent=body;
+  $reqModal.style.opacity='1'; $reqModal.style.pointerEvents='all';
+}
+function closeModal() { $reqModal.style.opacity='0'; $reqModal.style.pointerEvents='none'; }
+window.addEventListener('click',function(e){ if(e.target.id==='reqModal') closeModal(); });
+
+// ═══════════════════════════════════════════
+// ORB CANVAS ANIMATION
+// ═══════════════════════════════════════════
+(function(){
+  var canvas=$orbCanvas,ctx=canvas.getContext('2d'),S=68,cx=34,cy=34;
+  var blobs=[
+    {r:'rgba(76,170,143,',ax:18,ay:14,fx:1,fy:1.3,px:0,py:.4,br:26},
+    {r:'rgba(124,111,160,',ax:14,ay:18,fx:1.5,fy:.9,px:1.1,py:0,br:24},
+    {r:'rgba(76,170,143,',ax:20,ay:10,fx:.7,fy:1.7,px:2.2,py:1.5,br:22},
+    {r:'rgba(124,111,160,',ax:10,ay:20,fx:1.8,fy:.6,px:.8,py:2.8,br:20},
+    {r:'rgba(76,170,143,',ax:16,ay:16,fx:1.2,fy:1.1,px:3.5,py:1,br:18}
+  ];
+  function drawOrb(t){
+    ctx.clearRect(0,0,S,S);ctx.save();ctx.beginPath();ctx.arc(cx,cy,34,0,Math.PI*2);ctx.clip();
+    ctx.fillStyle='#0b0818';ctx.fillRect(0,0,S,S);ctx.globalCompositeOperation='screen';
+    blobs.forEach(function(b){var x=cx+b.ax*Math.sin(b.fx*t+b.px),y=cy+b.ay*Math.cos(b.fy*t+b.py);var g=ctx.createRadialGradient(x,y,0,x,y,b.br);g.addColorStop(0,b.r+'0.9)');g.addColorStop(.4,b.r+'0.5)');g.addColorStop(1,b.r+'0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,b.br,0,Math.PI*2);ctx.fill()});
+    ctx.globalCompositeOperation='multiply';var v=ctx.createRadialGradient(cx,cy,17,cx,cy,34);v.addColorStop(0,'rgba(255,255,255,1)');v.addColorStop(1,'rgba(40,20,60,0.85)');ctx.fillStyle=v;ctx.beginPath();ctx.arc(cx,cy,34,0,Math.PI*2);ctx.fill();ctx.restore();
+  }
+  var start=null,raf=null;
+  function loop(ts){if(!start)start=ts;drawOrb((ts-start)/1000);raf=requestAnimationFrame(loop)}
+  var mo=new MutationObserver(function(){var h=$fab.classList.contains('hidden');if(h&&raf){cancelAnimationFrame(raf);raf=null}else if(!h&&!raf){raf=requestAnimationFrame(loop)}});
+  mo.observe($fab,{attributes:true,attributeFilter:['class']});
+  raf=requestAnimationFrame(loop);
+})();
+
+// ═══════════════════════════════════════════
+// CHAT OPEN / CLOSE
+// ═══════════════════════════════════════════
+function openChat() {
+  $fab.classList.add('hidden');
+  setTimeout(function(){ $overlay.classList.add('open'); },150);
+}
+function closeChat() {
+  [$czEfficacy,$czSafety].forEach(function(el){ el.classList.remove('visible','slide-out'); });
+  ['open','expanded'].forEach(function(c){ $overlay.classList.remove(c); });
+  $persistBtns.classList.remove('visible');
+  setTimeout(function(){ $fab.classList.remove('hidden'); },400);
+  // Reset CZ cards
+  ['czSc0','czSc1','czSc2','czChartCard'].forEach(function(id){
+    var el=document.getElementById(id);if(el){el.style.cssText='opacity:0;transform:translateY(20px);transition:none';}
+  });
+  var se=document.getElementById('czSecEfficacy');if(se)se.style.cssText='opacity:0;transform:translateY(12px)';
+  ['czN0','czN1','czN2'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent='0'});
+  var cs=document.getElementById('ctasRow');if(cs)cs.classList.remove('in');
+  var is=document.getElementById('isiRow');if(is)is.classList.remove('in');
+  $czSkeleton.classList.remove('visible');
+  if(czChartRAF){cancelAnimationFrame(czChartRAF);czChartRAF=null}
+  czChartProgress=0;
+  var cc=document.getElementById('czChart');if(cc){var cx=cc.getContext('2d');cx.clearRect(0,0,cc.width,cc.height)}
+}
+
+// ═══════════════════════════════════════════
+// CHAT MESSAGING
+// ═══════════════════════════════════════════
+function sendMsg() {
+  var t=$chatInput.value.trim(); if(!t) return;
+  triggerDemo(t); $chatInput.value='';
+}
+function triggerDemo(text) {
+  addUserMsg(text);
+  $quickBtns.classList.add('hidden-btns');
+  var lower=text.toLowerCase();
+  var isSafety=lower.indexOf('safety')!==-1||lower.indexOf('tolerab')!==-1||lower.indexOf('adverse')!==-1;
+  var typing=addTyping();
+  setTimeout(function(){
+    if(typing&&typing.parentNode)typing.parentNode.removeChild(typing);
+    if(isSafety){addAgentMsg('Here is the safety and tolerability profile from CLARITY — see the panel →');showSafetyZone()}
+    else{addAgentMsg('Here is the latest clinical evidence from CLARITY — see the panel →');showEfficacyZone()}
+  },1100);
+}
+function addUserMsg(t){appendMsg('<div class="msg u"><div class="bubble u">'+t+'</div></div>')}
+function addAgentMsg(t){appendMsg('<div class="msg"><div class="mav">M</div><div class="bubble a">'+t+'</div></div>')}
+function addTyping(){var d=document.createElement('div');d.className='msg';d.innerHTML='<div class="mav">M</div><div class="bubble a"><div class="typing"><span></span><span></span><span></span></div></div>';$msgs.appendChild(d);$msgs.scrollTop=$msgs.scrollHeight;return d}
+function appendMsg(html){var d=document.createElement('div');d.innerHTML=html;$msgs.appendChild(d.firstChild);$msgs.scrollTop=$msgs.scrollHeight}
+
+// ═══════════════════════════════════════════
+// CONTENT ZONES
+// ═══════════════════════════════════════════
+function showZone(show, hide, revealFn) {
+  if(hide.classList.contains('visible')){var fl=document.createElement('div');fl.className='zone-flash';hide.appendChild(fl);setTimeout(function(){if(fl.parentNode)fl.parentNode.removeChild(fl)},350)}
+  hide.classList.remove('visible');hide.classList.add('slide-out');
+  setTimeout(function(){hide.classList.remove('slide-out')},350);
+  show.classList.add('visible');$overlay.classList.add('expanded');$persistBtns.classList.add('visible');
+  setTimeout(revealFn,200);
+}
+
+// CZ Chart
+var czChartProgress=0, czChartRAF=null, czChartFired=false;
+function sizeCzChart(){
+  var c=document.getElementById('czChart');if(!c)return;
+  var dpr=window.devicePixelRatio||1,w=c.parentElement.offsetWidth,h=Math.round(w*.38);
+  c.style.width=w+'px';c.style.height=h+'px';c.width=w*dpr;c.height=h*dpr;
+}
+function animateCzChart(){
+  czChartProgress=0;var start=null,dur=1600;
+  function step(ts){if(!start)start=ts;czChartProgress=easeInOut(Math.min((ts-start)/dur,1));drawMainChart(document.getElementById('czChart'),czChartProgress);if(ts-start<dur)czChartRAF=requestAnimationFrame(step)}
+  if(czChartRAF)cancelAnimationFrame(czChartRAF);
+  czChartRAF=requestAnimationFrame(step);
+}
+
+function revealCard(id,dur){
+  var d=dur||700,el=document.getElementById(id);if(!el)return;
+  el.style.transition='opacity '+(d/1000)+'s ease, transform '+(d/1000)+'s cubic-bezier(.22,1,.36,1)';
+  el.style.opacity='1';el.style.transform='translateY(0)';
+  setTimeout(function(){el.style.transition=''},d);
+}
+
+function revealEfficacy(){
+  $czSkeleton.classList.remove('visible');
+  czChartFired=false;
+  // Badge
+  var bn=document.getElementById('badgeNum');if(bn)animateCounter(bn,487,900);
+  // Meta stagger
+  $czEfficacy.querySelectorAll('.cz-mi').forEach(function(mi,i){mi.classList.remove('visible');setTimeout(function(){mi.classList.add('visible')},120+i*80)});
+  // Stagger sequence
+  var steps=[
+    [100,function(){var s=document.getElementById('czSecEfficacy');if(s){s.style.opacity='1';s.style.transform='translateY(0)'}}],
+    [380,function(){revealCard('czSc0',650);animateCounter(document.getElementById('czN0'),74,900)}],
+    [580,function(){revealCard('czSc1',750);animateCounter(document.getElementById('czN1'),71,900)}],
+    [780,function(){revealCard('czSc2',850);animateCounter(document.getElementById('czN2'),58,900)}],
+    [1100,function(){revealCard('czChartCard');setTimeout(function(){sizeCzChart();animateCzChart()},80)}],
+    [3180,function(){var c=document.getElementById('ctasRow');if(c)c.classList.add('in')}],
+    [3420,function(){var i=document.getElementById('isiRow');if(i)i.classList.add('in')}]
+  ];
+  steps.forEach(function(s){setTimeout(s[1],s[0])});
+}
+
+function showEfficacyZone(){
+  $czSkeleton.classList.add('visible');
+  showZone($czEfficacy,$czSafety,revealEfficacy);
+}
+
+function showSafetyZone(){
+  // Reveal safety table rows on load
+  showZone($czSafety,$czEfficacy,function(){
+    var bn=document.getElementById('safetyBadge');if(bn)animateCounter(bn,487,900);
+    $czSafety.querySelectorAll('.cz-mi').forEach(function(mi,i){mi.classList.remove('visible');setTimeout(function(){mi.classList.add('visible')},120+i*80)});
+    // AE rows
+    $czSafety.querySelectorAll('.safe-row').forEach(function(r,i){r.classList.remove('row-visible');setTimeout(function(){r.classList.add('row-visible')},200+i*55)});
+  });
+}
+
+function switchToEfficacy(){
+  showEfficacyZone();
+  addAgentMsg('Showing efficacy data for IMMUNEXIS.');
+}
+
+// CZ Chart tooltip
+(function(){
+  var tip=document.getElementById('czTooltip'),canvas=document.getElementById('czChart');
+  if(!tip||!canvas)return;
+  var padL=68,padR=20,padT=28,padB=40,xPC=null;
+  function gx(){if(xPC)return xPC;var dpr=window.devicePixelRatio||1,W=canvas.width/dpr,cw=W-padL-padR,xS=padL+24,xE=padL+cw-24;xPC=weeks.map(function(_,i){return xS+(i/(weeks.length-1))*(xE-xS)});return xPC}
+  window.addEventListener('resize',function(){xPC=null});
+  canvas.addEventListener('mousemove',function(e){
+    if(czChartProgress<1){tip.style.opacity='0';return}
+    var r=canvas.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,dpr=window.devicePixelRatio||1,W=canvas.width/dpr,H=canvas.height/dpr,ch=H-padT-padB,yS=ch/90,xP=gx();
+    var hit=null,minD=18;
+    weeks.forEach(function(w,i){var px=xP[i]*(r.width/W),py=(padT+ch-immunexis[i]*yS)*(r.height/H),d=Math.sqrt((mx-px)*(mx-px)+(my-py)*(my-py));if(d<minD){hit={w:w,i:immunexis[i],p:placebo[i],px:px,py:py};minD=d}});
+    if(hit){tip.innerHTML='<span style="color:#6BBFAB">'+hit.i+'%</span> IMMUNEXIS · <span style="color:#8a92a0">'+hit.p+'%</span> Placebo · '+hit.w;tip.style.left=hit.px+'px';tip.style.top=hit.py+'px';tip.style.opacity='1'}else{tip.style.opacity='0'}
+  });
+  canvas.addEventListener('mouseleave',function(){tip.style.opacity='0'});
+})();
+
+
+// ── Chat panel ──
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+  document.getElementById('chatFab').classList.toggle('hidden', chatOpen);
+}
+function chatAction(text) {
+  const msgs = document.getElementById('chatMsgs');
+  const u = document.createElement('div');
+  u.className = 'msg-bubble user';
+  u.textContent = text;
+  msgs.appendChild(u);
+  document.getElementById('quickActions').style.display = 'none';
+  const t = document.createElement('div');
+  t.className = 'typing-dots';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(t);
+  msgs.scrollTop = msgs.scrollHeight;
+  const replies = {
+    'Learn about IMMUNEXIS': 'IMMUNEXIS\u00ae is our breakthrough IL-31 receptor antagonist approved for pediatric atopic dermatitis. In the CLARITY Phase III trial, 72% of patients achieved EASI-75 at Week 16. Would you like to see the full prescribing information?',
+    'Find clinical trials': 'We have 15 active clinical trials across immunology, cardiovascular, neuroscience, and oncology. I can help you find trials based on your condition and location. What therapeutic area interests you?',
+    'Talk to a representative': "I'd be happy to connect you with a Makana Health representative. You can reach our medical information team at 1-800-MAKANA or I can have someone contact you. Would you like to provide your email?",
+    'View product safety info': 'I can provide safety information for any of our approved products: IMMUNEXIS\u00ae, CARDIOGUARD\u00ae, or any pipeline compound. Which product are you interested in?'
+  };
+  setTimeout(() => {
+    t.remove();
+    const b = document.createElement('div');
+    b.className = 'msg-bubble bot';
+    b.textContent = replies[text] || "I'd be happy to help with that. Let me look into it for you.";
+    msgs.appendChild(b);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1500);
+}
+
+
+// ── Gateway portal ──
+function openGateway() {
+  document.getElementById('gatewayOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function closeGateway() {
+  document.getElementById('gatewayOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showHcpLogin() {
+  document.getElementById('gwMain').style.display = 'none';
+  document.getElementById('gwHcpLogin').classList.add('active');
+}
+function backToGateway() {
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function handleHcpLogin(e) {
+  e.preventDefault();
+  var email = document.getElementById('hcpEmail').value;
+  if (email) { e.target.classList.add('hidden'); document.getElementById('hcpLoginSuccess').classList.remove('hidden'); setTimeout(function(){ window.location.href='hcp-portal.html'; }, 2500); }
+}
+</script>
+
+<!-- ═══════════ ASTRO CLINICAL EVIDENCE BUTTON ═══════════ -->
+<button id="astroBtn" onclick="openAstroOverlay()" aria-label="Explore Clinical Evidence" data-track="astro_button_click" title="Explore Clinical Evidence">
+  <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/0804de5c-f3f3-49b6-badd-e563e47bfdad/e760e0c7-3518-474b-b4f8-09bc7eede3c2.png" alt="Astro — Explore Clinical Evidence">
+</button>
+
+<!-- ═══════════ ASTRO CLINICAL EVIDENCE OVERLAY ═══════════ -->
+<div id="astroOverlay">
+  <div class="ao-backdrop" onclick="closeAstroOverlay()"></div>
+  <div class="ao-inner">
+    <button class="ao-close-btn" onclick="closeAstroOverlay()" title="Close" aria-label="Close evidence viewer" data-track="astro_overlay_close">&#10005;</button>
+
+    <!-- Chat Panel -->
+    <div class="ao-chat-panel">
+      <div class="ao-chat-hdr">
+        <div class="ao-chat-av">M</div>
+        <div class="ao-chat-hdr-info"><h4>Makana Assistant</h4><p>Powered by Agentforce</p></div>
+        <div class="ao-online-dot"></div>
+      </div>
+      <div class="ao-msgs" id="aoMsgs">
+        <div class="ao-msg"><div class="ao-mav">M</div><div class="ao-bubble a">Hello! I can help you explore clinical evidence and prescribing information for IMMUNEXIS. What would you like to know?</div></div>
+      </div>
+      <div class="ao-quick-btns" id="aoQuickBtns">
+        <div class="ao-qa-label">Suggested questions</div>
+        <button class="ao-opt" onclick="MakanaAdaptive.triggerDemo('What clinical trial data supports IMMUNEXIS with pediatric patients?')">Clinical trial data for pediatric patients</button>
+        <button class="ao-opt" onclick="MakanaAdaptive.triggerDemo('Safety &amp; tolerability profile')">Safety &amp; tolerability profile</button>
+        <button class="ao-opt" onclick="MakanaAdaptive.triggerDemo('Long-term durability data')">Long-term durability data</button>
+      </div>
+      <div class="ao-persist-btns" id="aoPersistBtns">
+        <div class="ao-qa-label">Switch view</div>
+        <button class="ao-opt" onclick="MakanaAdaptive.triggerDemo('What clinical trial data supports IMMUNEXIS with pediatric patients?')">&#128202; Efficacy data</button>
+        <button class="ao-opt" onclick="MakanaAdaptive.triggerDemo('What is the safety and tolerability profile for IMMUNEXIS?')">&#128737;&#65039; Safety profile</button>
+      </div>
+      <div class="ao-chat-input-row">
+        <input class="ao-chat-input" id="aoChatInput" type="text" placeholder="Ask about IMMUNEXIS..." aria-label="Ask about IMMUNEXIS" onkeydown="if(event.key==='Enter')MakanaAdaptive.sendMsg()">
+        <button class="ao-chat-send" onclick="MakanaAdaptive.sendMsg()" aria-label="Send message">&#8593;</button>
+      </div>
+    </div>
+
+    <!-- Content Slot -->
+    <div class="ao-content-slot">
+      <!-- Efficacy Zone -->
+      <div class="ao-cz-wrap" id="aoCzWrap">
+        <div class="ao-sk-wrap" id="aoCzSkeleton">
+          <div class="ao-sk-row wide"></div>
+          <div class="ao-sk-card-row"><div class="ao-sk-card"></div><div class="ao-sk-card"></div><div class="ao-sk-card"></div></div>
+          <div class="ao-sk-chart"></div>
+          <div class="ao-sk-row med"></div>
+          <div class="ao-sk-row full"></div>
+        </div>
+        <div class="ao-cz">
+          <div class="ao-cz-hdr">
+            <div class="ao-cz-logo"><img src="https://makana-health-mc.s3.us-east-2.amazonaws.com/MakanaHealth-primary-logo-02.png" alt="Makana Health"></div>
+            <div class="ao-cz-eyebrow">Clinical Evidence</div>
+            <div class="ao-cz-title-row">
+              <div><div class="ao-cz-drug">IMMUNEXIS<sup>&reg;</sup></div><div class="ao-cz-trial">CLARITY<sup class="ao-sup-ref">1</sup> Phase 3 Trial</div></div>
+              <div class="ao-cz-badge"><div class="ao-cz-badge-n">n=<span class="ao-badge-num">487</span></div><div class="ao-cz-badge-lbl">Patients</div></div>
+            </div>
+            <div class="ao-cz-meta">
+              <div class="ao-cz-mi"><div class="ao-cz-ml">Population</div><div class="ao-cz-mv">Pediatric patients aged 6&#8211;17</div></div>
+              <div class="ao-cz-mi"><div class="ao-cz-ml">Duration</div><div class="ao-cz-mv">52 weeks</div></div>
+              <div class="ao-cz-mi"><div class="ao-cz-ml">Primary Endpoint</div><div class="ao-cz-mv">IGA 0/1 at Week 16</div></div>
+            </div>
+          </div>
+
+          <div class="ao-cz-body">
+            <div class="ao-cz-section-head" id="aoSecEfficacy" style="opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s;">Key Efficacy Outcomes &#8212; CLARITY Phase 3</div>
+
+            <div class="ao-stat-grid">
+              <div class="ao-sc ao-card-hover" id="aoSc0">
+                <div class="ao-sc-lbl">EASI-75 at Week 16</div>
+                <div class="ao-sc-num"><span id="aoN0">0</span><span class="unit">%</span></div>
+                <div class="ao-sc-desc">&#8805;75% improvement in Eczema Area and Severity Index at Week 16</div>
+                <div class="ao-sc-sub"><b>16%</b> Placebo</div>
+                <div class="ao-sc-pv">p&lt;0.001 vs placebo</div>
+              </div>
+              <div class="ao-sc ao-card-hover" id="aoSc1">
+                <div class="ao-sc-lbl">EASI-75 at Week 52</div>
+                <div class="ao-sc-num"><span id="aoN1">0</span><span class="unit">%</span></div>
+                <div class="ao-sc-desc">Durable response maintained through end of study extension period</div>
+                <div class="ao-sc-sub"><b>13%</b> Placebo</div>
+                <div class="ao-sc-pv">p&lt;0.001 vs placebo</div>
+              </div>
+              <div class="ao-sc ao-card-hover" id="aoSc2">
+                <div class="ao-sc-lbl">IGA 0/1 at Week 16</div>
+                <div class="ao-sc-num"><span id="aoN2">0</span><span class="unit">%</span></div>
+                <div class="ao-sc-desc">Clear or almost clear skin at Week 16 (co-primary endpoint)</div>
+                <div class="ao-sc-sub"><b>14%</b> Placebo</div>
+                <div class="ao-sc-pv">p&lt;0.001 vs placebo</div>
+              </div>
+            </div>
+
+            <div class="ao-chart-card ao-card-hover" id="aoChartCard">
+              <div class="ao-chart-title">EASI-75 Response Over Time</div>
+              <div class="ao-chart-desc">Proportion of patients achieving &#8805;75% improvement in EASI score &#8212; Week 4 through Week 52</div>
+              <div class="ao-chart-wrap"><canvas id="aoChart"></canvas><div class="ao-chart-tooltip" id="aoChartTooltip"></div></div>
+              <div class="ao-chart-legend">
+                <div class="ao-legend-item"><div class="ao-legend-line"></div>IMMUNEXIS</div>
+                <div class="ao-legend-item"><div class="ao-legend-dash"></div>Placebo</div>
+              </div>
+              <div class="ao-chart-note">EASI-75 rates: 32% (Wk4) &#8594; 55% (Wk8) &#8594; 74% (Wk16) &#8594; 71% (Wk52) &middot; p&lt;0.001 vs placebo at all timepoints</div>
+            </div>
+
+            <div class="ao-study ao-card-hover" id="aoStudyCard">
+              <div class="ao-si">&#128300;</div>
+              <div><div class="ao-sl">Study Design</div><div class="ao-st">Randomized, double-blind, placebo-controlled study evaluating IMMUNEXIS in pediatric patients aged 6&#8211;17 with moderate-to-severe atopic dermatitis (IGA &#8805;3). 16-week induction + 36-week extension period.</div></div>
+            </div>
+
+            <div class="ao-ctas-static ao-ctasRow" id="aoCtasRow">
+              <button class="ao-cta1" onclick="MakanaAdaptive.openModal('CLARITY Phase 3 &#8212; Full Results','The complete 52-week efficacy and safety dataset is available to registered HCPs. Contact your Makana Health representative to request access.',this)" data-track="astro_download_study">&#8595; Download Full Study Results</button>
+              <button class="ao-cta2" onclick="MakanaAdaptive.triggerDemo('What is the safety and tolerability profile for IMMUNEXIS?')" data-track="astro_switch_safety">Safety &amp; tolerability &#10095;</button>
+            </div>
+
+            <div class="ao-isi ao-isiRow" id="aoIsiRow"><sup>1</sup>CLARITY: Children&#8217;s Long-term Atopic dermatitis Response ITY trial. Data from the CLARITY Phase 3 trial. IMMUNEXIS [Prescribing Information]. For complete safety and efficacy data, see full Prescribing Information. This content is for healthcare professional use only.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety Zone -->
+      <div class="ao-cz-wrap" id="aoSafetyWrap">
+        <div class="ao-cz">
+          <div class="ao-cz-hdr">
+            <div class="ao-cz-logo"><img src="https://makana-health-mc.s3.us-east-2.amazonaws.com/MakanaHealth-primary-logo-02.png" alt="Makana Health"></div>
+            <div class="ao-cz-eyebrow">Safety &amp; Tolerability</div>
+            <div class="ao-cz-title-row">
+              <div><div class="ao-cz-drug">IMMUNEXIS<sup>&reg;</sup></div><div class="ao-cz-trial">CLARITY<sup class="ao-sup-ref">1</sup> Phase 3 &#8212; Safety Data at Week 16 &amp; Week 52</div></div>
+              <div class="ao-cz-badge"><div class="ao-cz-badge-n">n=<span class="ao-badge-num">487</span></div><div class="ao-cz-badge-lbl">Patients</div></div>
+            </div>
+            <div class="ao-cz-meta">
+              <div class="ao-cz-mi"><div class="ao-cz-ml">Population</div><div class="ao-cz-mv">Pediatric patients aged 6&#8211;17</div></div>
+              <div class="ao-cz-mi"><div class="ao-cz-ml">Double-blind period</div><div class="ao-cz-mv">16 weeks</div></div>
+              <div class="ao-cz-mi"><div class="ao-cz-ml">Total follow-up</div><div class="ao-cz-mv">52 weeks</div></div>
+            </div>
+          </div>
+          <div class="ao-safety-tabs" id="aoSafetyTabs" role="tablist">
+            <button class="ao-s-tab active" role="tab" aria-selected="true" onclick="MakanaAdaptive.showSTab('ao-s-tab-safety',this)" data-track="astro_tab_safety">Safety Data</button>
+            <button class="ao-s-tab" role="tab" aria-selected="false" onclick="MakanaAdaptive.showSTab('ao-s-tab-study',this)" data-track="astro_tab_study">Study Design</button>
+            <button class="ao-s-tab" role="tab" aria-selected="false" onclick="MakanaAdaptive.showSTab('ao-s-tab-label',this)" data-track="astro_tab_label">Label Profile</button>
+            <div class="ao-tab-ink" id="aoTabInk"></div>
+          </div>
+          <div class="ao-s-panel active" id="ao-s-tab-safety">
+            <div class="ao-no-grid">
+              <div class="ao-no-card ao-card-hover"><div class="ao-no-tag">No requirement</div><div class="ao-no-title">Routine Lab Monitoring</div><div class="ao-no-body">No routine blood work required &#8212; unlike JAK inhibitors and methotrexate, reducing burden for pediatric patients and families.</div></div>
+              <div class="ao-no-card ao-card-hover"><div class="ao-no-tag">No increased risk</div><div class="ao-no-title">Serious Infections</div><div class="ao-no-body">IL-4/IL-13 blockade preserves innate immune defenses. Serious infection rate numerically lower than placebo through Week 52.</div></div>
+              <div class="ao-no-card ao-card-hover"><div class="ao-no-tag">No restriction</div><div class="ao-no-title">Live Vaccines</div><div class="ao-no-body">No contraindication to live vaccines &#8212; critical for pediatric vaccination schedules, unlike systemic immunosuppressants.</div></div>
+            </div>
+            <div class="ao-cz-section-head" id="aoSrAehed">Adverse Events of Interest</div>
+            <div class="ao-safe-table-wrap ao-card-hover" id="aoSrTable">
+              <div class="ao-safe-table-head">
+                <div class="ao-sth-period"><div class="ao-sth-period-label">Week 16 &middot; Double-blind period</div><div class="ao-sth-period-name">IMMUNEXIS vs Placebo</div></div>
+                <div class="ao-sth-period ao-sth-divider"><div class="ao-sth-period-label">IMMUNEXIS</div><div class="ao-sth-period-name sm">(n=325) % (n)</div></div>
+                <div class="ao-sth-period ao-sth-divider"><div class="ao-sth-period-label">Placebo</div><div class="ao-sth-period-name sm">(n=162) % (n)</div></div>
+              </div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Serious AEs</div><div class="ao-safe-row-val ao-sv-good">2.1% (7)</div><div class="ao-safe-row-val ao-sv-pbo">2.8% (5)</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Any infection</div><div class="ao-safe-row-val ao-sv-good">11.4% (37)</div><div class="ao-safe-row-val ao-sv-pbo">11.7% (19)</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Any serious infection</div><div class="ao-safe-row-val ao-sv-good">0.6% (2)</div><div class="ao-safe-row-val ao-sv-pbo">1.2% (2)</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Active TB</div><div class="ao-safe-row-val ao-sv-zero">0</div><div class="ao-safe-row-val ao-sv-zero">0</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Any malignancy</div><div class="ao-safe-row-val ao-sv-zero">0</div><div class="ao-safe-row-val ao-sv-zero">0</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">IBD</div><div class="ao-safe-row-val ao-sv-zero">0</div><div class="ao-safe-row-val ao-sv-zero">0</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Depression / anxiety</div><div class="ao-safe-row-val ao-sv-zero">0</div><div class="ao-safe-row-val ao-sv-zero">0</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Candidiasis</div><div class="ao-safe-row-val ao-sv-zero">0</div><div class="ao-safe-row-val ao-sv-zero">0</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Conjunctivitis <span class="ao-class-effect">(class effect)</span></div><div class="ao-safe-row-val ao-sv-imm">9.2% (30)</div><div class="ao-safe-row-val ao-sv-pbo">3.1% (5)</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Injection site reaction <span class="ao-class-effect">(class effect)</span></div><div class="ao-safe-row-val ao-sv-imm">18.2% (59)</div><div class="ao-safe-row-val ao-sv-pbo">7.4% (12)</div></div>
+              <div class="ao-safe-row"><div class="ao-safe-row-label">Discontinuation due to AE</div><div class="ao-safe-row-val ao-sv-good">1.8% (6)</div><div class="ao-safe-row-val ao-sv-pbo">2.2% (4)</div></div>
+            </div>
+            <div class="ao-ctas-static" id="aoSrCtas">
+              <button class="ao-cta1" onclick="MakanaAdaptive.openModal('CLARITY Phase 3 &#8212; Safety Report','The full safety data report including subgroup analyses is available to registered HCPs. Contact your Makana Health representative to request access.',this)" data-track="astro_download_safety">&#8595; Download Full Safety Report</button>
+              <button class="ao-cta2" onclick="MakanaAdaptive.switchToEfficacy()" data-track="astro_switch_efficacy">Efficacy data &#10095;</button>
+            </div>
+            <div class="ao-isi" id="aoSrIsi"><sup>1</sup>CLARITY: Children&#8217;s Long-term Atopic dermatitis Response ITY trial. AE=adverse event &middot; IBD=inflammatory bowel disease &middot; TB=tuberculosis. Data from CLARITY Phase 3 (double-blind period). Conjunctivitis and injection site reactions are class-effect AEs. No routine lab monitoring required. IMMUNEXIS [Prescribing Information].</div>
+          </div>
+          <div class="ao-s-panel" id="ao-s-tab-study">
+            <div class="ao-cz-section-head">CLARITY Phase 3 &#8212; Study Design</div>
+            <div class="ao-tl-wrap ao-card-hover">
+              <div class="ao-tl-title">CLARITY &#8212; Study Design</div>
+              <svg width="100%" viewBox="0 0 700 180" style="display:block;overflow:visible;font-family:'Segoe UI',sans-serif;">
+                <rect x="0" y="55" width="90" height="70" rx="8" fill="#4a5263"/>
+                <text x="45" y="78" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(255,255,255,0.55)" letter-spacing="1">RANDOMIZED</text>
+                <text x="45" y="96" text-anchor="middle" font-size="14" font-weight="800" fill="white">2:1</text>
+                <text x="45" y="112" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.7)">n=487</text>
+                <text x="100" y="44" font-size="12" font-weight="700" fill="#7c6fa0">IMMUNEXIS 300 mg Q4W</text>
+                <text x="100" y="58" font-size="10" fill="#8a92a0">(n=325)</text>
+                <line x1="100" y1="75" x2="695" y2="75" stroke="#7c6fa0" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="100" cy="75" r="6" fill="#7c6fa0" stroke="white" stroke-width="2"/>
+                <circle cx="195" cy="75" r="5" fill="#7c6fa0" stroke="white" stroke-width="2"/>
+                <circle cx="385" cy="75" r="6" fill="#7c6fa0" stroke="white" stroke-width="2"/>
+                <circle cx="540" cy="75" r="5" fill="#7c6fa0" stroke="white" stroke-width="2"/>
+                <circle cx="660" cy="75" r="5" fill="#7c6fa0" stroke="white" stroke-width="2"/>
+                <circle cx="695" cy="75" r="6" fill="#7c6fa0" stroke="white" stroke-width="2"/>
+                <text x="100" y="118" font-size="12" font-weight="600" fill="#1a1f2e">Placebo</text>
+                <text x="160" y="118" font-size="10" fill="#8a92a0">(n=162)</text>
+                <line x1="100" y1="133" x2="385" y2="133" stroke="#c8cdd6" stroke-width="3.5" stroke-dasharray="6,4"/>
+                <line x1="385" y1="133" x2="695" y2="133" stroke="#4caa8f" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="100" cy="133" r="5" fill="#c8cdd6" stroke="white" stroke-width="2"/>
+                <polygon points="382,127 394,133 382,139" fill="#4caa8f"/>
+                <text x="390" y="120" font-size="9.5" font-weight="700" fill="#4caa8f">&#8594; Switch to IMMUNEXIS</text>
+                <circle cx="695" cy="133" r="5" fill="#4caa8f" stroke="white" stroke-width="2"/>
+                <line x1="100" y1="160" x2="695" y2="160" stroke="#e2e5eb" stroke-width="1.5"/>
+                <line x1="100" y1="157" x2="100" y2="163" stroke="#8a92a0" stroke-width="1.5"/>
+                <text x="100" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5263">Wk 0</text>
+                <line x1="195" y1="157" x2="195" y2="163" stroke="#e2e5eb" stroke-width="1"/>
+                <text x="195" y="174" text-anchor="middle" font-size="11" fill="#8a92a0">Wk 4</text>
+                <line x1="385" y1="157" x2="385" y2="163" stroke="#8a92a0" stroke-width="1.5"/>
+                <text x="385" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5263">Wk 16</text>
+                <line x1="540" y1="157" x2="540" y2="163" stroke="#e2e5eb" stroke-width="1"/>
+                <text x="540" y="174" text-anchor="middle" font-size="11" fill="#8a92a0">Wk 28</text>
+                <line x1="660" y1="157" x2="660" y2="163" stroke="#e2e5eb" stroke-width="1"/>
+                <text x="660" y="174" text-anchor="middle" font-size="11" fill="#8a92a0">Wk 40</text>
+                <line x1="695" y1="157" x2="695" y2="163" stroke="#8a92a0" stroke-width="1.5"/>
+                <text x="695" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#4a5263">Wk 52</text>
+                <text x="242" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8a92a0" letter-spacing="0.5">PERIOD A &#8212; DOUBLE-BLIND</text>
+                <text x="540" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8a92a0" letter-spacing="0.5">PERIOD B &#8212; OPEN-LABEL</text>
+                <line x1="385" y1="142" x2="385" y2="155" stroke="#d0d4db" stroke-width="1" stroke-dasharray="3,2"/>
+              </svg>
+              <div class="ao-tl-desc">Randomized, double-blind, placebo-controlled, multicenter Phase 3 trial. Pediatric patients aged 6&#8211;17 with moderate-to-severe atopic dermatitis (IGA &#8805;3). After Week 16, all patients received IMMUNEXIS in open-label extension through Week 52. Co-primary endpoints: IGA 0/1 and EASI-75 at Week 16.</div>
+            </div>
+            <div class="ao-ctas-static" id="aoSdCtas">
+              <button class="ao-cta1" onclick="MakanaAdaptive.openModal('CLARITY &#8212; Study Design Summary','The study design document including protocol details and endpoint definitions is available to registered HCPs. Contact your Makana Health representative.',this)" data-track="astro_download_design">&#8595; Download Study Design</button>
+              <button class="ao-cta2" onclick="MakanaAdaptive.switchToEfficacy()" data-track="astro_switch_efficacy_from_study">Efficacy data &#10095;</button>
+            </div>
+          </div>
+          <div class="ao-s-panel" id="ao-s-tab-label">
+            <div class="ao-warn-box ao-card-hover"><div class="ao-warn-icon">&#9888;&#65039;</div><div><div class="ao-warn-title">Warnings &amp; Precautions Include</div><div class="ao-warn-body">Hypersensitivity reactions &nbsp;&middot;&nbsp; Infections &#8212; evaluate for TB prior to initiation &nbsp;&middot;&nbsp; Tuberculosis screening required &nbsp;&middot;&nbsp; Immunizations &#8212; update vaccines per guidelines before starting therapy</div></div></div>
+            <div class="ao-nowarn-box ao-card-hover"><div class="ao-warn-icon">&#9989;</div><div><div class="ao-nowarn-title">No Labeled Warnings or Precautions on:</div><div class="ao-nowarn-body"><strong>Malignancy</strong> &nbsp;&middot;&nbsp; <strong>IBD</strong> &nbsp;&middot;&nbsp; <strong>Depression or Suicidality</strong> &nbsp;&middot;&nbsp; <strong>Candidiasis</strong> &nbsp;&middot;&nbsp; <strong>Hepatotoxicity</strong> &nbsp;&middot;&nbsp; <strong>Thrombosis or MACE</strong></div></div></div>
+            <div class="ao-cz-section-head">Monitoring Requirements</div>
+            <div class="ao-no-grid">
+              <div class="ao-no-card ao-card-hover"><div class="ao-no-tag">No requirement</div><div class="ao-no-title">Routine Lab Monitoring</div><div class="ao-no-body">No blood counts, LFTs, or lipid panels required &#8212; unlike JAK inhibitors and methotrexate.</div></div>
+              <div class="ao-no-card ao-card-hover"><div class="ao-no-tag">No requirement</div><div class="ao-no-title">Liver Testing</div><div class="ao-no-body">No labeled liver testing required for initiation or during treatment.</div></div>
+              <div class="ao-no-card ao-card-hover"><div class="ao-no-tag">No restriction</div><div class="ao-no-title">Live Vaccines</div><div class="ao-no-body">No contraindication to live vaccines &#8212; preserving standard pediatric immunization schedules.</div></div>
+            </div>
+            <div class="ao-ctas-static"><button class="ao-cta1" onclick="MakanaAdaptive.openModal('IMMUNEXIS&reg; Prescribing Information','The full Prescribing Information including complete Warnings, Precautions, and Adverse Reactions is available through the HCP portal.',this)" data-track="astro_view_prescribing_info">&#8595; View Full Prescribing Information</button><button class="ao-cta2" onclick="MakanaAdaptive.switchToEfficacy()" data-track="astro_switch_efficacy_from_label">Efficacy data &#10095;</button></div>
+            <div class="ao-isi" id="aoLpIsi">AE=adverse event &middot; IBD=inflammatory bowel disease &middot; MACE=major adverse cardiac events &middot; TB=tuberculosis. IMMUNEXIS [Prescribing Information]. For healthcare professional use only.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scoped Modal -->
+    <div class="ao-modal-backdrop" id="aoReqModal">
+      <div class="ao-modal">
+        <div class="ao-modal-icon">&#128203;</div>
+        <div class="ao-modal-title" id="aoModalTitle">Request Document</div>
+        <div class="ao-modal-body" id="aoModalBody">This document is available to registered healthcare providers. Contact your Makana Health representative or submit a request through the HCP portal.</div>
+        <div class="ao-modal-actions">
+          <button class="ao-modal-btn-primary" onclick="MakanaAdaptive.closeModal()">Request Access</button>
+          <button class="ao-modal-btn-secondary" onclick="MakanaAdaptive.closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ AGENTFORCE CHAT FAB ═══════════ -->
+<button id="chatFab" class="fab-orb" onclick="toggleChat()" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+</button>
+
+<!-- ═══════════ CHAT PANEL ═══════════ -->
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-hdr">
+    <div class="chat-avatar">M</div>
+    <div>
+      <h4 class="text-[15px] font-semibold text-white leading-tight">Makana Assistant</h4>
+      <p class="text-[11px] text-white/50">Powered by Agentforce</p>
+    </div>
+    <div class="online-dot"></div>
+    <button onclick="toggleChat()" class="ml-3 text-white/50 hover:text-white transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg-bubble bot">Hello! I'm Makana's AI assistant, powered by Agentforce. How can I help you today?</div>
+  </div>
+  <div class="quick-actions" id="quickActions">
+    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Quick Actions</p>
+    <button class="q-action" onclick="chatAction('Learn about IMMUNEXIS')">Learn about IMMUNEXIS&reg;</button>
+    <button class="q-action" onclick="chatAction('Find clinical trials')">Find clinical trials</button>
+    <button class="q-action" onclick="chatAction('Talk to a representative')">Talk to a representative</button>
+    <button class="q-action" onclick="chatAction('View product safety info')">View product safety info</button>
+  </div>
+</div>
+
+<!-- ═══════════ ASTRO CLINICAL EVIDENCE VIEWER — SCOPED JS ═══════════ -->
+<script>
+// ═══ ASTRO OVERLAY OPEN/CLOSE ═══
+var _aoOpenTime = null;
+
+function openAstroOverlay() {
+  // Data layer tracking
+  if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'click', action:'astro_button_open', label:'Adaptive Evidence Viewer' }); }
+  _aoOpenTime = Date.now();
+
+  var ov = document.getElementById('astroOverlay');
+  var btn = document.getElementById('astroBtn');
+  btn.style.display = 'none';
+  ov.classList.add('ao-visible');
+  // Force reflow for transition
+  void ov.offsetWidth;
+  ov.classList.add('ao-open');
+
+  // Shimmer quick-action buttons on open
+  MakanaAdaptive.shimmerQuickBtns();
+
+  // Auto-reveal efficacy zone after overlay animation completes
+  setTimeout(function() {
+    var czWrap = document.getElementById('aoCzWrap');
+    if (czWrap && !czWrap.classList.contains('visible')) {
+      czWrap.classList.add('visible');
+      // Trigger the reveal sequence for stat cards and chart
+      var skeleton = document.getElementById('aoCzSkeleton');
+      if (skeleton) skeleton.classList.add('visible');
+      // Small delay then reveal content cards
+      setTimeout(function() {
+        ['aoSc0','aoSc1','aoSc2','aoChartCard','aoStudyCard'].forEach(function(id, i) {
+          var el = document.getElementById(id);
+          if (el) {
+            setTimeout(function() {
+              el.classList.add('in');
+              setTimeout(function() { el.classList.add('revealed'); }, 400);
+            }, i * 120);
+          }
+        });
+        // Show CTAs and ISI
+        var ctasRow = document.getElementById('aoCtasRow');
+        var isiRow = document.getElementById('aoIsiRow');
+        if (ctasRow) setTimeout(function() { ctasRow.classList.add('in'); }, 600);
+        if (isiRow) setTimeout(function() { isiRow.classList.add('in'); }, 700);
+        // Show persistent buttons
+        var persist = document.getElementById('aoPersistBtns');
+        if (persist) persist.classList.add('visible');
+      }, 300);
+    }
+  }, 500);
+}
+
+function closeAstroOverlay() {
+  var ov = document.getElementById('astroOverlay');
+  var btn = document.getElementById('astroBtn');
+
+  // Track time spent
+  if (window.makanaDataLayer && _aoOpenTime) {
+    var seconds = Math.round((Date.now() - _aoOpenTime) / 1000);
+    window.makanaDataLayer.push({ event:'engagement', action:'astro_overlay_close', label:'Adaptive Evidence Viewer', value:seconds, metadata:{ time_spent_seconds:seconds } });
+    _aoOpenTime = null;
+  }
+
+  ov.classList.remove('ao-open');
+  setTimeout(function() {
+    ov.classList.remove('ao-visible');
+    btn.style.display = 'flex';
+    // Reset internal state
+    MakanaAdaptive.resetOverlay();
+  }, 350);
+}
+
+// ═══ MAKANA ADAPTIVE NAMESPACE ═══
+window.MakanaAdaptive = (function() {
+  'use strict';
+
+  // ─── DOM refs (lazy-init) ───
+  var $ = {};
+  var inited = false;
+
+  function init() {
+    if (inited) return;
+    $.overlay     = document.getElementById('astroOverlay');
+    $.czWrap      = document.getElementById('aoCzWrap');
+    $.safetyWrap  = document.getElementById('aoSafetyWrap');
+    $.msgs        = document.getElementById('aoMsgs');
+    $.quickBtns   = document.getElementById('aoQuickBtns');
+    $.persistBtns = document.getElementById('aoPersistBtns');
+    $.ctasRow     = document.getElementById('aoCtasRow');
+    $.isiRow      = document.getElementById('aoIsiRow');
+    $.czSkeleton  = document.getElementById('aoCzSkeleton');
+    $.secEfficacy = document.getElementById('aoSecEfficacy');
+    $.chartCard   = document.getElementById('aoChartCard');
+    $.srTable     = document.getElementById('aoSrTable');
+    $.n0          = document.getElementById('aoN0');
+    $.n1          = document.getElementById('aoN1');
+    $.n2          = document.getElementById('aoN2');
+    $.chart       = document.getElementById('aoChart');
+    $.chartTip    = document.getElementById('aoChartTooltip');
+    $.chatInput   = document.getElementById('aoChatInput');
+    $.chatSend    = $.overlay.querySelector('.ao-chat-send');
+    $.chatAv      = $.overlay.querySelector('.ao-chat-av');
+    $.safetyTabs  = document.getElementById('aoSafetyTabs');
+    $.tabInk      = document.getElementById('aoTabInk');
+    $.stSafety    = document.getElementById('ao-s-tab-safety');
+    $.reqModal    = document.getElementById('aoReqModal');
+    $.modalTitle  = document.getElementById('aoModalTitle');
+    $.modalBody   = document.getElementById('aoModalBody');
+    $.modalEl     = $.reqModal.querySelector('.ao-modal');
+    inited = true;
+
+    // Init card hidden state
+    ['aoSc0','aoSc1','aoSc2','aoChartCard','aoStudyCard'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; }
+    });
+
+    // Init ink position
+    setTimeout(function() {
+      var firstTab = $.safetyTabs.querySelector('.ao-s-tab.active');
+      if (firstTab) positionInk(firstTab);
+    }, 0);
+
+    // Hover interactions
+    setupHoverInteractions();
+
+    // Chart tooltip
+    setupChartTooltip();
+  }
+
+  // ─── Easing ───
+  function easeInOut(t) { return t < .5 ? 2*t*t : -1+(4-2*t)*t; }
+
+  // ─── Chart data ───
+  var immunexis = [32, 55, 74, 71];
+  var placebo   = [7,  11, 16, 13];
+  var weeks     = ['Week 4','Week 8','Week 16','Week 52'];
+  var chartProgress = 0;
+  var chartRAF = null;
+  var chartHoverFired = false;
+  var tableHoverFired = false;
+
+  function sizeCanvas() {
+    var canvas = $.chart;
+    if (!canvas) return;
+    var dpr = window.devicePixelRatio || 1;
+    var w = canvas.parentElement.offsetWidth;
+    var h = Math.round(w * 0.38);
+    canvas.style.width  = w + 'px';
+    canvas.style.height = h + 'px';
+    canvas.width  = w * dpr;
+    canvas.height = h * dpr;
+  }
+
+  function drawChart(progress) {
+    var canvas = $.chart;
+    if (!canvas) return;
+    var dpr = window.devicePixelRatio || 1;
+    var W = canvas.width / dpr;
+    var H = canvas.height / dpr;
+    var ctx = canvas.getContext('2d');
+    var FONT = '12px Segoe UI, sans-serif';
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    var padL=68, padR=20, padT=28, padB=40;
+    var cw = W-padL-padR, ch = H-padT-padB;
+    var yScale = ch / 90;
+
+    var gridVals = [0, 25, 50, 75];
+    gridVals.forEach(function(v) {
+      var y = padT + ch - v * yScale;
+      ctx.beginPath(); ctx.moveTo(padL,y); ctx.lineTo(padL+cw,y);
+      ctx.strokeStyle = v===0 ? '#e2e5eb' : '#f0f2f5';
+      ctx.lineWidth   = v===0 ? 1.5 : 1;
+      ctx.setLineDash(v===0 ? [] : [5,6]);
+      ctx.stroke(); ctx.setLineDash([]);
+      ctx.font = FONT;
+      ctx.fillStyle = '#8a92a0';
+      ctx.textAlign = 'right';
+      ctx.fillText(v+'%', padL-10, y+4.5);
+    });
+
+    var xStart = padL + 24;
+    var xEnd   = padL + cw - 24;
+    var xPos = weeks.map(function(_,i){ return xStart + (i/(weeks.length-1))*(xEnd-xStart); });
+
+    ctx.font = FONT;
+    ctx.fillStyle = '#4a5263';
+    ctx.textAlign = 'center';
+    weeks.forEach(function(w,i){ ctx.fillText(w, xPos[i], H-8); });
+
+    var segs = weeks.length-1;
+    var drawn = progress * segs;
+
+    var immPts = immunexis.map(function(v,i){ return {x:xPos[i], y:padT + ch - v*yScale}; });
+    var plaPts = placebo.map(function(v,i)  { return {x:xPos[i], y:padT + ch - v*yScale}; });
+
+    function drawLine(p, color, dash, lw) {
+      ctx.strokeStyle=color; ctx.lineWidth=lw; ctx.lineJoin='round'; ctx.lineCap='round';
+      ctx.setLineDash(dash);
+      ctx.beginPath(); ctx.moveTo(p[0].x, p[0].y);
+      for (var i=0;i<segs;i++){
+        var sp = Math.max(0, Math.min(1, drawn-i));
+        if (sp<=0) break;
+        ctx.lineTo(p[i].x+(p[i+1].x-p[i].x)*sp, p[i].y+(p[i+1].y-p[i].y)*sp);
+      }
+      ctx.stroke(); ctx.setLineDash([]);
+    }
+
+    // Fill under IMMUNEXIS
+    ctx.save();
+    var grad = ctx.createLinearGradient(0,padT,0,padT+ch);
+    grad.addColorStop(0,'rgba(124,111,160,0.16)');
+    grad.addColorStop(1,'rgba(124,111,160,0.0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.moveTo(immPts[0].x, padT+ch);
+    ctx.lineTo(immPts[0].x, immPts[0].y);
+    for (var i=0;i<segs;i++){
+      var sp=Math.max(0,Math.min(1,drawn-i));
+      if(sp<=0) break;
+      ctx.lineTo(immPts[i].x+(immPts[i+1].x-immPts[i].x)*sp, immPts[i].y+(immPts[i+1].y-immPts[i].y)*sp);
+    }
+    var ls=Math.floor(Math.min(drawn,segs-0.001));
+    var lsp=Math.max(0,Math.min(1,drawn-ls));
+    var lx=immPts[ls].x+(ls<segs?(immPts[ls+1].x-immPts[ls].x)*lsp:0);
+    ctx.lineTo(lx, padT+ch); ctx.closePath(); ctx.fill();
+    ctx.restore();
+
+    drawLine(plaPts,'#c8cdd6',[7,6],2);
+    drawLine(immPts,'#7c6fa0',[],3.5);
+
+    immPts.forEach(function(pt,ii){
+      var a = Math.max(0,Math.min(1,(drawn-ii+0.2)/0.2));
+      if(a<=0) return;
+      ctx.globalAlpha=a;
+      ctx.shadowColor='rgba(124,111,160,0.35)'; ctx.shadowBlur=10;
+      ctx.beginPath(); ctx.arc(pt.x,pt.y,7,0,Math.PI*2);
+      ctx.fillStyle='#fff'; ctx.fill();
+      ctx.strokeStyle='#7c6fa0'; ctx.lineWidth=3; ctx.stroke();
+      ctx.shadowBlur=0;
+      ctx.font = 'bold 14px Segoe UI, sans-serif';
+      ctx.fillStyle='#1a1f2e'; ctx.textAlign='center';
+      ctx.fillText(immunexis[ii]+'%', pt.x, pt.y-16);
+      ctx.globalAlpha=1;
+    });
+    plaPts.forEach(function(pt,ii){
+      var a=Math.max(0,Math.min(1,(drawn-ii+0.2)/0.2))*0.65;
+      if(a<=0) return;
+      ctx.globalAlpha=a;
+      ctx.beginPath(); ctx.arc(pt.x,pt.y,5,0,Math.PI*2);
+      ctx.fillStyle='#c8cdd6'; ctx.fill();
+      ctx.globalAlpha=1;
+    });
+  }
+
+  function animateChart() {
+    chartProgress=0;
+    var start=null, dur=1600;
+    function step(ts){
+      if(!start) start=ts;
+      chartProgress=easeInOut(Math.min((ts-start)/dur,1));
+      drawChart(chartProgress);
+      if(ts-start<dur) chartRAF=requestAnimationFrame(step);
+    }
+    if(chartRAF) cancelAnimationFrame(chartRAF);
+    chartRAF=requestAnimationFrame(step);
+  }
+
+  // ─── Counter animation ───
+  function animateCounter(el, target, duration, from) {
+    var start = null;
+    var fromVal = from || 0;
+    function step(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(fromVal + (target - fromVal) * easeInOut(p));
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ─── Card reveal ───
+  function revealCard(id, dur) {
+    var d = dur || 700;
+    var el = document.getElementById(id);
+    if (!el) return;
+    var ds = (d/1000) + 's';
+    el.style.transition = 'opacity ' + ds + ' ease, transform ' + ds + ' cubic-bezier(.22,1,.36,1)';
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+    setTimeout(function() {
+      el.classList.add('revealed');
+      el.style.transition = '';
+      el.style.opacity = '';
+      el.style.transform = '';
+    }, d);
+  }
+
+  function revealSequence() {
+    $.czSkeleton.classList.remove('visible');
+    chartHoverFired = false;
+
+    var badge = $.czWrap.querySelector('.ao-badge-num');
+    if (badge) animateCounter(badge, 487, 900);
+    $.czWrap.querySelectorAll('.ao-cz-mi').forEach(function(mi, i) {
+      mi.classList.remove('visible');
+      setTimeout(function() { mi.classList.add('visible'); }, 120 + i * 80);
+    });
+
+    var steps = [
+      [100,  function() { $.secEfficacy.style.opacity='1'; $.secEfficacy.style.transform='translateY(0)'; }],
+      [380,  function() { revealCard('aoSc0', 650); animateCounter($.n0, 74, 900); }],
+      [580,  function() { revealCard('aoSc1', 750); animateCounter($.n1, 71, 900); }],
+      [780,  function() { revealCard('aoSc2', 850); animateCounter($.n2, 58, 900); }],
+      [1100, function() { revealCard('aoChartCard'); setTimeout(function(){ sizeCanvas(); if(chartHoverFired) drawChart(1); }, 80); }],
+      [2900, function() { revealCard('aoStudyCard'); }],
+      [3180, function() { $.ctasRow.classList.add('in'); }],
+      [3420, function() { $.isiRow.classList.add('in'); }],
+    ];
+    steps.forEach(function(s) { setTimeout(s[1], s[0]); });
+  }
+
+  // ─── Chat messaging ───
+  function sendMsg() {
+    var text = $.chatInput.value.trim();
+    if (!text) return;
+    var ripple = document.createElement('div');
+    ripple.className = 'ao-send-ripple';
+    $.chatSend.appendChild(ripple);
+    setTimeout(function(){ if(ripple.parentNode) ripple.parentNode.removeChild(ripple); }, 500);
+    triggerDemo(text);
+    $.chatInput.value = '';
+  }
+
+  function triggerDemo(text) {
+    addUserMsg(text);
+    $.quickBtns.classList.add('hidden-btns');
+    var lower = text.toLowerCase();
+    var isSafety = lower.indexOf('safety') !== -1 || lower.indexOf('tolerab') !== -1 || lower.indexOf('adverse') !== -1 || lower.indexOf('side effect') !== -1;
+    var typing = addTyping();
+    setTimeout(function(){
+      if(typing && typing.parentNode) typing.parentNode.removeChild(typing);
+      if (isSafety) {
+        addAgentMsg('Here is the safety and tolerability profile from CLARITY \u2014 see the panel \u2192');
+        showSafetyZone();
+        if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'view', action:'astro_safety_zone', label:'Safety Zone' }); }
+      } else {
+        addAgentMsg('Here is the latest clinical evidence from CLARITY \u2014 see the panel \u2192');
+        showContentZone();
+        if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'view', action:'astro_efficacy_zone', label:'Efficacy Zone' }); }
+      }
+    }, 1100);
+  }
+
+  function addUserMsg(t) { append('<div class="ao-msg u"><div class="ao-bubble u">'+t+'</div></div>'); }
+  function addAgentMsg(t) {
+    append('<div class="ao-msg"><div class="ao-mav">M</div><div class="ao-bubble a">'+t+'</div></div>');
+    var avs = $.msgs.querySelectorAll('.ao-mav');
+    var av = avs[avs.length-1];
+    if(av){ av.classList.remove('speaking'); void av.offsetWidth; av.classList.add('speaking'); }
+    if($.chatAv){ $.chatAv.classList.remove('speaking'); void $.chatAv.offsetWidth; $.chatAv.classList.add('speaking'); }
+  }
+  function addTyping() {
+    var d = document.createElement('div'); d.className='ao-msg'; d.id='ao-typing-ind';
+    d.innerHTML='<div class="ao-mav">M</div><div class="ao-bubble a"><div class="ao-typing"><span></span><span></span><span></span></div></div>';
+    $.msgs.appendChild(d); scrollMsgs(); return d;
+  }
+  function append(html) {
+    var d = document.createElement('div');
+    d.innerHTML = html;
+    $.msgs.appendChild(d.firstChild);
+    scrollMsgs();
+  }
+  function scrollMsgs() { $.msgs.scrollTop = $.msgs.scrollHeight; }
+
+  // ─── Content zones ───
+  function showZone(show, hide, revealFn) {
+    if (hide.classList.contains('visible')) {
+      var flash = document.createElement('div');
+      flash.className = 'ao-zone-flash';
+      hide.appendChild(flash);
+      setTimeout(function(){ if(flash.parentNode) flash.parentNode.removeChild(flash); }, 350);
+    }
+    hide.classList.remove('visible');
+    hide.classList.add('slide-out');
+    setTimeout(function() { hide.classList.remove('slide-out'); }, 350);
+    show.classList.add('visible');
+    $.persistBtns.classList.add('visible');
+    setTimeout(revealFn, 200);
+  }
+
+  function showContentZone() {
+    $.czSkeleton.classList.add('visible');
+    showZone($.czWrap, $.safetyWrap, revealSequence);
+  }
+
+  function showSafetyZone() {
+    if(chartRAF) { cancelAnimationFrame(chartRAF); chartRAF = null; }
+    chartProgress = 0;
+    if ($.chart) {
+      var ctx = $.chart.getContext('2d');
+      ctx.clearRect(0, 0, $.chart.width, $.chart.height);
+    }
+
+    $.safetyWrap.querySelectorAll('.ao-s-panel,.ao-s-tab').forEach(function(el){ el.classList.remove('active'); });
+    $.stSafety.classList.add('active');
+    var firstTab = $.safetyTabs.querySelector('.ao-s-tab');
+    if(firstTab) { firstTab.classList.add('active'); positionInk(firstTab); }
+    showZone($.safetyWrap, $.czWrap, revealSafety);
+  }
+
+  function revealSafety() {
+    var scrollRoot = $.safetyWrap.querySelector('.ao-cz');
+    if (scrollRoot) scrollRoot.scrollTop = 0;
+
+    $.stSafety.querySelectorAll('.ao-safe-row').forEach(function(row) { row.classList.remove('row-visible'); });
+    tableHoverFired = false;
+
+    var badge = $.safetyWrap.querySelector('.ao-badge-num');
+    if (badge) animateCounter(badge, 487, 900);
+    $.safetyWrap.querySelectorAll('.ao-cz-mi').forEach(function(mi, i) {
+      mi.classList.remove('visible');
+      setTimeout(function() { mi.classList.add('visible'); }, 120 + i * 80);
+    });
+
+    $.stSafety.querySelectorAll('.ao-no-card').forEach(function(card, i) {
+      card.style.cssText = 'opacity:0;transform:translateY(16px);transition:none';
+      setTimeout(function() {
+        card.style.cssText = 'opacity:1;transform:translateY(0);transition:opacity .5s ease,transform .5s cubic-bezier(.22,1,.36,1)';
+        setTimeout(function() { card.style.cssText = ''; }, 550);
+      }, 80 + i * 100);
+    });
+  }
+
+  function switchToEfficacy() {
+    $.safetyWrap.classList.remove('visible');
+    $.czWrap.classList.add('visible');
+    addAgentMsg('Showing efficacy data for IMMUNEXIS.');
+    if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'click', action:'astro_switch_efficacy', label:'Switch to Efficacy' }); }
+  }
+
+  // ─── Tab ink ───
+  function positionInk(btn) {
+    if (!$.tabInk || !btn) return;
+    var barRect = $.safetyTabs.getBoundingClientRect();
+    var btnRect = btn.getBoundingClientRect();
+    $.tabInk.style.left  = (btnRect.left - barRect.left) + 'px';
+    $.tabInk.style.width = btnRect.width + 'px';
+  }
+
+  function showSTab(tabId, btn) {
+    $.safetyWrap.querySelectorAll('.ao-s-panel').forEach(function(p){ p.classList.remove('active'); });
+    $.safetyWrap.querySelectorAll('.ao-s-tab').forEach(function(t){ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    var panel = document.getElementById(tabId);
+    if (panel) panel.classList.add('active');
+    if (btn) { btn.classList.add('active'); btn.setAttribute('aria-selected','true'); positionInk(btn); }
+    // Data layer tracking for tab switch
+    if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'click', action:'astro_tab_switch', label:tabId }); }
+  }
+
+  // ─── Modal ───
+  function openModal(title, body, sourceEl) {
+    $.modalTitle.textContent = title;
+    $.modalBody.textContent = body;
+    if (sourceEl) {
+      var r = sourceEl.getBoundingClientRect();
+      $.modalEl.style.transformOrigin = (r.left + r.width/2) + 'px ' + (r.top + r.height/2) + 'px';
+    } else {
+      $.modalEl.style.transformOrigin = 'center center';
+    }
+    $.reqModal.classList.add('open');
+  }
+  function closeModal() { $.reqModal.classList.remove('open'); }
+
+  // ─── Shimmer ───
+  function shimmerQuickBtns() {
+    var btns = $.overlay.querySelectorAll('#aoQuickBtns .ao-opt');
+    btns.forEach(function(btn, i) {
+      setTimeout(function() {
+        btn.classList.add('shimmer');
+        setTimeout(function() { btn.classList.remove('shimmer'); }, 1400);
+      }, i * 120);
+    });
+  }
+
+  // ─── Hover interactions ───
+  function setupHoverInteractions() {
+    var scTargets = { aoSc0:74, aoSc1:71, aoSc2:58 };
+    Object.keys(scTargets).forEach(function(id) {
+      var card = document.getElementById(id);
+      if (!card) return;
+      card.addEventListener('mouseenter', function() {
+        if (!card.classList.contains('revealed')) return;
+        var span = card.querySelector('.ao-sc-num span:first-child');
+        if (!span) return;
+        animateCounter(span, scTargets[id], 420, 0);
+        // Data layer tracking for chart interaction
+        if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'interaction', action:'astro_stat_hover', label:id }); }
+      });
+    });
+
+    $.chartCard.addEventListener('mouseenter', function() {
+      if (!this.classList.contains('revealed')) return;
+      if (chartHoverFired) return;
+      chartHoverFired = true;
+      animateChart();
+      if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'interaction', action:'astro_chart_animate', label:'EASI-75 Chart' }); }
+    });
+
+    $.srTable.addEventListener('mouseenter', function() {
+      if (tableHoverFired) return;
+      tableHoverFired = true;
+      var rows = $.stSafety.querySelectorAll('.ao-safe-row');
+      rows.forEach(function(row, i) {
+        setTimeout(function() { row.classList.add('row-visible'); }, i * 55);
+      });
+      if (window.makanaDataLayer) { window.makanaDataLayer.push({ event:'interaction', action:'astro_table_reveal', label:'AE Table' }); }
+    });
+  }
+
+  // ─── Chart tooltip ───
+  function setupChartTooltip() {
+    var tip = $.chartTip;
+    var canvas = $.chart;
+    if (!tip || !canvas) return;
+
+    var padL=68, padR=20, padT=28, padB=40;
+    var xPosCache = null;
+
+    function getXPos() {
+      if (xPosCache) return xPosCache;
+      var dpr = window.devicePixelRatio || 1;
+      var W = canvas.width / dpr;
+      var cw = W - padL - padR;
+      var xStart = padL+24, xEnd = padL+cw-24;
+      xPosCache = weeks.map(function(_,i){ return xStart + (i/(weeks.length-1))*(xEnd-xStart); });
+      return xPosCache;
+    }
+
+    canvas.addEventListener('mousemove', function(e) {
+      if (chartProgress < 1) { tip.style.opacity = '0'; return; }
+      var rect = canvas.getBoundingClientRect();
+      var mx = e.clientX - rect.left;
+      var my = e.clientY - rect.top;
+      var dpr = window.devicePixelRatio || 1;
+      var W = canvas.width / dpr;
+      var H = canvas.height / dpr;
+      var ch = H - padT - padB;
+      var yScale = ch / 90;
+      var xPos = getXPos();
+
+      var hit = null, minDist = 18;
+      weeks.forEach(function(w,i) {
+        var px = xPos[i] * (rect.width/W);
+        var py = (padT + ch - immunexis[i]*yScale) * (rect.height/H);
+        var d = Math.sqrt((mx-px)*(mx-px)+(my-py)*(my-py));
+        if (d < minDist) { hit = { w:w, imm:immunexis[i], pla:placebo[i], px:px, py:py }; minDist = d; }
+      });
+
+      if (hit) {
+        tip.innerHTML = '<span style="color:#4caa8f">' + hit.imm + '%</span> IMMUNEXIS &nbsp;&middot;&nbsp; <span style="color:#8a92a0">' + hit.pla + '%</span> Placebo &nbsp;&middot;&nbsp; ' + hit.w;
+        tip.style.left = hit.px + 'px';
+        tip.style.top  = hit.py + 'px';
+        tip.style.opacity = '1';
+      } else {
+        tip.style.opacity = '0';
+      }
+    });
+
+    canvas.addEventListener('mouseleave', function() { tip.style.opacity = '0'; });
+
+    // Invalidate xPos cache on resize
+    window.addEventListener('resize', function() {
+      xPosCache = null;
+      if ($.czWrap.classList.contains('visible')) {
+        sizeCanvas();
+        drawChart(chartProgress);
+      }
+      var activeTab = $.safetyTabs.querySelector('.ao-s-tab.active');
+      if (activeTab) positionInk(activeTab);
+    });
+  }
+
+  // ─── Reset overlay state ───
+  function resetOverlay() {
+    // Reset zones
+    [$.czWrap, $.safetyWrap].forEach(function(el) {
+      el.classList.remove('visible','closing','slide-out');
+    });
+    $.persistBtns.classList.remove('visible');
+    $.quickBtns.classList.remove('hidden-btns');
+
+    // Reset cards
+    ['aoSc0','aoSc1','aoSc2','aoChartCard','aoStudyCard'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('in','revealed');
+        el.style.cssText = 'transition:none;opacity:0;transform:translateY(20px)';
+      }
+    });
+    $.ctasRow.classList.remove('in');
+    $.isiRow.classList.remove('in');
+    $.czSkeleton.classList.remove('visible');
+    $.secEfficacy.style.cssText = 'opacity:0;transform:translateY(12px)';
+    [$.n0, $.n1, $.n2].forEach(function(el){ if(el) el.textContent = '0'; });
+    $.overlay.querySelectorAll('.ao-badge-num').forEach(function(el){ el.textContent = '487'; });
+
+    if(chartRAF) cancelAnimationFrame(chartRAF);
+    chartProgress = 0;
+    if ($.chart) {
+      var ctx = $.chart.getContext('2d');
+      ctx.clearRect(0, 0, $.chart.width, $.chart.height);
+    }
+
+    // Reset chat messages to default
+    $.msgs.innerHTML = '<div class="ao-msg"><div class="ao-mav">M</div><div class="ao-bubble a">Hello! I can help you explore clinical evidence and prescribing information for IMMUNEXIS. What would you like to know?</div></div>';
+  }
+
+  // ─── Initialize on first call ───
+  // We use DOMContentLoaded or call init lazily
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Public API
+  return {
+    triggerDemo: function(t) { init(); triggerDemo(t); },
+    sendMsg: function() { init(); sendMsg(); },
+    showSTab: function(tabId, btn) { init(); showSTab(tabId, btn); },
+    openModal: function(title, body, src) { init(); openModal(title, body, src); },
+    closeModal: function() { init(); closeModal(); },
+    switchToEfficacy: function() { init(); switchToEfficacy(); },
+    shimmerQuickBtns: function() { init(); shimmerQuickBtns(); },
+    resetOverlay: function() { init(); resetOverlay(); }
+  };
+})();
+</script>
+
+</body>
+</html>

@@ -1,1 +1,1189 @@
-{"id":"/news.html","path":"/news.html","sha":"834aa1c19505a825052ccbb5afaf4d8a69ff818c","mime_type":"text/html","size":104239,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsroom | Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+}
+</style>
+<style>
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { scroll-behavior: smooth; }
+
+  /* Apple-style glassmorphism nav */
+  .glass-nav {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(255,255,255,0.72);
+  }
+  .glass-nav.scrolled {
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 0.5px 0 rgba(0,0,0,0.08);
+  }
+
+  /* Mega menu */
+  .mega-menu { opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+  .nav-item:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* Card animations */
+  .card-modern { transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .card-modern:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+
+  /* Fade in */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* Gradient text */
+  .gradient-text { background: linear-gradient(135deg, #6BBFAB 0%, #9B8EC4 50%, #4A4063 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .gradient-text-hero { background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  /* Hero background */
+  .hero-mesh {
+    background: linear-gradient(135deg, #2D2640 0%, #4A4063 30%, #352D47 60%, #1D1D1F 100%);
+  }
+  .hero-orb-1 { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(107,191,171,0.15) 0%, transparent 70%); filter: blur(40px); top: -100px; right: -100px; animation: float 20s ease-in-out infinite; }
+  .hero-orb-2 { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(155,142,196,0.12) 0%, transparent 70%); filter: blur(40px); bottom: -150px; left: -50px; animation: float 25s ease-in-out infinite reverse; }
+  .hero-orb-3 { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(107,191,171,0.08) 0%, transparent 70%); filter: blur(30px); top: 40%; left: 30%; animation: float 18s ease-in-out infinite 3s; }
+  @keyframes float { 0%,100%{transform:translate(0,0)} 33%{transform:translate(30px,-20px)} 66%{transform:translate(-20px,15px)} }
+
+  /* Modal */
+  .modal-backdrop { background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .modal-content { animation: modalIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  @keyframes modalIn { from { opacity:0; transform: scale(0.95) translateY(10px); } to { opacity:1; transform: scale(1) translateY(0); } }
+
+  /* Cookie banner */
+  .cookie-banner { animation: slideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s both; }
+  @keyframes slideUp { from { transform: translateY(100%); opacity:0; } to { transform: translateY(0); opacity:1; } }
+
+  /* Smooth pill buttons */
+  .pill-btn { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .pill-btn:hover { transform: scale(1.03); }
+
+  /* Section divider */
+  .section-fade { background: linear-gradient(to bottom, transparent, #FAFAFA); height: 80px; }
+
+  /* Filter pill active state */
+  .filter-pill.active { background-color: #4A4063; color: white; border-color: #4A4063; }
+
+
+/* ═══ GATEWAY PORTAL ═══ */
+.gw-overlay { position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:1rem; }
+.gw-overlay.open { display:flex; }
+.gw-backdrop { position:absolute; inset:0; background:rgba(29,29,31,.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); animation:gwFadeIn .3s ease; }
+@keyframes gwFadeIn { from{opacity:0} to{opacity:1} }
+.gw-modal { position:relative; z-index:1; width:100%; max-width:880px; max-height:92vh; overflow-y:auto; background:#fff; border-radius:28px; box-shadow:0 40px 120px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.1); animation:gwSlideIn .4s cubic-bezier(.22,1,.36,1); }
+@keyframes gwSlideIn { from{opacity:0;transform:scale(.93) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.gw-hero { position:relative; background:linear-gradient(135deg,#2D2640 0%,#4A4063 40%,#3a6b5e 100%); padding:2.5rem 2.5rem 3rem; border-radius:28px 28px 0 0; overflow:hidden; }
+.gw-hero::before { content:''; position:absolute; top:-40%; right:-15%; width:460px; height:460px; background:radial-gradient(circle,rgba(107,191,171,.2) 0%,transparent 70%); border-radius:50%; }
+.gw-hero::after { content:''; position:absolute; bottom:-60%; left:-10%; width:380px; height:380px; background:radial-gradient(circle,rgba(155,142,196,.15) 0%,transparent 70%); border-radius:50%; }
+.gw-close { position:absolute; top:1.25rem; right:1.25rem; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .2s; z-index:2; }
+.gw-close:hover { background:rgba(255,255,255,.25); transform:scale(1.1); }
+.gw-close svg { width:16px; height:16px; color:#fff; }
+.gw-body { padding:2rem 2.5rem 2.5rem; }
+.portal-card { position:relative; border-radius:20px; padding:2rem; border:1.5px solid #e5e7eb; transition:all .35s cubic-bezier(.25,.46,.45,.94); cursor:pointer; overflow:hidden; background:#fff; }
+.portal-card::before { content:''; position:absolute; inset:0; border-radius:20px; opacity:0; transition:opacity .35s; }
+.portal-card:hover { transform:translateY(-4px); border-color:transparent; }
+.portal-card.hcp-card:hover { box-shadow:0 20px 60px rgba(74,64,99,.15),0 0 0 1.5px rgba(74,64,99,.2); }
+.portal-card.hcp-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(74,64,99,.03),rgba(155,142,196,.05)); }
+.portal-card.patient-card:hover { box-shadow:0 20px 60px rgba(107,191,171,.15),0 0 0 1.5px rgba(107,191,171,.25); }
+.portal-card.patient-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(107,191,171,.03),rgba(107,191,171,.06)); }
+.portal-icon-wrap { width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+.portal-icon-wrap.hcp { background:linear-gradient(135deg,#4A4063,#6B5B8A); box-shadow:0 4px 14px rgba(74,64,99,.25); }
+.portal-icon-wrap.patient { background:linear-gradient(135deg,#6BBFAB,#4A9B87); box-shadow:0 4px 14px rgba(107,191,171,.25); }
+.portal-icon-wrap svg { width:24px; height:24px; color:#fff; }
+.feature-check { display:flex; align-items:center; gap:.5rem; padding:.35rem 0; }
+.feature-check .check-icon { width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.feature-check .check-icon.hcp { background:rgba(74,64,99,.08); color:#4A4063; }
+.feature-check .check-icon.patient { background:rgba(107,191,171,.1); color:#4A9B87; }
+.feature-check .check-icon svg { width:10px; height:10px; }
+.portal-btn { display:flex; align-items:center; justify-content:center; gap:.5rem; width:100%; padding:.85rem 1.5rem; border-radius:14px; font-size:.8125rem; font-weight:600; border:none; cursor:pointer; transition:all .25s; margin-top:1.5rem; }
+.portal-btn.hcp { background:#4A4063; color:#fff; }
+.portal-btn.hcp:hover { background:#2D2640; box-shadow:0 8px 24px rgba(74,64,99,.3); transform:scale(1.02); }
+.portal-btn.patient { background:#fff; color:#4A9B87; border:1.5px solid #6BBFAB; }
+.portal-btn.patient:hover { background:#ecfdf5; box-shadow:0 8px 24px rgba(107,191,171,.2); transform:scale(1.02); }
+.portal-btn svg { width:16px; height:16px; }
+.hcp-email-step { display:none; animation:gwFadeIn .3s ease; }
+.hcp-email-step.active { display:block; }
+.gw-input { width:100%; padding:.85rem 1.25rem; border-radius:14px; border:1.5px solid #e5e7eb; font-size:.875rem; background:#fafafa; transition:all .2s; outline:none; }
+.gw-input:focus { border-color:#9B8EC4; box-shadow:0 0 0 3px rgba(155,142,196,.12); background:#fff; }
+.gw-nav-btn { position:relative; display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,rgba(74,64,99,.06),rgba(107,191,171,.06)); border:1px solid rgba(74,64,99,.1); cursor:pointer; transition:all .25s; }
+.gw-nav-btn:hover { background:linear-gradient(135deg,rgba(74,64,99,.12),rgba(107,191,171,.12)); border-color:rgba(74,64,99,.2); transform:scale(1.08); box-shadow:0 4px 14px rgba(74,64,99,.12); }
+.gw-nav-btn svg { width:16px; height:16px; }
+.gw-img-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; margin-top:1.5rem; }
+.gw-img-thumb { border-radius:12px; overflow:hidden; aspect-ratio:3/4; position:relative; cursor:pointer; transition:all .3s; border:2px solid transparent; }
+.gw-img-thumb:hover { transform:scale(1.03); border-color:rgba(107,191,171,.3); box-shadow:0 8px 24px rgba(0,0,0,.1); }
+.gw-img-thumb img { width:100%; height:100%; object-fit:cover; }
+
+/* ═══ FAB ORB (Agentforce-style) ═══ */
+.fab-orb {
+  position:fixed; bottom:32px; right:32px; width:64px; height:64px; border-radius:50%;
+  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:600; background:#0b0818;
+  box-shadow: inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08),
+    0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35),
+    0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08);
+  animation:orb-pulse 2.8s ease-out infinite;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+}
+.fab-orb::before { content:''; position:absolute; top:8px; left:10px; width:20px; height:12px; background:radial-gradient(ellipse,rgba(255,255,255,.4) 0%,transparent 100%); border-radius:50%; pointer-events:none; z-index:2; }
+.fab-orb:hover { transform:scale(1.12) translateY(-3px); box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 16px 44px rgba(124,111,160,.75),0 4px 14px rgba(76,170,143,.5),0 5px 14px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.15),0 0 70px rgba(124,111,160,.3); }
+.fab-orb svg { width:24px; height:24px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
+@keyframes orb-pulse {
+  0%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,.6);}
+  70%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 22px rgba(124,111,160,0);}
+  100%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,0);}
+}
+.fab-orb.hidden { opacity:0; pointer-events:none; animation:none; }
+
+/* ═══ CHAT PANEL ═══ */
+.chat-panel { position:fixed; bottom:32px; right:32px; width:380px; max-height:580px; z-index:700;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-radius:24px; box-shadow:0 32px 80px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.5);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform:scale(.92) translateY(20px); opacity:0; pointer-events:none;
+  transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+}
+.chat-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+
+.chat-hdr { background:linear-gradient(135deg,#4A4063,#352D47); padding:20px 22px; display:flex; align-items:center; gap:12px; }
+.chat-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#9B8EC4,#6BBFAB); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; }
+.online-dot { width:9px; height:9px; background:#6BBFAB; border-radius:50%; margin-left:auto; animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{box-shadow:0 0 0 0 rgba(107,191,171,.5)} 50%{box-shadow:0 0 0 5px rgba(107,191,171,0)} }
+
+.chat-msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; max-height:320px; }
+.msg-bubble { max-width:85%; padding:12px 16px; border-radius:18px; font-size:13px; line-height:1.6; animation:bubble-in .3s cubic-bezier(.22,1,.36,1) both; }
+.msg-bubble.bot { background:#f0f0f5; color:#1D1D1F; border-bottom-left-radius:4px; align-self:flex-start; }
+.msg-bubble.user { background:#4A4063; color:#fff; border-bottom-right-radius:4px; align-self:flex-end; }
+@keyframes bubble-in { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+.typing-dots { display:flex; gap:5px; padding:8px 14px; }
+.typing-dots span { width:7px; height:7px; border-radius:50%; background:#9B8EC4; animation:dot-pulse 1s ease-in-out infinite; }
+.typing-dots span:nth-child(2) { animation-delay:.18s; background:#7FAAB4; }
+.typing-dots span:nth-child(3) { animation-delay:.36s; background:#6BBFAB; }
+@keyframes dot-pulse { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+.quick-actions { padding:14px 18px; border-top:1px solid rgba(0,0,0,.04); display:flex; flex-direction:column; gap:8px; }
+.q-action { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:10px 16px; font-size:13px; color:#4A4063; cursor:pointer; font-weight:500; text-align:left; transition:all .2s; display:flex; justify-content:space-between; align-items:center; }
+.q-action::after { content:'\2192'; color:#9B8EC4; opacity:0; transform:translateX(-6px); transition:all .2s; }
+.q-action:hover { border-color:#9B8EC4; background:#faf9ff; transform:translateX(3px); box-shadow:0 2px 12px rgba(155,142,196,.12); }
+.q-action:hover::after { opacity:1; transform:translateX(0); }
+
+</style>
+
+<!-- ═══ Salesforce Personalization — Data Cloud Web SDK ═══ -->
+<!-- Data Cloud Website Connector: Makana_Health_Website (494741f1-8288-47b0-bc0e-e60e66c23cc8) -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="js/makana-datalayer.js"></script>
+<script src="js/makana-init.js"></script>
+<script src="js/makana-sitemap.js"></script>
+<script src="js/makana-personalization.js"></script>
+<script src="js/makana-leadgen.js"></script>
+<!-- ═══ End Salesforce Personalization ═══ -->
+</head>
+<body class="font-sans text-slate-brand bg-white antialiased">
+
+<!-- ==================== COOKIE CONSENT BANNER ==================== -->
+<div id="cookieConsent" class="cookie-banner fixed bottom-0 left-0 right-0 z-[9999] p-4" style="pointer-events:auto">
+  <div class="max-w-5xl mx-auto bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 p-6 md:p-8">
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand text-base">Your Privacy Matters</h3>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed">We use cookies and similar technologies to provide you with the best experience, analyze traffic, and personalize content. By clicking "Accept All," you consent to our use of cookies. You can customize your preferences or learn more in our <a class='text-secondary hover:underline' href='/privacy'>Privacy Policy</a>.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full md:w-auto">
+        <button onclick="document.getElementById('cookieSettings').classList.remove('hidden')" class="pill-btn px-5 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 transition text-center">Manage Preferences</button>
+        <button onclick="acceptCookies('essential')" class="pill-btn px-5 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 transition text-center">Essential Only</button>
+        <button onclick="acceptCookies('all')" class="pill-btn px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition text-center">Accept All</button>
+      </div>
+    </div>
+
+    <!-- Cookie Settings Panel (hidden by default) -->
+    <div id="cookieSettings" class="hidden mt-6 pt-6 border-t border-gray-100">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" checked disabled class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Essential Cookies</p><p class="text-xs text-gray-400">Required for site functionality</p></div>
+        </label>
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" id="analyticsCookies" checked class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Analytics Cookies</p><p class="text-xs text-gray-400">Help us improve our website</p></div>
+        </label>
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" id="marketingCookies" class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Marketing Cookies</p><p class="text-xs text-gray-400">Personalized advertising</p></div>
+        </label>
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" id="funcCookies" checked class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Functional Cookies</p><p class="text-xs text-gray-400">Enhanced features & personalization</p></div>
+        </label>
+      </div>
+      <div class="flex justify-end mt-4">
+        <button onclick="acceptCookies('custom')" class="pill-btn px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== LOGIN MODAL ==================== -->
+<div id="loginModal" class="hidden fixed inset-0 z-[90] flex items-center justify-center p-4">
+  <div class="modal-backdrop absolute inset-0" onclick="closeLogin()"></div>
+  <div class="modal-content relative bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 md:p-10">
+    <button onclick="closeLogin()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 transition flex items-center justify-center">
+      <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="text-center mb-8">
+      <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-12 mx-auto mb-6">
+      <h2 class="text-2xl font-bold text-slate-brand">Welcome Back</h2>
+      <p class="text-sm text-gray-400 mt-2">Enter your email to access your Makana Health account</p>
+    </div>
+    <form onsubmit="handleLogin(event)">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-600 mb-2">Email Address</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com" required class="w-full px-5 py-3.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition bg-warm">
+      </div>
+      <button type="submit" class="pill-btn w-full py-3.5 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition mt-2">
+        Continue with Email
+      </button>
+    </form>
+    <div class="mt-6 text-center">
+      <p class="text-xs text-gray-400">By continuing, you agree to our <a href="/terms" class="text-secondary hover:underline">Terms</a> and <a class='text-secondary hover:underline' href='/privacy'>Privacy Policy</a></p>
+    </div>
+    <div id="loginSuccess" class="hidden text-center py-8">
+      <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <p class="font-semibold text-slate-brand">Check your inbox</p>
+      <p class="text-sm text-gray-400 mt-1">We've sent a login link to your email</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<!-- ═══════════ GATEWAY PORTAL MODAL ═══════════ -->
+<div id="gatewayOverlay" class="gw-overlay">
+  <div class="gw-backdrop" onclick="closeGateway()"></div>
+  <div class="gw-modal">
+    <div class="gw-hero">
+      <button class="gw-close" onclick="closeGateway()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div style="position:relative;z-index:1;">
+        <p class="text-secondary-light/80 text-xs font-semibold tracking-[.2em] uppercase mb-3">Precision & Care</p>
+        <h2 class="text-white text-3xl sm:text-4xl font-black leading-tight mb-3">The future of health,<br>managed with <span class="text-secondary-light">clarity.</span></h2>
+        <p class="text-white/50 text-sm max-w-md leading-relaxed">Access our integrated clinical ecosystem designed for both medical professionals and their patients.</p>
+      </div>
+    </div>
+    <div class="gw-body">
+      <div id="gwMain">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-slate-brand">Choose your gateway</h3>
+            <p class="text-gray-400 text-xs mt-1">Select your destination to access secure records, appointments, and diagnostic tools.</p>
+          </div>
+          <div class="flex items-center gap-4 text-[11px] text-gray-400 shrink-0">
+            <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>HIPAA Compliant</span>
+            <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Real-time Sync</span>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="portal-card hcp-card" onclick="showHcpLogin()">
+            <div class="portal-icon-wrap hcp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg></div>
+            <h4 class="text-lg font-bold text-slate-brand mb-1">HCP Portal</h4>
+            <p class="text-gray-400 text-xs leading-relaxed mb-4">Dedicated professional workspace for physicians, nurses, and administrative staff.</p>
+            <div class="space-y-1.5">
+              <div class="feature-check"><div class="check-icon hcp"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Patient Population Health</span></div>
+              <div class="feature-check"><div class="check-icon hcp"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Clinical Decision Support</span></div>
+              <div class="feature-check"><div class="check-icon hcp"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Laboratory Interfacing</span></div>
+            </div>
+            <button class="portal-btn hcp" onclick="event.stopPropagation();showHcpLogin()">Professional Login <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
+          </div>
+          <div class="portal-card patient-card" onclick="window.location.href='patients.html'">
+            <div class="portal-icon-wrap patient"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+            <h4 class="text-lg font-bold text-slate-brand mb-1">Patient Portal</h4>
+            <p class="text-gray-400 text-xs leading-relaxed mb-4">A simple and clear way for patients and caregivers to stay connected to their care team.</p>
+            <div class="space-y-1.5">
+              <div class="feature-check"><div class="check-icon patient"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Appointment Scheduling</span></div>
+              <div class="feature-check"><div class="check-icon patient"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Secure Messaging</span></div>
+              <div class="feature-check"><div class="check-icon patient"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Health Record Access</span></div>
+            </div>
+            <button class="portal-btn patient" onclick="event.stopPropagation();window.location.href='patients.html'">Patient Login <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg></button>
+          </div>
+        </div>
+        <div class="gw-img-gallery">
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/ab37857a-0e6f-483a-8368-f834f90bd972.png" alt="Gateway Overview"></div>
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/f6e332b0-6596-49d3-bfc0-c0c133a7d625.png" alt="HCP Dashboard"></div>
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/dcc49503-4ce5-4dac-9489-9fd059472cd9.png" alt="Clinical Studies"></div>
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/b0dfeb67-1c9a-4e24-b336-8c08dcfb0c1b.png" alt="HCP Login"></div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 mt-6 pt-5 border-t border-gray-100">
+          <div class="flex items-center gap-2 text-gray-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg><span class="text-[11px] font-medium">Expert Support</span></div>
+          <div class="flex items-center gap-2 text-gray-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg><span class="text-[11px] font-medium">Knowledge Base</span></div>
+          <div class="flex items-center gap-2 text-gray-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg><span class="text-[11px] font-medium">Privacy First</span></div>
+        </div>
+      </div>
+      <div id="gwHcpLogin" class="hcp-email-step">
+        <button onclick="backToGateway()" class="flex items-center gap-1.5 text-xs text-gray-400 hover:text-primary mb-5 transition"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>Back to gateway</button>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="portal-icon-wrap hcp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg></div>
+          <div><h3 class="text-xl font-bold text-slate-brand">Healthcare Professional Portal</h3><p class="text-gray-400 text-xs mt-0.5">Verify your credentials to access the clinical atelier.</p></div>
+        </div>
+        <form onsubmit="handleHcpLogin(event)">
+          <label class="block text-[11px] font-semibold text-primary uppercase tracking-wider mb-2">Email Address</label>
+          <input type="email" id="hcpEmail" placeholder="dr.name@hospital.org" required class="gw-input mb-4">
+          <label class="block text-[11px] font-semibold text-primary uppercase tracking-wider mb-2">NPI Number / Professional ID</label>
+          <input type="text" id="hcpNpi" placeholder="Enter your NPI or professional ID" class="gw-input mb-5">
+          <button type="submit" class="portal-btn hcp w-full">Enter Clinical Atelier <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
+          <div class="flex items-center justify-between mt-4"><label class="flex items-center gap-2 text-xs text-gray-400 cursor-pointer"><input type="checkbox" class="rounded border-gray-300"> Remember me</label><a href="#" onclick="alert('Please contact support@makanahealth.com for access recovery.')" class="text-xs text-secondary font-medium hover:underline">Forgot access?</a></div>
+          <p class="text-center text-[10px] text-gray-300 mt-5">🔒 Secure AES-256 Encryption</p>
+        </form>
+        <div id="hcpLoginSuccess" class="hidden text-center py-8">
+          <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+          <p class="font-semibold text-slate-brand">Verification sent</p>
+          <p class="text-sm text-gray-400 mt-1">Check your email for secure access link</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-12 lg:h-14">
+      <!-- Logo -->
+      <a class='shrink-0' href='/'>
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8">
+      </a>
+
+      <!-- Desktop Nav - Apple-style compact -->
+      <nav class="hidden lg:flex items-center gap-0.5">
+        <div class="nav-item relative">
+          <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/about'>About</a>
+          <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[520px]">
+            <div class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/50 p-5 grid grid-cols-2 gap-3">
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Company</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about'>Our Story</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about#leadership'>Leadership</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about#strategy'>Purpose & Strategy</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/manufacturing'>Manufacturing</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/quality'>Quality</a>
+              </div>
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Portfolio</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/products'>Products</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about#therapeutic'>Therapeutic Areas</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/pipeline'>Pipeline</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item relative">
+          <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/research'>Science</a>
+          <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[520px]">
+            <div class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/50 p-5 grid grid-cols-2 gap-3">
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Research</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/research'>R&D Overview</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/pipeline'>Pipeline</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/clinical-trials'>Clinical Trials</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/technology'>Technology Platforms</a>
+              </div>
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Disease Areas</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/cardiovascular'>Cardiovascular</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/immunology'>Immunology</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/neuroscience'>Neuroscience</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/oncology'>Oncology</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/patients'>Patients</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/hcp'>HCPs</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/esg'>Impact</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/investors'>Investors</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand hover:text-slate-brand transition' href='/news'>News</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/careers'>Careers</a>
+      </nav>
+
+      <!-- Right: Search + Login + Mobile -->
+      <div class="flex items-center gap-2">
+        <button class="p-2 text-slate-brand/60 hover:text-slate-brand transition rounded-full hover:bg-black/5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <!-- LOGIN ICON -->
+        <button onclick="openLogin()" class="p-2 text-slate-brand/60 hover:text-slate-brand transition rounded-full hover:bg-black/5" title="Sign In">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </button>
+        <button onclick="openGateway()" class="gw-nav-btn" title="Portal Gateway">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </button>
+        <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-brand/60 hover:text-slate-brand transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="lg:hidden hidden bg-white/98 backdrop-blur-xl border-t border-gray-100/50">
+    <div class="px-6 py-5 space-y-1 max-h-[85vh] overflow-y-auto">
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/about'>About</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/research'>Science & R&D</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/products'>Products</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/pipeline'>Pipeline</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/patients'>Patients</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/hcp'>Healthcare Professionals</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/esg'>ESG & Impact</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/investors'>Investors</a>
+      <a class='block px-4 py-3 text-sm text-secondary font-medium bg-warm-dark rounded-xl transition' href='/news'>News</a>
+      <a class='block px-4 py-3 text-sm text-gray-700 hover:bg-warm-dark rounded-xl transition' href='/careers'>Careers</a>
+      <hr class="my-3 border-gray-100">
+      <a class='block px-4 py-3 text-xs text-gray-400 hover:bg-warm-dark rounded-xl transition' href='/clinical-trials'>Clinical Trials</a>
+      <a class='block px-4 py-3 text-xs text-gray-400 hover:bg-warm-dark rounded-xl transition' href='/contact'>Contact Us</a>
+      <button onclick="openGateway()" class="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary-dark text-white text-sm font-semibold flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        Portal Gateway
+      </button>
+      <button onclick="openLogin()" class="w-full mt-3 py-3 rounded-xl bg-primary text-white text-sm font-semibold">Sign In</button>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero-mesh relative overflow-hidden min-h-[60vh] flex items-center">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-orb-3"></div>
+
+  <div class="max-w-[1200px] mx-auto px-6 py-32 lg:py-40 relative z-10">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="reveal text-secondary/80 font-medium text-sm tracking-[0.2em] uppercase mb-6">Media Center</p>
+      <h1 class="reveal reveal-delay-1 text-5xl sm:text-6xl lg:text-[72px] font-bold text-white leading-[1.05] tracking-tight mb-8">
+        Newsroom.
+      </h1>
+      <p class="reveal reveal-delay-2 text-lg lg:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed font-light">
+        The latest updates, press releases, stories, and media resources from Makana Health. Stay informed on our science, our people, and our impact.
+      </p>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+  </div>
+</section>
+
+<!-- ==================== FEATURED STORY ==================== -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal">
+      <a href="/news-article?id=positive-phase-iii-results-immunology-treatment" class="card-modern block bg-gradient-to-br from-primary-dark via-primary to-accent/60 rounded-3xl overflow-hidden group" data-track="news_featured_story">
+        <div class="grid lg:grid-cols-2 min-h-[400px]">
+          <div class="p-10 lg:p-16 flex flex-col justify-center">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs font-semibold rounded-full">Featured</span>
+              <span class="px-3 py-1 bg-white/10 text-white/70 text-xs font-medium rounded-full">Press Release</span>
+            </div>
+            <p class="text-white/40 text-sm font-medium mb-3">March 28, 2026</p>
+            <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight mb-5">Positive Phase III Results for Novel Immunology Treatment</h2>
+            <p class="text-white/50 leading-relaxed mb-8 font-light">Landmark clinical trial data demonstrates significant improvement in patient outcomes for moderate-to-severe autoimmune conditions, marking a potential new standard of care.</p>
+            <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-3 gap-2 transition-all">
+              Read Full Story <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+          <div class="bg-white/5 flex items-center justify-center p-12">
+            <div class="relative">
+              <div class="w-40 h-40 bg-secondary/10 rounded-full flex items-center justify-center">
+                <svg class="w-20 h-20 text-secondary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+              </div>
+              <div class="absolute -top-4 -right-4 w-16 h-16 bg-accent/20 rounded-full blur-xl"></div>
+              <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-secondary/15 rounded-full blur-xl"></div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FILTER BAR ==================== -->
+<section class="bg-white border-b border-gray-100">
+  <div class="max-w-[1200px] mx-auto px-6 py-6">
+    <div class="reveal flex flex-wrap items-center gap-3">
+      <button class="filter-pill active pill-btn px-5 py-2.5 rounded-full text-sm font-medium border border-gray-200 transition" data-filter="all" data-track="news_filter_all">All</button>
+      <button class="filter-pill pill-btn px-5 py-2.5 rounded-full text-sm font-medium border border-gray-200 text-gray-600 transition" data-filter="press" data-track="news_filter_press">Press Releases</button>
+      <button class="filter-pill pill-btn px-5 py-2.5 rounded-full text-sm font-medium border border-gray-200 text-gray-600 transition" data-filter="science" data-track="news_filter_science">Science & Innovation</button>
+      <button class="filter-pill pill-btn px-5 py-2.5 rounded-full text-sm font-medium border border-gray-200 text-gray-600 transition" data-filter="corporate" data-track="news_filter_corporate">Corporate</button>
+      <button class="filter-pill pill-btn px-5 py-2.5 rounded-full text-sm font-medium border border-gray-200 text-gray-600 transition" data-filter="esg" data-track="news_filter_esg">ESG</button>
+      <button class="filter-pill pill-btn px-5 py-2.5 rounded-full text-sm font-medium border border-gray-200 text-gray-600 transition" data-filter="financial" data-track="news_filter_financial">Financial</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NEWS GRID ==================== -->
+<section class="py-24 lg:py-32 bg-warm">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1: Press Release -->
+      <article class="reveal card-modern bg-white rounded-3xl overflow-hidden border border-gray-100 group cursor-pointer">
+        <div class="h-52 bg-gradient-to-br from-primary/8 to-secondary/8 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-12 h-12 text-primary/15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <div class="absolute top-4 right-4 w-20 h-20 bg-secondary/10 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <p class="text-xs text-gray-400 font-medium">March 25, 2026</p>
+            <span class="px-2.5 py-0.5 bg-primary/8 text-primary text-[10px] font-semibold rounded-full uppercase tracking-wide">Press Release</span>
+          </div>
+          <h3 class="font-bold text-slate-brand group-hover:text-primary transition mb-2 tracking-tight leading-snug">Strategic Acquisition Expands Oncology Portfolio</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">Strengthening our commitment to precision oncology with targeted cancer therapies and novel drug delivery platforms.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Card 2: Science & Innovation -->
+      <article class="reveal reveal-delay-1 card-modern bg-white rounded-3xl overflow-hidden border border-gray-100 group cursor-pointer">
+        <div class="h-52 bg-gradient-to-br from-secondary/8 to-accent/8 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-12 h-12 text-secondary/15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          <div class="absolute bottom-4 left-4 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <p class="text-xs text-gray-400 font-medium">March 22, 2026</p>
+            <span class="px-2.5 py-0.5 bg-secondary/10 text-secondary-dark text-[10px] font-semibold rounded-full uppercase tracking-wide">R&D Update</span>
+          </div>
+          <h3 class="font-bold text-slate-brand group-hover:text-primary transition mb-2 tracking-tight leading-snug">AI-Driven Drug Discovery Platform Identifies 12 New Candidates</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">Our computational biology team leverages machine learning to accelerate early-stage drug discovery across all four therapeutic areas.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Card 3: ESG -->
+      <article class="reveal reveal-delay-2 card-modern bg-white rounded-3xl overflow-hidden border border-gray-100 group cursor-pointer">
+        <div class="h-52 bg-gradient-to-br from-green-50 to-secondary/8 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-12 h-12 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="absolute top-4 left-4 w-20 h-20 bg-green-100 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <p class="text-xs text-gray-400 font-medium">March 18, 2026</p>
+            <span class="px-2.5 py-0.5 bg-green-50 text-green-700 text-[10px] font-semibold rounded-full uppercase tracking-wide">ESG</span>
+          </div>
+          <h3 class="font-bold text-slate-brand group-hover:text-primary transition mb-2 tracking-tight leading-snug">Makana Health Achieves Carbon Neutral Operations</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">Milestone reached two years ahead of schedule through renewable energy investments and sustainable manufacturing practices.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Card 4: Corporate -->
+      <article class="reveal card-modern bg-white rounded-3xl overflow-hidden border border-gray-100 group cursor-pointer">
+        <div class="h-52 bg-gradient-to-br from-accent/8 to-primary/8 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-12 h-12 text-accent/15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div class="absolute bottom-4 right-4 w-20 h-20 bg-accent/10 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <p class="text-xs text-gray-400 font-medium">March 15, 2026</p>
+            <span class="px-2.5 py-0.5 bg-accent/10 text-accent text-[10px] font-semibold rounded-full uppercase tracking-wide">Corporate</span>
+          </div>
+          <h3 class="font-bold text-slate-brand group-hover:text-primary transition mb-2 tracking-tight leading-snug">Dr. Elena Vasquez Appointed Chief Scientific Officer</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">World-renowned immunologist brings 25 years of experience to lead Makana Health's global research and development strategy.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Card 5: Financial -->
+      <article class="reveal reveal-delay-1 card-modern bg-white rounded-3xl overflow-hidden border border-gray-100 group cursor-pointer">
+        <div class="h-52 bg-gradient-to-br from-emerald-50 to-primary/5 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-12 h-12 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          <div class="absolute top-4 right-4 w-24 h-24 bg-emerald-100/50 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <p class="text-xs text-gray-400 font-medium">March 12, 2026</p>
+            <span class="px-2.5 py-0.5 bg-emerald-50 text-emerald-700 text-[10px] font-semibold rounded-full uppercase tracking-wide">Financial</span>
+          </div>
+          <h3 class="font-bold text-slate-brand group-hover:text-primary transition mb-2 tracking-tight leading-snug">Board Approves $2B Share Buyback Program</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">New share repurchase program reflects confidence in long-term growth trajectory and commitment to shareholder value creation.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Card 6: Press Release -->
+      <article class="reveal reveal-delay-2 card-modern bg-white rounded-3xl overflow-hidden border border-gray-100 group cursor-pointer">
+        <div class="h-52 bg-gradient-to-br from-rose-50 to-accent/5 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-12 h-12 text-rose-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <div class="absolute bottom-4 left-4 w-20 h-20 bg-rose-100/50 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-3">
+            <p class="text-xs text-gray-400 font-medium">March 10, 2026</p>
+            <span class="px-2.5 py-0.5 bg-primary/8 text-primary text-[10px] font-semibold rounded-full uppercase tracking-wide">Press Release</span>
+          </div>
+          <h3 class="font-bold text-slate-brand group-hover:text-primary transition mb-2 tracking-tight leading-snug">FDA Approves Treatment for Rare Genetic Disorder</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">First-in-class gene therapy receives regulatory approval for pediatric patients with inherited metabolic conditions.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MAKANA STORIES ==================== -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="reveal text-secondary font-medium text-sm tracking-[0.15em] uppercase mb-4">Behind the Headlines</p>
+      <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">Makana Stories.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Story 1: Behind the Scenes -->
+      <article class="reveal card-modern bg-warm rounded-3xl overflow-hidden group cursor-pointer">
+        <div class="h-56 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-16 h-16 text-primary/15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <div class="absolute top-6 right-6 w-24 h-24 bg-primary/8 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-7">
+          <p class="text-xs text-accent font-semibold uppercase tracking-wider mb-2">People & Culture</p>
+          <h3 class="font-bold text-slate-brand text-lg group-hover:text-primary transition mb-3 tracking-tight leading-snug">Meet the Scientist Behind Our Breakthrough Immunology Platform</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-5">Dr. Amira Patel shares her journey from academic research to leading one of pharma's most promising therapeutic programs. Her work on next-gen biologics is redefining how we approach autoimmune disease.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read Story <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Story 2: Patient Impact -->
+      <article class="reveal reveal-delay-1 card-modern bg-warm rounded-3xl overflow-hidden group cursor-pointer">
+        <div class="h-56 bg-gradient-to-br from-rose-50 to-secondary/8 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-16 h-16 text-rose-300/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <div class="absolute bottom-6 left-6 w-24 h-24 bg-rose-100/50 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-7">
+          <p class="text-xs text-rose-500 font-semibold uppercase tracking-wider mb-2">Patient Perspectives</p>
+          <h3 class="font-bold text-slate-brand text-lg group-hover:text-primary transition mb-3 tracking-tight leading-snug">Living with Purpose: James's Journey Through Cancer Treatment</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-5">One patient's inspiring story of resilience during precision oncology treatment. James shares how participating in a Makana clinical trial gave him hope when conventional treatments had failed.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read Story <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+      <!-- Story 3: Innovation Culture -->
+      <article class="reveal reveal-delay-2 card-modern bg-warm rounded-3xl overflow-hidden group cursor-pointer">
+        <div class="h-56 bg-gradient-to-br from-secondary/10 to-primary/5 flex items-center justify-center relative overflow-hidden">
+          <svg class="w-16 h-16 text-secondary/15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <div class="absolute top-6 left-6 w-20 h-20 bg-secondary/10 rounded-full blur-2xl"></div>
+        </div>
+        <div class="p-7">
+          <p class="text-xs text-secondary font-semibold uppercase tracking-wider mb-2">From Our Labs</p>
+          <h3 class="font-bold text-slate-brand text-lg group-hover:text-primary transition mb-3 tracking-tight leading-snug">How AI Is Transforming the Way We Discover Medicines</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-5">Our computational biology team is using machine learning to accelerate drug discovery by 40%. A deep look into the innovation culture that makes Makana a leader in pharma technology.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read Story <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MEDIA RESOURCES ==================== -->
+<section class="py-24 lg:py-32 bg-warm">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="reveal text-secondary font-medium text-sm tracking-[0.15em] uppercase mb-4">For Media</p>
+      <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">Media Resources.</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- Press Kit -->
+      <a href="/resources?category=media" class="reveal card-modern bg-white rounded-2xl p-7 flex flex-col group border border-gray-100 min-h-[220px]">
+        <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-brand mb-2 tracking-tight">Press Kit Download</h3>
+        <p class="text-sm text-gray-400 leading-relaxed flex-1">Comprehensive press kit with fact sheets, leadership bios, and company overview.</p>
+        <span class="inline-flex items-center text-secondary text-sm font-medium mt-4 group-hover:gap-2.5 gap-1.5 transition-all">Download <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </a>
+
+      <!-- Brand Assets -->
+      <a href="/resources?category=media" class="reveal reveal-delay-1 card-modern bg-white rounded-2xl p-7 flex flex-col group border border-gray-100 min-h-[220px]">
+        <div class="w-12 h-12 bg-secondary/8 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-brand mb-2 tracking-tight">Brand Assets</h3>
+        <p class="text-sm text-gray-400 leading-relaxed flex-1">Official logos, visual identity guidelines, and approved imagery for media use.</p>
+        <span class="inline-flex items-center text-secondary text-sm font-medium mt-4 group-hover:gap-2.5 gap-1.5 transition-all">Access <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </a>
+
+      <!-- Media Contact -->
+      <a href="/contact" class="reveal reveal-delay-2 card-modern bg-white rounded-2xl p-7 flex flex-col group border border-gray-100 min-h-[220px]">
+        <div class="w-12 h-12 bg-accent/8 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-brand mb-2 tracking-tight">Media Contact</h3>
+        <p class="text-sm text-gray-400 leading-relaxed flex-1">Reach our media relations team for press inquiries, interviews, and information requests.</p>
+        <span class="inline-flex items-center text-secondary text-sm font-medium mt-4 group-hover:gap-2.5 gap-1.5 transition-all">Contact <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </a>
+
+      <!-- Spokesperson Directory -->
+      <a href="/about" class="reveal reveal-delay-3 card-modern bg-white rounded-2xl p-7 flex flex-col group border border-gray-100 min-h-[220px]">
+        <div class="w-12 h-12 bg-rose-50 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-brand mb-2 tracking-tight">Spokesperson Directory</h3>
+        <p class="text-sm text-gray-400 leading-relaxed flex-1">Connect with Makana Health experts and leaders available for media commentary.</p>
+        <span class="inline-flex items-center text-secondary text-sm font-medium mt-4 group-hover:gap-2.5 gap-1.5 transition-all">View Directory <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MAKANA MAGAZINE ==================== -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-end justify-between mb-14">
+      <div>
+        <p class="reveal text-secondary font-medium text-sm tracking-[0.15em] uppercase mb-4">Digital Publication</p>
+        <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">Makana Magazine.</h2>
+      </div>
+      <a href="/resources?category=media" class="reveal hidden sm:inline-flex items-center text-secondary font-medium text-sm hover:gap-3 gap-2 transition-all">
+        All Issues <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Issue 1: Innovation -->
+      <a href="/news-article?id=makana-magazine-spring-2026-innovation" class="reveal card-modern rounded-3xl overflow-hidden group relative">
+        <div class="bg-gradient-to-br from-primary-dark via-primary to-accent/70 p-8 lg:p-10 min-h-[360px] flex flex-col justify-end relative overflow-hidden">
+          <div class="absolute top-6 right-6 w-32 h-32 bg-secondary/10 rounded-full blur-3xl group-hover:bg-secondary/20 transition-colors duration-700"></div>
+          <div class="absolute top-6 left-6">
+            <span class="px-3 py-1 bg-white/10 text-white/60 text-[10px] font-semibold rounded-full uppercase tracking-widest">Issue 14</span>
+          </div>
+          <p class="text-secondary text-xs font-semibold tracking-[0.2em] uppercase mb-3">Spring 2026</p>
+          <h3 class="text-2xl font-bold text-white tracking-tight mb-2">The Innovation Issue</h3>
+          <p class="text-white/40 text-sm leading-relaxed mb-5">Exploring the technologies and partnerships shaping the next era of pharmaceutical research and development.</p>
+          <span class="inline-flex items-center text-secondary text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read Issue <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Issue 2: Patient Stories -->
+      <a href="/news-article?id=makana-magazine-winter-2025-patient-stories" class="reveal reveal-delay-1 card-modern rounded-3xl overflow-hidden group relative">
+        <div class="bg-gradient-to-br from-[#0a2e1a] to-secondary-dark p-8 lg:p-10 min-h-[360px] flex flex-col justify-end relative overflow-hidden">
+          <div class="absolute top-6 right-6 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors duration-700"></div>
+          <div class="absolute top-6 left-6">
+            <span class="px-3 py-1 bg-white/10 text-white/60 text-[10px] font-semibold rounded-full uppercase tracking-widest">Issue 13</span>
+          </div>
+          <p class="text-secondary-light text-xs font-semibold tracking-[0.2em] uppercase mb-3">Winter 2025</p>
+          <h3 class="text-2xl font-bold text-white tracking-tight mb-2">Patient Stories</h3>
+          <p class="text-white/40 text-sm leading-relaxed mb-5">Real stories from real patients whose lives have been transformed by innovative medicines and compassionate care.</p>
+          <span class="inline-flex items-center text-secondary-light text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read Issue <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+      <!-- Issue 3: Sustainability -->
+      <a href="/news-article?id=makana-magazine-autumn-2025-sustainability" class="reveal reveal-delay-2 card-modern rounded-3xl overflow-hidden group relative">
+        <div class="bg-gradient-to-br from-slate-brand to-primary-dark p-8 lg:p-10 min-h-[360px] flex flex-col justify-end relative overflow-hidden">
+          <div class="absolute top-6 right-6 w-32 h-32 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-colors duration-700"></div>
+          <div class="absolute top-6 left-6">
+            <span class="px-3 py-1 bg-white/10 text-white/60 text-[10px] font-semibold rounded-full uppercase tracking-widest">Issue 12</span>
+          </div>
+          <p class="text-green-400 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Autumn 2025</p>
+          <h3 class="text-2xl font-bold text-white tracking-tight mb-2">The Sustainability Issue</h3>
+          <p class="text-white/40 text-sm leading-relaxed mb-5">How Makana Health is building a more sustainable future through responsible manufacturing and environmental stewardship.</p>
+          <span class="inline-flex items-center text-green-400 text-sm font-medium group-hover:gap-2.5 gap-1.5 transition-all">Read Issue <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== NEWSLETTER SIGNUP ==================== -->
+<section class="py-24 lg:py-32 bg-warm">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal bg-gradient-to-br from-primary-dark via-primary to-accent/80 rounded-[2rem] overflow-hidden">
+      <div class="p-12 lg:p-20 text-center max-w-2xl mx-auto">
+        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-8">
+          <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight mb-4">Stay informed.</h2>
+        <p class="text-white/50 text-lg leading-relaxed mb-10 font-light">Get the latest news, press releases, and stories from Makana Health delivered directly to your inbox. No spam, unsubscribe anytime.</p>
+        <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+          <input type="email" id="newsletterEmail" placeholder="Enter your email address" required class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/15 text-white placeholder-white/30 text-sm focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition backdrop-blur-sm">
+          <button type="submit" class="pill-btn px-8 py-4 rounded-full bg-white text-slate-brand font-semibold text-sm hover:bg-white/90 transition shrink-0">
+            Subscribe
+          </button>
+        </form>
+        <p class="text-white/20 text-xs mt-6">By subscribing, you agree to our <a class='text-white/40 hover:text-secondary transition underline' href='/privacy'>Privacy Policy</a></p>
+        <div id="newsletterSuccess" class="hidden mt-8">
+          <div class="flex items-center justify-center gap-2 text-secondary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <p class="font-medium text-sm">Thank you! Check your inbox to confirm your subscription.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SOCIAL MEDIA FEED ==================== -->
+<section class="py-24 lg:py-32 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="reveal text-secondary font-medium text-sm tracking-[0.15em] uppercase mb-4">Follow Us</p>
+      <h2 class="reveal text-4xl lg:text-5xl font-bold text-slate-brand tracking-tight">Social Media.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/company/makanahealth" class="reveal card-modern bg-warm rounded-3xl p-7 group border border-gray-100 hover:border-gray-200" data-track="social_feed_linkedin">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 bg-[#0A66C2]/10 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-sm text-slate-brand">LinkedIn</p>
+            <p class="text-xs text-gray-400">@MakanaHealth</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">Excited to announce our Phase III immunology results. This milestone reflects years of dedication from our incredible research team. #Innovation #Pharma</p>
+        <div class="flex items-center gap-4 text-xs text-gray-400">
+          <span class="flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            2.4K
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            186
+          </span>
+          <span>2 days ago</span>
+        </div>
+      </a>
+
+      <!-- X / Twitter -->
+      <a href="https://x.com/MakanaHealth" class="reveal reveal-delay-1 card-modern bg-warm rounded-3xl p-7 group border border-gray-100 hover:border-gray-200" data-track="social_feed_twitter">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 bg-slate-brand/8 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-slate-brand" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-sm text-slate-brand">X (Twitter)</p>
+            <p class="text-xs text-gray-400">@MakanaHealth</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">Proud to share that Makana Health has achieved carbon neutral operations -- two years ahead of schedule. Sustainability is not just a goal, it's how we operate. Read more on our Newsroom.</p>
+        <div class="flex items-center gap-4 text-xs text-gray-400">
+          <span class="flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            1.1K
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            342
+          </span>
+          <span>5 days ago</span>
+        </div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/makanahealth" class="reveal reveal-delay-2 card-modern bg-warm rounded-3xl p-7 group border border-gray-100 hover:border-gray-200" data-track="social_feed_instagram">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-sm text-slate-brand">Instagram</p>
+            <p class="text-xs text-gray-400">@makanahealth</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">Behind every breakthrough is a team that believes in better. Meet the scientists, researchers, and dedicated people who make it all possible. #LifeAtMakana #ScienceMatters</p>
+        <div class="flex items-center gap-4 text-xs text-gray-400">
+          <span class="flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            3.8K
+          </span>
+          <span class="flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            94
+          </span>
+          <span>1 week ago</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-16 lg:py-20">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
+      <div class="col-span-2 md:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8 brightness-0 invert opacity-60 mb-4">
+        <p class="text-xs text-white/30 leading-relaxed max-w-xs">Reimagining medicine to improve and extend people's lives.</p>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Company</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/about'>About</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/about#leadership'>Leadership</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/manufacturing'>Manufacturing</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/quality'>Quality</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Science</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/research'>R&D</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/pipeline'>Pipeline</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/products'>Products</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/clinical-trials'>Clinical Trials</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/technology'>Technology</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Disease Areas</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/cardiovascular'>Cardiovascular</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/immunology'>Immunology</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/neuroscience'>Neuroscience</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/oncology'>Oncology</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Resources</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/patients'>Patients</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/hcp'>HCPs</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/careers'>Careers</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/investors'>Investors</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/news'>News</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/contact'>Contact</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Connect</h4>
+        <div class="flex flex-wrap gap-2">
+          <a href="https://linkedin.com/company/makana-health" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_linkedin"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://twitter.com/MakanaHealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_twitter"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://instagram.com/makanahealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+          <a href="https://youtube.com/@MakanaHealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_youtube"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#1D1D1F"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/8">
+    <div class="max-w-[1200px] mx-auto px-6 py-5">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-3 text-[11px] text-white/25">
+          <a class='hover:text-white/50 transition' href='/privacy'>Privacy</a>
+          <span>|</span>
+          <a href="/terms" class="hover:text-white/50 transition">Terms</a>
+          <span>|</span>
+          <button onclick="reopenCookies()" class="hover:text-white/50 transition">Cookie Settings</button>
+          <span>|</span>
+          <a href="/accessibility" class="hover:text-white/50 transition">Accessibility</a>
+          <span>|</span>
+          <a href="/sitemap-page" class="hover:text-white/50 transition">Sitemap</a>
+        </div>
+        <p class="text-[11px] text-white/20">&copy; 2026 Makana Health. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  // Mobile menu
+  document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Glass nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Login modal
+  function openLogin() {
+    document.getElementById('loginModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLogin() {
+    document.getElementById('loginModal').classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    if (email) {
+      e.target.classList.add('hidden');
+      document.getElementById('loginSuccess').classList.remove('hidden');
+      setTimeout(() => closeLogin(), 3000);
+    }
+  }
+
+  // Cookie consent with 365-day expiration
+  function acceptCookies(type) {
+    document.getElementById('cookieConsent').style.display = 'none';
+    localStorage.setItem('makana_cookies', JSON.stringify({ type: type, timestamp: Date.now() }));
+  }
+  function reopenCookies() {
+    const banner = document.getElementById('cookieConsent');
+    banner.style.display = '';
+    banner.style.animation = 'slideUp 0.3s ease both';
+  }
+  // Auto-hide if accepted within 365 days
+  (function() {
+    var stored = localStorage.getItem('makana_cookies');
+    if (stored) {
+      try {
+        var data = JSON.parse(stored);
+        if (data.timestamp && (Date.now() - data.timestamp < 365 * 24 * 60 * 60 * 1000)) {
+          document.getElementById('cookieConsent').style.display = 'none';
+        } else {
+          localStorage.removeItem('makana_cookies');
+        }
+      } catch(e) {
+        // Legacy string value — remove and re-show banner
+        localStorage.removeItem('makana_cookies');
+      }
+    }
+  })();
+
+  // Filter pills
+  document.querySelectorAll('.filter-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-pill').forEach(b => {
+        b.classList.remove('active');
+        b.classList.add('text-gray-600');
+      });
+      btn.classList.add('active');
+      btn.classList.remove('text-gray-600');
+    });
+  });
+
+  // Newsletter signup
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const email = document.getElementById('newsletterEmail').value;
+    if (email) {
+      e.target.classList.add('hidden');
+      document.getElementById('newsletterSuccess').classList.remove('hidden');
+    }
+  }
+
+
+// ── Chat panel ──
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+  document.getElementById('chatFab').classList.toggle('hidden', chatOpen);
+}
+function chatAction(text) {
+  const msgs = document.getElementById('chatMsgs');
+  const u = document.createElement('div');
+  u.className = 'msg-bubble user';
+  u.textContent = text;
+  msgs.appendChild(u);
+  document.getElementById('quickActions').style.display = 'none';
+  const t = document.createElement('div');
+  t.className = 'typing-dots';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(t);
+  msgs.scrollTop = msgs.scrollHeight;
+  const replies = {
+    'Learn about IMMUNEXIS': 'IMMUNEXIS\u00ae is our breakthrough IL-31 receptor antagonist approved for pediatric atopic dermatitis. In the CLARITY Phase III trial, 72% of patients achieved EASI-75 at Week 16. Would you like to see the full prescribing information?',
+    'Find clinical trials': 'We have 15 active clinical trials across immunology, cardiovascular, neuroscience, and oncology. I can help you find trials based on your condition and location. What therapeutic area interests you?',
+    'Talk to a representative': "I'd be happy to connect you with a Makana Health representative. You can reach our medical information team at 1-800-MAKANA or I can have someone contact you. Would you like to provide your email?",
+    'View product safety info': 'I can provide safety information for any of our approved products: IMMUNEXIS\u00ae, CARDIOGUARD\u00ae, or any pipeline compound. Which product are you interested in?'
+  };
+  setTimeout(() => {
+    t.remove();
+    const b = document.createElement('div');
+    b.className = 'msg-bubble bot';
+    b.textContent = replies[text] || "I'd be happy to help with that. Let me look into it for you.";
+    msgs.appendChild(b);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1500);
+}
+
+
+// ── Gateway portal ──
+function openGateway() {
+  document.getElementById('gatewayOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function closeGateway() {
+  document.getElementById('gatewayOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showHcpLogin() {
+  document.getElementById('gwMain').style.display = 'none';
+  document.getElementById('gwHcpLogin').classList.add('active');
+}
+function backToGateway() {
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function handleHcpLogin(e) {
+  e.preventDefault();
+  var email = document.getElementById('hcpEmail').value;
+  if (email) { e.target.classList.add('hidden'); document.getElementById('hcpLoginSuccess').classList.remove('hidden'); setTimeout(function(){ window.location.href='hcp-portal.html'; }, 2500); }
+}
+</script>
+
+<!-- ═══════════ AGENTFORCE CHAT FAB ═══════════ -->
+<button id="chatFab" class="fab-orb" onclick="toggleChat()" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+</button>
+
+<!-- ═══════════ CHAT PANEL ═══════════ -->
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-hdr">
+    <div class="chat-avatar">M</div>
+    <div>
+      <h4 class="text-[15px] font-semibold text-white leading-tight">Makana Assistant</h4>
+      <p class="text-[11px] text-white/50">Powered by Agentforce</p>
+    </div>
+    <div class="online-dot"></div>
+    <button onclick="toggleChat()" class="ml-3 text-white/50 hover:text-white transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg-bubble bot">Hello! I'm Makana's AI assistant, powered by Agentforce. How can I help you today?</div>
+  </div>
+  <div class="quick-actions" id="quickActions">
+    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Quick Actions</p>
+    <button class="q-action" onclick="chatAction('Learn about IMMUNEXIS')">Learn about IMMUNEXIS&reg;</button>
+    <button class="q-action" onclick="chatAction('Find clinical trials')">Find clinical trials</button>
+    <button class="q-action" onclick="chatAction('Talk to a representative')">Talk to a representative</button>
+    <button class="q-action" onclick="chatAction('View product safety info')">View product safety info</button>
+  </div>
+</div>
+
+
+</body>
+</html>

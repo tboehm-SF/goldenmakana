@@ -1,1 +1,708 @@
-{"id":"/hcp-portal/cme-programs.html","path":"/hcp-portal/cme-programs.html","sha":"109d89c6a93682dbeb1d82f5fad79085d2d506d1","mime_type":"text/html","size":44642,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CME Programs | HCP Portal | Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+</style>
+<style>
+*, *::before, *::after { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; }
+.glass-nav { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); background: rgba(255,255,255,0.72); }
+.glass-nav.scrolled { background: rgba(255,255,255,0.92); box-shadow: 0 0.5px 0 rgba(0,0,0,0.08); }
+.card-modern { transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.card-modern:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.gradient-text { background: linear-gradient(135deg, #6BBFAB 0%, #9B8EC4 50%, #4A4063 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: transparent; }
+.resource-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.resource-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(74,64,99,0.1); border-color: rgba(74,64,99,0.15); }
+.portal-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+.progress-bar-track { background: rgba(0,0,0,0.06); border-radius: 100px; height: 10px; overflow: hidden; }
+.progress-bar-fill { height: 100%; border-radius: 100px; transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); background: linear-gradient(90deg, #6BBFAB, #9B8EC4); }
+.cme-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.cme-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(74,64,99,0.1); border-color: rgba(74,64,99,0.15); }
+.enroll-btn { transition: all 0.3s ease; }
+.enroll-btn:hover:not(.enrolled) { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(74,64,99,0.2); }
+.enroll-btn.enrolled { background: #6BBFAB !important; border-color: #6BBFAB !important; cursor: default; }
+.transcript-row { transition: background 0.2s ease; }
+.transcript-row:hover { background: rgba(74,64,99,0.02); }
+</style>
+
+<!-- Salesforce c360a Beacon & Tracking -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="/js/makana-datalayer.js"></script>
+<script src="/js/makana-init.js"></script>
+<script src="/js/makana-sitemap.js"></script>
+<script src="/js/makana-personalization.js"></script>
+<script src="/js/makana-leadgen.js"></script>
+<script defer src="/js/makana-contact.js"></script>
+</head>
+<body class="bg-warm font-sans text-slate-brand">
+
+<!-- ═══════════ AUTH GATE ═══════════ -->
+<script>
+(function() {
+  var stored = localStorage.getItem('makana_user');
+  if (!stored) {
+    window.location.href = '/?gateway=hcp';
+    return;
+  }
+  try {
+    var user = JSON.parse(stored);
+    if (!user.email) { window.location.href = '/?gateway=hcp'; return; }
+    window.__hcpUser = user;
+  } catch(e) {
+    window.location.href = '/?gateway=hcp';
+  }
+})();
+</script>
+
+<!-- ═══════════ NAVIGATION ═══════════ -->
+<header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-14">
+      <div class="flex items-center gap-4">
+        <a class="shrink-0" href="/">
+          <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8">
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <span class="portal-badge bg-primary/8 text-primary">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+          HCP Portal
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/hcp-portal" class="flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-primary transition px-3 py-2 rounded-lg hover:bg-primary/5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/></svg>
+          Back to Portal
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <div id="userAvatar" class="flex items-center gap-2">
+          <span id="userInitial" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6BBFAB,#4A4063);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600"></span>
+        </div>
+        <button onclick="showLogoutModal()" class="text-xs text-gray-400 hover:text-red-500 transition font-medium">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="pt-24 pb-12 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
+  <div class="absolute inset-0 opacity-30">
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(107,191,171,0.2) 0%,transparent 70%);filter:blur(50px);top:-100px;right:-50px;"></div>
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(155,142,196,0.15) 0%,transparent 70%);filter:blur(40px);bottom:-150px;left:-50px;"></div>
+  </div>
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-white/40 mb-4">
+      <a href="/hcp-portal" class="hover:text-white/70 transition">Portal</a>
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      <span class="text-white/70">CME Programs</span>
+    </nav>
+    <div class="flex items-center gap-3 mb-3">
+      <span class="portal-badge bg-white/15 text-white/90 text-[10px]">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+        Secure Session
+      </span>
+      <span class="portal-badge bg-white/10 text-white/80 text-[10px]">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+        ACCME Accredited
+      </span>
+    </div>
+    <h1 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Continuing Medical Education</h1>
+    <p class="text-white/60 text-sm mt-2 max-w-xl">Advance your clinical knowledge with accredited CME programs spanning immunology, cardiology, oncology, and neurology. Earn credits at your own pace.</p>
+  </div>
+</section>
+
+<!-- ═══════════ YOUR CME PROGRESS ═══════════ -->
+<section class="py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal stat-card p-6 lg:p-8">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-6">
+        <!-- Left: Progress Summary -->
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-primary/8 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+            </div>
+            <div>
+              <h2 class="text-lg font-bold text-slate-brand">Your CME Progress</h2>
+              <p class="text-[11px] text-gray-400">2026 Licensing Cycle</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="flex items-end gap-1 mb-1">
+              <span class="text-3xl font-bold text-slate-brand">12</span>
+              <span class="text-sm text-gray-400 mb-1">/ 25 credits</span>
+            </div>
+            <div class="progress-bar-track w-full max-w-md">
+              <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+            <p class="text-[11px] text-gray-400 mt-2">13 credits remaining to meet your annual requirement</p>
+          </div>
+        </div>
+        <!-- Right: Stats Grid -->
+        <div class="grid grid-cols-3 gap-4 lg:gap-6">
+          <div class="text-center">
+            <p class="text-2xl font-bold text-secondary">12</p>
+            <p class="text-[10px] text-gray-400 mt-0.5">Credits Earned</p>
+          </div>
+          <div class="text-center">
+            <p class="text-2xl font-bold text-accent">25</p>
+            <p class="text-[10px] text-gray-400 mt-0.5">Required</p>
+          </div>
+          <div class="text-center">
+            <p class="text-2xl font-bold text-primary">Dec 31</p>
+            <p class="text-[10px] text-gray-400 mt-0.5">Next Renewal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FEATURED PROGRAMS ═══════════ -->
+<section class="pb-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="reveal text-2xl font-bold text-slate-brand tracking-tight mb-6">Featured Programs</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+
+      <!-- Program 1: Atopic Dermatitis -->
+      <div class="reveal cme-card" id="program-ad">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3 flex-wrap">
+            <span class="portal-badge bg-secondary/10 text-secondary-dark text-[10px]">2.0 CME Credits</span>
+            <span class="portal-badge bg-blue-50 text-blue-600 text-[10px]">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
+              Live Webinar
+            </span>
+            <span class="portal-badge bg-orange-50 text-orange-600 text-[10px]">April 22, 2026</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-brand mb-2">Advances in Atopic Dermatitis Management</h3>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3">Explore the evolving landscape of atopic dermatitis therapy, including IL-31 receptor antagonism, JAK inhibitor positioning, and biomarker-driven treatment selection. This live session covers the latest clinical trial data and real-world evidence for optimizing patient outcomes in moderate-to-severe AD.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+              <span class="text-[10px] font-bold text-primary">SR</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">Sarah Richfield, MD, FAAD</p>
+              <p class="text-[10px] text-gray-400">Chief of Dermatology, Northwestern Memorial Hospital</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <button onclick="enrollProgram(this, 'ad_management', 'Advances in Atopic Dermatitis Management')" class="enroll-btn px-5 py-2.5 bg-primary text-white text-xs font-semibold rounded-xl hover:bg-primary-dark">
+              Enroll Now
+            </button>
+            <span class="text-[10px] text-gray-300">42 seats remaining</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Program 2: Cardiovascular PCSK9 -->
+      <div class="reveal reveal-d1 cme-card" id="program-cv">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3 flex-wrap">
+            <span class="portal-badge bg-secondary/10 text-secondary-dark text-[10px]">1.5 CME Credits</span>
+            <span class="portal-badge bg-emerald-50 text-emerald-600 text-[10px]">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z"/></svg>
+              On-Demand
+            </span>
+            <span class="portal-badge bg-green-50 text-green-600 text-[10px]">Available Now</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-brand mb-2">Cardiovascular Risk Reduction: New Frontiers with PCSK9 Inhibition</h3>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3">Examine the mechanistic rationale and clinical evidence for dual PCSK9/Lp(a) inhibition in cardiovascular risk management. This on-demand module reviews MACE outcomes from pivotal trials, patient selection strategies, and the integration of novel lipid-lowering therapies into guideline-directed medical therapy.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
+              <span class="text-[10px] font-bold text-secondary">JM</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">James Moreno, MD, FACC</p>
+              <p class="text-[10px] text-gray-400">Director of Preventive Cardiology, Cedars-Sinai Medical Center</p>
+            </div>
+          </div>
+          <!-- Partial completion -->
+          <div class="mb-3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-[10px] text-gray-400">35% complete</span>
+              <span class="text-[10px] text-gray-300">Module 2 of 4</span>
+            </div>
+            <div class="progress-bar-track h-1.5">
+              <div class="progress-bar-fill" style="width: 35%; background: linear-gradient(90deg, #6BBFAB, #4A9B87);"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <button onclick="enrollProgram(this, 'cv_pcsk9', 'Cardiovascular Risk Reduction: PCSK9 Inhibition')" class="enroll-btn px-5 py-2.5 bg-secondary text-white text-xs font-semibold rounded-xl hover:bg-secondary-dark">
+              Continue Learning
+            </button>
+            <span class="text-[10px] text-gray-300">Self-paced</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Program 3: Bispecific Antibodies in Oncology -->
+      <div class="reveal cme-card" id="program-onc">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3 flex-wrap">
+            <span class="portal-badge bg-secondary/10 text-secondary-dark text-[10px]">3.0 CME Credits</span>
+            <span class="portal-badge bg-purple-50 text-purple-600 text-[10px]">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+              Self-Paced Module
+            </span>
+          </div>
+          <h3 class="text-base font-bold text-slate-brand mb-2">Bispecific Antibodies in Oncology: Mechanisms &amp; Clinical Applications</h3>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3">Gain a comprehensive understanding of bispecific antibody engineering, T-cell redirection mechanisms, and the expanding role of these agents in hematologic malignancies and solid tumors. This module covers clinical data from pivotal trials, management of immune-related adverse events including cytokine release syndrome, and emerging combination strategies.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+              <span class="text-[10px] font-bold text-accent">LP</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">Linda Park, MD, PhD</p>
+              <p class="text-[10px] text-gray-400">Professor of Hematology/Oncology, Dana-Farber Cancer Institute</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <button onclick="enrollProgram(this, 'onc_bispecific', 'Bispecific Antibodies in Oncology')" class="enroll-btn px-5 py-2.5 bg-primary text-white text-xs font-semibold rounded-xl hover:bg-primary-dark">
+              Start Program
+            </button>
+            <span class="text-[10px] text-gray-300">Approx. 3.5 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Program 4: Migraine Prevention -->
+      <div class="reveal reveal-d1 cme-card" id="program-migraine">
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3 flex-wrap">
+            <span class="portal-badge bg-secondary/10 text-secondary-dark text-[10px]">1.0 CME Credit</span>
+            <span class="portal-badge bg-rose-50 text-rose-600 text-[10px]">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z"/></svg>
+              Podcast Series
+            </span>
+            <span class="portal-badge bg-gray-50 text-gray-500 text-[10px]">4 Episodes</span>
+          </div>
+          <h3 class="text-base font-bold text-slate-brand mb-2">Migraine Prevention: From Pathophysiology to Practice</h3>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3">A four-part podcast series examining CGRP pathway biology, evidence-based preventive strategies, and practical approaches to patient counseling in migraine management. Each episode features case-based discussions with expert commentary on treatment selection, switching strategies, and monitoring outcomes in chronic and episodic migraine.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center">
+              <span class="text-[10px] font-bold text-rose-500">AK</span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-slate-brand">Anita Kapoor, MD, FAAN</p>
+              <p class="text-[10px] text-gray-400">Director of Headache Medicine, Mayo Clinic</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <button onclick="enrollProgram(this, 'migraine_prevention', 'Migraine Prevention: Pathophysiology to Practice')" class="enroll-btn px-5 py-2.5 bg-primary text-white text-xs font-semibold rounded-xl hover:bg-primary-dark">
+              Start Listening
+            </button>
+            <span class="text-[10px] text-gray-300">~15 min per episode</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ COMPLETED PROGRAMS ═══════════ -->
+<section class="pb-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="reveal text-2xl font-bold text-slate-brand tracking-tight mb-6">Completed Programs</h2>
+    <div class="reveal space-y-3">
+
+      <!-- Completed 1 -->
+      <div class="stat-card p-5 flex items-start gap-4">
+        <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <h4 class="text-sm font-semibold text-slate-brand">Immunotherapy Fundamentals: Checkpoint Inhibitors in Practice</h4>
+            <span class="portal-badge bg-green-50 text-green-600 text-[9px]">Completed</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">Comprehensive overview of PD-1/PD-L1 and CTLA-4 inhibitors, immune-related adverse event management, and biomarker-guided therapy selection.</p>
+          <div class="flex items-center gap-4 mt-2">
+            <span class="text-[10px] text-gray-400">2.5 CME Credits</span>
+            <span class="text-[10px] text-gray-300">Completed Feb 14, 2026</span>
+            <button onclick="downloadCertificate('immunotherapy_fundamentals', 'Immunotherapy Fundamentals')" class="text-[10px] font-semibold text-primary hover:text-primary-dark transition flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              Download Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed 2 -->
+      <div class="stat-card p-5 flex items-start gap-4">
+        <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <h4 class="text-sm font-semibold text-slate-brand">Heart Failure Management: From Guidelines to Clinical Practice</h4>
+            <span class="portal-badge bg-green-50 text-green-600 text-[9px]">Completed</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">Evidence-based approaches to HFrEF and HFpEF management including SGLT2 inhibitors, ARNI therapy, and device-based interventions.</p>
+          <div class="flex items-center gap-4 mt-2">
+            <span class="text-[10px] text-gray-400">3.0 CME Credits</span>
+            <span class="text-[10px] text-gray-300">Completed Jan 8, 2026</span>
+            <button onclick="downloadCertificate('hf_management', 'Heart Failure Management')" class="text-[10px] font-semibold text-primary hover:text-primary-dark transition flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              Download Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Completed 3 -->
+      <div class="stat-card p-5 flex items-start gap-4">
+        <div class="w-10 h-10 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <h4 class="text-sm font-semibold text-slate-brand">Biologics in Dermatology: Targeted Therapy for Inflammatory Skin Disease</h4>
+            <span class="portal-badge bg-green-50 text-green-600 text-[9px]">Completed</span>
+          </div>
+          <p class="text-xs text-gray-400 mt-1">Mechanisms of action, clinical trial data, and practical treatment algorithms for biologic therapies in psoriasis, atopic dermatitis, and hidradenitis suppurativa.</p>
+          <div class="flex items-center gap-4 mt-2">
+            <span class="text-[10px] text-gray-400">6.5 CME Credits</span>
+            <span class="text-[10px] text-gray-300">Completed Nov 20, 2025</span>
+            <button onclick="downloadCertificate('biologics_derm', 'Biologics in Dermatology')" class="text-[10px] font-semibold text-primary hover:text-primary-dark transition flex items-center gap-1">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              Download Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CME TRANSCRIPT ═══════════ -->
+<section class="pb-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-slate-brand tracking-tight">CME Transcript</h2>
+        <button onclick="downloadTranscript()" class="flex items-center gap-2 px-4 py-2 bg-primary/8 text-primary text-xs font-semibold rounded-xl hover:bg-primary/15 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          Download Full Transcript (PDF)
+        </button>
+      </div>
+      <div class="stat-card overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-gray-100">
+                <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Activity</th>
+                <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Credits</th>
+                <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Type</th>
+                <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Date</th>
+                <th class="text-left text-[10px] font-semibold text-gray-400 uppercase tracking-wider px-5 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="transcript-row border-b border-gray-50">
+                <td class="px-5 py-3.5">
+                  <p class="text-xs font-medium text-slate-brand">Cardiovascular Risk Reduction: PCSK9 Inhibition</p>
+                </td>
+                <td class="px-5 py-3.5 text-xs text-gray-500">1.5</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-emerald-50 text-emerald-600 text-[9px]">On-Demand</span></td>
+                <td class="px-5 py-3.5 text-[11px] text-gray-400">In Progress</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-amber-50 text-amber-600 text-[9px]">35% Complete</span></td>
+              </tr>
+              <tr class="transcript-row border-b border-gray-50">
+                <td class="px-5 py-3.5">
+                  <p class="text-xs font-medium text-slate-brand">Immunotherapy Fundamentals: Checkpoint Inhibitors</p>
+                </td>
+                <td class="px-5 py-3.5 text-xs text-gray-500">2.5</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-purple-50 text-purple-600 text-[9px]">Self-Paced</span></td>
+                <td class="px-5 py-3.5 text-[11px] text-gray-400">Feb 14, 2026</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-green-50 text-green-600 text-[9px]">Completed</span></td>
+              </tr>
+              <tr class="transcript-row border-b border-gray-50">
+                <td class="px-5 py-3.5">
+                  <p class="text-xs font-medium text-slate-brand">Heart Failure Management: Guidelines to Practice</p>
+                </td>
+                <td class="px-5 py-3.5 text-xs text-gray-500">3.0</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-blue-50 text-blue-600 text-[9px]">Live Webinar</span></td>
+                <td class="px-5 py-3.5 text-[11px] text-gray-400">Jan 8, 2026</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-green-50 text-green-600 text-[9px]">Completed</span></td>
+              </tr>
+              <tr class="transcript-row border-b border-gray-50">
+                <td class="px-5 py-3.5">
+                  <p class="text-xs font-medium text-slate-brand">Biologics in Dermatology: Targeted Therapy</p>
+                </td>
+                <td class="px-5 py-3.5 text-xs text-gray-500">6.5</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-purple-50 text-purple-600 text-[9px]">Self-Paced</span></td>
+                <td class="px-5 py-3.5 text-[11px] text-gray-400">Nov 20, 2025</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-green-50 text-green-600 text-[9px]">Completed</span></td>
+              </tr>
+              <tr class="transcript-row">
+                <td class="px-5 py-3.5">
+                  <p class="text-xs font-medium text-slate-brand">Pharmacogenomics in Clinical Decision-Making</p>
+                </td>
+                <td class="px-5 py-3.5 text-xs text-gray-500">2.0</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-emerald-50 text-emerald-600 text-[9px]">On-Demand</span></td>
+                <td class="px-5 py-3.5 text-[11px] text-gray-400">Sep 3, 2025</td>
+                <td class="px-5 py-3.5"><span class="portal-badge bg-green-50 text-green-600 text-[9px]">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ACCREDITATION INFO ═══════════ -->
+<section class="pb-20">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal stat-card p-6 lg:p-8">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-lg font-bold text-slate-brand mb-2">Accreditation Statement</h2>
+          <p class="text-xs text-gray-500 leading-relaxed mb-3">Makana Health Education Institute is accredited by the National Board for Continuing Medical Education (NBCME) to provide continuing medical education for physicians. Makana Health Education Institute designates each educational activity for a specified number of <em>AMA PRA Category 1 Credits</em>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.</p>
+          <div class="grid md:grid-cols-3 gap-4 mt-4">
+            <div class="bg-warm rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold mb-1">Accrediting Body</p>
+              <p class="text-xs font-semibold text-slate-brand">National Board for CME (NBCME)</p>
+            </div>
+            <div class="bg-warm rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold mb-1">Provider Number</p>
+              <p class="text-xs font-semibold text-slate-brand">MH-CME-2024-0847</p>
+            </div>
+            <div class="bg-warm rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold mb-1">Accreditation Valid Through</p>
+              <p class="text-xs font-semibold text-slate-brand">December 31, 2028</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-gray-400 mt-4 leading-relaxed">Disclosure: All faculty participating in CME activities sponsored by Makana Health Education Institute are required to disclose relevant financial relationships with commercial interests. These disclosures are reviewed and resolved to ensure that educational content is fair, balanced, and free of commercial bias. For complete disclosure information, refer to the individual program materials.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-6 brightness-0 invert opacity-50">
+        <span class="text-xs text-white/30">HCP Portal</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 text-[11px] text-white/25">
+        <a href="/privacy" class="hover:text-white/50 transition">Privacy</a><span>|</span>
+        <a href="/terms" class="hover:text-white/50 transition">Terms</a><span>|</span>
+        <a href="/hcp-portal" class="hover:text-white/50 transition">HCP Portal</a><span>|</span>
+        <a href="/" class="hover:text-white/50 transition">Main Site</a>
+      </div>
+      <p class="text-[11px] text-white/20">&copy; 2026 Makana Health. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+// ── Glass nav scroll ──
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+// ── Reveal on scroll ──
+var revObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { revObs.observe(el); });
+
+// ── Animate progress bar ──
+setTimeout(function() {
+  var bar = document.getElementById('progressBar');
+  if (bar) bar.style.width = '48%';
+}, 400);
+
+// ── Contact lookup handled by makana-contact.js ──
+
+// ── Identity stitching on page load ──
+(function() {
+  if (typeof SalesforceInteractions !== 'undefined' && window.__hcpUser) {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP CME Programs View' },
+      user: { attributes: { eventType: 'identity', emailAddress: window.__hcpUser.email } }
+    });
+  }
+  if (window.makanaDataLayer && window.__hcpUser) {
+    window.makanaDataLayer.push({
+      event: 'identity', action: 'hcp_portal_cme_programs',
+      label: 'HCP Portal: CME Programs',
+      user: { attributes: { emailAddress: window.__hcpUser.email } }
+    });
+  }
+})();
+
+// ── Enroll / Start program ──
+function enrollProgram(btn, programId, programName) {
+  if (btn.classList.contains('enrolled')) return;
+
+  btn.classList.add('enrolled');
+  btn.innerHTML = 'Enrolled &#10003;';
+
+  // Track enrollment click
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'CME Program Enrollment: ' + programName, eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'cme_enrollment',
+      category: 'HCP_CME',
+      action: 'enroll',
+      label: programName,
+      program_id: programId,
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+}
+
+// ── Download certificate ──
+function downloadCertificate(programId, programName) {
+  // Track certificate download
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'CME Certificate Download: ' + programName, eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'cme_certificate_download',
+      category: 'HCP_CME',
+      action: 'download_certificate',
+      label: programName,
+      program_id: programId,
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+
+  // Simulate download
+  alert('Certificate for "' + programName + '" is being prepared for download.');
+}
+
+// ── Download transcript ──
+function downloadTranscript() {
+  // Track transcript download
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'CME Transcript Download', eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'cme_transcript_download',
+      category: 'HCP_CME',
+      action: 'download_transcript',
+      label: 'Full CME Transcript PDF',
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+
+  alert('Your CME transcript is being generated. The PDF will download shortly.');
+}
+
+// ── Logout Modal ──
+function showLogoutModal() {
+  document.getElementById('logoutModal').classList.remove('hidden');
+  document.getElementById('logoutModal').classList.add('flex');
+  setTimeout(function() {
+    document.getElementById('logoutPanel').style.opacity = '1';
+    document.getElementById('logoutPanel').style.transform = 'scale(1) translateY(0)';
+  }, 10);
+}
+function hideLogoutModal() {
+  var panel = document.getElementById('logoutPanel');
+  panel.style.opacity = '0';
+  panel.style.transform = 'scale(0.95) translateY(8px)';
+  setTimeout(function() {
+    document.getElementById('logoutModal').classList.add('hidden');
+    document.getElementById('logoutModal').classList.remove('flex');
+  }, 200);
+}
+function hcpLogout() {
+  // Track logout event
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'hcp_logout',
+      category: 'HCP_PORTAL',
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Logout', eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  // Clear all session data
+  localStorage.removeItem('makana_user');
+  sessionStorage.removeItem('makana_contact');
+  window.__hcpUser = null;
+  window.__hcpContact = null;
+  window.location.href = '/?gateway=hcp';
+}
+</script>
+
+<!-- ═══════════ LOGOUT CONFIRMATION MODAL ═══════════ -->
+<div id="logoutModal" class="hidden fixed inset-0 z-[9998] items-center justify-center bg-black/40 backdrop-blur-sm" onclick="hideLogoutModal()">
+  <div id="logoutPanel" onclick="event.stopPropagation()" style="opacity:0;transform:scale(0.95) translateY(8px);transition:all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);" class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 max-w-sm w-full mx-4">
+    <div class="flex items-center justify-center w-14 h-14 bg-red-50 rounded-2xl mx-auto mb-5">
+      <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
+    </div>
+    <h3 class="text-lg font-bold text-slate-brand text-center mb-2">Sign out of HCP Portal?</h3>
+    <p class="text-sm text-gray-400 text-center mb-6">You'll need to sign in again to access clinical resources and your portal dashboard.</p>
+    <div class="flex gap-3">
+      <button onclick="hideLogoutModal()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-xl transition">Cancel</button>
+      <button onclick="hcpLogout()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-white bg-red-500 hover:bg-red-600 rounded-xl transition">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

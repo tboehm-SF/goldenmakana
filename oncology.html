@@ -1,1 +1,1708 @@
-{"id":"/oncology.html","path":"/oncology.html","sha":"9752bc4cf9f53a6b00322f44c13222f015141b66","mime_type":"text/html","size":112149,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oncology | Makana Health</title>
+  <meta name="description" content="Makana Health Oncology - Redefining cancer treatment through precision medicine and immunotherapy. Explore our approved therapies and pipeline programs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #4A4063;
+      --color-primary-light: #6B5B8A;
+      --color-primary-dark: #2D2640;
+      --color-secondary: #6BBFAB;
+      --color-secondary-light: #8ED4C4;
+      --color-secondary-dark: #4A9B87;
+      --color-accent: #9B8EC4;
+      --color-accent-light: #B8AED6;
+      --color-slate-brand: #1D1D1F;
+      --color-warm: #FAFAFA;
+      --color-warm-dark: #F5F5F7;
+      --color-glass: rgba(255,255,255,0.72);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    }
+  </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+
+    /* Glass Navigation */
+    .glass-nav {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-nav.scrolled {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(40px) saturate(200%);
+      -webkit-backdrop-filter: blur(40px) saturate(200%);
+      box-shadow: 0 1px 40px rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    /* Mega Menu */
+    .mega-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(40px) saturate(200%);
+      -webkit-backdrop-filter: blur(40px) saturate(200%);
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .mega-menu-trigger:hover .mega-menu,
+    .mega-menu-trigger:focus-within .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    /* Card Modern */
+    .card-modern {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0,0,0,0.04);
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card-modern:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+      border-color: rgba(245,158,11,0.2);
+    }
+
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, #F59E0B, #D97706, #F59E0B);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-text-primary {
+      background: linear-gradient(135deg, #4A4063, #6B5B8A, #9B8EC4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Hero Mesh Background */
+    .hero-mesh {
+      background: linear-gradient(135deg, #1D1D1F 0%, #2D2640 30%, #1D1D1F 60%, #2D2640 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-mesh::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(245,158,11,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(155,142,196,0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(245,158,11,0.06) 0%, transparent 70%);
+    }
+
+    /* Hero Orbs */
+    .hero-orb-1 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, rgba(245,158,11,0.03) 50%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      animation: floatOrb1 8s ease-in-out infinite;
+    }
+    .hero-orb-2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(155,142,196,0.12) 0%, rgba(155,142,196,0.02) 50%, transparent 70%);
+      bottom: -80px;
+      left: -80px;
+      animation: floatOrb2 10s ease-in-out infinite;
+    }
+
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-30px, 20px) scale(1.05); }
+      66% { transform: translate(20px, -15px) scale(0.95); }
+    }
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(25px, -20px) scale(1.05); }
+      66% { transform: translate(-15px, 25px) scale(0.95); }
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 20px;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+      transform: scale(0.95) translateY(20px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-backdrop.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cookie-banner.slideUp {
+      transform: translateY(0);
+    }
+
+    /* Pill Button */
+    .pill-btn {
+      border-radius: 980px;
+      padding: 12px 28px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: -0.01em;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pill-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Progress Bars */
+    .progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: #F3F4F6;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #F59E0B, #D97706);
+      transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 0;
+    }
+    .progress-bar-fill.animated {
+      /* width set via inline style */
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* Disease card accent */
+    .disease-accent {
+      position: relative;
+    }
+    .disease-accent::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(90deg, #F59E0B, #D97706);
+    }
+
+    /* Stat counter */
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Testimonial quote */
+    .testimonial-quote::before {
+      content: '\201C';
+      font-size: 4rem;
+      line-height: 1;
+      color: #F59E0B;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: -10px;
+      left: -5px;
+      opacity: 0.3;
+    }
+  
+
+/* ═══ GATEWAY PORTAL ═══ */
+.gw-overlay { position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:1rem; }
+.gw-overlay.open { display:flex; }
+.gw-backdrop { position:absolute; inset:0; background:rgba(29,29,31,.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); animation:gwFadeIn .3s ease; }
+@keyframes gwFadeIn { from{opacity:0} to{opacity:1} }
+.gw-modal { position:relative; z-index:1; width:100%; max-width:880px; max-height:92vh; overflow-y:auto; background:#fff; border-radius:28px; box-shadow:0 40px 120px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.1); animation:gwSlideIn .4s cubic-bezier(.22,1,.36,1); }
+@keyframes gwSlideIn { from{opacity:0;transform:scale(.93) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.gw-hero { position:relative; background:linear-gradient(135deg,#2D2640 0%,#4A4063 40%,#3a6b5e 100%); padding:2.5rem 2.5rem 3rem; border-radius:28px 28px 0 0; overflow:hidden; }
+.gw-hero::before { content:''; position:absolute; top:-40%; right:-15%; width:460px; height:460px; background:radial-gradient(circle,rgba(107,191,171,.2) 0%,transparent 70%); border-radius:50%; }
+.gw-hero::after { content:''; position:absolute; bottom:-60%; left:-10%; width:380px; height:380px; background:radial-gradient(circle,rgba(155,142,196,.15) 0%,transparent 70%); border-radius:50%; }
+.gw-close { position:absolute; top:1.25rem; right:1.25rem; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .2s; z-index:2; }
+.gw-close:hover { background:rgba(255,255,255,.25); transform:scale(1.1); }
+.gw-close svg { width:16px; height:16px; color:#fff; }
+.gw-body { padding:2rem 2.5rem 2.5rem; }
+.portal-card { position:relative; border-radius:20px; padding:2rem; border:1.5px solid #e5e7eb; transition:all .35s cubic-bezier(.25,.46,.45,.94); cursor:pointer; overflow:hidden; background:#fff; }
+.portal-card::before { content:''; position:absolute; inset:0; border-radius:20px; opacity:0; transition:opacity .35s; }
+.portal-card:hover { transform:translateY(-4px); border-color:transparent; }
+.portal-card.hcp-card:hover { box-shadow:0 20px 60px rgba(74,64,99,.15),0 0 0 1.5px rgba(74,64,99,.2); }
+.portal-card.hcp-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(74,64,99,.03),rgba(155,142,196,.05)); }
+.portal-card.patient-card:hover { box-shadow:0 20px 60px rgba(107,191,171,.15),0 0 0 1.5px rgba(107,191,171,.25); }
+.portal-card.patient-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(107,191,171,.03),rgba(107,191,171,.06)); }
+.portal-icon-wrap { width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+.portal-icon-wrap.hcp { background:linear-gradient(135deg,#4A4063,#6B5B8A); box-shadow:0 4px 14px rgba(74,64,99,.25); }
+.portal-icon-wrap.patient { background:linear-gradient(135deg,#6BBFAB,#4A9B87); box-shadow:0 4px 14px rgba(107,191,171,.25); }
+.portal-icon-wrap svg { width:24px; height:24px; color:#fff; }
+.feature-check { display:flex; align-items:center; gap:.5rem; padding:.35rem 0; }
+.feature-check .check-icon { width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.feature-check .check-icon.hcp { background:rgba(74,64,99,.08); color:#4A4063; }
+.feature-check .check-icon.patient { background:rgba(107,191,171,.1); color:#4A9B87; }
+.feature-check .check-icon svg { width:10px; height:10px; }
+.portal-btn { display:flex; align-items:center; justify-content:center; gap:.5rem; width:100%; padding:.85rem 1.5rem; border-radius:14px; font-size:.8125rem; font-weight:600; border:none; cursor:pointer; transition:all .25s; margin-top:1.5rem; }
+.portal-btn.hcp { background:#4A4063; color:#fff; }
+.portal-btn.hcp:hover { background:#2D2640; box-shadow:0 8px 24px rgba(74,64,99,.3); transform:scale(1.02); }
+.portal-btn.patient { background:#fff; color:#4A9B87; border:1.5px solid #6BBFAB; }
+.portal-btn.patient:hover { background:#ecfdf5; box-shadow:0 8px 24px rgba(107,191,171,.2); transform:scale(1.02); }
+.portal-btn svg { width:16px; height:16px; }
+.hcp-email-step { display:none; animation:gwFadeIn .3s ease; }
+.hcp-email-step.active { display:block; }
+.gw-input { width:100%; padding:.85rem 1.25rem; border-radius:14px; border:1.5px solid #e5e7eb; font-size:.875rem; background:#fafafa; transition:all .2s; outline:none; }
+.gw-input:focus { border-color:#9B8EC4; box-shadow:0 0 0 3px rgba(155,142,196,.12); background:#fff; }
+.gw-nav-btn { position:relative; display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,rgba(74,64,99,.06),rgba(107,191,171,.06)); border:1px solid rgba(74,64,99,.1); cursor:pointer; transition:all .25s; }
+.gw-nav-btn:hover { background:linear-gradient(135deg,rgba(74,64,99,.12),rgba(107,191,171,.12)); border-color:rgba(74,64,99,.2); transform:scale(1.08); box-shadow:0 4px 14px rgba(74,64,99,.12); }
+.gw-nav-btn svg { width:16px; height:16px; }
+.gw-img-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; margin-top:1.5rem; }
+.gw-img-thumb { border-radius:12px; overflow:hidden; aspect-ratio:3/4; position:relative; cursor:pointer; transition:all .3s; border:2px solid transparent; }
+.gw-img-thumb:hover { transform:scale(1.03); border-color:rgba(107,191,171,.3); box-shadow:0 8px 24px rgba(0,0,0,.1); }
+.gw-img-thumb img { width:100%; height:100%; object-fit:cover; }
+
+/* ═══ FAB ORB (Agentforce-style) ═══ */
+.fab-orb {
+  position:fixed; bottom:32px; right:32px; width:64px; height:64px; border-radius:50%;
+  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:600; background:#0b0818;
+  box-shadow: inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08),
+    0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35),
+    0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08);
+  animation:orb-pulse 2.8s ease-out infinite;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+}
+.fab-orb::before { content:''; position:absolute; top:8px; left:10px; width:20px; height:12px; background:radial-gradient(ellipse,rgba(255,255,255,.4) 0%,transparent 100%); border-radius:50%; pointer-events:none; z-index:2; }
+.fab-orb:hover { transform:scale(1.12) translateY(-3px); box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 16px 44px rgba(124,111,160,.75),0 4px 14px rgba(76,170,143,.5),0 5px 14px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.15),0 0 70px rgba(124,111,160,.3); }
+.fab-orb svg { width:24px; height:24px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
+@keyframes orb-pulse {
+  0%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,.6);}
+  70%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 22px rgba(124,111,160,0);}
+  100%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,0);}
+}
+.fab-orb.hidden { opacity:0; pointer-events:none; animation:none; }
+
+/* ═══ CHAT PANEL ═══ */
+.chat-panel { position:fixed; bottom:32px; right:32px; width:380px; max-height:580px; z-index:700;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-radius:24px; box-shadow:0 32px 80px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.5);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform:scale(.92) translateY(20px); opacity:0; pointer-events:none;
+  transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+}
+.chat-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+
+.chat-hdr { background:linear-gradient(135deg,#4A4063,#352D47); padding:20px 22px; display:flex; align-items:center; gap:12px; }
+.chat-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#9B8EC4,#6BBFAB); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; }
+.online-dot { width:9px; height:9px; background:#6BBFAB; border-radius:50%; margin-left:auto; animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{box-shadow:0 0 0 0 rgba(107,191,171,.5)} 50%{box-shadow:0 0 0 5px rgba(107,191,171,0)} }
+
+.chat-msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; max-height:320px; }
+.msg-bubble { max-width:85%; padding:12px 16px; border-radius:18px; font-size:13px; line-height:1.6; animation:bubble-in .3s cubic-bezier(.22,1,.36,1) both; }
+.msg-bubble.bot { background:#f0f0f5; color:#1D1D1F; border-bottom-left-radius:4px; align-self:flex-start; }
+.msg-bubble.user { background:#4A4063; color:#fff; border-bottom-right-radius:4px; align-self:flex-end; }
+@keyframes bubble-in { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+.typing-dots { display:flex; gap:5px; padding:8px 14px; }
+.typing-dots span { width:7px; height:7px; border-radius:50%; background:#9B8EC4; animation:dot-pulse 1s ease-in-out infinite; }
+.typing-dots span:nth-child(2) { animation-delay:.18s; background:#7FAAB4; }
+.typing-dots span:nth-child(3) { animation-delay:.36s; background:#6BBFAB; }
+@keyframes dot-pulse { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+.quick-actions { padding:14px 18px; border-top:1px solid rgba(0,0,0,.04); display:flex; flex-direction:column; gap:8px; }
+.q-action { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:10px 16px; font-size:13px; color:#4A4063; cursor:pointer; font-weight:500; text-align:left; transition:all .2s; display:flex; justify-content:space-between; align-items:center; }
+.q-action::after { content:'\2192'; color:#9B8EC4; opacity:0; transform:translateX(-6px); transition:all .2s; }
+.q-action:hover { border-color:#9B8EC4; background:#faf9ff; transform:translateX(3px); box-shadow:0 2px 12px rgba(155,142,196,.12); }
+.q-action:hover::after { opacity:1; transform:translateX(0); }
+
+</style>
+
+<!-- ═══ Salesforce Personalization — Data Cloud Web SDK ═══ -->
+<!-- Data Cloud Website Connector: Makana_Health_Website (494741f1-8288-47b0-bc0e-e60e66c23cc8) -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="js/makana-datalayer.js"></script>
+<script src="js/makana-init.js"></script>
+<script src="js/makana-sitemap.js"></script>
+<script src="js/makana-personalization.js"></script>
+<script src="js/makana-leadgen.js"></script>
+<!-- ═══ End Salesforce Personalization ═══ -->
+</head>
+<body class="bg-warm text-slate-brand antialiased">
+
+  <!-- Glass Navigation -->
+  <nav class="glass-nav fixed top-0 left-0 right-0 z-50" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-18">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 shrink-0">
+          <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-9 w-auto">
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/about'>About</a>
+
+          <!-- Science Mega Menu -->
+          <div class="mega-menu-trigger relative">
+            <button class="px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03] flex items-center gap-1">
+              Science
+              <svg class="w-3.5 h-3.5 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 rounded-2xl p-3">
+              <a class='flex items-center gap-3 p-3 rounded-xl hover:bg-amber-50 transition-colors group' href='/research'>
+                <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+                  <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-slate-brand">Research</div>
+                  <div class="text-xs text-slate-brand/50">Our scientific platform</div>
+                </div>
+              </a>
+              <a class='flex items-center gap-3 p-3 rounded-xl hover:bg-amber-50 transition-colors group' href='/pipeline'>
+                <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+                  <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-slate-brand">Pipeline</div>
+                  <div class="text-xs text-slate-brand/50">Drug development stages</div>
+                </div>
+              </a>
+              <a class='flex items-center gap-3 p-3 rounded-xl hover:bg-amber-50 transition-colors group' href='/clinical-trials'>
+                <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+                  <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-slate-brand">Clinical Trials</div>
+                  <div class="text-xs text-slate-brand/50">Active study programs</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/products'>Products</a>
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/hcp'>HCP Portal</a>
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/patients'>Patients</a>
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/esg'>Sustainability</a>
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/investors'>Investors</a>
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/news'>News</a>
+          <a class='px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]' href='/careers'>Careers</a>
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-3">
+          <button onclick="openLoginModal()" class="hidden lg:flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-brand/70 hover:text-slate-brand transition-colors rounded-lg hover:bg-black/[0.03]" aria-label="Login">
+            <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl hover:bg-black/[0.03] transition-colors" aria-label="Menu">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-white/98 backdrop-blur-xl border-t border-black/[0.04]">
+      <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/about'>About</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/research'>Research</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/pipeline'>Pipeline</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/clinical-trials'>Clinical Trials</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/products'>Products</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/hcp'>HCP Portal</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/patients'>Patients</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/esg'>Sustainability</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/investors'>Investors</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/news'>News</a>
+        <a class='block px-4 py-3 text-sm font-medium text-slate-brand/70 hover:text-slate-brand hover:bg-amber-50 rounded-xl transition-colors' href='/careers'>Careers</a>
+        <div class="pt-2 border-t border-black/[0.04]">
+      <button onclick="openGateway()" class="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary-dark text-white text-sm font-semibold flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        Portal Gateway
+      </button>
+          <button onclick="openLoginModal()" class="w-full px-4 py-3 text-sm font-medium text-amber-600 hover:bg-amber-50 rounded-xl transition-colors text-left">Login</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero-mesh min-h-[90vh] flex items-center relative pt-20">
+    <div class="hero-orb-1"></div>
+    <div class="hero-orb-2"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-32">
+      <div class="max-w-3xl">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-8">
+            <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+            <span class="text-amber-300 text-sm font-medium tracking-wide">Therapeutic Area</span>
+          </div>
+        </div>
+        <h1 class="reveal reveal-delay-1 text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-white leading-[0.95] mb-6">
+          <span class="gradient-text">Oncology</span>
+        </h1>
+        <p class="reveal reveal-delay-2 text-xl sm:text-2xl text-white/60 font-light leading-relaxed max-w-2xl mb-10">
+          Redefining cancer treatment through precision medicine and immunotherapy
+        </p>
+        <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+          <a href="#medicines" class="pill-btn bg-amber-500 text-white hover:bg-amber-600">
+            Our Medicines
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="#clinical-evidence" class="pill-btn bg-white/10 text-white border border-white/20 hover:bg-white/20">
+            Clinical Evidence
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+      <svg class="w-6 h-6 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="py-20 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div class="reveal text-center">
+          <div class="stat-number text-4xl lg:text-5xl font-bold text-amber-500 mb-2">20M+</div>
+          <div class="text-sm text-slate-brand/50 font-medium">New Cases / Year</div>
+        </div>
+        <div class="reveal reveal-delay-1 text-center">
+          <div class="stat-number text-4xl lg:text-5xl font-bold text-amber-500 mb-2">2</div>
+          <div class="text-sm text-slate-brand/50 font-medium">Approved Therapies</div>
+        </div>
+        <div class="reveal reveal-delay-2 text-center">
+          <div class="stat-number text-4xl lg:text-5xl font-bold text-amber-500 mb-2">10</div>
+          <div class="text-sm text-slate-brand/50 font-medium">Pipeline Programs</div>
+        </div>
+        <div class="reveal reveal-delay-3 text-center">
+          <div class="stat-number text-4xl lg:text-5xl font-bold text-amber-500 mb-2">60+</div>
+          <div class="text-sm text-slate-brand/50 font-medium">Clinical Studies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DISEASE UNDERSTANDING ========== -->
+  <section class="py-24 bg-warm-dark relative" id="disease-understanding">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">Disease Landscape</span>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-4">Understanding Cancer</h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-brand/50 max-w-2xl mx-auto">Our oncology programs address the most significant unmet needs across multiple tumor types, informed by deep molecular understanding.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <!-- NSCLC -->
+        <div class="reveal card-modern disease-accent p-8">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-brand mb-1">Non-Small Cell Lung Cancer</h3>
+              <span class="inline-block px-3 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-full">NSCLC</span>
+            </div>
+          </div>
+          <p class="text-slate-brand/60 text-sm leading-relaxed mb-4">Non-small cell lung cancer accounts for approximately 85% of all lung cancers, representing the leading cause of cancer-related mortality worldwide. Despite advances in treatment, most patients with advanced NSCLC will eventually progress on standard therapies.</p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Prevalence</span>
+              <span class="text-sm text-slate-brand/60">~2.2M new cases globally per year; most common cancer worldwide</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Landscape</span>
+              <span class="text-sm text-slate-brand/60">TKIs, immune checkpoint inhibitors, chemotherapy; increasing focus on biomarker-driven therapy</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Unmet Need</span>
+              <span class="text-sm text-slate-brand/60">KRAS-mutant NSCLC with limited targeted options; resistance to first-line therapies; CNS metastases</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breast Cancer -->
+        <div class="reveal reveal-delay-1 card-modern disease-accent p-8">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-brand mb-1">Breast Cancer</h3>
+              <span class="inline-block px-3 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-full">HER2+ / TNBC</span>
+            </div>
+          </div>
+          <p class="text-slate-brand/60 text-sm leading-relaxed mb-4">Breast cancer remains the most commonly diagnosed cancer among women, with triple-negative breast cancer (TNBC) and HER2-positive subtypes presenting distinct treatment challenges. Novel antibody-drug conjugates are transforming the treatment paradigm.</p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Prevalence</span>
+              <span class="text-sm text-slate-brand/60">~2.3M new cases annually; most common cancer in women globally</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Landscape</span>
+              <span class="text-sm text-slate-brand/60">Endocrine therapy, anti-HER2 agents, CDK4/6 inhibitors, ADCs, immune checkpoint inhibitors for TNBC</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Unmet Need</span>
+              <span class="text-sm text-slate-brand/60">Durable responses in metastatic TNBC; overcoming endocrine resistance; brain metastases treatment</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hematologic Malignancies -->
+        <div class="reveal reveal-delay-2 card-modern disease-accent p-8">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-brand mb-1">Hematologic Malignancies</h3>
+              <span class="inline-block px-3 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-full">Blood Cancers</span>
+            </div>
+          </div>
+          <p class="text-slate-brand/60 text-sm leading-relaxed mb-4">Hematologic malignancies encompass a diverse group of cancers arising from blood-forming tissues, including leukemias, lymphomas, and myelomas. Bispecific antibodies and cell therapies are revolutionizing outcomes for patients with relapsed or refractory disease.</p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Prevalence</span>
+              <span class="text-sm text-slate-brand/60">~1.3M new cases per year including NHL, AML, CLL, and multiple myeloma</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Landscape</span>
+              <span class="text-sm text-slate-brand/60">BTK inhibitors, bispecific antibodies, CAR-T cell therapy, proteasome inhibitors, immunomodulators</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Unmet Need</span>
+              <span class="text-sm text-slate-brand/60">Durable complete remissions; managing treatment-resistant clones; reducing treatment toxicity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solid Tumors -->
+        <div class="reveal reveal-delay-3 card-modern disease-accent p-8">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0">
+              <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-brand mb-1">Solid Tumors</h3>
+              <span class="inline-block px-3 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-full">Tumor-Agnostic</span>
+            </div>
+          </div>
+          <p class="text-slate-brand/60 text-sm leading-relaxed mb-4">Our tumor-agnostic pipeline programs target molecular alterations that drive cancer across multiple solid tumor types, including colorectal, pancreatic, gastric, and bladder cancers. This biomarker-driven approach enables precision treatment regardless of cancer origin.</p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Prevalence</span>
+              <span class="text-sm text-slate-brand/60">Millions affected across CRC (~1.9M), pancreatic (~500K), gastric (~1.1M) cancers annually</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Landscape</span>
+              <span class="text-sm text-slate-brand/60">Tumor-agnostic approvals emerging; NTRK, RET, BRAF-targeted therapies; MSI-H immunotherapy</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-xs font-semibold text-amber-600 uppercase tracking-wide w-24 shrink-0 pt-0.5">Unmet Need</span>
+              <span class="text-sm text-slate-brand/60">Expanded biomarker coverage; therapies for rare mutations; combination strategies for cold tumors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OUR MEDICINES ========== -->
+  <section class="py-24 bg-white relative" id="medicines">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">Therapeutic Portfolio</span>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-4">Our Medicines</h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-brand/50 max-w-2xl mx-auto">Bringing transformative treatments to patients with the highest unmet need in oncology.</p>
+      </div>
+
+      <!-- Oncolys -->
+      <div class="reveal card-modern p-0 overflow-hidden mb-8">
+        <div class="bg-gradient-to-r from-amber-500 to-amber-600 p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-2xl">
+                <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+              </span>
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white">Oncolys<sup>&reg;</sup></h3>
+                <p class="text-amber-100 text-sm">(onitresib)</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 sm:ml-auto">
+              <span class="px-3 py-1 bg-white/20 text-white text-xs font-semibold rounded-full">FDA Approved</span>
+              <span class="px-3 py-1 bg-white/20 text-white text-xs font-semibold rounded-full">EMA Approved</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 sm:p-8 lg:p-10">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            <div>
+              <h4 class="text-lg font-bold text-slate-brand mb-3">Mechanism of Action</h4>
+              <p class="text-slate-brand/60 text-sm leading-relaxed mb-6">Oncolys (onitresib) is a highly selective, irreversible small-molecule inhibitor targeting the KRAS G12C oncoprotein. It covalently binds to the mutant cysteine residue in KRAS G12C, locking the protein in its inactive GDP-bound state and blocking downstream RAS/MAPK signaling that drives tumor proliferation and survival.</p>
+
+              <h4 class="text-lg font-bold text-slate-brand mb-3">Approved Indications</h4>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2 text-sm text-slate-brand/60">
+                  <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  Locally advanced or metastatic KRAS G12C-mutant NSCLC after at least one prior line of systemic therapy
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-brand/60">
+                  <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  KRAS G12C-mutant advanced colorectal cancer (CRC) in combination with cetuximab after prior fluoropyrimidine-, oxaliplatin-, and irinotecan-based therapy
+                </li>
+              </ul>
+
+              <h4 class="text-lg font-bold text-slate-brand mb-3">Dosing</h4>
+              <p class="text-slate-brand/60 text-sm leading-relaxed">960 mg orally once daily, with or without food. Treatment continued until disease progression or unacceptable toxicity.</p>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-slate-brand mb-6">Key Trial Data: MAKANA-Lung-301</h4>
+              <div class="space-y-6">
+                <!-- ORR -->
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-semibold text-slate-brand">Overall Response Rate (ORR)</span>
+                    <span class="text-2xl font-bold text-amber-500">42.6%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill" data-width="42.6"></div>
+                  </div>
+                  <p class="text-xs text-slate-brand/40 mt-1">95% CI: 35.9% - 49.5% | n=345 evaluable patients</p>
+                </div>
+                <!-- PFS -->
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-semibold text-slate-brand">Median PFS</span>
+                    <span class="text-2xl font-bold text-amber-500">7.1 mo</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill" data-width="59.2"></div>
+                  </div>
+                  <p class="text-xs text-slate-brand/40 mt-1">HR 0.56 (95% CI: 0.45-0.70) vs docetaxel | p &lt; 0.001</p>
+                </div>
+                <!-- OS -->
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-semibold text-slate-brand">Median OS</span>
+                    <span class="text-2xl font-bold text-amber-500">12.5 mo</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill" data-width="52.1"></div>
+                  </div>
+                  <p class="text-xs text-slate-brand/40 mt-1">HR 0.64 (95% CI: 0.50-0.81) vs docetaxel | p &lt; 0.001</p>
+                </div>
+                <!-- Duration -->
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-semibold text-slate-brand">Median Duration of Response</span>
+                    <span class="text-2xl font-bold text-amber-500">11.1 mo</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-bar-fill" data-width="46.3"></div>
+                  </div>
+                  <p class="text-xs text-slate-brand/40 mt-1">95% CI: 8.2-16.4 months | 36% of responders ongoing at 18 months</p>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-amber-50 rounded-2xl">
+                <p class="text-xs text-amber-700">
+                  <strong>Safety Summary:</strong> Most common adverse events (&ge;20%): diarrhea (62%), nausea (34%), fatigue (26%), arthralgia (22%), hepatotoxicity (21%). Grade &ge;3 AEs in 45% of patients. Treatment discontinuation due to AEs: 9.4%.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pipeline Candidate: Immuno-Oncology -->
+      <div class="reveal card-modern p-0 overflow-hidden">
+        <div class="bg-gradient-to-r from-primary to-primary-light p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            <div class="flex items-center gap-3">
+              <span class="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-2xl">
+                <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+              </span>
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white">MKN-4280</h3>
+                <p class="text-white/70 text-sm">Anti-TIGIT + PD-1 Bispecific Antibody</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 sm:ml-auto">
+              <span class="px-3 py-1 bg-white/20 text-white text-xs font-semibold rounded-full">Phase II</span>
+              <span class="px-3 py-1 bg-white/20 text-white text-xs font-semibold rounded-full">Immuno-Oncology</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 sm:p-8 lg:p-10">
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            <div>
+              <h4 class="text-lg font-bold text-slate-brand mb-3">Mechanism of Action</h4>
+              <p class="text-slate-brand/60 text-sm leading-relaxed mb-6">MKN-4280 is a first-in-class bispecific antibody simultaneously targeting TIGIT and PD-1 immune checkpoints. By co-engaging both receptors on T cells and NK cells, MKN-4280 delivers enhanced anti-tumor immune activation compared to monotherapy approaches, restoring immune surveillance in immunosuppressive tumor microenvironments.</p>
+
+              <h4 class="text-lg font-bold text-slate-brand mb-3">Clinical Program</h4>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-start gap-2 text-sm text-slate-brand/60">
+                  <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                  Phase II trial in 1L metastatic NSCLC (PD-L1 TPS &ge;50%) + platinum chemotherapy
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-brand/60">
+                  <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                  Phase I/II expansion cohort in recurrent/metastatic head and neck squamous cell carcinoma
+                </li>
+                <li class="flex items-start gap-2 text-sm text-slate-brand/60">
+                  <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                  Biomarker-enriched basket study across multiple solid tumor types
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-slate-brand mb-4">Preliminary Phase I/II Results</h4>
+              <div class="space-y-4">
+                <div class="p-4 bg-warm-dark rounded-2xl">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm font-semibold text-slate-brand">Confirmed ORR (NSCLC cohort)</span>
+                    <span class="text-xl font-bold text-primary">38%</span>
+                  </div>
+                  <p class="text-xs text-slate-brand/40">n=52, data cutoff Dec 2025 | Mature data expected Q3 2026</p>
+                </div>
+                <div class="p-4 bg-warm-dark rounded-2xl">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm font-semibold text-slate-brand">Disease Control Rate</span>
+                    <span class="text-xl font-bold text-primary">78%</span>
+                  </div>
+                  <p class="text-xs text-slate-brand/40">CR + PR + SD at 16 weeks</p>
+                </div>
+                <div class="p-4 bg-warm-dark rounded-2xl">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm font-semibold text-slate-brand">Grade &ge;3 irAEs</span>
+                    <span class="text-xl font-bold text-primary">14%</span>
+                  </div>
+                  <p class="text-xs text-slate-brand/40">Manageable safety profile; no new safety signals identified</p>
+                </div>
+              </div>
+              <div class="mt-6">
+                <a class='pill-btn bg-primary text-white hover:bg-primary-dark text-sm' href='/pipeline'>
+                  View Full Pipeline
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SCIENTIFIC APPROACH ========== -->
+  <section class="py-24 bg-warm-dark relative" id="approach">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">Our Platform</span>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-4">Scientific Approach</h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-brand/50 max-w-2xl mx-auto">Our multi-modality oncology platform leverages five complementary strategies to address cancer complexity.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Targeted Therapy -->
+        <div class="reveal card-modern p-6 text-center group">
+          <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Targeted Therapy</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed">Precision small molecules designed against validated oncogenic drivers including KRAS, EGFR, and RAF</p>
+        </div>
+
+        <!-- Immuno-Oncology -->
+        <div class="reveal reveal-delay-1 card-modern p-6 text-center group">
+          <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Immuno-Oncology</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed">Next-generation checkpoint modulators and bispecific antibodies reactivating anti-tumor immunity</p>
+        </div>
+
+        <!-- ADCs -->
+        <div class="reveal reveal-delay-2 card-modern p-6 text-center group">
+          <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-2.124a4.5 4.5 0 00-6.364-6.364L6.5 6.5"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Antibody-Drug Conjugates</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed">ADCs delivering potent cytotoxic payloads selectively to tumor cells via tumor-specific antigens</p>
+        </div>
+
+        <!-- Combination -->
+        <div class="reveal reveal-delay-3 card-modern p-6 text-center group">
+          <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Combination Strategies</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed">Rational combinations to overcome resistance, enhance efficacy, and achieve durable responses</p>
+        </div>
+
+        <!-- Biomarker -->
+        <div class="reveal reveal-delay-4 card-modern p-6 text-center group">
+          <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Biomarker Selection</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed">Companion diagnostics and genomic profiling to match patients to the most effective therapies</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KEY CLINICAL EVIDENCE ========== -->
+  <section class="py-24 bg-white relative" id="clinical-evidence">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">Evidence</span>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-4">Key Clinical Evidence</h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-brand/50 max-w-2xl mx-auto">Pivotal data from our landmark oncology trials demonstrate meaningful clinical benefit.</p>
+      </div>
+
+      <!-- Featured Trial -->
+      <div class="reveal card-modern p-0 overflow-hidden mb-8">
+        <div class="p-6 sm:p-8 lg:p-10 bg-gradient-to-br from-amber-50 to-warm">
+          <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div class="lg:w-1/2">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-100 rounded-full mb-4">
+                <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                <span class="text-xs font-semibold text-amber-700">Featured Trial</span>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-brand mb-2">MAKANA-Lung-301</h3>
+              <p class="text-sm text-slate-brand/50 mb-4">Phase III, randomized, open-label study of onitresib vs docetaxel in previously treated KRAS G12C-mutant advanced NSCLC</p>
+              <div class="space-y-3 mb-6">
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-semibold text-amber-600 w-20">Patients</span>
+                  <span class="text-sm text-slate-brand/60">N=679 (2:1 randomization)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-semibold text-amber-600 w-20">Endpoint</span>
+                  <span class="text-sm text-slate-brand/60">Co-primary: PFS and OS</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="text-xs font-semibold text-amber-600 w-20">Status</span>
+                  <span class="text-sm text-slate-brand/60">Primary analysis complete; long-term follow-up ongoing</span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-brand/40 italic">Presented at ASCO 2025; published in New England Journal of Medicine, 2025</p>
+            </div>
+            <div class="lg:w-1/2">
+              <h4 class="text-sm font-bold text-slate-brand mb-6">Survival Analysis</h4>
+
+              <!-- PFS Bar Chart -->
+              <div class="mb-6">
+                <p class="text-xs font-semibold text-slate-brand/60 mb-3 uppercase tracking-wide">Progression-Free Survival (Median)</p>
+                <div class="space-y-3">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-xs font-medium text-amber-700">Onitresib</span>
+                      <span class="text-sm font-bold text-amber-600">7.1 months</span>
+                    </div>
+                    <div class="w-full h-6 bg-white rounded-lg overflow-hidden">
+                      <div class="h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-lg flex items-center justify-end pr-2 progress-bar-fill" data-width="71" style="width:0">
+                        <span class="text-[10px] font-bold text-white">HR 0.56</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-xs font-medium text-slate-brand/40">Docetaxel</span>
+                      <span class="text-sm font-bold text-slate-brand/40">4.0 months</span>
+                    </div>
+                    <div class="w-full h-6 bg-white rounded-lg overflow-hidden">
+                      <div class="h-full bg-slate-200 rounded-lg progress-bar-fill" data-width="40" style="width:0"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OS Bar Chart -->
+              <div class="mb-6">
+                <p class="text-xs font-semibold text-slate-brand/60 mb-3 uppercase tracking-wide">Overall Survival (Median)</p>
+                <div class="space-y-3">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-xs font-medium text-amber-700">Onitresib</span>
+                      <span class="text-sm font-bold text-amber-600">12.5 months</span>
+                    </div>
+                    <div class="w-full h-6 bg-white rounded-lg overflow-hidden">
+                      <div class="h-full bg-gradient-to-r from-amber-400 to-amber-500 rounded-lg flex items-center justify-end pr-2 progress-bar-fill" data-width="62.5" style="width:0">
+                        <span class="text-[10px] font-bold text-white">HR 0.64</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-xs font-medium text-slate-brand/40">Docetaxel</span>
+                      <span class="text-sm font-bold text-slate-brand/40">8.8 months</span>
+                    </div>
+                    <div class="w-full h-6 bg-white rounded-lg overflow-hidden">
+                      <div class="h-full bg-slate-200 rounded-lg progress-bar-fill" data-width="44" style="width:0"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Response Waterfall Summary -->
+              <div class="grid grid-cols-3 gap-3">
+                <div class="bg-white p-3 rounded-xl text-center">
+                  <div class="text-lg font-bold text-amber-500">42.6%</div>
+                  <div class="text-[10px] text-slate-brand/40 font-medium">ORR</div>
+                </div>
+                <div class="bg-white p-3 rounded-xl text-center">
+                  <div class="text-lg font-bold text-amber-500">3.4%</div>
+                  <div class="text-[10px] text-slate-brand/40 font-medium">Complete Response</div>
+                </div>
+                <div class="bg-white p-3 rounded-xl text-center">
+                  <div class="text-lg font-bold text-amber-500">82%</div>
+                  <div class="text-[10px] text-slate-brand/40 font-medium">Disease Control</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Trial Cards -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="reveal card-modern p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-full">Phase III</span>
+            <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-semibold rounded-full">CRC</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-brand mb-2">MAKANA-CRC-201</h3>
+          <p class="text-sm text-slate-brand/50 mb-4">Onitresib + cetuximab in KRAS G12C-mutant CRC after prior systemic therapy</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-warm-dark p-3 rounded-xl">
+              <div class="text-xl font-bold text-amber-500">33.1%</div>
+              <div class="text-[10px] text-slate-brand/40 font-medium">ORR</div>
+            </div>
+            <div class="bg-warm-dark p-3 rounded-xl">
+              <div class="text-xl font-bold text-amber-500">6.9 mo</div>
+              <div class="text-[10px] text-slate-brand/40 font-medium">Median PFS</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1 card-modern p-6">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-full">Phase II</span>
+            <span class="px-3 py-1 bg-primary/5 text-primary text-xs font-semibold rounded-full">IO Combo</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-brand mb-2">MAKANA-IO-102</h3>
+          <p class="text-sm text-slate-brand/50 mb-4">MKN-4280 + chemotherapy in 1L PD-L1-high metastatic NSCLC</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-warm-dark p-3 rounded-xl">
+              <div class="text-xl font-bold text-primary">38%</div>
+              <div class="text-[10px] text-slate-brand/40 font-medium">Preliminary ORR</div>
+            </div>
+            <div class="bg-warm-dark p-3 rounded-xl">
+              <div class="text-xl font-bold text-primary">78%</div>
+              <div class="text-[10px] text-slate-brand/40 font-medium">Disease Control</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PATIENT STORIES ========== -->
+  <section class="py-24 bg-warm-dark relative" id="patient-stories">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">Real Stories</span>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-4">Patient Voices</h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-brand/50 max-w-2xl mx-auto">Behind every data point is a patient story. These individuals inspire our mission.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Patient 1 -->
+        <div class="reveal card-modern p-8 relative">
+          <div class="testimonial-quote relative">
+            <p class="text-slate-brand/60 text-sm leading-relaxed italic pl-4 mb-6">When I was diagnosed with KRAS-mutant lung cancer, I felt like I had run out of options after my first treatment stopped working. Joining the MAKANA trial gave me hope. Eighteen months later, my scans are clear and I'm back to hiking with my grandchildren.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+              <span class="text-lg font-bold text-amber-600">MR</span>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-slate-brand">Margaret R., 67</div>
+              <div class="text-xs text-amber-600 font-medium">NSCLC | KRAS G12C-positive</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patient 2 -->
+        <div class="reveal reveal-delay-1 card-modern p-8 relative">
+          <div class="testimonial-quote relative">
+            <p class="text-slate-brand/60 text-sm leading-relaxed italic pl-4 mb-6">As a father of two young kids, the diagnosis of colorectal cancer at 41 was devastating. The treatment regimen was manageable enough that I could keep working while my tumors shrank. My oncologist says my response has been remarkable.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+              <span class="text-lg font-bold text-amber-600">JT</span>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-slate-brand">James T., 41</div>
+              <div class="text-xs text-amber-600 font-medium">Colorectal Cancer | Stage IV</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patient 3 -->
+        <div class="reveal reveal-delay-2 card-modern p-8 relative">
+          <div class="testimonial-quote relative">
+            <p class="text-slate-brand/60 text-sm leading-relaxed italic pl-4 mb-6">Living with triple-negative breast cancer felt like fighting an invisible enemy. Being part of the immuno-oncology clinical trial has been a turning point. My care team explained every step, and for the first time in two years, I feel optimistic about my future.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+              <span class="text-lg font-bold text-amber-600">SK</span>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-slate-brand">Sarah K., 54</div>
+              <div class="text-xs text-amber-600 font-medium">Triple-Negative Breast Cancer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center mt-8 text-xs text-slate-brand/30">Patient stories are individual experiences. Results may vary. Names have been changed to protect privacy.</p>
+    </div>
+  </section>
+
+  <!-- ========== HCP RESOURCES ========== -->
+  <section class="py-24 bg-white relative" id="hcp-resources">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">For Healthcare Professionals</span>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-4">HCP Resources</h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-brand/50 max-w-2xl mx-auto">Clinical tools and information to support evidence-based treatment decisions.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal card-modern p-6 group cursor-pointer">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Prescribing Information</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed mb-3">Full prescribing information, dosing guidelines, contraindications, and safety data for Oncolys (onitresib).</p>
+          <span class="text-xs font-semibold text-amber-600 group-hover:text-amber-700 transition-colors flex items-center gap-1">
+            Access PI
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </span>
+        </div>
+
+        <div class="reveal reveal-delay-1 card-modern p-6 group cursor-pointer">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Biomarker Testing Guides</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed mb-3">KRAS G12C testing recommendations, validated assays, specimen requirements, and reflex testing protocols.</p>
+          <span class="text-xs font-semibold text-amber-600 group-hover:text-amber-700 transition-colors flex items-center gap-1">
+            View Guides
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </span>
+        </div>
+
+        <div class="reveal reveal-delay-2 card-modern p-6 group cursor-pointer">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Treatment Algorithms</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed mb-3">Evidence-based treatment sequencing algorithms for KRAS-mutant NSCLC and CRC aligned with NCCN guidelines.</p>
+          <span class="text-xs font-semibold text-amber-600 group-hover:text-amber-700 transition-colors flex items-center gap-1">
+            View Algorithms
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </span>
+        </div>
+
+        <div class="reveal reveal-delay-3 card-modern p-6 group cursor-pointer">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg class="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-brand mb-2">Medical Education</h3>
+          <p class="text-xs text-slate-brand/50 leading-relaxed mb-3">CME/CE-accredited programs, mechanism-of-action videos, and on-demand webinars from key opinion leaders.</p>
+          <span class="text-xs font-semibold text-amber-600 group-hover:text-amber-700 transition-colors flex items-center gap-1">
+            Browse Programs
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PATIENT RESOURCES ========== -->
+  <section class="py-24 bg-warm-dark relative" id="patient-resources">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="reveal inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">Support &amp; Information</span>
+        <h2 class="reveal reveal-delay-1 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-4">Patient Resources</h2>
+        <p class="reveal reveal-delay-2 text-lg text-slate-brand/50 max-w-2xl mx-auto">Comprehensive support for every stage of your cancer journey.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cancer Education -->
+        <div class="reveal card-modern p-6 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+              <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-slate-brand">Cancer Education by Type</h3>
+          </div>
+          <p class="text-sm text-slate-brand/50 leading-relaxed mb-4">Learn about your specific cancer type, including causes, staging, treatment options, and what to expect. Available for NSCLC, breast cancer, colorectal cancer, and more.</p>
+          <ul class="space-y-2">
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Understanding NSCLC
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Breast Cancer Basics
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Colorectal Cancer Guide
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Blood Cancer Overview
+            </li>
+          </ul>
+        </div>
+
+        <!-- Treatment Journey -->
+        <div class="reveal reveal-delay-1 card-modern p-6 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+              <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-slate-brand">Treatment Journey Guides</h3>
+          </div>
+          <p class="text-sm text-slate-brand/50 leading-relaxed mb-4">Step-by-step guides to help you navigate your cancer treatment from diagnosis through survivorship, including what to ask your doctor and how to prepare.</p>
+          <ul class="space-y-2">
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Newly Diagnosed Roadmap
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              During Treatment Checklist
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Side Effect Management
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Survivorship Planning
+            </li>
+          </ul>
+        </div>
+
+        <!-- Financial Assistance -->
+        <div class="reveal reveal-delay-2 card-modern p-6 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+              <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-slate-brand">Financial Assistance</h3>
+          </div>
+          <p class="text-sm text-slate-brand/50 leading-relaxed mb-4">We believe cost should not be a barrier to treatment. Our comprehensive financial support programs help eligible patients access Makana Health medicines.</p>
+          <ul class="space-y-2">
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Co-Pay Assistance Program
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Patient Access Foundation
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Insurance Navigation Support
+            </li>
+            <li class="text-xs text-slate-brand/50 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Free Drug Program
+            </li>
+          </ul>
+        </div>
+
+        <!-- Clinical Trial Finder -->
+        <div class="reveal reveal-delay-3 card-modern p-6 group">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+              <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-slate-brand">Clinical Trial Finder</h3>
+          </div>
+          <p class="text-sm text-slate-brand/50 leading-relaxed mb-4">Search for Makana Health clinical trials enrolling near you. Our trial finder helps you explore options based on cancer type, location, and eligibility criteria.</p>
+          <a class='pill-btn bg-amber-500 text-white hover:bg-amber-600 text-xs' href='/clinical-trials'>
+            Find a Trial
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+
+        <!-- Support Communities -->
+        <div class="reveal reveal-delay-4 card-modern p-6 group lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center group-hover:bg-amber-100 transition-colors">
+              <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-slate-brand">Support Communities</h3>
+          </div>
+          <p class="text-sm text-slate-brand/50 leading-relaxed mb-4">You are not alone. Connect with other patients, caregivers, and survivors through our partner support organizations and community programs. Find peer support groups, caregiver resources, mental health counseling, and wellness programs designed for people affected by cancer.</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="flex items-center gap-2 text-xs text-slate-brand/50">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Peer-to-Peer Mentoring
+            </div>
+            <div class="flex items-center gap-2 text-xs text-slate-brand/50">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Caregiver Support Network
+            </div>
+            <div class="flex items-center gap-2 text-xs text-slate-brand/50">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Virtual Support Groups
+            </div>
+            <div class="flex items-center gap-2 text-xs text-slate-brand/50">
+              <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+              Wellness &amp; Nutrition Programs
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="py-24 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-primary/5"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="reveal max-w-3xl mx-auto text-center">
+        <span class="inline-block text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">Explore Our Pipeline</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-brand mb-6">Explore Our <span class="gradient-text">Oncology Pipeline</span></h2>
+        <p class="text-lg text-slate-brand/50 mb-10 max-w-xl mx-auto">Discover how our growing portfolio of precision oncology therapies is working to transform cancer care and improve outcomes for patients worldwide.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a class='pill-btn bg-amber-500 text-white hover:bg-amber-600 text-base px-8 py-4' href='/pipeline'>
+            View Pipeline
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a class='pill-btn bg-white text-slate-brand border border-black/[0.08] hover:border-amber-200 text-base px-8 py-4' href='/clinical-trials'>
+            Find a Clinical Trial
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-slate-brand text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6 mb-16">
+        <!-- Company -->
+        <div class="col-span-2 md:col-span-3 lg:col-span-2">
+          <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8 w-auto mb-4 brightness-0 invert">
+          <p class="text-sm text-white/40 leading-relaxed max-w-xs">Advancing human health through precision medicine, innovative science, and a commitment to patients who need new treatment options.</p>
+        </div>
+
+        <!-- Company Links -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-widest text-white/60 uppercase mb-4">Company</h4>
+          <ul class="space-y-2.5">
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/about'>About</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/careers'>Careers</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/news'>News</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/investors'>Investors</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/esg'>Sustainability</a></li>
+          </ul>
+        </div>
+
+        <!-- Science -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-widest text-white/60 uppercase mb-4">Science</h4>
+          <ul class="space-y-2.5">
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/research'>Research</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/pipeline'>Pipeline</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/clinical-trials'>Clinical Trials</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/products'>Products</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-widest text-white/60 uppercase mb-4">Resources</h4>
+          <ul class="space-y-2.5">
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/hcp'>HCP Portal</a></li>
+            <li><a class='text-sm text-white/40 hover:text-white transition-colors' href='/patients'>Patients</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-widest text-white/60 uppercase mb-4">Legal</h4>
+          <ul class="space-y-2.5">
+            <li><a href="/privacy" class="text-sm text-white/40 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms" class="text-sm text-white/40 hover:text-white transition-colors">Terms of Use</a></li>
+            <li><a href="/terms" class="text-sm text-white/40 hover:text-white transition-colors">Legal Notice</a></li>
+            <li><button onclick="document.getElementById('cookieConsent').classList.add('slideUp')" class="text-sm text-white/40 hover:text-white transition-colors">Cookie Settings</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-white/30">&copy; 2026 Makana Health. All rights reserved.</p>
+        <p class="text-xs text-white/20">The information on this site is intended for a U.S. audience only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== COOKIE CONSENT BANNER ========== -->
+  <div id="cookieConsent" class="cookie-banner fixed bottom-0 left-0 right-0 z-[9999] p-4" style="pointer-events:auto">
+    <div class="max-w-5xl mx-auto bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-black/[0.04] p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div class="flex-1">
+        <h3 class="text-sm font-bold text-slate-brand mb-1">We value your privacy</h3>
+        <p class="text-xs text-slate-brand/50 leading-relaxed">We use cookies and similar technologies to enhance your experience, analyze site usage, and assist in our marketing efforts. By clicking "Accept All," you consent to our use of cookies. You may manage your preferences at any time.</p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <button onclick="acceptCookies()" class="pill-btn bg-amber-500 text-white hover:bg-amber-600 text-xs py-2.5 px-5">Accept All</button>
+        <button onclick="declineCookies()" class="pill-btn bg-white text-slate-brand border border-black/[0.08] text-xs py-2.5 px-5">Essential Only</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== LOGIN MODAL ========== -->
+  <div id="loginModal" class="modal-backdrop fixed inset-0 z-[70] flex items-center justify-center p-4">
+    <div class="modal-content w-full max-w-md p-8">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl font-bold text-slate-brand">Sign In</h3>
+        <button onclick="closeLoginModal()" class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-black/[0.04] transition-colors" aria-label="Close">
+          <svg class="w-5 h-5 text-slate-brand/40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <p class="text-sm text-slate-brand/50 mb-6">Access your Makana Health account for personalized resources, prescribing tools, and clinical data.</p>
+      <form onsubmit="event.preventDefault(); closeLoginModal();">
+        <div class="mb-4">
+          <label for="loginEmail" class="block text-xs font-semibold text-slate-brand mb-1.5">Email Address</label>
+          <input type="email" id="loginEmail" placeholder="name@organization.com" class="w-full px-4 py-3 bg-warm-dark border border-black/[0.06] rounded-xl text-sm text-slate-brand placeholder:text-slate-brand/30 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all">
+        </div>
+        <div class="mb-6">
+          <label for="loginPassword" class="block text-xs font-semibold text-slate-brand mb-1.5">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" class="w-full px-4 py-3 bg-warm-dark border border-black/[0.06] rounded-xl text-sm text-slate-brand placeholder:text-slate-brand/30 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all">
+        </div>
+        <button type="submit" class="w-full pill-btn bg-amber-500 text-white hover:bg-amber-600 justify-center py-3">
+          Sign In
+        </button>
+        <p class="text-xs text-slate-brand/30 text-center mt-4">
+          <a href="#" onclick="alert('Please contact support@makanahealth.com for access recovery.')" class="text-amber-600 hover:text-amber-700 transition-colors">Forgot password?</a>
+          <span class="mx-2">|</span>
+          <a href="/patient-registration" class="text-amber-600 hover:text-amber-700 transition-colors">Create account</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let mobileMenuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuOpen = !mobileMenuOpen;
+      mobileMenu.classList.toggle('hidden', !mobileMenuOpen);
+      mobileMenuBtn.innerHTML = mobileMenuOpen
+        ? '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>'
+        : '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>';
+    });
+
+    // Glass Nav Scroll
+    const mainNav = document.getElementById('mainNav');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 20) {
+        mainNav.classList.add('scrolled');
+      } else {
+        mainNav.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    }, { passive: true });
+
+    // Intersection Observer for .reveal -> .visible
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          // Animate progress bars inside visible elements
+          const bars = entry.target.querySelectorAll('.progress-bar-fill');
+          bars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            if (width) {
+              setTimeout(() => {
+                bar.style.width = width + '%';
+                bar.classList.add('animated');
+              }, 300);
+            }
+          });
+
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Also observe progress bars that are not inside .reveal
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bars = entry.target.querySelectorAll('.progress-bar-fill:not(.animated)');
+          bars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            if (width) {
+              setTimeout(() => {
+                bar.style.width = width + '%';
+                bar.classList.add('animated');
+              }, 300);
+            }
+          });
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.progress-bar, .card-modern').forEach(el => {
+      barObserver.observe(el);
+    });
+
+    // Cookie consent with 365-day expiration
+    function acceptCookies(type) {
+      document.getElementById('cookieConsent').style.display = 'none';
+      localStorage.setItem('makana_cookies', JSON.stringify({ type: type || 'all', timestamp: Date.now() }));
+    }
+    function declineCookies() {
+      document.getElementById('cookieConsent').style.display = 'none';
+      localStorage.setItem('makana_cookies', JSON.stringify({ type: 'essential', timestamp: Date.now() }));
+    }
+    function reopenCookies() {
+      const banner = document.getElementById('cookieConsent');
+      banner.style.display = '';
+      banner.style.animation = 'slideUp 0.3s ease both';
+    }
+    // Auto-hide if accepted within 365 days
+    (function() {
+      var stored = localStorage.getItem('makana_cookies');
+      if (stored) {
+        try {
+          var data = JSON.parse(stored);
+          if (data.timestamp && (Date.now() - data.timestamp < 365 * 24 * 60 * 60 * 1000)) {
+            document.getElementById('cookieConsent').style.display = 'none';
+          } else {
+            localStorage.removeItem('makana_cookies');
+          }
+        } catch(e) {
+          // Legacy string value — remove and re-show banner
+          localStorage.removeItem('makana_cookies');
+        }
+      }
+    })();
+
+    // Login Modal
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('loginModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('loginModal')) {
+        closeLoginModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLoginModal();
+      }
+    });
+  
+
+// ── Chat panel ──
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+  document.getElementById('chatFab').classList.toggle('hidden', chatOpen);
+}
+function chatAction(text) {
+  const msgs = document.getElementById('chatMsgs');
+  const u = document.createElement('div');
+  u.className = 'msg-bubble user';
+  u.textContent = text;
+  msgs.appendChild(u);
+  document.getElementById('quickActions').style.display = 'none';
+  const t = document.createElement('div');
+  t.className = 'typing-dots';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(t);
+  msgs.scrollTop = msgs.scrollHeight;
+  const replies = {
+    'Learn about IMMUNEXIS': 'IMMUNEXIS\u00ae is our breakthrough IL-31 receptor antagonist approved for pediatric atopic dermatitis. In the CLARITY Phase III trial, 72% of patients achieved EASI-75 at Week 16. Would you like to see the full prescribing information?',
+    'Find clinical trials': 'We have 15 active clinical trials across immunology, cardiovascular, neuroscience, and oncology. I can help you find trials based on your condition and location. What therapeutic area interests you?',
+    'Talk to a representative': "I'd be happy to connect you with a Makana Health representative. You can reach our medical information team at 1-800-MAKANA or I can have someone contact you. Would you like to provide your email?",
+    'View product safety info': 'I can provide safety information for any of our approved products: IMMUNEXIS\u00ae, CARDIOGUARD\u00ae, or any pipeline compound. Which product are you interested in?'
+  };
+  setTimeout(() => {
+    t.remove();
+    const b = document.createElement('div');
+    b.className = 'msg-bubble bot';
+    b.textContent = replies[text] || "I'd be happy to help with that. Let me look into it for you.";
+    msgs.appendChild(b);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1500);
+}
+
+
+// ── Gateway portal ──
+function openGateway() {
+  document.getElementById('gatewayOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function closeGateway() {
+  document.getElementById('gatewayOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showHcpLogin() {
+  document.getElementById('gwMain').style.display = 'none';
+  document.getElementById('gwHcpLogin').classList.add('active');
+}
+function backToGateway() {
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function handleHcpLogin(e) {
+  e.preventDefault();
+  var email = document.getElementById('hcpEmail').value;
+  if (email) { e.target.classList.add('hidden'); document.getElementById('hcpLoginSuccess').classList.remove('hidden'); setTimeout(function(){ window.location.href='hcp-portal.html'; }, 2500); }
+}
+</script>
+
+
+<!-- ═══════════ AGENTFORCE CHAT FAB ═══════════ -->
+<button id="chatFab" class="fab-orb" onclick="toggleChat()" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+</button>
+
+<!-- ═══════════ CHAT PANEL ═══════════ -->
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-hdr">
+    <div class="chat-avatar">M</div>
+    <div>
+      <h4 class="text-[15px] font-semibold text-white leading-tight">Makana Assistant</h4>
+      <p class="text-[11px] text-white/50">Powered by Agentforce</p>
+    </div>
+    <div class="online-dot"></div>
+    <button onclick="toggleChat()" class="ml-3 text-white/50 hover:text-white transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg-bubble bot">Hello! I'm Makana's AI assistant, powered by Agentforce. How can I help you today?</div>
+  </div>
+  <div class="quick-actions" id="quickActions">
+    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Quick Actions</p>
+    <button class="q-action" onclick="chatAction('Learn about IMMUNEXIS')">Learn about IMMUNEXIS&reg;</button>
+    <button class="q-action" onclick="chatAction('Find clinical trials')">Find clinical trials</button>
+    <button class="q-action" onclick="chatAction('Talk to a representative')">Talk to a representative</button>
+    <button class="q-action" onclick="chatAction('View product safety info')">View product safety info</button>
+  </div>
+</div>
+
+
+</body>
+</html>

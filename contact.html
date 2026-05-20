@@ -1,1 +1,1581 @@
-{"id":"/contact.html","path":"/contact.html","sha":"84205f7ff3398802f9b21248349266cd6d1006e5","mime_type":"text/html","size":123863,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+}
+</style>
+<style>
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { scroll-behavior: smooth; }
+
+  /* Apple-style glassmorphism nav */
+  .glass-nav {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(255,255,255,0.72);
+  }
+  .glass-nav.scrolled {
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 0.5px 0 rgba(0,0,0,0.08);
+  }
+
+  /* Mega menu */
+  .mega-menu { opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+  .nav-item:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+
+  /* Card animations */
+  .card-modern { transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .card-modern:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+
+  /* Fade in */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* Gradient text */
+  .gradient-text { background: linear-gradient(135deg, #6BBFAB 0%, #9B8EC4 50%, #4A4063 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .gradient-text-hero { background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  /* Hero background */
+  .hero-mesh {
+    background: linear-gradient(135deg, #2D2640 0%, #4A4063 30%, #352D47 60%, #1D1D1F 100%);
+  }
+  .hero-orb-1 { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(107,191,171,0.15) 0%, transparent 70%); filter: blur(40px); top: -100px; right: -100px; animation: float 20s ease-in-out infinite; }
+  .hero-orb-2 { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(155,142,196,0.12) 0%, transparent 70%); filter: blur(40px); bottom: -150px; left: -50px; animation: float 25s ease-in-out infinite reverse; }
+  .hero-orb-3 { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(107,191,171,0.08) 0%, transparent 70%); filter: blur(30px); top: 40%; left: 30%; animation: float 18s ease-in-out infinite 3s; }
+  @keyframes float { 0%,100%{transform:translate(0,0)} 33%{transform:translate(30px,-20px)} 66%{transform:translate(-20px,15px)} }
+
+  /* Pill buttons */
+  .pill-btn { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .pill-btn:hover { transform: scale(1.03); }
+
+  /* FAQ accordion */
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .faq-answer.open { max-height: 500px; }
+  .faq-icon { transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+  /* Form input focus */
+  .form-input { transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+  .form-input:focus { border-color: #6BBFAB; box-shadow: 0 0 0 3px rgba(107,191,171,0.15); outline: none; }
+
+  /* Drag and drop zone */
+  .drop-zone { transition: border-color 0.3s ease, background-color 0.3s ease; }
+  .drop-zone.dragover { border-color: #6BBFAB; background-color: rgba(107,191,171,0.05); }
+
+  /* Loading spinner */
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .spinner { animation: spin 0.8s linear infinite; }
+
+  /* Form success/error slide */
+  .form-state { animation: fadeInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  @keyframes fadeInUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+
+  /* Emergency banner pulse */
+  @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.2); } 50% { box-shadow: 0 0 0 8px rgba(239,68,68,0); } }
+  .emergency-pulse { animation: pulse-glow 2s infinite; }
+
+
+/* ═══ GATEWAY PORTAL ═══ */
+.gw-overlay { position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:1rem; }
+.gw-overlay.open { display:flex; }
+.gw-backdrop { position:absolute; inset:0; background:rgba(29,29,31,.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); animation:gwFadeIn .3s ease; }
+@keyframes gwFadeIn { from{opacity:0} to{opacity:1} }
+.gw-modal { position:relative; z-index:1; width:100%; max-width:880px; max-height:92vh; overflow-y:auto; background:#fff; border-radius:28px; box-shadow:0 40px 120px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.1); animation:gwSlideIn .4s cubic-bezier(.22,1,.36,1); }
+@keyframes gwSlideIn { from{opacity:0;transform:scale(.93) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.gw-hero { position:relative; background:linear-gradient(135deg,#2D2640 0%,#4A4063 40%,#3a6b5e 100%); padding:2.5rem 2.5rem 3rem; border-radius:28px 28px 0 0; overflow:hidden; }
+.gw-hero::before { content:''; position:absolute; top:-40%; right:-15%; width:460px; height:460px; background:radial-gradient(circle,rgba(107,191,171,.2) 0%,transparent 70%); border-radius:50%; }
+.gw-hero::after { content:''; position:absolute; bottom:-60%; left:-10%; width:380px; height:380px; background:radial-gradient(circle,rgba(155,142,196,.15) 0%,transparent 70%); border-radius:50%; }
+.gw-close { position:absolute; top:1.25rem; right:1.25rem; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .2s; z-index:2; }
+.gw-close:hover { background:rgba(255,255,255,.25); transform:scale(1.1); }
+.gw-close svg { width:16px; height:16px; color:#fff; }
+.gw-body { padding:2rem 2.5rem 2.5rem; }
+.portal-card { position:relative; border-radius:20px; padding:2rem; border:1.5px solid #e5e7eb; transition:all .35s cubic-bezier(.25,.46,.45,.94); cursor:pointer; overflow:hidden; background:#fff; }
+.portal-card::before { content:''; position:absolute; inset:0; border-radius:20px; opacity:0; transition:opacity .35s; }
+.portal-card:hover { transform:translateY(-4px); border-color:transparent; }
+.portal-card.hcp-card:hover { box-shadow:0 20px 60px rgba(74,64,99,.15),0 0 0 1.5px rgba(74,64,99,.2); }
+.portal-card.hcp-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(74,64,99,.03),rgba(155,142,196,.05)); }
+.portal-card.patient-card:hover { box-shadow:0 20px 60px rgba(107,191,171,.15),0 0 0 1.5px rgba(107,191,171,.25); }
+.portal-card.patient-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(107,191,171,.03),rgba(107,191,171,.06)); }
+.portal-icon-wrap { width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+.portal-icon-wrap.hcp { background:linear-gradient(135deg,#4A4063,#6B5B8A); box-shadow:0 4px 14px rgba(74,64,99,.25); }
+.portal-icon-wrap.patient { background:linear-gradient(135deg,#6BBFAB,#4A9B87); box-shadow:0 4px 14px rgba(107,191,171,.25); }
+.portal-icon-wrap svg { width:24px; height:24px; color:#fff; }
+.feature-check { display:flex; align-items:center; gap:.5rem; padding:.35rem 0; }
+.feature-check .check-icon { width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.feature-check .check-icon.hcp { background:rgba(74,64,99,.08); color:#4A4063; }
+.feature-check .check-icon.patient { background:rgba(107,191,171,.1); color:#4A9B87; }
+.feature-check .check-icon svg { width:10px; height:10px; }
+.portal-btn { display:flex; align-items:center; justify-content:center; gap:.5rem; width:100%; padding:.85rem 1.5rem; border-radius:14px; font-size:.8125rem; font-weight:600; border:none; cursor:pointer; transition:all .25s; margin-top:1.5rem; }
+.portal-btn.hcp { background:#4A4063; color:#fff; }
+.portal-btn.hcp:hover { background:#2D2640; box-shadow:0 8px 24px rgba(74,64,99,.3); transform:scale(1.02); }
+.portal-btn.patient { background:#fff; color:#4A9B87; border:1.5px solid #6BBFAB; }
+.portal-btn.patient:hover { background:#ecfdf5; box-shadow:0 8px 24px rgba(107,191,171,.2); transform:scale(1.02); }
+.portal-btn svg { width:16px; height:16px; }
+.hcp-email-step { display:none; animation:gwFadeIn .3s ease; }
+.hcp-email-step.active { display:block; }
+.gw-input { width:100%; padding:.85rem 1.25rem; border-radius:14px; border:1.5px solid #e5e7eb; font-size:.875rem; background:#fafafa; transition:all .2s; outline:none; }
+.gw-input:focus { border-color:#9B8EC4; box-shadow:0 0 0 3px rgba(155,142,196,.12); background:#fff; }
+.gw-nav-btn { position:relative; display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,rgba(74,64,99,.06),rgba(107,191,171,.06)); border:1px solid rgba(74,64,99,.1); cursor:pointer; transition:all .25s; }
+.gw-nav-btn:hover { background:linear-gradient(135deg,rgba(74,64,99,.12),rgba(107,191,171,.12)); border-color:rgba(74,64,99,.2); transform:scale(1.08); box-shadow:0 4px 14px rgba(74,64,99,.12); }
+.gw-nav-btn svg { width:16px; height:16px; }
+.gw-img-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; margin-top:1.5rem; }
+.gw-img-thumb { border-radius:12px; overflow:hidden; aspect-ratio:3/4; position:relative; cursor:pointer; transition:all .3s; border:2px solid transparent; }
+.gw-img-thumb:hover { transform:scale(1.03); border-color:rgba(107,191,171,.3); box-shadow:0 8px 24px rgba(0,0,0,.1); }
+.gw-img-thumb img { width:100%; height:100%; object-fit:cover; }
+
+/* ═══ FAB ORB (Agentforce-style) ═══ */
+.fab-orb {
+  position:fixed; bottom:32px; right:32px; width:64px; height:64px; border-radius:50%;
+  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:600; background:#0b0818;
+  box-shadow: inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08),
+    0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35),
+    0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08);
+  animation:orb-pulse 2.8s ease-out infinite;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+}
+.fab-orb::before { content:''; position:absolute; top:8px; left:10px; width:20px; height:12px; background:radial-gradient(ellipse,rgba(255,255,255,.4) 0%,transparent 100%); border-radius:50%; pointer-events:none; z-index:2; }
+.fab-orb:hover { transform:scale(1.12) translateY(-3px); box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 16px 44px rgba(124,111,160,.75),0 4px 14px rgba(76,170,143,.5),0 5px 14px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.15),0 0 70px rgba(124,111,160,.3); }
+.fab-orb svg { width:24px; height:24px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
+@keyframes orb-pulse {
+  0%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,.6);}
+  70%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 22px rgba(124,111,160,0);}
+  100%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,0);}
+}
+.fab-orb.hidden { opacity:0; pointer-events:none; animation:none; }
+
+/* ═══ CHAT PANEL ═══ */
+.chat-panel { position:fixed; bottom:32px; right:32px; width:380px; max-height:580px; z-index:700;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-radius:24px; box-shadow:0 32px 80px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.5);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform:scale(.92) translateY(20px); opacity:0; pointer-events:none;
+  transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+}
+.chat-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+
+.chat-hdr { background:linear-gradient(135deg,#4A4063,#352D47); padding:20px 22px; display:flex; align-items:center; gap:12px; }
+.chat-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#9B8EC4,#6BBFAB); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; }
+.online-dot { width:9px; height:9px; background:#6BBFAB; border-radius:50%; margin-left:auto; animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{box-shadow:0 0 0 0 rgba(107,191,171,.5)} 50%{box-shadow:0 0 0 5px rgba(107,191,171,0)} }
+
+.chat-msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; max-height:320px; }
+.msg-bubble { max-width:85%; padding:12px 16px; border-radius:18px; font-size:13px; line-height:1.6; animation:bubble-in .3s cubic-bezier(.22,1,.36,1) both; }
+.msg-bubble.bot { background:#f0f0f5; color:#1D1D1F; border-bottom-left-radius:4px; align-self:flex-start; }
+.msg-bubble.user { background:#4A4063; color:#fff; border-bottom-right-radius:4px; align-self:flex-end; }
+@keyframes bubble-in { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+.typing-dots { display:flex; gap:5px; padding:8px 14px; }
+.typing-dots span { width:7px; height:7px; border-radius:50%; background:#9B8EC4; animation:dot-pulse 1s ease-in-out infinite; }
+.typing-dots span:nth-child(2) { animation-delay:.18s; background:#7FAAB4; }
+.typing-dots span:nth-child(3) { animation-delay:.36s; background:#6BBFAB; }
+@keyframes dot-pulse { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+.quick-actions { padding:14px 18px; border-top:1px solid rgba(0,0,0,.04); display:flex; flex-direction:column; gap:8px; }
+.q-action { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:10px 16px; font-size:13px; color:#4A4063; cursor:pointer; font-weight:500; text-align:left; transition:all .2s; display:flex; justify-content:space-between; align-items:center; }
+.q-action::after { content:'\2192'; color:#9B8EC4; opacity:0; transform:translateX(-6px); transition:all .2s; }
+.q-action:hover { border-color:#9B8EC4; background:#faf9ff; transform:translateX(3px); box-shadow:0 2px 12px rgba(155,142,196,.12); }
+.q-action:hover::after { opacity:1; transform:translateX(0); }
+
+</style>
+
+<!-- ═══ Salesforce Personalization — Data Cloud Web SDK ═══ -->
+<!-- Data Cloud Website Connector: Makana_Health_Website (494741f1-8288-47b0-bc0e-e60e66c23cc8) -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="js/makana-datalayer.js"></script>
+<script src="js/makana-init.js"></script>
+<script src="js/makana-sitemap.js"></script>
+<script src="js/makana-personalization.js"></script>
+<script src="js/makana-leadgen.js"></script>
+<!-- ═══ End Salesforce Personalization ═══ -->
+</head>
+<body class="font-sans text-slate-brand bg-white antialiased">
+
+<!-- ==================== NAVIGATION ==================== -->
+<!-- ═══════════ GATEWAY PORTAL MODAL ═══════════ -->
+<div id="gatewayOverlay" class="gw-overlay">
+  <div class="gw-backdrop" onclick="closeGateway()"></div>
+  <div class="gw-modal">
+    <div class="gw-hero">
+      <button class="gw-close" onclick="closeGateway()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div style="position:relative;z-index:1;">
+        <p class="text-secondary-light/80 text-xs font-semibold tracking-[.2em] uppercase mb-3">Precision & Care</p>
+        <h2 class="text-white text-3xl sm:text-4xl font-black leading-tight mb-3">The future of health,<br>managed with <span class="text-secondary-light">clarity.</span></h2>
+        <p class="text-white/50 text-sm max-w-md leading-relaxed">Access our integrated clinical ecosystem designed for both medical professionals and their patients.</p>
+      </div>
+    </div>
+    <div class="gw-body">
+      <div id="gwMain">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-slate-brand">Choose your gateway</h3>
+            <p class="text-gray-400 text-xs mt-1">Select your destination to access secure records, appointments, and diagnostic tools.</p>
+          </div>
+          <div class="flex items-center gap-4 text-[11px] text-gray-400 shrink-0">
+            <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>HIPAA Compliant</span>
+            <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>Real-time Sync</span>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="portal-card hcp-card" onclick="showHcpLogin()">
+            <div class="portal-icon-wrap hcp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg></div>
+            <h4 class="text-lg font-bold text-slate-brand mb-1">HCP Portal</h4>
+            <p class="text-gray-400 text-xs leading-relaxed mb-4">Dedicated professional workspace for physicians, nurses, and administrative staff.</p>
+            <div class="space-y-1.5">
+              <div class="feature-check"><div class="check-icon hcp"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Patient Population Health</span></div>
+              <div class="feature-check"><div class="check-icon hcp"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Clinical Decision Support</span></div>
+              <div class="feature-check"><div class="check-icon hcp"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Laboratory Interfacing</span></div>
+            </div>
+            <button class="portal-btn hcp" onclick="event.stopPropagation();showHcpLogin()">Professional Login <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
+          </div>
+          <div class="portal-card patient-card" onclick="window.location.href='patients.html'">
+            <div class="portal-icon-wrap patient"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+            <h4 class="text-lg font-bold text-slate-brand mb-1">Patient Portal</h4>
+            <p class="text-gray-400 text-xs leading-relaxed mb-4">A simple and clear way for patients and caregivers to stay connected to their care team.</p>
+            <div class="space-y-1.5">
+              <div class="feature-check"><div class="check-icon patient"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Appointment Scheduling</span></div>
+              <div class="feature-check"><div class="check-icon patient"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Secure Messaging</span></div>
+              <div class="feature-check"><div class="check-icon patient"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-gray-500">Health Record Access</span></div>
+            </div>
+            <button class="portal-btn patient" onclick="event.stopPropagation();window.location.href='patients.html'">Patient Login <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg></button>
+          </div>
+        </div>
+        <div class="gw-img-gallery">
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/ab37857a-0e6f-483a-8368-f834f90bd972.png" alt="Gateway Overview"></div>
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/f6e332b0-6596-49d3-bfc0-c0c133a7d625.png" alt="HCP Dashboard"></div>
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/dcc49503-4ce5-4dac-9489-9fd059472cd9.png" alt="Clinical Studies"></div>
+          <div class="gw-img-thumb"><img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/b0dfeb67-1c9a-4e24-b336-8c08dcfb0c1b.png" alt="HCP Login"></div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 mt-6 pt-5 border-t border-gray-100">
+          <div class="flex items-center gap-2 text-gray-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg><span class="text-[11px] font-medium">Expert Support</span></div>
+          <div class="flex items-center gap-2 text-gray-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg><span class="text-[11px] font-medium">Knowledge Base</span></div>
+          <div class="flex items-center gap-2 text-gray-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg><span class="text-[11px] font-medium">Privacy First</span></div>
+        </div>
+      </div>
+      <div id="gwHcpLogin" class="hcp-email-step">
+        <button onclick="backToGateway()" class="flex items-center gap-1.5 text-xs text-gray-400 hover:text-primary mb-5 transition"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>Back to gateway</button>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="portal-icon-wrap hcp"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg></div>
+          <div><h3 class="text-xl font-bold text-slate-brand">Healthcare Professional Portal</h3><p class="text-gray-400 text-xs mt-0.5">Verify your credentials to access the clinical atelier.</p></div>
+        </div>
+        <form onsubmit="handleHcpLogin(event)">
+          <label class="block text-[11px] font-semibold text-primary uppercase tracking-wider mb-2">Email Address</label>
+          <input type="email" id="hcpEmail" placeholder="dr.name@hospital.org" required class="gw-input mb-4">
+          <label class="block text-[11px] font-semibold text-primary uppercase tracking-wider mb-2">NPI Number / Professional ID</label>
+          <input type="text" id="hcpNpi" placeholder="Enter your NPI or professional ID" class="gw-input mb-5">
+          <button type="submit" class="portal-btn hcp w-full">Enter Clinical Atelier <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
+          <div class="flex items-center justify-between mt-4"><label class="flex items-center gap-2 text-xs text-gray-400 cursor-pointer"><input type="checkbox" class="rounded border-gray-300"> Remember me</label><a href="#" onclick="alert('Please contact support@makanahealth.com for access recovery.')" class="text-xs text-secondary font-medium hover:underline">Forgot access?</a></div>
+          <p class="text-center text-[10px] text-gray-300 mt-5">🔒 Secure AES-256 Encryption</p>
+        </form>
+        <div id="hcpLoginSuccess" class="hidden text-center py-8">
+          <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"><svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+          <p class="font-semibold text-slate-brand">Verification sent</p>
+          <p class="text-sm text-gray-400 mt-1">Check your email for secure access link</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-12 lg:h-14">
+      <!-- Logo -->
+      <a class='shrink-0' href='/'>
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-0.5">
+        <div class="nav-item relative">
+          <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/about'>About</a>
+          <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[520px]">
+            <div class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/50 p-5 grid grid-cols-2 gap-3">
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Company</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about'>Our Story</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about#leadership'>Leadership</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about#strategy'>Purpose & Strategy</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/manufacturing'>Manufacturing</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/quality'>Quality</a>
+              </div>
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Portfolio</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/products'>Products</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/about#therapeutic'>Therapeutic Areas</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/pipeline'>Pipeline</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item relative">
+          <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/research'>Science</a>
+          <div class="mega-menu absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[520px]">
+            <div class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/50 p-5 grid grid-cols-2 gap-3">
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Research</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/research'>R&D Overview</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/pipeline'>Pipeline</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/clinical-trials'>Clinical Trials</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/technology'>Technology Platforms</a>
+              </div>
+              <div>
+                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-2">Disease Areas</p>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/oncology'>Oncology</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/immunology'>Immunology</a>
+                <a class='block py-1.5 text-sm text-gray-600 hover:text-primary transition' href='/neuroscience'>Neuroscience</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/products'>Products</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/patients'>Patients</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/hcp'>HCP</a>
+        <a class='px-3 py-4 text-xs font-medium text-slate-brand/80 hover:text-slate-brand transition' href='/careers'>Careers</a>
+      </nav>
+
+      <!-- Right side actions -->
+      <div class="flex items-center gap-3">
+        <a class='hidden lg:inline-flex pill-btn px-4 py-1.5 rounded-full bg-primary text-white text-xs font-medium hover:bg-primary-dark transition' href='/contact'>Contact</a>
+        <!-- Mobile menu button -->
+        <button id="mobileMenuBtn" class="lg:hidden w-8 h-8 flex items-center justify-center">
+          <svg class="w-5 h-5 text-slate-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100">
+    <div class="max-w-[1200px] mx-auto px-6 py-4 space-y-1">
+      <a class='block py-2.5 text-sm font-medium text-slate-brand/80' href='/about'>About</a>
+      <a class='block py-2.5 text-sm font-medium text-slate-brand/80' href='/research'>Science & Research</a>
+      <a class='block py-2.5 text-sm font-medium text-slate-brand/80' href='/products'>Products</a>
+      <a class='block py-2.5 text-sm font-medium text-slate-brand/80' href='/patients'>Patients</a>
+      <a class='block py-2.5 text-sm font-medium text-slate-brand/80' href='/hcp'>HCP</a>
+      <a class='block py-2.5 text-sm font-medium text-slate-brand/80' href='/careers'>Careers</a>
+      <a class='block py-2.5 text-sm font-semibold text-primary' href='/contact'>Contact Us</a>
+
+      <button onclick="openGateway()" class="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary-dark text-white text-sm font-semibold flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        Portal Gateway
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-mesh relative min-h-[420px] lg:min-h-[480px] flex items-end overflow-hidden pt-20">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="hero-orb-3"></div>
+  <div class="relative z-10 max-w-[1200px] mx-auto px-6 pb-16 lg:pb-20 w-full">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-white/40 mb-8">
+      <a class='hover:text-white/70 transition' href='/'>Home</a>
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      <span class="text-white/60">Contact Us</span>
+    </nav>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-5">
+      <span class="gradient-text-hero">Get in Touch</span>
+    </h1>
+    <p class="text-base lg:text-lg text-white/50 max-w-2xl leading-relaxed">
+      We're here to help patients, healthcare professionals, and partners connect with the right resources. Reach out to our dedicated teams for the support you need.
+    </p>
+  </div>
+</section>
+
+<!-- ==================== QUICK CONTACT CARDS ==================== -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">Immediate Assistance</p>
+      <h2 class="reveal text-3xl lg:text-4xl font-bold text-slate-brand tracking-tight">How can we help you?</h2>
+      <p class="reveal text-sm text-gray-400 mt-3 max-w-lg mx-auto">Select the category that best matches your inquiry to be connected with the right team.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Medical Information -->
+      <div class="reveal card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="font-semibold text-slate-brand text-sm mb-2">Medical Information</h3>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Product safety data, prescribing information, and clinical questions for HCPs and patients.</p>
+        <div class="space-y-2">
+          <a href="tel:+18005551234" class="flex items-center gap-2 text-xs text-primary font-medium hover:text-primary-dark transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            1-800-555-1234
+          </a>
+          <a href="mailto:medinfo@makanahealth.com" class="flex items-center gap-2 text-xs text-primary font-medium hover:text-primary-dark transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            medinfo@makanahealth.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Adverse Event Reporting -->
+      <div class="reveal reveal-delay-1 card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+        </div>
+        <h3 class="font-semibold text-slate-brand text-sm mb-2">Adverse Event Reporting</h3>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Report side effects or safety concerns 24 hours a day, 7 days a week. Your report matters.</p>
+        <div class="space-y-2">
+          <a href="tel:+18005559111" class="flex items-center gap-2 text-xs text-red-600 font-medium hover:text-red-700 transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            1-800-555-9111 (24/7)
+          </a>
+          <a href="mailto:safety@makanahealth.com" class="flex items-center gap-2 text-xs text-red-600 font-medium hover:text-red-700 transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            safety@makanahealth.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Media Inquiries -->
+      <div class="reveal reveal-delay-2 card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+        </div>
+        <h3 class="font-semibold text-slate-brand text-sm mb-2">Media Inquiries</h3>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Press releases, interview requests, and corporate communications for journalists and media.</p>
+        <div class="space-y-2">
+          <a href="tel:+18085554700" class="flex items-center gap-2 text-xs text-primary font-medium hover:text-primary-dark transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +1 (808) 555-4700
+          </a>
+          <a href="mailto:media@makanahealth.com" class="flex items-center gap-2 text-xs text-primary font-medium hover:text-primary-dark transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            media@makanahealth.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Investor Relations -->
+      <div class="reveal reveal-delay-3 card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        </div>
+        <h3 class="font-semibold text-slate-brand text-sm mb-2">Investor Relations</h3>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Financial information, shareholder services, SEC filings, and analyst inquiries.</p>
+        <div class="space-y-2">
+          <a href="tel:+18085554800" class="flex items-center gap-2 text-xs text-primary font-medium hover:text-primary-dark transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +1 (808) 555-4800
+          </a>
+          <a href="mailto:investors@makanahealth.com" class="flex items-center gap-2 text-xs text-primary font-medium hover:text-primary-dark transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            investors@makanahealth.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT FORM ==================== -->
+<section class="py-20 lg:py-28 bg-warm-dark">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+      <!-- Form info -->
+      <div class="lg:col-span-2">
+        <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">Send a Message</p>
+        <h2 class="reveal text-3xl lg:text-4xl font-bold text-slate-brand tracking-tight mb-4">We'd love to hear from you.</h2>
+        <p class="reveal text-sm text-gray-400 leading-relaxed mb-8">Fill out the form and a member of our team will get back to you within 1-2 business days. For urgent medical inquiries, please call our Medical Information line directly.</p>
+        <div class="reveal space-y-5">
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-slate-brand">Response Time</p>
+              <p class="text-xs text-gray-400 mt-0.5">1-2 business days for general inquiries</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-slate-brand">Global Support</p>
+              <p class="text-xs text-gray-400 mt-0.5">Available in English, Spanish, Japanese, German, and Portuguese</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-slate-brand">Secure & Confidential</p>
+              <p class="text-xs text-gray-400 mt-0.5">All submissions are encrypted and handled per our privacy policy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-3">
+        <div id="contactFormWrapper" class="reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 lg:p-10">
+          <form id="contactForm" novalidate>
+            <!-- Department -->
+            <div class="mb-5">
+              <label for="department" class="block text-sm font-medium text-slate-brand mb-1.5">Department / Category <span class="text-red-400">*</span></label>
+              <select id="department" name="department" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm appearance-none cursor-pointer">
+                <option value="">Select a department...</option>
+                <option value="general">General Inquiry</option>
+                <option value="medical">Medical Information</option>
+                <option value="adverse">Adverse Event Reporting</option>
+                <option value="careers">Careers & Employment</option>
+                <option value="partnerships">Business Development & Partnerships</option>
+                <option value="other">Other</option>
+              </select>
+              <p class="form-error hidden text-xs text-red-500 mt-1">Please select a department.</p>
+            </div>
+
+            <!-- Name row -->
+            <div class="grid sm:grid-cols-2 gap-4 mb-5">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-slate-brand mb-1.5">First Name <span class="text-red-400">*</span></label>
+                <input type="text" id="firstName" name="firstName" required placeholder="Jane" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm">
+                <p class="form-error hidden text-xs text-red-500 mt-1">First name is required.</p>
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-slate-brand mb-1.5">Last Name <span class="text-red-400">*</span></label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Doe" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm">
+                <p class="form-error hidden text-xs text-red-500 mt-1">Last name is required.</p>
+              </div>
+            </div>
+
+            <!-- Email & Phone -->
+            <div class="grid sm:grid-cols-2 gap-4 mb-5">
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-brand mb-1.5">Email Address <span class="text-red-400">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="jane@example.com" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm">
+                <p class="form-error hidden text-xs text-red-500 mt-1">Please enter a valid email address.</p>
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-slate-brand mb-1.5">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm">
+              </div>
+            </div>
+
+            <!-- Company & Country -->
+            <div class="grid sm:grid-cols-2 gap-4 mb-5">
+              <div>
+                <label for="company" class="block text-sm font-medium text-slate-brand mb-1.5">Company / Organization</label>
+                <input type="text" id="company" name="company" placeholder="Your organization" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm">
+              </div>
+              <div>
+                <label for="country" class="block text-sm font-medium text-slate-brand mb-1.5">Country / Region <span class="text-red-400">*</span></label>
+                <select id="country" name="country" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm appearance-none cursor-pointer">
+                  <option value="">Select country...</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="JP">Japan</option>
+                  <option value="AU">Australia</option>
+                  <option value="BR">Brazil</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="MX">Mexico</option>
+                  <option value="IN">India</option>
+                  <option value="CN">China</option>
+                  <option value="KR">South Korea</option>
+                  <option value="SG">Singapore</option>
+                  <option value="OTHER">Other</option>
+                </select>
+                <p class="form-error hidden text-xs text-red-500 mt-1">Please select your country or region.</p>
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="mb-5">
+              <label for="subject" class="block text-sm font-medium text-slate-brand mb-1.5">Subject <span class="text-red-400">*</span></label>
+              <input type="text" id="subject" name="subject" required placeholder="Brief description of your inquiry" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm">
+              <p class="form-error hidden text-xs text-red-500 mt-1">Please enter a subject.</p>
+            </div>
+
+            <!-- Message -->
+            <div class="mb-5">
+              <label for="message" class="block text-sm font-medium text-slate-brand mb-1.5">Message <span class="text-red-400">*</span></label>
+              <textarea id="message" name="message" required rows="5" placeholder="Please provide details about your inquiry..." class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 text-sm bg-warm resize-none"></textarea>
+              <p class="form-error hidden text-xs text-red-500 mt-1">Please enter your message.</p>
+            </div>
+
+            <!-- File Upload -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-slate-brand mb-1.5">Attachments <span class="text-xs text-gray-400 font-normal">(optional)</span></label>
+              <div id="dropZone" class="drop-zone border-2 border-dashed border-gray-200 rounded-xl p-6 text-center cursor-pointer hover:border-secondary/50 hover:bg-secondary/5">
+                <svg class="w-8 h-8 text-gray-300 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                <p class="text-sm text-gray-500 font-medium">Drag & drop files here</p>
+                <p class="text-xs text-gray-400 mt-1">or <span class="text-secondary font-medium">browse your computer</span></p>
+                <p class="text-xs text-gray-300 mt-2">PDF, DOC, DOCX, JPG, PNG up to 10MB</p>
+                <input type="file" id="fileInput" class="hidden" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+              </div>
+              <div id="fileList" class="mt-3 space-y-2"></div>
+            </div>
+
+            <!-- Privacy Consent -->
+            <div class="mb-6">
+              <label class="flex items-start gap-3 cursor-pointer">
+                <input type="checkbox" id="privacyConsent" name="privacyConsent" required class="mt-0.5 w-4 h-4 rounded accent-primary shrink-0">
+                <span class="text-xs text-gray-400 leading-relaxed">I consent to Makana Health processing my personal data in accordance with the <a class='text-secondary hover:underline' href='/privacy'>Privacy Policy</a>. I understand that my information will be used to respond to my inquiry and may be retained as required by applicable regulations. <span class="text-red-400">*</span></span>
+              </label>
+              <p class="form-error hidden text-xs text-red-500 mt-1 ml-7">You must consent to our privacy policy to proceed.</p>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" id="submitBtn" class="pill-btn w-full sm:w-auto px-8 py-3.5 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition flex items-center justify-center gap-2">
+              <span id="submitText">Send Message</span>
+              <svg id="submitSpinner" class="hidden spinner w-4 h-4 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            </button>
+          </form>
+
+          <!-- Success State -->
+          <div id="formSuccess" class="hidden form-state text-center py-12">
+            <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-brand mb-2">Message Sent Successfully</h3>
+            <p class="text-sm text-gray-400 max-w-sm mx-auto">Thank you for reaching out. A member of our team will respond within 1-2 business days. You'll receive a confirmation email shortly.</p>
+            <p class="text-xs text-gray-300 mt-4">Reference #: <span id="refNumber" class="font-mono text-secondary">MKH-000000</span></p>
+            <button onclick="resetForm()" class="pill-btn mt-6 px-6 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 transition">Send Another Message</button>
+          </div>
+
+          <!-- Error State -->
+          <div id="formError" class="hidden form-state text-center py-12">
+            <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-brand mb-2">Something Went Wrong</h3>
+            <p class="text-sm text-gray-400 max-w-sm mx-auto">We couldn't send your message at this time. Please try again or contact us directly at <a href="mailto:info@makanahealth.com" class="text-secondary hover:underline">info@makanahealth.com</a>.</p>
+            <button onclick="resetForm()" class="pill-btn mt-6 px-6 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 transition">Try Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DEPARTMENT DIRECTORY ==================== -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">Department Directory</p>
+      <h2 class="reveal text-3xl lg:text-4xl font-bold text-slate-brand tracking-tight">Reach the right team.</h2>
+      <p class="reveal text-sm text-gray-400 mt-3 max-w-lg mx-auto">Connect directly with the department that handles your area of inquiry.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Medical Affairs -->
+      <div class="reveal card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand">Medical Affairs</h3>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Medical information requests, clinical inquiries, educational grants, and scientific collaboration.</p>
+        <div class="pt-4 border-t border-gray-100 space-y-2">
+          <p class="text-xs text-gray-500"><span class="font-medium text-slate-brand">Dr. Elena Nakamura</span> — VP, Medical Affairs</p>
+          <a href="mailto:medaffairs@makanahealth.com" class="block text-xs text-secondary hover:text-secondary-dark transition">medaffairs@makanahealth.com</a>
+          <p class="text-xs text-gray-400">Ext. 2100</p>
+        </div>
+      </div>
+
+      <!-- Commercial Operations -->
+      <div class="reveal reveal-delay-1 card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand">Commercial Operations</h3>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Product availability, pricing, distribution, supply chain, and market access inquiries.</p>
+        <div class="pt-4 border-t border-gray-100 space-y-2">
+          <p class="text-xs text-gray-500"><span class="font-medium text-slate-brand">James Hartwell</span> — SVP, Commercial</p>
+          <a href="mailto:commercial@makanahealth.com" class="block text-xs text-secondary hover:text-secondary-dark transition">commercial@makanahealth.com</a>
+          <p class="text-xs text-gray-400">Ext. 3200</p>
+        </div>
+      </div>
+
+      <!-- Clinical Development -->
+      <div class="reveal reveal-delay-2 card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand">Clinical Development</h3>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Clinical trial inquiries, site selection, investigator-initiated studies, and trial enrollment information.</p>
+        <div class="pt-4 border-t border-gray-100 space-y-2">
+          <p class="text-xs text-gray-500"><span class="font-medium text-slate-brand">Dr. Priya Raghavan</span> — SVP, Clinical Development</p>
+          <a href="mailto:clinicaldev@makanahealth.com" class="block text-xs text-secondary hover:text-secondary-dark transition">clinicaldev@makanahealth.com</a>
+          <p class="text-xs text-gray-400">Ext. 4100</p>
+        </div>
+      </div>
+
+      <!-- Pharmacovigilance -->
+      <div class="reveal card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand">Pharmacovigilance</h3>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Adverse event reporting, drug safety data, risk management, and post-market surveillance.</p>
+        <div class="pt-4 border-t border-gray-100 space-y-2">
+          <p class="text-xs text-gray-500"><span class="font-medium text-slate-brand">Dr. Marcus Chen</span> — VP, Drug Safety</p>
+          <a href="mailto:safety@makanahealth.com" class="block text-xs text-secondary hover:text-secondary-dark transition">safety@makanahealth.com</a>
+          <p class="text-xs text-gray-400">Ext. 9111 (24/7)</p>
+        </div>
+      </div>
+
+      <!-- Business Development -->
+      <div class="reveal reveal-delay-1 card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand">Business Development</h3>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Partnership opportunities, licensing inquiries, co-development proposals, and strategic alliances.</p>
+        <div class="pt-4 border-t border-gray-100 space-y-2">
+          <p class="text-xs text-gray-500"><span class="font-medium text-slate-brand">Sarah Inoue</span> — SVP, Business Development</p>
+          <a href="mailto:partnerships@makanahealth.com" class="block text-xs text-secondary hover:text-secondary-dark transition">partnerships@makanahealth.com</a>
+          <p class="text-xs text-gray-400">Ext. 5300</p>
+        </div>
+      </div>
+
+      <!-- Human Resources -->
+      <div class="reveal reveal-delay-2 card-modern bg-warm rounded-2xl p-6 border border-transparent hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand">Human Resources</h3>
+        </div>
+        <p class="text-xs text-gray-400 leading-relaxed mb-4">Career opportunities, applications, recruitment events, internships, and employee relations.</p>
+        <div class="pt-4 border-t border-gray-100 space-y-2">
+          <p class="text-xs text-gray-500"><span class="font-medium text-slate-brand">Malia Kealoha</span> — CHRO</p>
+          <a href="mailto:careers@makanahealth.com" class="block text-xs text-secondary hover:text-secondary-dark transition">careers@makanahealth.com</a>
+          <p class="text-xs text-gray-400">Ext. 6100</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GLOBAL OFFICE LOCATIONS ==================== -->
+<section class="py-20 lg:py-28 bg-warm-dark">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">Worldwide Presence</p>
+      <h2 class="reveal text-3xl lg:text-4xl font-bold text-slate-brand tracking-tight">Our global offices.</h2>
+      <p class="reveal text-sm text-gray-400 mt-3 max-w-lg mx-auto">With operations across six continents, Makana Health is committed to bringing transformative medicines to patients everywhere.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Global HQ — Honolulu -->
+      <div class="reveal card-modern bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200 relative">
+        <span class="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-widest text-secondary bg-secondary/10 px-2.5 py-1 rounded-full">Global HQ</span>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand text-sm">Honolulu, Hawaii</h3>
+            <p class="text-xs text-gray-400">United States</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-gray-500">
+          <p class="leading-relaxed">1001 Bishop Street, Suite 2800<br>Honolulu, HI 96813<br>United States</p>
+          <a href="tel:+18085551000" class="flex items-center gap-1.5 text-primary hover:text-primary-dark transition font-medium">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +1 (808) 555-1000
+          </a>
+          <p class="text-gray-400">HST (UTC-10:00)</p>
+        </div>
+      </div>
+
+      <!-- North America — Cambridge -->
+      <div class="reveal reveal-delay-1 card-modern bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand text-sm">Cambridge, Massachusetts</h3>
+            <p class="text-xs text-gray-400">North America R&D Hub</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-gray-500">
+          <p class="leading-relaxed">245 First Street, 17th Floor<br>Cambridge, MA 02142<br>United States</p>
+          <a href="tel:+16175552000" class="flex items-center gap-1.5 text-primary hover:text-primary-dark transition font-medium">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +1 (617) 555-2000
+          </a>
+          <p class="text-gray-400">EST (UTC-5:00)</p>
+        </div>
+      </div>
+
+      <!-- Europe — Basel -->
+      <div class="reveal reveal-delay-2 card-modern bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand text-sm">Basel, Switzerland</h3>
+            <p class="text-xs text-gray-400">Europe Headquarters</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-gray-500">
+          <p class="leading-relaxed">Aeschenvorstadt 36<br>4051 Basel<br>Switzerland</p>
+          <a href="tel:+41615553000" class="flex items-center gap-1.5 text-primary hover:text-primary-dark transition font-medium">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +41 61 555 3000
+          </a>
+          <p class="text-gray-400">CET (UTC+1:00)</p>
+        </div>
+      </div>
+
+      <!-- Asia Pacific — Tokyo -->
+      <div class="reveal card-modern bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-rose-50 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand text-sm">Tokyo, Japan</h3>
+            <p class="text-xs text-gray-400">Asia Pacific Headquarters</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-gray-500">
+          <p class="leading-relaxed">Otemachi Park Building, 1-1-1<br>Otemachi, Chiyoda-ku<br>Tokyo 100-0004, Japan</p>
+          <a href="tel:+81355554000" class="flex items-center gap-1.5 text-primary hover:text-primary-dark transition font-medium">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +81 3-5555-4000
+          </a>
+          <p class="text-gray-400">JST (UTC+9:00)</p>
+        </div>
+      </div>
+
+      <!-- Latin America — Sao Paulo -->
+      <div class="reveal reveal-delay-1 card-modern bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand text-sm">S&atilde;o Paulo, Brazil</h3>
+            <p class="text-xs text-gray-400">Latin America Headquarters</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-gray-500">
+          <p class="leading-relaxed">Av. Brigadeiro Faria Lima, 3477<br>18&deg; andar, Itaim Bibi<br>S&atilde;o Paulo, SP 04538-133, Brazil</p>
+          <a href="tel:+551155555000" class="flex items-center gap-1.5 text-primary hover:text-primary-dark transition font-medium">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +55 11 5555-5000
+          </a>
+          <p class="text-gray-400">BRT (UTC-3:00)</p>
+        </div>
+      </div>
+
+      <!-- Middle East & Africa — Dubai -->
+      <div class="reveal reveal-delay-2 card-modern bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand text-sm">Dubai, UAE</h3>
+            <p class="text-xs text-gray-400">Middle East & Africa Headquarters</p>
+          </div>
+        </div>
+        <div class="space-y-2 text-xs text-gray-500">
+          <p class="leading-relaxed">Dubai Healthcare City, Building 64<br>Phase 2, Al Razi Street<br>Dubai, UAE</p>
+          <a href="tel:+97145556000" class="flex items-center gap-1.5 text-primary hover:text-primary-dark transition font-medium">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +971 4 555 6000
+          </a>
+          <p class="text-gray-400">GST (UTC+4:00)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ACCORDION ==================== -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[800px] mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="reveal text-xs font-semibold uppercase tracking-[0.2em] text-secondary mb-3">Common Questions</p>
+      <h2 class="reveal text-3xl lg:text-4xl font-bold text-slate-brand tracking-tight">Frequently asked questions.</h2>
+      <p class="reveal text-sm text-gray-400 mt-3">Find quick answers to the most common inquiries we receive.</p>
+    </div>
+    <div class="reveal space-y-3" id="faqContainer">
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">How do I report a side effect or adverse event?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">If you experience or become aware of a side effect related to any Makana Health product, you can report it 24/7 by calling our Pharmacovigilance hotline at <strong>1-800-555-9111</strong> or by emailing <a href="mailto:safety@makanahealth.com" class="text-secondary hover:underline">safety@makanahealth.com</a>. You may also report adverse events through the FDA's MedWatch program. Your report will be handled confidentially and helps us monitor the ongoing safety of our medicines. Healthcare professionals can also submit reports through our HCP portal.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">How can I access Makana medicines in my country?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">Product availability varies by country and is subject to local regulatory approvals. Visit our <a class='text-secondary hover:underline' href='/products'>Products page</a> for the current list of approved medications. If a product is not yet available in your region, our Commercial Operations team can provide information on anticipated timelines or compassionate use programs. Contact <a href="mailto:commercial@makanahealth.com" class="text-secondary hover:underline">commercial@makanahealth.com</a> for region-specific availability.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">Where can I find prescribing information?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">Full prescribing information, including approved indications, dosing, warnings, and safety data, is available on each product's individual page within our <a class='text-secondary hover:underline' href='/products'>Products section</a>. Healthcare professionals can also access detailed product monographs, clinical data summaries, and safety updates through our <a class='text-secondary hover:underline' href='/hcp'>HCP Portal</a>. For additional medical information, contact our Medical Information team at <strong>1-800-555-1234</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">How do I apply for a clinical trial?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">Information about our active clinical trials, including eligibility criteria and participating sites, is available on our <a class='text-secondary hover:underline' href='/clinical-trials'>Clinical Trials page</a>. You can also search for our trials on <a href="https://clinicaltrials.gov" class="text-secondary hover:underline" target="_blank" rel="noopener">ClinicalTrials.gov</a>. To discuss whether a trial may be appropriate for you, please speak with your healthcare provider. For site selection or investigator inquiries, contact <a href="mailto:clinicaldev@makanahealth.com" class="text-secondary hover:underline">clinicaldev@makanahealth.com</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">Does Makana offer patient assistance programs?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">Yes. The Makana Patient Support Program provides financial assistance, co-pay support, and free medication to eligible patients who cannot afford their treatment. Eligibility is based on income, insurance status, and residency. Visit our <a class='text-secondary hover:underline' href='/patients'>Patients page</a> for program details and enrollment forms, or call our Patient Support team at <strong>1-800-555-1234</strong> (Mon-Fri, 8am-8pm ET).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">How can I request medical information?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">Our Medical Information team is available to answer scientific and medical questions about Makana Health products. Healthcare professionals and patients can request information by calling <strong>1-800-555-1234</strong> (Mon-Fri, 8am-6pm ET), emailing <a href="mailto:medinfo@makanahealth.com" class="text-secondary hover:underline">medinfo@makanahealth.com</a>, or submitting a request through the <a class='text-secondary hover:underline' href='/hcp'>HCP Portal</a>. Responses are typically provided within 24-48 hours for standard requests.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">How do I contact Investor Relations?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">For financial information, SEC filings, earnings reports, and shareholder services, visit our <a class='text-secondary hover:underline' href='/investors'>Investors page</a>. Analysts and institutional investors can reach our Investor Relations team at <a href="mailto:investors@makanahealth.com" class="text-secondary hover:underline">investors@makanahealth.com</a> or by calling <strong>+1 (808) 555-4800</strong>. To receive email alerts for press releases and SEC filings, sign up on our investor portal.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">What partnership opportunities are available?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">Makana Health actively seeks partnerships across drug discovery, co-development, licensing, and distribution. We are particularly interested in collaborations in oncology, immunology, neuroscience, and rare diseases. To explore partnership opportunities, contact our Business Development team at <a href="mailto:partnerships@makanahealth.com" class="text-secondary hover:underline">partnerships@makanahealth.com</a>. Please include a brief summary of the proposed collaboration and relevant data or background information.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">How do I apply for a job at Makana Health?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">All open positions are listed on our <a class='text-secondary hover:underline' href='/careers'>Careers page</a>, where you can search by location, function, and experience level. We encourage you to create a profile and submit your application online. For questions about the application process, recruitment events, or internship programs, contact <a href="mailto:careers@makanahealth.com" class="text-secondary hover:underline">careers@makanahealth.com</a>. Makana Health is an equal opportunity employer committed to building a diverse and inclusive workforce.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="faq-item bg-warm rounded-2xl border border-transparent hover:border-gray-200 transition-colors">
+        <button class="faq-toggle w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+          <span class="text-sm font-semibold text-slate-brand pr-4">How does Makana Health protect my personal data?</span>
+          <span class="faq-icon w-6 h-6 bg-gray-200/60 rounded-full flex items-center justify-center shrink-0">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer px-5 pb-0">
+          <div class="pb-5">
+            <p class="text-sm text-gray-500 leading-relaxed">We take data privacy seriously and comply with applicable regulations including GDPR, CCPA, and HIPAA where relevant. All personal information submitted through our website is encrypted in transit and at rest. We collect only the data necessary to respond to your inquiry and do not sell personal information to third parties. For detailed information about our data practices, please review our <a class='text-secondary hover:underline' href='/privacy'>Privacy Policy</a> or contact our Data Protection Officer at <a href="mailto:privacy@makanahealth.com" class="text-secondary hover:underline">privacy@makanahealth.com</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EMERGENCY INFORMATION BANNER ==================== -->
+<section class="py-10 bg-red-50">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal flex flex-col md:flex-row items-start md:items-center gap-5 bg-white rounded-2xl p-6 md:p-8 border border-red-100 shadow-sm emergency-pulse">
+      <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center shrink-0">
+        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+      </div>
+      <div class="flex-1">
+        <h3 class="font-bold text-red-800 text-base mb-1">Medical Emergency</h3>
+        <p class="text-sm text-red-600 leading-relaxed">If you or someone you know is experiencing a medical emergency, call your local emergency number immediately. In the United States, dial <strong>911</strong>. For non-emergency adverse event reporting, call our 24/7 safety hotline at <strong>1-800-555-9111</strong>. Do not use this website for urgent medical situations.</p>
+      </div>
+      <a href="tel:911" class="pill-btn shrink-0 px-6 py-3 rounded-xl bg-red-600 text-white font-semibold text-sm hover:bg-red-700 transition flex items-center gap-2" data-track="contact_emergency_call">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call 911
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA SECTION ==================== -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-brand tracking-tight mb-4">Can't find what you need?</h2>
+      <p class="text-sm text-gray-400 max-w-lg mx-auto mb-10">Explore additional resources or connect with our specialized teams for the support you're looking for.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a class='pill-btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary-dark transition' href='/patients' data-track="contact_patient_resources">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          Patient Resources
+        </a>
+        <a class='pill-btn inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-sm font-medium text-slate-brand hover:bg-gray-50 transition' href='/hcp' data-track="contact_hcp_portal">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          HCP Portal
+        </a>
+        <a class='pill-btn inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-sm font-medium text-slate-brand hover:bg-gray-50 transition' href='/careers' data-track="contact_join_team">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Join Our Team
+        </a>
+        <a class='pill-btn inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 text-sm font-medium text-slate-brand hover:bg-gray-50 transition' href='/investors' data-track="contact_investor_relations">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          Investor Relations
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-16 lg:py-20">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
+      <div class="col-span-2 md:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8 brightness-0 invert opacity-60 mb-4">
+        <p class="text-xs text-white/30 leading-relaxed max-w-xs">Reimagining medicine to improve and extend people's lives.</p>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Company</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/about'>About</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/about#leadership'>Leadership</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/manufacturing'>Manufacturing</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/quality'>Quality</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Science</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/research'>R&D</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/pipeline'>Pipeline</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/products'>Products</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/clinical-trials'>Clinical Trials</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/technology'>Technology</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Disease Areas</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/oncology'>Oncology</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/immunology'>Immunology</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/neuroscience'>Neuroscience</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Resources</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/patients'>Patients</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/hcp'>HCPs</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/careers'>Careers</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/investors'>Investors</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/news'>News</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/contact'>Contact</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Connect</h4>
+        <div class="flex flex-wrap gap-2">
+          <a href="https://linkedin.com/company/makana-health" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_linkedin"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://twitter.com/MakanaHealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_twitter"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://instagram.com/makanahealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+          <a href="https://youtube.com/@MakanaHealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition" data-track="footer_youtube"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#1D1D1F"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/8">
+    <div class="max-w-[1200px] mx-auto px-6 py-5">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-3 text-[11px] text-white/25">
+          <a class='hover:text-white/50 transition' href='/privacy'>Privacy</a>
+          <span>|</span>
+          <a href="/terms" class="hover:text-white/50 transition">Terms</a>
+          <span>|</span>
+          <a href="/privacy" class="hover:text-white/50 transition">Cookie Settings</a>
+          <span>|</span>
+          <a href="/accessibility" class="hover:text-white/50 transition">Accessibility</a>
+          <span>|</span>
+          <a href="/sitemap-page" class="hover:text-white/50 transition">Sitemap</a>
+        </div>
+        <p class="text-[11px] text-white/20">&copy; 2026 Makana Health. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  // ========== Mobile menu toggle ==========
+  document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // ========== Glass nav scroll effect ==========
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // ========== Reveal on scroll (Intersection Observer) ==========
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ========== FAQ Accordion ==========
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('active');
+
+      // Close all others
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          otherAnswer.style.maxHeight = null;
+          otherAnswer.style.paddingBottom = '0';
+        }
+      });
+
+      // Toggle current
+      if (isOpen) {
+        item.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+        answer.style.paddingBottom = '0';
+      } else {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        answer.style.paddingBottom = '0';
+      }
+    });
+  });
+
+  // ========== File Upload / Drag & Drop ==========
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const fileList = document.getElementById('fileList');
+  let uploadedFiles = [];
+
+  dropZone.addEventListener('click', () => fileInput.click());
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('dragover');
+  });
+
+  dropZone.addEventListener('dragleave', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+  });
+
+  fileInput.addEventListener('change', () => {
+    handleFiles(fileInput.files);
+  });
+
+  function handleFiles(files) {
+    Array.from(files).forEach(file => {
+      if (file.size > 10 * 1024 * 1024) {
+        alert('File "' + file.name + '" exceeds 10MB limit.');
+        return;
+      }
+      uploadedFiles.push(file);
+      renderFileList();
+    });
+  }
+
+  function renderFileList() {
+    fileList.innerHTML = '';
+    uploadedFiles.forEach((file, index) => {
+      const sizeKB = (file.size / 1024).toFixed(1);
+      const sizeMB = (file.size / (1024 * 1024)).toFixed(1);
+      const displaySize = file.size > 1024 * 1024 ? sizeMB + ' MB' : sizeKB + ' KB';
+      const div = document.createElement('div');
+      div.className = 'flex items-center justify-between bg-warm rounded-lg px-4 py-2.5 text-sm';
+      div.innerHTML = `
+        <div class="flex items-center gap-2 min-w-0">
+          <svg class="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span class="truncate text-xs text-slate-brand font-medium">${file.name}</span>
+          <span class="text-xs text-gray-400 shrink-0">${displaySize}</span>
+        </div>
+        <button type="button" onclick="removeFile(${index})" class="ml-3 w-6 h-6 rounded-full bg-gray-200 hover:bg-red-100 flex items-center justify-center transition shrink-0">
+          <svg class="w-3 h-3 text-gray-500 hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      `;
+      fileList.appendChild(div);
+    });
+  }
+
+  function removeFile(index) {
+    uploadedFiles.splice(index, 1);
+    renderFileList();
+  }
+
+  // ========== Form Validation & Submission ==========
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitText = document.getElementById('submitText');
+  const submitSpinner = document.getElementById('submitSpinner');
+  const formSuccess = document.getElementById('formSuccess');
+  const formError = document.getElementById('formError');
+
+  // Clear inline errors on input
+  contactForm.querySelectorAll('input, select, textarea').forEach(field => {
+    field.addEventListener('input', () => {
+      const errorEl = field.closest('div')?.querySelector('.form-error');
+      if (errorEl) errorEl.classList.add('hidden');
+      field.classList.remove('border-red-300');
+    });
+  });
+
+  // Checkbox change
+  document.getElementById('privacyConsent')?.addEventListener('change', function() {
+    const errorEl = this.closest('div')?.querySelector('.form-error') || this.closest('label')?.parentElement.querySelector('.form-error');
+    if (errorEl && this.checked) errorEl.classList.add('hidden');
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Validate
+    let isValid = true;
+    const requiredFields = [
+      { id: 'department', type: 'select' },
+      { id: 'firstName', type: 'text' },
+      { id: 'lastName', type: 'text' },
+      { id: 'email', type: 'email' },
+      { id: 'country', type: 'select' },
+      { id: 'subject', type: 'text' },
+      { id: 'message', type: 'textarea' }
+    ];
+
+    requiredFields.forEach(({ id, type }) => {
+      const field = document.getElementById(id);
+      const errorEl = field.closest('div')?.querySelector('.form-error');
+      let valid = true;
+
+      if (!field.value.trim()) {
+        valid = false;
+      }
+      if (type === 'email' && field.value.trim()) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        valid = emailRegex.test(field.value.trim());
+      }
+
+      if (!valid) {
+        isValid = false;
+        field.classList.add('border-red-300');
+        if (errorEl) errorEl.classList.remove('hidden');
+      } else {
+        field.classList.remove('border-red-300');
+        if (errorEl) errorEl.classList.add('hidden');
+      }
+    });
+
+    // Privacy consent
+    const consent = document.getElementById('privacyConsent');
+    const consentError = consent.closest('label')?.parentElement.querySelector('.form-error');
+    if (!consent.checked) {
+      isValid = false;
+      if (consentError) consentError.classList.remove('hidden');
+    }
+
+    if (!isValid) {
+      // Scroll to first error
+      const firstError = contactForm.querySelector('.border-red-300, .form-error:not(.hidden)');
+      if (firstError) {
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitText.textContent = 'Sending...';
+    submitSpinner.classList.remove('hidden');
+
+    // Submit to Salesforce via edge function
+    var payload = {
+      firstName: document.getElementById('firstName').value,
+      lastName: document.getElementById('lastName').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone') ? document.getElementById('phone').value : '',
+      company: document.getElementById('organization') ? document.getElementById('organization').value : '',
+      interest: document.getElementById('department') ? document.getElementById('department').value : '',
+      source: 'Contact Form',
+      description: 'Contact form: ' + (document.getElementById('department') ? document.getElementById('department').value : '') + ' - ' + (document.getElementById('message') ? document.getElementById('message').value : '')
+    };
+
+    fetch('/api/lead-create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      submitBtn.disabled = false;
+      submitText.textContent = 'Send Message';
+      submitSpinner.classList.add('hidden');
+
+      if (data.success || data.leadId) {
+        // Generate reference number
+        const refNum = 'MKH-' + String(Math.floor(100000 + Math.random() * 900000));
+        document.getElementById('refNumber').textContent = refNum;
+
+        // Show success
+        contactForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+
+        // Track via data layer
+        if (window.makanaDataLayer) {
+          window.makanaDataLayer.push({
+            event: 'lead',
+            action: 'form_submit',
+            label: 'Contact Form',
+            metadata: { leadId: data.leadId, source: 'Contact Form' }
+          });
+          // Identity stitching
+          window.makanaDataLayer.push({
+            event: 'identity',
+            action: 'identity_stitch',
+            label: 'Contact Form',
+            user: { attributes: { eventType: 'identity', firstName: payload.firstName, lastName: payload.lastName, email: payload.email, isAnonymous: false } }
+          });
+        }
+        if (window.makanaMarkFormSubmitted) window.makanaMarkFormSubmitted('contactForm');
+      } else {
+        // Show error
+        formError.classList.remove('hidden');
+        formError.querySelector('p:last-child').textContent = data.error || 'Submission failed. Please try again.';
+      }
+    })
+    .catch(function(err) {
+      submitBtn.disabled = false;
+      submitText.textContent = 'Send Message';
+      submitSpinner.classList.add('hidden');
+      formError.classList.remove('hidden');
+      formError.querySelector('p:last-child').textContent = 'Network error. Please try again.';
+      console.error('[Contact Form] Error:', err.message);
+    });
+  });
+
+  function resetForm() {
+    contactForm.reset();
+    uploadedFiles = [];
+    renderFileList();
+    contactForm.classList.remove('hidden');
+    formSuccess.classList.add('hidden');
+    formError.classList.add('hidden');
+
+    // Clear all error states
+    contactForm.querySelectorAll('.form-error').forEach(el => el.classList.add('hidden'));
+    contactForm.querySelectorAll('.border-red-300').forEach(el => el.classList.remove('border-red-300'));
+
+    document.getElementById('contactFormWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+
+// ── Chat panel ──
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+  document.getElementById('chatFab').classList.toggle('hidden', chatOpen);
+}
+function chatAction(text) {
+  const msgs = document.getElementById('chatMsgs');
+  const u = document.createElement('div');
+  u.className = 'msg-bubble user';
+  u.textContent = text;
+  msgs.appendChild(u);
+  document.getElementById('quickActions').style.display = 'none';
+  const t = document.createElement('div');
+  t.className = 'typing-dots';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(t);
+  msgs.scrollTop = msgs.scrollHeight;
+  const replies = {
+    'Learn about IMMUNEXIS': 'IMMUNEXIS\u00ae is our breakthrough IL-31 receptor antagonist approved for pediatric atopic dermatitis. In the CLARITY Phase III trial, 72% of patients achieved EASI-75 at Week 16. Would you like to see the full prescribing information?',
+    'Find clinical trials': 'We have 15 active clinical trials across immunology, cardiovascular, neuroscience, and oncology. I can help you find trials based on your condition and location. What therapeutic area interests you?',
+    'Talk to a representative': "I'd be happy to connect you with a Makana Health representative. You can reach our medical information team at 1-800-MAKANA or I can have someone contact you. Would you like to provide your email?",
+    'View product safety info': 'I can provide safety information for any of our approved products: IMMUNEXIS\u00ae, CARDIOGUARD\u00ae, or any pipeline compound. Which product are you interested in?'
+  };
+  setTimeout(() => {
+    t.remove();
+    const b = document.createElement('div');
+    b.className = 'msg-bubble bot';
+    b.textContent = replies[text] || "I'd be happy to help with that. Let me look into it for you.";
+    msgs.appendChild(b);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1500);
+}
+
+
+// ── Gateway portal ──
+function openGateway() {
+  document.getElementById('gatewayOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function closeGateway() {
+  document.getElementById('gatewayOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showHcpLogin() {
+  document.getElementById('gwMain').style.display = 'none';
+  document.getElementById('gwHcpLogin').classList.add('active');
+}
+function backToGateway() {
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function handleHcpLogin(e) {
+  e.preventDefault();
+  var email = document.getElementById('hcpEmail').value;
+  if (email) { e.target.classList.add('hidden'); document.getElementById('hcpLoginSuccess').classList.remove('hidden'); setTimeout(function(){ window.location.href='hcp-portal.html'; }, 2500); }
+}
+</script>
+
+<!-- ═══════════ AGENTFORCE CHAT FAB ═══════════ -->
+<button id="chatFab" class="fab-orb" onclick="toggleChat()" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+</button>
+
+<!-- ═══════════ CHAT PANEL ═══════════ -->
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-hdr">
+    <div class="chat-avatar">M</div>
+    <div>
+      <h4 class="text-[15px] font-semibold text-white leading-tight">Makana Assistant</h4>
+      <p class="text-[11px] text-white/50">Powered by Agentforce</p>
+    </div>
+    <div class="online-dot"></div>
+    <button onclick="toggleChat()" class="ml-3 text-white/50 hover:text-white transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg-bubble bot">Hello! I'm Makana's AI assistant, powered by Agentforce. How can I help you today?</div>
+  </div>
+  <div class="quick-actions" id="quickActions">
+    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Quick Actions</p>
+    <button class="q-action" onclick="chatAction('Learn about IMMUNEXIS')">Learn about IMMUNEXIS&reg;</button>
+    <button class="q-action" onclick="chatAction('Find clinical trials')">Find clinical trials</button>
+    <button class="q-action" onclick="chatAction('Talk to a representative')">Talk to a representative</button>
+    <button class="q-action" onclick="chatAction('View product safety info')">View product safety info</button>
+  </div>
+</div>
+
+</body>
+</html>

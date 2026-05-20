@@ -1,1 +1,925 @@
-{"id":"/hcp-portal/formulary-tools.html","path":"/hcp-portal/formulary-tools.html","sha":"c85ceb1f1583b5417cbbc8411d539762886bb0ec","mime_type":"text/html","size":61815,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulary & Access Tools | HCP Portal | Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+</style>
+<style>
+*, *::before, *::after { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { scroll-behavior: smooth; }
+.glass-nav { backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); background: rgba(255,255,255,0.72); }
+.glass-nav.scrolled { background: rgba(255,255,255,0.92); box-shadow: 0 0.5px 0 rgba(0,0,0,0.08); }
+.card-modern { transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.card-modern:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.gradient-text { background: linear-gradient(135deg, #6BBFAB 0%, #9B8EC4 50%, #4A4063 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: transparent; }
+.resource-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer; }
+.resource-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(74,64,99,0.1); border-color: rgba(74,64,99,0.15); }
+.portal-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.02em; }
+.form-input { transition: border-color 0.2s, box-shadow 0.2s; }
+.form-input:focus { border-color: #4A4063; box-shadow: 0 0 0 3px rgba(74,64,99,0.1); outline: none; }
+.form-select { transition: border-color 0.2s, box-shadow 0.2s; }
+.form-select:focus { border-color: #4A4063; box-shadow: 0 0 0 3px rgba(74,64,99,0.1); outline: none; }
+.results-panel { display: none; animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.results-panel.active { display: block; }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.program-card { background: #fff; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.program-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(74,64,99,0.1); border-color: rgba(74,64,99,0.15); }
+.pa-download-link { transition: all 0.2s; }
+.pa-download-link:hover { background: rgba(74,64,99,0.04); }
+</style>
+
+<!-- Salesforce c360a Beacon & Tracking -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="/js/makana-datalayer.js"></script>
+<script src="/js/makana-init.js"></script>
+<script src="/js/makana-sitemap.js"></script>
+<script src="/js/makana-personalization.js"></script>
+<script src="/js/makana-leadgen.js"></script>
+<script defer src="/js/makana-contact.js"></script>
+</head>
+<body class="bg-warm font-sans text-slate-brand">
+
+<!-- AUTH GATE -->
+<script>
+(function() {
+  var stored = localStorage.getItem('makana_user');
+  if (!stored) {
+    window.location.href = '/?gateway=hcp';
+    return;
+  }
+  try {
+    var user = JSON.parse(stored);
+    if (!user.email) { window.location.href = '/?gateway=hcp'; return; }
+    window.__hcpUser = user;
+  } catch(e) {
+    window.location.href = '/?gateway=hcp';
+  }
+})();
+</script>
+
+<!-- NAVIGATION -->
+<header id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-14">
+      <div class="flex items-center gap-4">
+        <a class="shrink-0" href="/">
+          <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8">
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <span class="portal-badge bg-primary/8 text-primary">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+          HCP Portal
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/hcp-portal" class="flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-primary transition px-3 py-2 rounded-lg hover:bg-primary/5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/></svg>
+          Back to Portal
+        </a>
+        <div class="h-5 w-px bg-gray-200"></div>
+        <div id="userAvatar" class="flex items-center gap-2">
+          <span id="userInitial" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6BBFAB,#4A4063);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600"></span>
+        </div>
+        <button onclick="showLogoutModal()" class="text-xs text-gray-400 hover:text-red-500 transition font-medium">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-24 pb-12 bg-gradient-to-br from-primary-dark via-primary to-primary-light relative overflow-hidden">
+  <div class="absolute inset-0 opacity-30">
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(107,191,171,0.2) 0%,transparent 70%);filter:blur(50px);top:-100px;right:-50px;"></div>
+    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(155,142,196,0.15) 0%,transparent 70%);filter:blur(40px);bottom:-150px;left:-50px;"></div>
+  </div>
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="portal-badge bg-white/15 text-white/90 text-[10px]">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+        Secure Session
+      </span>
+    </div>
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-white/50 mb-3">
+      <a href="/hcp-portal" class="hover:text-white/80 transition">Portal</a>
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      <span class="text-white/80">Formulary & Access</span>
+    </nav>
+    <h1 class="text-3xl lg:text-4xl font-bold text-white tracking-tight">Formulary & Access Tools</h1>
+    <p class="text-white/60 text-sm mt-2 max-w-2xl">Coverage lookup, prior authorization resources, patient assistance programs, and specialty pharmacy information to help your patients access Makana therapies.</p>
+  </div>
+</section>
+
+<!-- COVERAGE LOOKUP TOOL -->
+<section class="py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="reveal text-2xl font-bold text-slate-brand tracking-tight mb-2">Coverage Lookup Tool</h2>
+    <p class="reveal text-sm text-gray-400 mb-6">Check formulary status and estimated patient cost for Makana products across major insurance plans.</p>
+
+    <div class="reveal stat-card p-6 lg:p-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+        <!-- Product Selector -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-500 mb-2" for="productSelect">Product</label>
+          <select id="productSelect" class="form-select w-full text-sm border border-gray-200 rounded-xl px-4 py-3 bg-white text-slate-brand appearance-none" style="background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%236B7280&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:16px;">
+            <option value="">Select product...</option>
+            <option value="immunexis">IMMUNEXIS® (IL-31 RA)</option>
+            <option value="cardioguard">CARDIOGUARD® (PCSK9/Lp(a))</option>
+          </select>
+        </div>
+        <!-- Insurance Type -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-500 mb-2" for="insuranceType">Insurance Type</label>
+          <select id="insuranceType" class="form-select w-full text-sm border border-gray-200 rounded-xl px-4 py-3 bg-white text-slate-brand appearance-none" style="background-image:url('data:image/svg+xml;utf8,<svg fill=&quot;%236B7280&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path fill-rule=&quot;evenodd&quot; d=&quot;M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z&quot; clip-rule=&quot;evenodd&quot;/></svg>');background-repeat:no-repeat;background-position:right 12px center;background-size:16px;">
+            <option value="">Select type...</option>
+            <option value="commercial">Commercial</option>
+            <option value="medicare">Medicare Part D</option>
+            <option value="medicaid">Medicaid</option>
+            <option value="va">VA/TRICARE</option>
+          </select>
+        </div>
+        <!-- Plan Name -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-500 mb-2" for="planName">Plan Name</label>
+          <input type="text" id="planName" placeholder="e.g. Aetna PPO, BCBS Gold..." class="form-input w-full text-sm border border-gray-200 rounded-xl px-4 py-3 bg-white text-slate-brand placeholder-gray-300">
+        </div>
+        <!-- Submit -->
+        <div class="flex items-end">
+          <button id="checkCoverageBtn" onclick="checkCoverage()" class="w-full bg-primary hover:bg-primary-light text-white font-semibold text-sm py-3 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] flex items-center justify-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+            Check Coverage
+          </button>
+        </div>
+      </div>
+
+      <!-- Validation message -->
+      <div id="coverageValidation" class="hidden text-xs text-red-500 font-medium mb-4 flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+        <span>Please select a product and insurance type.</span>
+      </div>
+
+      <!-- Loading State -->
+      <div id="coverageLoading" class="hidden py-8 text-center">
+        <div class="inline-flex items-center gap-3 text-sm text-gray-400">
+          <svg class="w-5 h-5 animate-spin text-primary" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+          Checking formulary status across payer databases...
+        </div>
+      </div>
+
+      <!-- Results Panel -->
+      <div id="coverageResults" class="results-panel">
+        <div class="border-t border-gray-100 pt-6">
+          <div class="flex items-center gap-2 mb-5">
+            <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-semibold text-slate-brand">Coverage Results</h3>
+            <span id="resultProductBadge" class="portal-badge bg-primary/8 text-primary text-[10px] ml-2"></span>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div class="bg-warm-dark rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Formulary Tier</p>
+              <p id="resultTier" class="text-lg font-bold text-slate-brand"></p>
+              <p id="resultTierLabel" class="text-[11px] text-gray-400"></p>
+            </div>
+            <div class="bg-warm-dark rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Prior Auth Required</p>
+              <p id="resultPA" class="text-lg font-bold"></p>
+              <p id="resultPANote" class="text-[11px] text-gray-400"></p>
+            </div>
+            <div class="bg-warm-dark rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Step Therapy</p>
+              <p id="resultStep" class="text-lg font-bold"></p>
+              <p id="resultStepNote" class="text-[11px] text-gray-400"></p>
+            </div>
+            <div class="bg-warm-dark rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Est. Patient Copay</p>
+              <p id="resultCopay" class="text-lg font-bold text-slate-brand"></p>
+              <p id="resultCopayNote" class="text-[11px] text-gray-400"></p>
+            </div>
+            <div class="bg-warm-dark rounded-xl p-4">
+              <p class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mb-1">Specialty Pharmacy</p>
+              <p id="resultSpecialty" class="text-lg font-bold text-slate-brand"></p>
+              <p id="resultSpecialtyNote" class="text-[11px] text-gray-400"></p>
+            </div>
+          </div>
+          <div id="resultDisclaimer" class="mt-4 text-[10px] text-gray-300 leading-relaxed bg-gray-50 rounded-lg p-3">
+            <strong class="text-gray-400">Disclaimer:</strong> Coverage results are based on general formulary data and may not reflect individual plan variations. Actual patient costs depend on specific benefit design, deductible status, and out-of-pocket accumulation. Verify with the patient's pharmacy benefit manager for exact coverage details. Data updated as of April 2026.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIOR AUTHORIZATION RESOURCES -->
+<section class="py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="reveal text-2xl font-bold text-slate-brand tracking-tight mb-2">Prior Authorization Resources</h2>
+    <p class="reveal text-sm text-gray-400 mb-6">Streamline the PA process with pre-populated forms, submission guides, and appeal templates for Makana products.</p>
+
+    <div class="grid lg:grid-cols-2 gap-5">
+      <!-- Downloadable PA Forms -->
+      <div class="reveal stat-card p-6">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 bg-primary/8 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand">Prior Authorization Forms</h3>
+            <p class="text-[11px] text-gray-400">Pre-populated with product-specific clinical criteria</p>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="#" onclick="trackPADownload('immunexis_pa_form'); return false;" class="pa-download-link flex items-center gap-3 p-3 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13,3.5L18.5,9H13V3.5M8.93,12.22H16V14.31H13.54L16,17.89H13.64L11.47,14.92L9.3,17.89H6.94L9.4,14.31H6.94V12.22H8.93Z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-slate-brand">IMMUNEXIS® PA Request Form</p>
+              <p class="text-[11px] text-gray-400">Includes ICD-10 codes for atopic dermatitis (L20.x)</p>
+            </div>
+            <div class="flex items-center gap-1 text-primary text-xs font-semibold flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              PDF
+            </div>
+          </a>
+          <a href="#" onclick="trackPADownload('cardioguard_pa_form'); return false;" class="pa-download-link flex items-center gap-3 p-3 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13,3.5L18.5,9H13V3.5M8.93,12.22H16V14.31H13.54L16,17.89H13.64L11.47,14.92L9.3,17.89H6.94L9.4,14.31H6.94V12.22H8.93Z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-slate-brand">CARDIOGUARD® PA Request Form</p>
+              <p class="text-[11px] text-gray-400">Includes ICD-10 codes for hyperlipidemia (E78.x), ASCVD (I25.x)</p>
+            </div>
+            <div class="flex items-center gap-1 text-primary text-xs font-semibold flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              PDF
+            </div>
+          </a>
+          <a href="#" onclick="trackPADownload('universal_pa_form'); return false;" class="pa-download-link flex items-center gap-3 p-3 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-slate-brand">Universal PA Submission Checklist</p>
+              <p class="text-[11px] text-gray-400">Required documentation checklist for all Makana products</p>
+            </div>
+            <div class="flex items-center gap-1 text-primary text-xs font-semibold flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              PDF
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Guides & Templates -->
+      <div class="reveal reveal-d1 stat-card p-6">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 bg-secondary/8 rounded-xl flex items-center justify-center">
+            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-brand">Guides & Templates</h3>
+            <p class="text-[11px] text-gray-400">Step-by-step tools for PA submissions and appeals</p>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="#" onclick="trackPADownload('pa_submission_guide'); return false;" class="pa-download-link flex items-center gap-3 p-3 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-slate-brand">Step-by-Step PA Submission Guide</p>
+              <p class="text-[11px] text-gray-400">5-step process with timelines, fax numbers, and electronic PA portals</p>
+            </div>
+            <div class="flex items-center gap-1 text-secondary text-xs font-semibold flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              PDF
+            </div>
+          </a>
+          <a href="#" onclick="trackPADownload('appeals_letter_template'); return false;" class="pa-download-link flex items-center gap-3 p-3 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 bg-amber-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-slate-brand">Appeals Letter Template</p>
+              <p class="text-[11px] text-gray-400">Customizable template with clinical justification language and literature citations</p>
+            </div>
+            <div class="flex items-center gap-1 text-secondary text-xs font-semibold flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              DOCX
+            </div>
+          </a>
+          <a href="#" onclick="trackPADownload('peer_to_peer_tips'); return false;" class="pa-download-link flex items-center gap-3 p-3 rounded-xl border border-gray-100">
+            <div class="w-9 h-9 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-slate-brand">Peer-to-Peer Review Tips</p>
+              <p class="text-[11px] text-gray-400">Key talking points, clinical evidence summary, and preparation checklist for P2P reviews</p>
+            </div>
+            <div class="flex items-center gap-1 text-secondary text-xs font-semibold flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              PDF
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATIENT ASSISTANCE PROGRAMS -->
+<section class="py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="reveal text-2xl font-bold text-slate-brand tracking-tight mb-2">Patient Assistance Programs</h2>
+    <p class="reveal text-sm text-gray-400 mb-6">Help eligible patients access Makana therapies regardless of insurance status or financial circumstances.</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <!-- CareConnect -->
+      <div class="reveal program-card" onclick="trackAssistanceProgram('careconnect')">
+        <div class="h-1.5 bg-gradient-to-r from-secondary to-secondary-light"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-secondary/8 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>
+            </div>
+            <span class="portal-badge bg-secondary/10 text-secondary-dark text-[10px]">Commercially Insured</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-brand mb-2">Makana CareConnect</h3>
+          <p class="text-xs text-gray-400 leading-relaxed mb-4">Copay assistance for commercially insured patients. Reduces out-of-pocket costs for IMMUNEXIS and CARDIOGUARD prescriptions.</p>
+          <div class="space-y-2.5 mb-5">
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Up to <strong class="text-slate-brand">$15,000/year</strong> in copay support</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Patients may pay as little as <strong class="text-slate-brand">$0 copay</strong></p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Instant activation at participating pharmacies</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">No income requirements for commercially insured patients</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 text-secondary text-xs font-semibold">
+            Enroll patient
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patient Access -->
+      <div class="reveal reveal-d1 program-card" onclick="trackAssistanceProgram('patient_access')">
+        <div class="h-1.5 bg-gradient-to-r from-primary to-accent"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-primary/8 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+            </div>
+            <span class="portal-badge bg-primary/10 text-primary text-[10px]">Uninsured/Underinsured</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-brand mb-2">Makana Patient Access</h3>
+          <p class="text-xs text-gray-400 leading-relaxed mb-4">Free drug program for uninsured and underinsured patients who meet income-based eligibility criteria.</p>
+          <div class="space-y-2.5 mb-5">
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500"><strong class="text-slate-brand">Free medication</strong> for qualifying patients</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Income threshold: <strong class="text-slate-brand">&le;400% FPL</strong> (~$62,400 individual)</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Annual re-enrollment with simplified renewal process</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Direct-to-patient shipping at no cost</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 text-primary text-xs font-semibold">
+            Check eligibility
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bridge Program -->
+      <div class="reveal reveal-d2 program-card" onclick="trackAssistanceProgram('bridge_program')">
+        <div class="h-1.5 bg-gradient-to-r from-accent to-accent-light"></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 bg-accent/8 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="portal-badge bg-accent/10 text-primary text-[10px]">Awaiting Approval</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-brand mb-2">Makana Bridge Program</h3>
+          <p class="text-xs text-gray-400 leading-relaxed mb-4">Temporary free drug supply for patients awaiting insurance determination, PA decisions, or appeal outcomes.</p>
+          <div class="space-y-2.5 mb-5">
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Up to <strong class="text-slate-brand">90-day supply</strong> while awaiting coverage</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500"><strong class="text-slate-brand">48-hour turnaround</strong> for enrollment decisions</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">Covers PA pending, appeals, and insurance transitions</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              <p class="text-xs text-gray-500">No gap in therapy during coverage determination</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5 text-accent text-xs font-semibold">
+            Start bridge supply
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTY PHARMACY NETWORK -->
+<section class="py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <h2 class="reveal text-2xl font-bold text-slate-brand tracking-tight mb-2">Specialty Pharmacy Network</h2>
+    <p class="reveal text-sm text-gray-400 mb-6">Authorized specialty pharmacies for dispensing IMMUNEXIS and CARDIOGUARD. All locations provide patient counseling and adherence support.</p>
+
+    <div class="reveal stat-card overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-warm-dark">
+              <th class="text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider px-6 py-4">Pharmacy</th>
+              <th class="text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider px-6 py-4">Phone</th>
+              <th class="text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider px-6 py-4">Fax</th>
+              <th class="text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider px-6 py-4">Hours</th>
+              <th class="text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider px-6 py-4">Products</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-50">
+            <tr class="hover:bg-warm-dark/50 transition">
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-slate-brand">AccordantHealth Specialty</p>
+                    <p class="text-[11px] text-gray-400">National / Mail Order</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0142</td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0143</td>
+              <td class="px-6 py-4 text-xs text-gray-400">Mon-Fri 8a-8p ET<br>Sat 9a-1p ET</td>
+              <td class="px-6 py-4">
+                <div class="flex gap-1.5">
+                  <span class="portal-badge bg-primary/8 text-primary text-[9px]">IMMUNEXIS</span>
+                  <span class="portal-badge bg-secondary/8 text-secondary-dark text-[9px]">CARDIOGUARD</span>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-warm-dark/50 transition">
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-slate-brand">BioPlus Specialty Pharmacy</p>
+                    <p class="text-[11px] text-gray-400">National / Mail Order</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0267</td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0268</td>
+              <td class="px-6 py-4 text-xs text-gray-400">Mon-Fri 8a-9p ET<br>Sat 9a-5p ET</td>
+              <td class="px-6 py-4">
+                <div class="flex gap-1.5">
+                  <span class="portal-badge bg-primary/8 text-primary text-[9px]">IMMUNEXIS</span>
+                  <span class="portal-badge bg-secondary/8 text-secondary-dark text-[9px]">CARDIOGUARD</span>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-warm-dark/50 transition">
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-slate-brand">Optum Specialty Pharmacy</p>
+                    <p class="text-[11px] text-gray-400">National / Retail & Mail Order</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0391</td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0392</td>
+              <td class="px-6 py-4 text-xs text-gray-400">Mon-Fri 7a-10p ET<br>Sat-Sun 9a-5p ET</td>
+              <td class="px-6 py-4">
+                <div class="flex gap-1.5">
+                  <span class="portal-badge bg-primary/8 text-primary text-[9px]">IMMUNEXIS</span>
+                </div>
+              </td>
+            </tr>
+            <tr class="hover:bg-warm-dark/50 transition">
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-slate-brand">CVS Specialty</p>
+                    <p class="text-[11px] text-gray-400">National / Retail & Mail Order</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0518</td>
+              <td class="px-6 py-4 text-sm text-gray-600">(800) 555-0519</td>
+              <td class="px-6 py-4 text-xs text-gray-400">Mon-Fri 8a-8p ET<br>Sat 9a-3p ET</td>
+              <td class="px-6 py-4">
+                <div class="flex gap-1.5">
+                  <span class="portal-badge bg-secondary/8 text-secondary-dark text-[9px]">CARDIOGUARD</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REIMBURSEMENT HOTLINE -->
+<section class="py-10 pb-20">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal stat-card p-6 lg:p-8 bg-gradient-to-br from-white to-warm-dark">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 bg-primary/8 rounded-2xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-brand">Makana Reimbursement Hotline</h3>
+            <p class="text-xs text-gray-400 mt-1">Dedicated support for HCPs navigating coverage, prior authorization, and patient assistance enrollment</p>
+          </div>
+        </div>
+        <div class="lg:ml-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div class="text-center sm:text-right">
+            <p class="text-2xl font-bold gradient-text">1-888-MAKANA-1</p>
+            <p class="text-xs text-gray-400">(1-888-625-2621)</p>
+          </div>
+          <div class="h-10 w-px bg-gray-100 hidden sm:block"></div>
+          <div class="text-xs text-gray-400 leading-relaxed">
+            <p class="font-semibold text-gray-500">Available Hours</p>
+            <p>Mon - Fri: 8:00 AM - 8:00 PM ET</p>
+            <p>Saturday: 9:00 AM - 1:00 PM ET</p>
+            <p class="text-[10px] text-gray-300 mt-1">Closed Sundays & major holidays</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-10">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-6 brightness-0 invert opacity-50">
+        <span class="text-xs text-white/30">HCP Portal</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 text-[11px] text-white/25">
+        <a href="/privacy" class="hover:text-white/50 transition">Privacy</a><span>|</span>
+        <a href="/terms" class="hover:text-white/50 transition">Terms</a><span>|</span>
+        <a href="/hcp-portal" class="hover:text-white/50 transition">HCP Portal</a><span>|</span>
+        <a href="/" class="hover:text-white/50 transition">Main Site</a>
+      </div>
+      <p class="text-[11px] text-white/20">&copy; 2026 Makana Health. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+// Glass nav scroll
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+// Reveal on scroll
+var revObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { revObs.observe(el); });
+
+// Contact lookup handled by makana-contact.js
+
+// Identity stitching on page load
+(function() {
+  if (typeof SalesforceInteractions !== 'undefined' && window.__hcpUser) {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Formulary Tools View' },
+      user: { attributes: { eventType: 'identity', emailAddress: window.__hcpUser.email } }
+    });
+  }
+  if (window.makanaDataLayer && window.__hcpUser) {
+    window.makanaDataLayer.push({
+      event: 'identity', action: 'hcp_portal_formulary_tools',
+      label: 'HCP Portal: Formulary & Access',
+      user: { attributes: { emailAddress: window.__hcpUser.email } }
+    });
+  }
+})();
+
+// Coverage lookup data
+var coverageData = {
+  immunexis: {
+    commercial: {
+      tier: 'Tier 3', tierLabel: 'Preferred Specialty', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'Clinical criteria: failed 1 topical', step: 'Yes', stepColor: 'text-amber-600',
+      stepNote: 'Trial of topical corticosteroid required', copay: '$35 - $75',
+      copayNote: 'Per 28-day supply (before CareConnect)', specialty: 'Required',
+      specialtyNote: 'Dispensed through specialty pharmacy only'
+    },
+    medicare: {
+      tier: 'Tier 5', tierLabel: 'Specialty Tier', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'Medical necessity documentation required', step: 'Yes', stepColor: 'text-amber-600',
+      stepNote: 'Trial of 2 conventional therapies', copay: '$95 - $250',
+      copayNote: 'Per 28-day supply (varies by plan)', specialty: 'Required',
+      specialtyNote: 'Dispensed through specialty pharmacy only'
+    },
+    medicaid: {
+      tier: 'Tier 2', tierLabel: 'Preferred Brand', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'State-specific criteria apply', step: 'No', stepColor: 'text-green-600',
+      stepNote: 'No step therapy in most state programs', copay: '$0 - $3',
+      copayNote: 'Nominal copay per state guidelines', specialty: 'Required',
+      specialtyNote: 'Must use Medicaid-contracted specialty pharmacy'
+    },
+    va: {
+      tier: 'Tier 2', tierLabel: 'Non-Formulary (case-by-case)', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'Non-formulary request through VISN P&T', step: 'Yes', stepColor: 'text-amber-600',
+      stepNote: 'Trial of formulary alternatives required', copay: '$0 - $11',
+      copayNote: 'Based on priority group assignment', specialty: 'Required',
+      specialtyNote: 'VA Mail Order or CMOP pharmacy'
+    }
+  },
+  cardioguard: {
+    commercial: {
+      tier: 'Tier 3', tierLabel: 'Preferred Specialty', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'LDL-C >70 on max statin or statin intolerant', step: 'Yes', stepColor: 'text-amber-600',
+      stepNote: 'Max-tolerated statin + ezetimibe trial', copay: '$25 - $60',
+      copayNote: 'Per 28-day supply (before CareConnect)', specialty: 'Required',
+      specialtyNote: 'Dispensed through specialty pharmacy only'
+    },
+    medicare: {
+      tier: 'Tier 5', tierLabel: 'Specialty Tier', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'ASCVD diagnosis with elevated Lp(a) or LDL-C', step: 'Yes', stepColor: 'text-amber-600',
+      stepNote: 'Documentation of statin therapy trial', copay: '$75 - $200',
+      copayNote: 'Per 28-day supply (catastrophic phase lower)', specialty: 'Required',
+      specialtyNote: 'Dispensed through specialty pharmacy only'
+    },
+    medicaid: {
+      tier: 'Tier 3', tierLabel: 'Non-Preferred Brand', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'State formulary varies; most require PA', step: 'Yes', stepColor: 'text-amber-600',
+      stepNote: 'Trial of generic statin required', copay: '$0 - $3',
+      copayNote: 'Nominal copay per state guidelines', specialty: 'Required',
+      specialtyNote: 'Must use Medicaid-contracted specialty pharmacy'
+    },
+    va: {
+      tier: 'Tier 3', tierLabel: 'Non-Formulary (criteria-based)', pa: 'Yes', paColor: 'text-amber-600',
+      paNote: 'Criteria-for-use through VA P&T Committee', step: 'Yes', stepColor: 'text-amber-600',
+      stepNote: 'Max statin + ezetimibe + lifestyle modification', copay: '$0 - $11',
+      copayNote: 'Based on priority group assignment', specialty: 'Required',
+      specialtyNote: 'VA Mail Order or CMOP pharmacy'
+    }
+  }
+};
+
+// Coverage lookup function
+function checkCoverage() {
+  var product = document.getElementById('productSelect').value;
+  var insurance = document.getElementById('insuranceType').value;
+  var validationEl = document.getElementById('coverageValidation');
+  var loadingEl = document.getElementById('coverageLoading');
+  var resultsEl = document.getElementById('coverageResults');
+
+  // Hide previous results
+  resultsEl.classList.remove('active');
+  validationEl.classList.add('hidden');
+
+  // Validate
+  if (!product || !insurance) {
+    validationEl.classList.remove('hidden');
+    return;
+  }
+
+  // Track the lookup
+  trackCoverageLookup(product, insurance);
+
+  // Show loading
+  loadingEl.classList.remove('hidden');
+
+  // Simulate API delay
+  setTimeout(function() {
+    loadingEl.classList.add('hidden');
+
+    var data = coverageData[product] && coverageData[product][insurance];
+    if (!data) return;
+
+    var productName = product === 'immunexis' ? 'IMMUNEXIS®' : 'CARDIOGUARD®';
+    document.getElementById('resultProductBadge').textContent = productName;
+    document.getElementById('resultTier').textContent = data.tier;
+    document.getElementById('resultTierLabel').textContent = data.tierLabel;
+    document.getElementById('resultPA').textContent = data.pa;
+    document.getElementById('resultPA').className = 'text-lg font-bold ' + data.paColor;
+    document.getElementById('resultPANote').textContent = data.paNote;
+    document.getElementById('resultStep').textContent = data.step;
+    document.getElementById('resultStep').className = 'text-lg font-bold ' + data.stepColor;
+    document.getElementById('resultStepNote').textContent = data.stepNote;
+    document.getElementById('resultCopay').textContent = data.copay;
+    document.getElementById('resultCopayNote').textContent = data.copayNote;
+    document.getElementById('resultSpecialty').textContent = data.specialty;
+    document.getElementById('resultSpecialtyNote').textContent = data.specialtyNote;
+
+    resultsEl.classList.add('active');
+  }, 1500);
+}
+
+// Track coverage lookup
+function trackCoverageLookup(product, insurance) {
+  var planName = document.getElementById('planName').value || 'Not specified';
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: {
+        name: 'Coverage Lookup',
+        eventType: 'custom',
+        product: product,
+        insuranceType: insurance,
+        planName: planName
+      }
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'coverage_lookup',
+      category: 'HCP_FORMULARY',
+      action: 'coverage_check',
+      label: product + ' / ' + insurance,
+      product: product,
+      insuranceType: insurance,
+      planName: planName,
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+}
+
+// Track PA form downloads
+function trackPADownload(formName) {
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: {
+        name: 'PA Form Download: ' + formName,
+        eventType: 'custom'
+      }
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'pa_form_download',
+      category: 'HCP_FORMULARY',
+      action: 'download',
+      label: formName,
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+}
+
+// Track patient assistance program clicks
+function trackAssistanceProgram(programName) {
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: {
+        name: 'Patient Assistance Click: ' + programName,
+        eventType: 'custom'
+      }
+    });
+  }
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'patient_assistance_click',
+      category: 'HCP_FORMULARY',
+      action: 'program_click',
+      label: programName,
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+}
+
+// ── Logout Modal ──
+function showLogoutModal() {
+  document.getElementById('logoutModal').classList.remove('hidden');
+  document.getElementById('logoutModal').classList.add('flex');
+  setTimeout(function() {
+    document.getElementById('logoutPanel').style.opacity = '1';
+    document.getElementById('logoutPanel').style.transform = 'scale(1) translateY(0)';
+  }, 10);
+}
+function hideLogoutModal() {
+  var panel = document.getElementById('logoutPanel');
+  panel.style.opacity = '0';
+  panel.style.transform = 'scale(0.95) translateY(8px)';
+  setTimeout(function() {
+    document.getElementById('logoutModal').classList.add('hidden');
+    document.getElementById('logoutModal').classList.remove('flex');
+  }, 200);
+}
+function hcpLogout() {
+  // Track logout event
+  if (window.makanaDataLayer) {
+    window.makanaDataLayer.push({
+      event: 'hcp_logout',
+      category: 'HCP_PORTAL',
+      email: window.__hcpUser ? window.__hcpUser.email : undefined
+    });
+  }
+  if (typeof SalesforceInteractions !== 'undefined') {
+    SalesforceInteractions.sendEvent({
+      interaction: { name: 'HCP Logout', eventType: 'custom' },
+      user: window.__hcpUser ? { attributes: { emailAddress: window.__hcpUser.email } } : {}
+    });
+  }
+  // Clear all session data
+  localStorage.removeItem('makana_user');
+  sessionStorage.removeItem('makana_contact');
+  window.__hcpUser = null;
+  window.__hcpContact = null;
+  window.location.href = '/?gateway=hcp';
+}
+</script>
+
+<!-- ═══════════ LOGOUT CONFIRMATION MODAL ═══════════ -->
+<div id="logoutModal" class="hidden fixed inset-0 z-[9998] items-center justify-center bg-black/40 backdrop-blur-sm" onclick="hideLogoutModal()">
+  <div id="logoutPanel" onclick="event.stopPropagation()" style="opacity:0;transform:scale(0.95) translateY(8px);transition:all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);" class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 max-w-sm w-full mx-4">
+    <div class="flex items-center justify-center w-14 h-14 bg-red-50 rounded-2xl mx-auto mb-5">
+      <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"/></svg>
+    </div>
+    <h3 class="text-lg font-bold text-slate-brand text-center mb-2">Sign out of HCP Portal?</h3>
+    <p class="text-sm text-gray-400 text-center mb-6">You'll need to sign in again to access clinical resources and your portal dashboard.</p>
+    <div class="flex gap-3">
+      <button onclick="hideLogoutModal()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-xl transition">Cancel</button>
+      <button onclick="hcpLogout()" class="flex-1 px-4 py-2.5 text-sm font-semibold text-white bg-red-500 hover:bg-red-600 rounded-xl transition">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

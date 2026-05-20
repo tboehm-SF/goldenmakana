@@ -1,1 +1,1850 @@
-{"id":"/privacy.html","path":"/privacy.html","sha":"eaba6bd8899de468f059a48df85553f59ada7f68","mime_type":"text/html","size":149125,"site_id":"11f33a71-1382-482b-89ba-27beac439da8","deploy_id":"69dfb7ce3a423c518648d178"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy & Cookie Policy | Makana Health</title>
+<script src="https://assets.meshmesh.io/system/tailwindcss-browser-4.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style type="text/tailwindcss">
+@theme {
+  --color-primary: #4A4063;
+  --color-primary-light: #6B5B8A;
+  --color-primary-dark: #2D2640;
+  --color-secondary: #6BBFAB;
+  --color-secondary-light: #8ED4C4;
+  --color-secondary-dark: #4A9B87;
+  --color-accent: #9B8EC4;
+  --color-accent-light: #B8AED6;
+  --color-slate-brand: #1D1D1F;
+  --color-warm: #FAFAFA;
+  --color-warm-dark: #F5F5F7;
+  --color-glass: rgba(255,255,255,0.72);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+}
+</style>
+<style>
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { scroll-behavior: smooth; }
+
+  /* Glass nav */
+  .glass-nav {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background: rgba(255,255,255,0.72);
+  }
+  .glass-nav.scrolled {
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 0.5px 0 rgba(0,0,0,0.08);
+  }
+
+  /* Reveal animations */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* Gradient text */
+  .gradient-text { background: linear-gradient(135deg, #6BBFAB 0%, #9B8EC4 50%, #4A4063 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .gradient-text-hero { background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  /* Hero */
+  .hero-mesh {
+    background: linear-gradient(135deg, #2D2640 0%, #4A4063 30%, #352D47 60%, #1D1D1F 100%);
+  }
+  .hero-orb-1 { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(107,191,171,0.15) 0%, transparent 70%); filter: blur(40px); top: -100px; right: -100px; animation: float 20s ease-in-out infinite; }
+  .hero-orb-2 { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(155,142,196,0.12) 0%, transparent 70%); filter: blur(40px); bottom: -150px; left: -50px; animation: float 25s ease-in-out infinite reverse; }
+  @keyframes float { 0%,100%{transform:translate(0,0)} 33%{transform:translate(30px,-20px)} 66%{transform:translate(-20px,15px)} }
+
+  /* Pill buttons */
+  .pill-btn { transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .pill-btn:hover { transform: scale(1.03); }
+
+  /* TOC active */
+  .toc-link { transition: all 0.25s ease; border-left: 2px solid transparent; }
+  .toc-link:hover { color: #4A4063; border-left-color: #9B8EC4; background: rgba(155,142,196,0.06); }
+  .toc-link.active { color: #4A4063; font-weight: 600; border-left-color: #6BBFAB; background: rgba(107,191,171,0.08); }
+
+  /* Accordion */
+  .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.3s ease; }
+  .accordion-content.open { max-height: 2000px; }
+  .accordion-icon { transition: transform 0.3s ease; }
+  .accordion-trigger.open .accordion-icon { transform: rotate(180deg); }
+
+  /* Table styling */
+  .policy-table { border-collapse: separate; border-spacing: 0; }
+  .policy-table th { background: #F5F5F7; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #4A4063; }
+  .policy-table td, .policy-table th { padding: 0.875rem 1rem; border-bottom: 1px solid #E5E7EB; }
+  .policy-table tbody tr:hover { background: rgba(107,191,171,0.04); }
+  .policy-table tbody tr:last-child td { border-bottom: none; }
+
+  /* Section numbering */
+  .section-number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #6BBFAB, #9B8EC4); color: #fff; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+
+  /* Print styles */
+  @media print {
+    .glass-nav, .mobile-toc-toggle, footer, .no-print { display: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .toc-sidebar { display: none !important; }
+    body { font-size: 11pt; }
+    .policy-section { break-inside: avoid; }
+  }
+
+  /* Form focus */
+  .form-input:focus { outline: none; border-color: #6BBFAB; box-shadow: 0 0 0 3px rgba(107,191,171,0.15); }
+
+  /* Cookie banner */
+  .cookie-banner { animation: slideUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s both; }
+  @keyframes slideUp { from { transform: translateY(100%); opacity:0; } to { transform: translateY(0); opacity:1; } }
+
+
+/* ═══ GATEWAY PORTAL ═══ */
+.gw-overlay { position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:1rem; }
+.gw-overlay.open { display:flex; }
+.gw-backdrop { position:absolute; inset:0; background:rgba(29,29,31,.55); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); animation:gwFadeIn .3s ease; }
+@keyframes gwFadeIn { from{opacity:0} to{opacity:1} }
+.gw-modal { position:relative; z-index:1; width:100%; max-width:880px; max-height:92vh; overflow-y:auto; background:#fff; border-radius:28px; box-shadow:0 40px 120px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.1); animation:gwSlideIn .4s cubic-bezier(.22,1,.36,1); }
+@keyframes gwSlideIn { from{opacity:0;transform:scale(.93) translateY(20px)} to{opacity:1;transform:scale(1) translateY(0)} }
+.gw-hero { position:relative; background:linear-gradient(135deg,#2D2640 0%,#4A4063 40%,#3a6b5e 100%); padding:2.5rem 2.5rem 3rem; border-radius:28px 28px 0 0; overflow:hidden; }
+.gw-hero::before { content:''; position:absolute; top:-40%; right:-15%; width:460px; height:460px; background:radial-gradient(circle,rgba(107,191,171,.2) 0%,transparent 70%); border-radius:50%; }
+.gw-hero::after { content:''; position:absolute; bottom:-60%; left:-10%; width:380px; height:380px; background:radial-gradient(circle,rgba(155,142,196,.15) 0%,transparent 70%); border-radius:50%; }
+.gw-close { position:absolute; top:1.25rem; right:1.25rem; width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .2s; z-index:2; }
+.gw-close:hover { background:rgba(255,255,255,.25); transform:scale(1.1); }
+.gw-close svg { width:16px; height:16px; color:#fff; }
+.gw-body { padding:2rem 2.5rem 2.5rem; }
+.portal-card { position:relative; border-radius:20px; padding:2rem; border:1.5px solid #e5e7eb; transition:all .35s cubic-bezier(.25,.46,.45,.94); cursor:pointer; overflow:hidden; background:#fff; }
+.portal-card::before { content:''; position:absolute; inset:0; border-radius:20px; opacity:0; transition:opacity .35s; }
+.portal-card:hover { transform:translateY(-4px); border-color:transparent; }
+.portal-card.hcp-card:hover { box-shadow:0 20px 60px rgba(74,64,99,.15),0 0 0 1.5px rgba(74,64,99,.2); }
+.portal-card.hcp-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(74,64,99,.03),rgba(155,142,196,.05)); }
+.portal-card.patient-card:hover { box-shadow:0 20px 60px rgba(107,191,171,.15),0 0 0 1.5px rgba(107,191,171,.25); }
+.portal-card.patient-card:hover::before { opacity:1; background:linear-gradient(135deg,rgba(107,191,171,.03),rgba(107,191,171,.06)); }
+.portal-icon-wrap { width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+.portal-icon-wrap.hcp { background:linear-gradient(135deg,#4A4063,#6B5B8A); box-shadow:0 4px 14px rgba(74,64,99,.25); }
+.portal-icon-wrap.patient { background:linear-gradient(135deg,#6BBFAB,#4A9B87); box-shadow:0 4px 14px rgba(107,191,171,.25); }
+.portal-icon-wrap svg { width:24px; height:24px; color:#fff; }
+.feature-check { display:flex; align-items:center; gap:.5rem; padding:.35rem 0; }
+.feature-check .check-icon { width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.feature-check .check-icon.hcp { background:rgba(74,64,99,.08); color:#4A4063; }
+.feature-check .check-icon.patient { background:rgba(107,191,171,.1); color:#4A9B87; }
+.feature-check .check-icon svg { width:10px; height:10px; }
+.portal-btn { display:flex; align-items:center; justify-content:center; gap:.5rem; width:100%; padding:.85rem 1.5rem; border-radius:14px; font-size:.8125rem; font-weight:600; border:none; cursor:pointer; transition:all .25s; margin-top:1.5rem; }
+.portal-btn.hcp { background:#4A4063; color:#fff; }
+.portal-btn.hcp:hover { background:#2D2640; box-shadow:0 8px 24px rgba(74,64,99,.3); transform:scale(1.02); }
+.portal-btn.patient { background:#fff; color:#4A9B87; border:1.5px solid #6BBFAB; }
+.portal-btn.patient:hover { background:#ecfdf5; box-shadow:0 8px 24px rgba(107,191,171,.2); transform:scale(1.02); }
+.portal-btn svg { width:16px; height:16px; }
+.hcp-email-step { display:none; animation:gwFadeIn .3s ease; }
+.hcp-email-step.active { display:block; }
+.gw-input { width:100%; padding:.85rem 1.25rem; border-radius:14px; border:1.5px solid #e5e7eb; font-size:.875rem; background:#fafafa; transition:all .2s; outline:none; }
+.gw-input:focus { border-color:#9B8EC4; box-shadow:0 0 0 3px rgba(155,142,196,.12); background:#fff; }
+.gw-nav-btn { position:relative; display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,rgba(74,64,99,.06),rgba(107,191,171,.06)); border:1px solid rgba(74,64,99,.1); cursor:pointer; transition:all .25s; }
+.gw-nav-btn:hover { background:linear-gradient(135deg,rgba(74,64,99,.12),rgba(107,191,171,.12)); border-color:rgba(74,64,99,.2); transform:scale(1.08); box-shadow:0 4px 14px rgba(74,64,99,.12); }
+.gw-nav-btn svg { width:16px; height:16px; }
+.gw-img-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; margin-top:1.5rem; }
+.gw-img-thumb { border-radius:12px; overflow:hidden; aspect-ratio:3/4; position:relative; cursor:pointer; transition:all .3s; border:2px solid transparent; }
+.gw-img-thumb:hover { transform:scale(1.03); border-color:rgba(107,191,171,.3); box-shadow:0 8px 24px rgba(0,0,0,.1); }
+.gw-img-thumb img { width:100%; height:100%; object-fit:cover; }
+
+/* ═══ FAB ORB (Agentforce-style) ═══ */
+.fab-orb {
+  position:fixed; bottom:32px; right:32px; width:64px; height:64px; border-radius:50%;
+  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  z-index:600; background:#0b0818;
+  box-shadow: inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08),
+    0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35),
+    0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08);
+  animation:orb-pulse 2.8s ease-out infinite;
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+}
+.fab-orb::before { content:''; position:absolute; top:8px; left:10px; width:20px; height:12px; background:radial-gradient(ellipse,rgba(255,255,255,.4) 0%,transparent 100%); border-radius:50%; pointer-events:none; z-index:2; }
+.fab-orb:hover { transform:scale(1.12) translateY(-3px); box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 16px 44px rgba(124,111,160,.75),0 4px 14px rgba(76,170,143,.5),0 5px 14px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.15),0 0 70px rgba(124,111,160,.3); }
+.fab-orb svg { width:24px; height:24px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
+@keyframes orb-pulse {
+  0%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,.6);}
+  70%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 22px rgba(124,111,160,0);}
+  100%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,0);}
+}
+.fab-orb.hidden { opacity:0; pointer-events:none; animation:none; }
+
+/* ═══ CHAT PANEL ═══ */
+.chat-panel { position:fixed; bottom:32px; right:32px; width:380px; max-height:580px; z-index:700;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+  border-radius:24px; box-shadow:0 32px 80px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.5);
+  display:flex; flex-direction:column; overflow:hidden;
+  transform:scale(.92) translateY(20px); opacity:0; pointer-events:none;
+  transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+}
+.chat-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+
+.chat-hdr { background:linear-gradient(135deg,#4A4063,#352D47); padding:20px 22px; display:flex; align-items:center; gap:12px; }
+.chat-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#9B8EC4,#6BBFAB); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; }
+.online-dot { width:9px; height:9px; background:#6BBFAB; border-radius:50%; margin-left:auto; animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{box-shadow:0 0 0 0 rgba(107,191,171,.5)} 50%{box-shadow:0 0 0 5px rgba(107,191,171,0)} }
+
+.chat-msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; max-height:320px; }
+.msg-bubble { max-width:85%; padding:12px 16px; border-radius:18px; font-size:13px; line-height:1.6; animation:bubble-in .3s cubic-bezier(.22,1,.36,1) both; }
+.msg-bubble.bot { background:#f0f0f5; color:#1D1D1F; border-bottom-left-radius:4px; align-self:flex-start; }
+.msg-bubble.user { background:#4A4063; color:#fff; border-bottom-right-radius:4px; align-self:flex-end; }
+@keyframes bubble-in { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+.typing-dots { display:flex; gap:5px; padding:8px 14px; }
+.typing-dots span { width:7px; height:7px; border-radius:50%; background:#9B8EC4; animation:dot-pulse 1s ease-in-out infinite; }
+.typing-dots span:nth-child(2) { animation-delay:.18s; background:#7FAAB4; }
+.typing-dots span:nth-child(3) { animation-delay:.36s; background:#6BBFAB; }
+@keyframes dot-pulse { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+.quick-actions { padding:14px 18px; border-top:1px solid rgba(0,0,0,.04); display:flex; flex-direction:column; gap:8px; }
+.q-action { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:10px 16px; font-size:13px; color:#4A4063; cursor:pointer; font-weight:500; text-align:left; transition:all .2s; display:flex; justify-content:space-between; align-items:center; }
+.q-action::after { content:'\2192'; color:#9B8EC4; opacity:0; transform:translateX(-6px); transition:all .2s; }
+.q-action:hover { border-color:#9B8EC4; background:#faf9ff; transform:translateX(3px); box-shadow:0 2px 12px rgba(155,142,196,.12); }
+.q-action:hover::after { opacity:1; transform:translateX(0); }
+
+</style>
+
+<!-- ═══ Salesforce Personalization — Data Cloud Web SDK ═══ -->
+<!-- Data Cloud Website Connector: Makana_Health_Website (494741f1-8288-47b0-bc0e-e60e66c23cc8) -->
+<script src="https://cdn.c360a.salesforce.com/beacon/c360a/494741f1-8288-47b0-bc0e-e60e66c23cc8/scripts/c360a.min.js"></script>
+<script src="js/makana-datalayer.js"></script>
+<script src="js/makana-init.js"></script>
+<script src="js/makana-sitemap.js"></script>
+<script src="js/makana-personalization.js"></script>
+<script src="js/makana-leadgen.js"></script>
+<!-- ═══ End Salesforce Personalization ═══ -->
+</head>
+<body class="font-sans text-slate-brand bg-white antialiased">
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="mainNav" class="glass-nav fixed top-0 left-0 right-0 z-50 border-b border-transparent">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a class='flex items-center gap-2 shrink-0' href='/'>
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8">
+      </a>
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-primary transition' href='/about'>About</a>
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-primary transition' href='/research'>Science &amp; Research</a>
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-primary transition' href='/products'>Products</a>
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-primary transition' href='/patients'>Patients</a>
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-primary transition' href='/hcp'>HCP</a>
+        <a class='text-[13px] font-medium text-slate-brand/70 hover:text-primary transition' href='/careers'>Careers</a>
+      </div>
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100 transition" aria-label="Toggle menu">
+        <svg class="w-5 h-5 text-slate-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100">
+    <div class="max-w-[1200px] mx-auto px-6 py-4 space-y-1">
+      <a class='block py-2.5 px-3 text-sm font-medium text-slate-brand/70 hover:text-primary hover:bg-warm rounded-lg transition' href='/about'>About</a>
+      <a class='block py-2.5 px-3 text-sm font-medium text-slate-brand/70 hover:text-primary hover:bg-warm rounded-lg transition' href='/research'>Science &amp; Research</a>
+      <a class='block py-2.5 px-3 text-sm font-medium text-slate-brand/70 hover:text-primary hover:bg-warm rounded-lg transition' href='/products'>Products</a>
+      <a class='block py-2.5 px-3 text-sm font-medium text-slate-brand/70 hover:text-primary hover:bg-warm rounded-lg transition' href='/patients'>Patients</a>
+      <a class='block py-2.5 px-3 text-sm font-medium text-slate-brand/70 hover:text-primary hover:bg-warm rounded-lg transition' href='/hcp'>HCP</a>
+      <a class='block py-2.5 px-3 text-sm font-medium text-slate-brand/70 hover:text-primary hover:bg-warm rounded-lg transition' href='/careers'>Careers</a>
+
+      <button onclick="openGateway()" class="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary-dark text-white text-sm font-semibold flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        Portal Gateway
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-mesh relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="max-w-[1200px] mx-auto px-6 relative z-10">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        </div>
+        <span class="text-white/50 text-sm font-medium tracking-wide">Legal &amp; Compliance</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+        <span class="gradient-text-hero">Privacy &amp; Data Protection</span>
+      </h1>
+      <p class="text-lg md:text-xl text-white/60 leading-relaxed mb-8 max-w-2xl">At Makana Health, safeguarding your personal data is fundamental to who we are. This policy explains how we collect, use, and protect information across all of our services and interactions.</p>
+      <div class="flex flex-wrap items-center gap-4 text-sm text-white/40">
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+          Last Updated: March 2026
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+          Version 4.2
+        </span>
+        <button onclick="window.print()" class="no-print flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/15 rounded-full transition text-white/50 hover:text-white/70 cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m0 0a48.159 48.159 0 018.5 0m-8.5 0V5.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v3.284"/></svg>
+          Print Policy
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MAIN CONTENT AREA ==================== -->
+<section class="py-16 lg:py-24">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+
+      <!-- ====== MOBILE TOC TOGGLE ====== -->
+      <div class="lg:hidden mobile-toc-toggle">
+        <button id="mobileTocBtn" class="w-full flex items-center justify-between px-5 py-4 bg-warm rounded-2xl border border-gray-100 text-sm font-semibold text-primary">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+            Table of Contents
+          </span>
+          <svg id="mobileTocIcon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="mobileTocContent" class="hidden mt-3 px-4 py-4 bg-warm rounded-2xl border border-gray-100">
+          <nav class="space-y-1">
+            <a href="#introduction" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">1. Introduction &amp; Scope</a>
+            <a href="#information-collected" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">2. Information We Collect</a>
+            <a href="#how-we-use" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">3. How We Use Your Information</a>
+            <a href="#legal-basis" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">4. Legal Basis for Processing</a>
+            <a href="#data-sharing" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">5. Data Sharing &amp; Third Parties</a>
+            <a href="#international-transfers" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">6. International Data Transfers</a>
+            <a href="#data-retention" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">7. Data Retention</a>
+            <a href="#your-rights" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">8. Your Privacy Rights</a>
+            <a href="#children" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">9. Children's Privacy</a>
+            <a href="#security" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">10. Security Measures</a>
+            <a href="#cookie-policy" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">11. Cookie Policy</a>
+            <a href="#rights-request" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">12. Data Subject Request</a>
+            <a href="#regional-notices" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">13. Regional Privacy Notices</a>
+            <a href="#contact-dpo" class="toc-link block py-2 px-3 text-xs font-medium text-gray-500 rounded-lg">14. Contact the DPO</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- ====== STICKY SIDEBAR TOC (Desktop) ====== -->
+      <aside class="toc-sidebar hidden lg:block w-64 shrink-0">
+        <div class="sticky top-24">
+          <h3 class="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-4 px-3">Table of Contents</h3>
+          <nav class="space-y-0.5">
+            <a href="#introduction" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">1. Introduction &amp; Scope</a>
+            <a href="#information-collected" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">2. Information We Collect</a>
+            <a href="#how-we-use" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">3. How We Use Your Information</a>
+            <a href="#legal-basis" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">4. Legal Basis for Processing</a>
+            <a href="#data-sharing" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">5. Data Sharing &amp; Third Parties</a>
+            <a href="#international-transfers" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">6. International Data Transfers</a>
+            <a href="#data-retention" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">7. Data Retention</a>
+            <a href="#your-rights" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">8. Your Privacy Rights</a>
+            <a href="#children" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">9. Children's Privacy</a>
+            <a href="#security" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">10. Security Measures</a>
+            <a href="#cookie-policy" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">11. Cookie Policy</a>
+            <a href="#rights-request" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">12. Data Subject Request</a>
+            <a href="#regional-notices" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">13. Regional Privacy Notices</a>
+            <a href="#contact-dpo" class="toc-link block py-2.5 px-3 text-xs font-medium text-gray-500 rounded-lg">14. Contact the DPO</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- ====== POLICY CONTENT ====== -->
+      <div class="flex-1 min-w-0 max-w-3xl">
+
+        <!-- ==================== SECTION 1: INTRODUCTION ==================== -->
+        <div id="introduction" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">1</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Introduction &amp; Scope</h2>
+          </div>
+
+          <h3 class="text-lg font-semibold text-slate-brand mb-3">Who We Are</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">Makana Health AG ("Makana Health," "we," "us," or "our") is a global pharmaceutical company headquartered in Bern, Switzerland, dedicated to discovering, developing, and delivering innovative medicines that improve and extend people's lives. We operate in more than 60 countries through subsidiaries, affiliates, and partner organizations.</p>
+
+          <h3 class="text-lg font-semibold text-slate-brand mb-3">What This Policy Covers</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">This Privacy Policy explains how Makana Health collects, uses, shares, retains, and protects personal information in connection with:</p>
+          <ul class="list-disc list-inside text-sm text-gray-600 leading-relaxed mb-4 space-y-2 pl-2">
+            <li>Our websites, mobile applications, and digital platforms (collectively, "Sites")</li>
+            <li>Patient support and assistance programs</li>
+            <li>Clinical trials and research studies</li>
+            <li>Healthcare professional (HCP) engagement programs</li>
+            <li>Adverse event and safety reporting</li>
+            <li>Medical information requests</li>
+            <li>Employment and recruitment activities</li>
+            <li>Business-to-business interactions with partners and vendors</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-slate-brand mb-3">Data Controller</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">For the purposes of applicable data protection laws, the data controller is:</p>
+          <div class="bg-warm rounded-xl p-5 border border-gray-100 mb-4">
+            <p class="text-sm font-semibold text-slate-brand">Makana Health AG</p>
+            <p class="text-sm text-gray-600 mt-1">Laupenstrasse 27, 3008 Bern, Switzerland</p>
+            <p class="text-sm text-gray-600 mt-1">Commercial Register: CHE-123.456.789</p>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">Depending on your location and the specific services you interact with, a local Makana Health affiliate may also act as a data controller or joint controller. Where this applies, the relevant entity will be identified in the local privacy notice.</p>
+
+          <h3 class="text-lg font-semibold text-slate-brand mb-3">Contact Details</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">For privacy-related inquiries, please contact our Data Protection Office at <a href="mailto:privacy@makanahealth.com" class="text-secondary hover:underline font-medium">privacy@makanahealth.com</a>. You may also write to us at the address above, marked to the attention of the Chief Privacy Officer.</p>
+        </div>
+
+        <!-- ==================== SECTION 2: INFORMATION WE COLLECT ==================== -->
+        <div id="information-collected" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">2</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Information We Collect</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">We collect personal information directly from you, automatically through your interactions with our Sites, and from third-party sources. The categories of information we collect depend on your relationship with Makana Health and the services you use.</p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="policy-table w-full text-sm rounded-xl overflow-hidden border border-gray-100">
+              <thead>
+                <tr>
+                  <th class="text-left rounded-tl-xl">Data Category</th>
+                  <th class="text-left">Examples</th>
+                  <th class="text-left rounded-tr-xl">Legal Basis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Personal Identification</td>
+                  <td class="text-gray-600">Full name, email address, phone number, postal address, date of birth</td>
+                  <td class="text-gray-600 align-top">Consent / Contract</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Professional Information</td>
+                  <td class="text-gray-600">HCP credentials, medical license number, NPI number, specialty, institutional affiliation</td>
+                  <td class="text-gray-600 align-top">Legitimate Interest</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Health-Related Data</td>
+                  <td class="text-gray-600">Adverse event reports, patient support program data, treatment information, diagnosis codes</td>
+                  <td class="text-gray-600 align-top">Legal Obligation / Vital Interest</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Technical Data</td>
+                  <td class="text-gray-600">IP address, browser type and version, device identifiers, operating system, screen resolution</td>
+                  <td class="text-gray-600 align-top">Legitimate Interest</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Usage Data</td>
+                  <td class="text-gray-600">Pages visited, time on site, click patterns, search queries, referring URLs</td>
+                  <td class="text-gray-600 align-top">Consent / Legitimate Interest</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Communication Data</td>
+                  <td class="text-gray-600">Email correspondence, contact form submissions, call recordings (where disclosed), chat transcripts</td>
+                  <td class="text-gray-600 align-top">Consent / Contract</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Cookie &amp; Tracking Data</td>
+                  <td class="text-gray-600">Cookie identifiers, pixel tags, session recordings, advertising identifiers</td>
+                  <td class="text-gray-600 align-top">Consent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-accent/5 rounded-xl p-5 border border-accent/10">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/></svg>
+              <div>
+                <p class="text-sm font-semibold text-slate-brand mb-1">Special Category Data</p>
+                <p class="text-xs text-gray-600 leading-relaxed">Health-related data is considered a "special category" under GDPR. We process this data only when strictly necessary for pharmacovigilance obligations, clinical trial management, or patient support services, and always under the applicable legal exemptions or with your explicit consent.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== SECTION 3: HOW WE USE YOUR INFORMATION ==================== -->
+        <div id="how-we-use" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">3</span>
+            <h2 class="text-2xl font-bold text-slate-brand">How We Use Your Information</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Makana Health processes personal information for the following purposes. We only process your data when we have a valid legal basis to do so.</p>
+
+          <div class="space-y-4 mb-6">
+            <div class="bg-warm rounded-xl p-5 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Service Delivery &amp; Account Management</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">To provide access to our websites, portals, and digital services; manage your account; process registrations for events, webinars, and programs; fulfill requests for samples or educational materials.</p>
+            </div>
+            <div class="bg-warm rounded-xl p-5 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Medical Information Requests</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">To respond to inquiries from patients and healthcare professionals about our products, including providing prescribing information, safety data, and clinical evidence.</p>
+            </div>
+            <div class="bg-warm rounded-xl p-5 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Adverse Event Reporting &amp; Pharmacovigilance</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">To comply with our legal obligations to monitor, collect, assess, and report adverse events and safety information to regulatory authorities worldwide, including the FDA, EMA, and Swissmedic. This processing is based on our legal obligations under pharmaceutical regulations.</p>
+            </div>
+            <div class="bg-warm rounded-xl p-5 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Clinical Trial Operations</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">To manage clinical trial recruitment, enrollment, participation, follow-up, and reporting in accordance with ICH-GCP guidelines and applicable regulatory requirements. Processing of clinical trial participant data is governed by separate informed consent documents.</p>
+            </div>
+            <div class="bg-warm rounded-xl p-5 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Marketing Communications</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">Where you have provided your consent, to send you newsletters, product updates, event invitations, and other promotional materials. You may withdraw your consent at any time by using the unsubscribe link in our emails or contacting us directly.</p>
+            </div>
+            <div class="bg-warm rounded-xl p-5 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Website Improvement &amp; Analytics</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">To analyze how our Sites are used, identify trends, diagnose technical issues, and improve user experience. This may include aggregated and pseudonymized data that does not directly identify you.</p>
+            </div>
+            <div class="bg-warm rounded-xl p-5 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Legal Compliance &amp; Fraud Prevention</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">To comply with applicable laws and regulations; respond to legal process or government requests; enforce our terms and conditions; protect the rights, property, and safety of Makana Health, our employees, and others; detect and prevent fraud or other illegal activities.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== SECTION 4: LEGAL BASIS ==================== -->
+        <div id="legal-basis" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">4</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Legal Basis for Processing (GDPR)</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Under the General Data Protection Regulation (GDPR) and the Swiss Federal Act on Data Protection (FADP), we rely on the following legal bases for processing personal data:</p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="policy-table w-full text-sm rounded-xl overflow-hidden border border-gray-100">
+              <thead>
+                <tr>
+                  <th class="text-left rounded-tl-xl">Legal Basis</th>
+                  <th class="text-left">GDPR Article</th>
+                  <th class="text-left rounded-tr-xl">Processing Activities</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Consent</td>
+                  <td class="text-gray-600 align-top">Art. 6(1)(a)</td>
+                  <td class="text-gray-600">Marketing emails, newsletters, analytics cookies, non-essential tracking technologies, processing of special category data where explicit consent is obtained</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Contract Performance</td>
+                  <td class="text-gray-600 align-top">Art. 6(1)(b)</td>
+                  <td class="text-gray-600">Account registration, service delivery, event registrations, patient support program enrollment, employment contracts</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Legal Obligation</td>
+                  <td class="text-gray-600 align-top">Art. 6(1)(c)</td>
+                  <td class="text-gray-600">Pharmacovigilance reporting, adverse event processing, regulatory submissions, tax and financial record-keeping, transparency reporting (Sunshine Act)</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Vital Interests</td>
+                  <td class="text-gray-600 align-top">Art. 6(1)(d)</td>
+                  <td class="text-gray-600">Emergency safety reporting where an individual's life or health is at risk</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Legitimate Interests</td>
+                  <td class="text-gray-600 align-top">Art. 6(1)(f)</td>
+                  <td class="text-gray-600">Website optimization, security monitoring, fraud prevention, HCP engagement, business analytics, IT administration, responding to inquiries</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed">Where we rely on legitimate interests, we have conducted balancing tests to ensure our interests do not override your fundamental rights and freedoms. You may request a copy of these assessments by contacting our Data Protection Office.</p>
+        </div>
+
+        <!-- ==================== SECTION 5: DATA SHARING ==================== -->
+        <div id="data-sharing" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">5</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Data Sharing &amp; Third Parties</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Makana Health may share your personal information with the following categories of recipients, always under appropriate contractual safeguards and data processing agreements.</p>
+
+          <div class="space-y-4 mb-6">
+            <div class="flex gap-4 p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-brand mb-1">Service Providers</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Contract research organizations (CROs), IT and cloud hosting providers, payment processors, analytics platforms, communication service providers, and other vendors who process data on our behalf under strict data processing agreements.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-brand mb-1">Healthcare &amp; Regulatory Authorities</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">We are legally required to share certain safety data with health authorities such as the U.S. Food and Drug Administration (FDA), European Medicines Agency (EMA), Swissmedic, and other national competent authorities for pharmacovigilance and post-market surveillance purposes.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-2.556a4.5 4.5 0 00-6.364-6.364L4.757 8.257a4.5 4.5 0 006.364 6.364l1.757-1.757"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-brand mb-1">Business Partners</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Co-promotion partners, licensing partners, and distributors, but only to the extent necessary to perform the relevant business activity and always under appropriate confidentiality and data protection obligations.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-slate-brand mb-1">Legal Requirements</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">When required by law, regulation, court order, or governmental request, or when we believe disclosure is necessary to protect the rights, property, or safety of Makana Health, our users, or the public.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-secondary/5 rounded-xl p-5 border border-secondary/10">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-secondary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div>
+                <p class="text-sm font-semibold text-secondary-dark mb-1">We Do Not Sell Your Personal Data</p>
+                <p class="text-xs text-gray-600 leading-relaxed">Makana Health does not sell, rent, or trade your personal information to third parties for their own marketing purposes. We have never sold personal data and have no plans to do so. For California residents, this statement satisfies the "Do Not Sell or Share My Personal Information" disclosure requirement under the CCPA/CPRA.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== SECTION 6: INTERNATIONAL TRANSFERS ==================== -->
+        <div id="international-transfers" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">6</span>
+            <h2 class="text-2xl font-bold text-slate-brand">International Data Transfers</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">As a global pharmaceutical company, Makana Health may transfer your personal data to countries outside your country of residence. We ensure that all international data transfers are conducted in compliance with applicable data protection laws by implementing appropriate safeguards.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+              </div>
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Standard Contractual Clauses</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">We use European Commission-approved Standard Contractual Clauses (SCCs) as adopted in June 2021, supplemented by transfer impact assessments where necessary, to govern transfers to countries without adequate data protection levels.</p>
+            </div>
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              </div>
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Adequacy Decisions</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">Where the European Commission or the Swiss Federal Council has determined that a recipient country provides an adequate level of data protection, transfers may be made on the basis of such adequacy decisions.</p>
+            </div>
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>
+              </div>
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">Binding Corporate Rules</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">Intra-group transfers within the Makana Health corporate family are governed by our Binding Corporate Rules, which have been approved by our lead supervisory authority and ensure a consistent standard of protection.</p>
+            </div>
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+              </div>
+              <h4 class="text-sm font-semibold text-slate-brand mb-2">EU-U.S. Data Privacy Framework</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">For transfers to the United States, we rely on the EU-U.S. Data Privacy Framework where our U.S. entities are certified, and may supplement with SCCs as an additional safeguard measure.</p>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed">You may obtain a copy of the relevant transfer safeguards by contacting our Data Protection Office at <a href="mailto:privacy@makanahealth.com" class="text-secondary hover:underline font-medium">privacy@makanahealth.com</a>.</p>
+        </div>
+
+        <!-- ==================== SECTION 7: DATA RETENTION ==================== -->
+        <div id="data-retention" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">7</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Data Retention</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">We retain your personal data only as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements. The specific retention periods depend on the type of data and the purpose of processing.</p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="policy-table w-full text-sm rounded-xl overflow-hidden border border-gray-100">
+              <thead>
+                <tr>
+                  <th class="text-left rounded-tl-xl">Data Type</th>
+                  <th class="text-left">Retention Period</th>
+                  <th class="text-left rounded-tr-xl">Justification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Clinical Trial Data</td>
+                  <td class="text-gray-600 align-top">25 years after trial completion</td>
+                  <td class="text-gray-600">ICH-GCP E6(R2) guidelines; regulatory requirements for drug approval dossiers</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Adverse Event Reports</td>
+                  <td class="text-gray-600 align-top">Minimum 10 years after product discontinuation</td>
+                  <td class="text-gray-600">Pharmacovigilance obligations under EU Regulation 726/2004 and FDA 21 CFR Part 314</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Patient Support Data</td>
+                  <td class="text-gray-600 align-top">Duration of program + 7 years</td>
+                  <td class="text-gray-600">Regulatory audit requirements and statute of limitations</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">HCP Interaction Records</td>
+                  <td class="text-gray-600 align-top">10 years</td>
+                  <td class="text-gray-600">Transparency reporting obligations (e.g., Sunshine Act, EFPIA Disclosure Code)</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Marketing Consent Records</td>
+                  <td class="text-gray-600 align-top">Until consent is withdrawn + 3 years</td>
+                  <td class="text-gray-600">Proof of consent for regulatory compliance</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Website Analytics Data</td>
+                  <td class="text-gray-600 align-top">26 months</td>
+                  <td class="text-gray-600">Industry standard; aligned with Google Analytics default retention</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Employee Records</td>
+                  <td class="text-gray-600 align-top">Duration of employment + 10 years</td>
+                  <td class="text-gray-600">Employment law, pension, and tax obligations</td>
+                </tr>
+                <tr>
+                  <td class="font-medium text-slate-brand align-top">Job Applicant Data</td>
+                  <td class="text-gray-600 align-top">6 months (unsuccessful) / until withdrawal (talent pool)</td>
+                  <td class="text-gray-600">Equal opportunity compliance; legitimate interest for talent pipeline</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed">When the retention period expires, we securely delete or anonymize the data so it can no longer identify you. Anonymized data may be retained indefinitely for statistical and research purposes.</p>
+        </div>
+
+        <!-- ==================== SECTION 8: YOUR PRIVACY RIGHTS ==================== -->
+        <div id="your-rights" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">8</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Your Privacy Rights</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Depending on your location and applicable law, you may have the following rights regarding your personal data. We are committed to facilitating the exercise of these rights and will respond to valid requests within the legally required timeframes.</p>
+
+          <div class="space-y-3 mb-8">
+            <div class="p-5 rounded-xl border border-gray-100 hover:border-secondary/30 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand mb-1">Right to Access <span class="text-xs font-normal text-gray-400">(GDPR Art. 15)</span></h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">You have the right to obtain confirmation whether we process your personal data and, if so, to receive a copy of such data along with information about the purposes, categories, recipients, retention periods, and your rights. We provide the first copy free of charge; additional copies may incur a reasonable administrative fee.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl border border-gray-100 hover:border-secondary/30 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand mb-1">Right to Rectification <span class="text-xs font-normal text-gray-400">(GDPR Art. 16)</span></h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">You have the right to request correction of inaccurate personal data and to have incomplete data completed. We will verify and update the data promptly and notify any recipients to whom the data has been disclosed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl border border-gray-100 hover:border-secondary/30 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand mb-1">Right to Erasure ("Right to be Forgotten") <span class="text-xs font-normal text-gray-400">(GDPR Art. 17)</span></h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">You may request deletion of your personal data when it is no longer necessary, you withdraw consent, or the data has been unlawfully processed. Please note that this right does not apply where processing is necessary for compliance with a legal obligation (such as pharmacovigilance) or for the establishment, exercise, or defense of legal claims.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl border border-gray-100 hover:border-secondary/30 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 5.25v13.5m-7.5-13.5v13.5"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand mb-1">Right to Restrict Processing <span class="text-xs font-normal text-gray-400">(GDPR Art. 18)</span></h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">You may request that we restrict the processing of your personal data while we verify its accuracy, assess a legitimate interest objection, or determine whether our legitimate grounds override yours. During restriction, we will only store the data and process it with your consent or for legal claims.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl border border-gray-100 hover:border-secondary/30 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand mb-1">Right to Data Portability <span class="text-xs font-normal text-gray-400">(GDPR Art. 20)</span></h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">Where processing is based on consent or contract and carried out by automated means, you may request to receive your personal data in a structured, commonly used, machine-readable format (such as CSV or JSON) and have it transmitted directly to another controller where technically feasible.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl border border-gray-100 hover:border-secondary/30 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand mb-1">Right to Object <span class="text-xs font-normal text-gray-400">(GDPR Art. 21)</span></h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">You have the right to object to processing based on legitimate interests or for direct marketing purposes. When you object to direct marketing, we will cease processing immediately. For other objections, we will stop unless we demonstrate compelling legitimate grounds that override your interests.</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 rounded-xl border border-gray-100 hover:border-secondary/30 transition">
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"/></svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand mb-1">Right to Withdraw Consent</h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">Where we rely on your consent for processing, you have the right to withdraw that consent at any time. Withdrawal does not affect the lawfulness of processing that occurred before the withdrawal. You can withdraw consent by contacting us, using unsubscribe links, or adjusting cookie preferences.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-warm rounded-xl p-6 border border-gray-100 mb-4">
+            <h4 class="text-sm font-semibold text-slate-brand mb-3">CCPA/CPRA Rights for California Residents</h4>
+            <p class="text-xs text-gray-600 leading-relaxed mb-3">If you are a California resident, you also have the following rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA):</p>
+            <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 pl-2">
+              <li><strong>Right to Know:</strong> Request disclosure of the categories and specific pieces of personal information collected, the sources, purposes, and third parties with whom it was shared in the preceding 12 months.</li>
+              <li><strong>Right to Delete:</strong> Request deletion of personal information we hold, subject to certain exceptions (e.g., completing transactions, legal compliance, security).</li>
+              <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information.</li>
+              <li><strong>Right to Opt-Out of Sale/Sharing:</strong> Although Makana Health does not sell personal information, you may exercise this right at any time.</li>
+              <li><strong>Right to Limit Use of Sensitive Information:</strong> Direct us to use sensitive personal information only for purposes authorized under the CPRA.</li>
+              <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising any of your CCPA/CPRA rights. You will not receive different pricing, quality of service, or be denied services.</li>
+            </ul>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed">To exercise any of these rights, please use the <a href="#rights-request" class="text-secondary hover:underline font-medium">Data Subject Request Form</a> below or contact our Data Protection Office at <a href="mailto:privacy@makanahealth.com" class="text-secondary hover:underline font-medium">privacy@makanahealth.com</a>.</p>
+        </div>
+
+        <!-- ==================== SECTION 9: CHILDREN'S PRIVACY ==================== -->
+        <div id="children" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">9</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Children's Privacy</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">Our Sites and services are not directed at children under the age of 16. We do not knowingly collect personal information from children under 16 through our websites or marketing activities. If we become aware that we have inadvertently collected personal data from a child under 16 without appropriate parental consent, we will take steps to delete such information promptly.</p>
+
+          <div class="bg-warm rounded-xl p-5 border border-gray-100 mb-4">
+            <h4 class="text-sm font-semibold text-slate-brand mb-2">Clinical Trials Involving Minors</h4>
+            <p class="text-xs text-gray-600 leading-relaxed">Some of our clinical trials may involve pediatric populations. In such cases, participation is governed by separate informed consent and assent processes that comply with applicable regulatory requirements, including the EU Clinical Trials Regulation (EU) 536/2014 and the U.S. Pediatric Research Equity Act. Parental or guardian consent is always required, and the child's assent is obtained where appropriate based on age and maturity. The Ethics Committee/IRB must specifically approve the inclusion of minors before any data collection begins.</p>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed">If you believe a child under 16 has provided us with personal information, please contact us immediately at <a href="mailto:privacy@makanahealth.com" class="text-secondary hover:underline font-medium">privacy@makanahealth.com</a>.</p>
+        </div>
+
+        <!-- ==================== SECTION 10: SECURITY MEASURES ==================== -->
+        <div id="security" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">10</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Security Measures</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Makana Health implements comprehensive technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. Our security program is aligned with industry standards and undergoes regular independent assessment.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mb-6">
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                </div>
+                <h4 class="text-sm font-semibold text-slate-brand">Encryption</h4>
+              </div>
+              <p class="text-xs text-gray-600 leading-relaxed">All data in transit is protected using TLS 1.3 encryption. Data at rest is encrypted using AES-256 encryption across all databases and storage systems. Encryption keys are managed through a dedicated hardware security module (HSM).</p>
+            </div>
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
+                </div>
+                <h4 class="text-sm font-semibold text-slate-brand">Access Controls</h4>
+              </div>
+              <p class="text-xs text-gray-600 leading-relaxed">We enforce role-based access control (RBAC) with the principle of least privilege. Multi-factor authentication (MFA) is required for all employees accessing personal data. Access is regularly reviewed and recertified on a quarterly basis.</p>
+            </div>
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                </div>
+                <h4 class="text-sm font-semibold text-slate-brand">Security Audits</h4>
+              </div>
+              <p class="text-xs text-gray-600 leading-relaxed">Annual penetration testing by independent third parties, continuous vulnerability scanning, and regular internal security audits. We maintain SOC 2 Type II certification, attesting to our security, availability, and confidentiality controls.</p>
+            </div>
+            <div class="p-5 bg-warm rounded-xl border border-gray-100">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                </div>
+                <h4 class="text-sm font-semibold text-slate-brand">Incident Response</h4>
+              </div>
+              <p class="text-xs text-gray-600 leading-relaxed">We maintain a documented incident response plan with 24/7 monitoring capabilities. In the event of a personal data breach that poses a risk to your rights, we will notify the relevant supervisory authority within 72 hours and affected individuals without undue delay, as required by GDPR Article 33/34.</p>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed">While we implement robust security measures, no method of transmission over the Internet or electronic storage is 100% secure. We continuously review and enhance our security practices to address emerging threats.</p>
+        </div>
+
+        <!-- ==================== SECTION 11: COOKIE POLICY ==================== -->
+        <div id="cookie-policy" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">11</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Cookie Policy</h2>
+          </div>
+
+          <h3 class="text-lg font-semibold text-slate-brand mb-3">What Are Cookies?</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Cookies are small text files placed on your device when you visit a website. They are widely used to make websites work efficiently, improve user experience, and provide information to site owners. We also use similar technologies such as pixel tags, web beacons, and local storage, which function in a comparable manner.</p>
+
+          <h3 class="text-lg font-semibold text-slate-brand mb-4">Cookies We Use</h3>
+
+          <!-- Strictly Necessary -->
+          <div class="mb-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-1 bg-green-50 text-green-700 text-[10px] font-bold uppercase tracking-wider rounded-full">Always Active</span>
+              <h4 class="text-sm font-semibold text-slate-brand">Strictly Necessary Cookies</h4>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed mb-3">These cookies are essential for the website to function and cannot be switched off. They are usually set in response to actions you take, such as setting privacy preferences, logging in, or filling out forms.</p>
+            <div class="overflow-x-auto">
+              <table class="policy-table w-full text-xs rounded-xl overflow-hidden border border-gray-100">
+                <thead>
+                  <tr>
+                    <th class="text-left rounded-tl-xl">Cookie Name</th>
+                    <th class="text-left">Provider</th>
+                    <th class="text-left">Purpose</th>
+                    <th class="text-left">Expiry</th>
+                    <th class="text-left rounded-tr-xl">Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-mono text-slate-brand">makana_session</td>
+                    <td class="text-gray-600">Makana Health</td>
+                    <td class="text-gray-600">Maintains user session state</td>
+                    <td class="text-gray-600">Session</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">makana_cookies</td>
+                    <td class="text-gray-600">Makana Health</td>
+                    <td class="text-gray-600">Stores cookie consent preferences</td>
+                    <td class="text-gray-600">1 year</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">__csrf_token</td>
+                    <td class="text-gray-600">Makana Health</td>
+                    <td class="text-gray-600">Cross-site request forgery protection</td>
+                    <td class="text-gray-600">Session</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">__cf_bm</td>
+                    <td class="text-gray-600">Cloudflare</td>
+                    <td class="text-gray-600">Bot detection and rate limiting</td>
+                    <td class="text-gray-600">30 minutes</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Functional -->
+          <div class="mb-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-wider rounded-full">Optional</span>
+              <h4 class="text-sm font-semibold text-slate-brand">Functional Cookies</h4>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed mb-3">These cookies enable enhanced functionality and personalization, such as remembering your language preference or accessibility settings. If you do not allow these cookies, some features may not function properly.</p>
+            <div class="overflow-x-auto">
+              <table class="policy-table w-full text-xs rounded-xl overflow-hidden border border-gray-100">
+                <thead>
+                  <tr>
+                    <th class="text-left rounded-tl-xl">Cookie Name</th>
+                    <th class="text-left">Provider</th>
+                    <th class="text-left">Purpose</th>
+                    <th class="text-left">Expiry</th>
+                    <th class="text-left rounded-tr-xl">Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-mono text-slate-brand">makana_lang</td>
+                    <td class="text-gray-600">Makana Health</td>
+                    <td class="text-gray-600">Stores preferred language</td>
+                    <td class="text-gray-600">1 year</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">makana_a11y</td>
+                    <td class="text-gray-600">Makana Health</td>
+                    <td class="text-gray-600">Stores accessibility preferences (font size, contrast)</td>
+                    <td class="text-gray-600">1 year</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">makana_region</td>
+                    <td class="text-gray-600">Makana Health</td>
+                    <td class="text-gray-600">Remembers selected region/country for localized content</td>
+                    <td class="text-gray-600">6 months</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Analytics -->
+          <div class="mb-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-1 bg-purple-50 text-purple-700 text-[10px] font-bold uppercase tracking-wider rounded-full">Optional</span>
+              <h4 class="text-sm font-semibold text-slate-brand">Analytics Cookies</h4>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed mb-3">These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This data allows us to improve the structure, content, and performance of our Sites.</p>
+            <div class="overflow-x-auto">
+              <table class="policy-table w-full text-xs rounded-xl overflow-hidden border border-gray-100">
+                <thead>
+                  <tr>
+                    <th class="text-left rounded-tl-xl">Cookie Name</th>
+                    <th class="text-left">Provider</th>
+                    <th class="text-left">Purpose</th>
+                    <th class="text-left">Expiry</th>
+                    <th class="text-left rounded-tr-xl">Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-mono text-slate-brand">_ga</td>
+                    <td class="text-gray-600">Google Analytics</td>
+                    <td class="text-gray-600">Distinguishes unique users by assigning a randomly generated ID</td>
+                    <td class="text-gray-600">2 years</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">_ga_*</td>
+                    <td class="text-gray-600">Google Analytics 4</td>
+                    <td class="text-gray-600">Maintains session state for GA4 data collection</td>
+                    <td class="text-gray-600">2 years</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">_gid</td>
+                    <td class="text-gray-600">Google Analytics</td>
+                    <td class="text-gray-600">Distinguishes users within a 24-hour window</td>
+                    <td class="text-gray-600">24 hours</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">_hjSessionUser_*</td>
+                    <td class="text-gray-600">Hotjar</td>
+                    <td class="text-gray-600">Identifies returning visitors for session recording and heatmaps</td>
+                    <td class="text-gray-600">1 year</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">_hjSession_*</td>
+                    <td class="text-gray-600">Hotjar</td>
+                    <td class="text-gray-600">Holds current session data (page views, events)</td>
+                    <td class="text-gray-600">30 minutes</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Marketing -->
+          <div class="mb-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-1 bg-rose-50 text-rose-700 text-[10px] font-bold uppercase tracking-wider rounded-full">Optional</span>
+              <h4 class="text-sm font-semibold text-slate-brand">Marketing Cookies</h4>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed mb-3">These cookies are used to track visitors across websites to allow the display of relevant advertisements. They may be set by our advertising partners to build a profile of your interests and show you relevant ads on other sites.</p>
+            <div class="overflow-x-auto">
+              <table class="policy-table w-full text-xs rounded-xl overflow-hidden border border-gray-100">
+                <thead>
+                  <tr>
+                    <th class="text-left rounded-tl-xl">Cookie Name</th>
+                    <th class="text-left">Provider</th>
+                    <th class="text-left">Purpose</th>
+                    <th class="text-left">Expiry</th>
+                    <th class="text-left rounded-tr-xl">Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-mono text-slate-brand">_fbp</td>
+                    <td class="text-gray-600">Meta (Facebook)</td>
+                    <td class="text-gray-600">Tracks visits across websites for ad targeting</td>
+                    <td class="text-gray-600">3 months</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">li_sugr</td>
+                    <td class="text-gray-600">LinkedIn</td>
+                    <td class="text-gray-600">Browser identifier for LinkedIn Insight Tag</td>
+                    <td class="text-gray-600">3 months</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">_gcl_au</td>
+                    <td class="text-gray-600">Google Ads</td>
+                    <td class="text-gray-600">Stores ad click information for conversion tracking</td>
+                    <td class="text-gray-600">3 months</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                  <tr>
+                    <td class="font-mono text-slate-brand">muc_ads</td>
+                    <td class="text-gray-600">X (Twitter)</td>
+                    <td class="text-gray-600">Identifies if the user is logged into X for ad targeting</td>
+                    <td class="text-gray-600">2 years</td>
+                    <td class="text-gray-600">HTTP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3 class="text-lg font-semibold text-slate-brand mb-3">How to Manage Cookies</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">You can control and manage cookies in several ways:</p>
+          <ul class="list-disc list-inside text-sm text-gray-600 space-y-2 pl-2 mb-6">
+            <li><strong>Cookie Preferences:</strong> Use our cookie preference center to customize which categories of cookies you allow.</li>
+            <li><strong>Browser Settings:</strong> Most browsers allow you to block or delete cookies through their settings. Consult your browser's help documentation for instructions.</li>
+            <li><strong>Opt-Out Tools:</strong> Visit <a href="https://optout.aboutads.info" class="text-secondary hover:underline" target="_blank" rel="noopener">optout.aboutads.info</a> (DAA), <a href="https://www.youronlinechoices.eu" class="text-secondary hover:underline" target="_blank" rel="noopener">youronlinechoices.eu</a> (EDAA), or <a href="https://tools.google.com/dlpage/gaoptout" class="text-secondary hover:underline" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</li>
+            <li><strong>Do Not Track:</strong> Our Sites currently do not respond to "Do Not Track" browser signals due to the lack of an industry-wide standard. However, we honor Global Privacy Control (GPC) signals as an opt-out of sale/sharing where applicable.</li>
+          </ul>
+
+          <button id="cookiePrefBtn" class="pill-btn inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/></svg>
+            Manage Cookie Preferences
+          </button>
+        </div>
+
+        <!-- ==================== SECTION 12: DATA SUBJECT REQUEST FORM ==================== -->
+        <div id="rights-request" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">12</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Data Subject Rights Request</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">Use this form to exercise your data protection rights. We will acknowledge your request within 3 business days and provide a substantive response within 30 days (GDPR) or 45 days (CCPA/CPRA). Complex requests may require an extension, in which case we will inform you of the reason and expected timeframe.</p>
+
+          <form id="dsrForm" class="bg-warm rounded-2xl p-6 md:p-8 border border-gray-100">
+            <div class="grid md:grid-cols-2 gap-5 mb-5">
+              <div>
+                <label for="requestType" class="block text-xs font-semibold text-slate-brand mb-2">Request Type *</label>
+                <select id="requestType" required class="form-input w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm text-gray-700 appearance-none cursor-pointer">
+                  <option value="" disabled selected>Select request type</option>
+                  <option value="access">Access My Data (Right to Access)</option>
+                  <option value="deletion">Delete My Data (Right to Erasure)</option>
+                  <option value="correction">Correct My Data (Right to Rectification)</option>
+                  <option value="portability">Export My Data (Right to Portability)</option>
+                  <option value="restrict">Restrict Processing</option>
+                  <option value="object">Object to Processing</option>
+                  <option value="opt-out">Opt-Out of Sale/Sharing (CCPA)</option>
+                  <option value="withdraw">Withdraw Consent</option>
+                </select>
+              </div>
+              <div>
+                <label for="relationship" class="block text-xs font-semibold text-slate-brand mb-2">Relationship to Makana Health *</label>
+                <select id="relationship" required class="form-input w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm text-gray-700 appearance-none cursor-pointer">
+                  <option value="" disabled selected>Select your relationship</option>
+                  <option value="patient">Patient</option>
+                  <option value="hcp">Healthcare Professional (HCP)</option>
+                  <option value="employee">Employee / Former Employee</option>
+                  <option value="clinical-trial">Clinical Trial Participant</option>
+                  <option value="visitor">Website Visitor</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5 mb-5">
+              <div>
+                <label for="fullName" class="block text-xs font-semibold text-slate-brand mb-2">Full Legal Name *</label>
+                <input type="text" id="fullName" required placeholder="Enter your full name" class="form-input w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm placeholder:text-gray-400">
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-brand mb-2">Email Address *</label>
+                <input type="email" id="email" required placeholder="your.email@example.com" class="form-input w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm placeholder:text-gray-400">
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5 mb-5">
+              <div>
+                <label for="country" class="block text-xs font-semibold text-slate-brand mb-2">Country of Residence *</label>
+                <select id="country" required class="form-input w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm text-gray-700 appearance-none cursor-pointer">
+                  <option value="" disabled selected>Select your country</option>
+                  <option value="US">United States</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="DE">Germany</option>
+                  <option value="FR">France</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="JP">Japan</option>
+                  <option value="BR">Brazil</option>
+                  <option value="CA">Canada</option>
+                  <option value="AU">Australia</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-semibold text-slate-brand mb-2">Phone Number <span class="font-normal text-gray-400">(optional)</span></label>
+                <input type="tel" id="phone" placeholder="+1 (555) 123-4567" class="form-input w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm placeholder:text-gray-400">
+              </div>
+            </div>
+
+            <div class="mb-5">
+              <label for="description" class="block text-xs font-semibold text-slate-brand mb-2">Description of Your Request *</label>
+              <textarea id="description" required rows="4" placeholder="Please provide details about your request, including any specific data categories, time periods, or services you are referencing..." class="form-input w-full px-4 py-3 bg-white rounded-xl border border-gray-200 text-sm placeholder:text-gray-400 resize-y"></textarea>
+            </div>
+
+            <div class="bg-amber-50 rounded-xl p-4 mb-6 border border-amber-100">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-amber-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+                <div>
+                  <p class="text-xs font-semibold text-amber-800 mb-1">Identity Verification Required</p>
+                  <p class="text-xs text-amber-700 leading-relaxed">To protect your privacy, we may need to verify your identity before processing your request. We will contact you via the email provided with instructions on how to complete verification. We may ask for a copy of a government-issued ID (with sensitive information redacted) or answers to security questions associated with your account.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 mb-6">
+              <input type="checkbox" id="consent" required class="mt-1 w-4 h-4 rounded accent-primary cursor-pointer">
+              <label for="consent" class="text-xs text-gray-600 leading-relaxed cursor-pointer">I confirm that the information provided is accurate and I am the data subject (or an authorized agent acting on behalf of the data subject). I understand that Makana Health will process this request in accordance with applicable data protection laws.</label>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <button type="submit" id="submitBtn" class="pill-btn px-8 py-3 bg-primary text-white text-sm font-semibold rounded-full hover:bg-primary-dark transition inline-flex items-center gap-2 cursor-pointer">
+                <span id="submitText">Submit Request</span>
+                <svg id="submitSpinner" class="hidden w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/></svg>
+              </button>
+              <div class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Expected response: 30 days (GDPR) / 45 days (CCPA)
+              </div>
+            </div>
+
+            <!-- Success State -->
+            <div id="formSuccess" class="hidden mt-6 bg-secondary/10 rounded-xl p-5 border border-secondary/20">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-secondary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div>
+                  <p class="text-sm font-semibold text-secondary-dark mb-1">Request Submitted Successfully</p>
+                  <p class="text-xs text-gray-600 leading-relaxed">Your data subject request has been received and assigned a reference number. You will receive a confirmation email shortly with next steps. Our Data Protection Office will process your request within the legally required timeframe.</p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- ==================== SECTION 13: REGIONAL PRIVACY NOTICES ==================== -->
+        <div id="regional-notices" class="policy-section scroll-mt-24 mb-16 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">13</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Regional Privacy Notices</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">In addition to this global Privacy Policy, the following region-specific supplements apply based on your location. Where a regional notice conflicts with this global policy, the regional notice prevails for residents of that jurisdiction.</p>
+
+          <div class="space-y-3">
+            <!-- EEA -->
+            <div class="border border-gray-100 rounded-xl overflow-hidden">
+              <button class="accordion-trigger w-full flex items-center justify-between px-5 py-4 text-left hover:bg-warm/50 transition cursor-pointer" data-target="accordion-eea">
+                <div class="flex items-center gap-3">
+                  <span class="text-xl">&#127466;&#127482;</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-slate-brand">European Economic Area (EEA)</h4>
+                    <p class="text-xs text-gray-400 mt-0.5">GDPR-specific provisions</p>
+                  </div>
+                </div>
+                <svg class="accordion-icon w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="accordion-eea" class="accordion-content px-5">
+                <div class="pb-5 pt-2 border-t border-gray-100">
+                  <p class="text-xs text-gray-600 leading-relaxed mb-3">If you are located in the European Economic Area, the processing of your personal data is governed by the General Data Protection Regulation (EU) 2016/679 ("GDPR"). In addition to the rights described in Section 8:</p>
+                  <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 pl-2 mb-3">
+                    <li><strong>Supervisory Authority:</strong> You have the right to lodge a complaint with a supervisory authority in the EU Member State of your habitual residence, place of work, or place of the alleged infringement. Our lead supervisory authority is the Federal Data Protection and Information Commissioner (FDPIC) of Switzerland.</li>
+                    <li><strong>Automated Decision-Making:</strong> Makana Health does not make decisions based solely on automated processing, including profiling, that produce legal effects concerning you or significantly affect you. Should this change, we will notify you and provide appropriate safeguards.</li>
+                    <li><strong>Data Protection Officer:</strong> Our DPO for EEA operations can be reached at dpo-eu@makanahealth.com.</li>
+                  </ul>
+                  <p class="text-xs text-gray-600 leading-relaxed"><strong>EU Representative:</strong> Makana Health EU B.V., Strawinskylaan 3051, 1077 ZX Amsterdam, Netherlands. Contact: eu-representative@makanahealth.com</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- United States -->
+            <div class="border border-gray-100 rounded-xl overflow-hidden">
+              <button class="accordion-trigger w-full flex items-center justify-between px-5 py-4 text-left hover:bg-warm/50 transition cursor-pointer" data-target="accordion-us">
+                <div class="flex items-center gap-3">
+                  <span class="text-xl">&#127482;&#127480;</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-slate-brand">United States</h4>
+                    <p class="text-xs text-gray-400 mt-0.5">CCPA, CPRA, VCDPA, CPA &amp; other state laws</p>
+                  </div>
+                </div>
+                <svg class="accordion-icon w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="accordion-us" class="accordion-content px-5">
+                <div class="pb-5 pt-2 border-t border-gray-100">
+                  <h5 class="text-xs font-semibold text-slate-brand mb-2">California (CCPA/CPRA)</h5>
+                  <p class="text-xs text-gray-600 leading-relaxed mb-3">If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), as detailed in Section 8. Makana Health does not sell personal information as defined by the CCPA. In the preceding 12 months, we have collected the categories of personal information detailed in Section 2 for the business purposes described in Section 3. You may submit a verifiable consumer request by using our Data Subject Request Form or calling 1-800-MAKANA-1.</p>
+                  <h5 class="text-xs font-semibold text-slate-brand mb-2">Virginia (VCDPA)</h5>
+                  <p class="text-xs text-gray-600 leading-relaxed mb-3">Virginia residents have rights under the Virginia Consumer Data Protection Act, including the right to access, correct, delete, and obtain a portable copy of their data, and to opt out of targeted advertising, sale of personal data, and profiling. You may appeal a decision regarding your request by contacting privacy@makanahealth.com.</p>
+                  <h5 class="text-xs font-semibold text-slate-brand mb-2">Colorado (CPA)</h5>
+                  <p class="text-xs text-gray-600 leading-relaxed">Colorado residents have similar rights under the Colorado Privacy Act, including the right to access, correct, delete, and obtain a portable copy of their personal data. You may opt out of targeted advertising, the sale of personal data, and certain forms of profiling. Universal opt-out mechanisms such as GPC are honored.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- United Kingdom -->
+            <div class="border border-gray-100 rounded-xl overflow-hidden">
+              <button class="accordion-trigger w-full flex items-center justify-between px-5 py-4 text-left hover:bg-warm/50 transition cursor-pointer" data-target="accordion-uk">
+                <div class="flex items-center gap-3">
+                  <span class="text-xl">&#127468;&#127463;</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-slate-brand">United Kingdom</h4>
+                    <p class="text-xs text-gray-400 mt-0.5">UK GDPR &amp; Data Protection Act 2018</p>
+                  </div>
+                </div>
+                <svg class="accordion-icon w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="accordion-uk" class="accordion-content px-5">
+                <div class="pb-5 pt-2 border-t border-gray-100">
+                  <p class="text-xs text-gray-600 leading-relaxed mb-3">If you are located in the United Kingdom, your data is processed under the UK General Data Protection Regulation ("UK GDPR") and the Data Protection Act 2018. Your rights are substantially similar to those under the EU GDPR.</p>
+                  <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 pl-2 mb-3">
+                    <li><strong>UK Supervisory Authority:</strong> The Information Commissioner's Office (ICO), Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF. Website: ico.org.uk</li>
+                    <li><strong>International Transfers:</strong> Transfers from the UK are governed by UK International Data Transfer Agreements (UK IDTAs) or the UK Addendum to the EU SCCs.</li>
+                    <li><strong>UK Representative:</strong> Makana Health UK Ltd, 10 Finsbury Square, London EC2A 1AF, United Kingdom. Contact: uk-privacy@makanahealth.com</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Japan -->
+            <div class="border border-gray-100 rounded-xl overflow-hidden">
+              <button class="accordion-trigger w-full flex items-center justify-between px-5 py-4 text-left hover:bg-warm/50 transition cursor-pointer" data-target="accordion-japan">
+                <div class="flex items-center gap-3">
+                  <span class="text-xl">&#127471;&#127477;</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-slate-brand">Japan</h4>
+                    <p class="text-xs text-gray-400 mt-0.5">Act on the Protection of Personal Information (APPI)</p>
+                  </div>
+                </div>
+                <svg class="accordion-icon w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="accordion-japan" class="accordion-content px-5">
+                <div class="pb-5 pt-2 border-t border-gray-100">
+                  <p class="text-xs text-gray-600 leading-relaxed mb-3">If you are located in Japan, the processing of your personal information is also governed by the Act on the Protection of Personal Information (APPI) as amended in 2022. Under the APPI:</p>
+                  <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 pl-2 mb-3">
+                    <li>You may request disclosure, correction, cessation of use, or deletion of your personal information held by us.</li>
+                    <li>Cross-border transfers of personal data are subject to additional consent requirements or equivalent protection measures.</li>
+                    <li>"Pseudonymously Processed Information" and "Anonymously Processed Information" are handled in accordance with the specific APPI provisions.</li>
+                    <li>We will not provide your personal data to third parties without your prior consent, except as permitted by law.</li>
+                  </ul>
+                  <p class="text-xs text-gray-600 leading-relaxed"><strong>Japan Contact:</strong> Makana Health Japan K.K., Marunouchi Park Building, 2-6-1 Marunouchi, Chiyoda-ku, Tokyo 100-6920. Contact: japan-privacy@makanahealth.com</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brazil -->
+            <div class="border border-gray-100 rounded-xl overflow-hidden">
+              <button class="accordion-trigger w-full flex items-center justify-between px-5 py-4 text-left hover:bg-warm/50 transition cursor-pointer" data-target="accordion-brazil">
+                <div class="flex items-center gap-3">
+                  <span class="text-xl">&#127463;&#127479;</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-slate-brand">Brazil</h4>
+                    <p class="text-xs text-gray-400 mt-0.5">Lei Geral de Protecao de Dados (LGPD)</p>
+                  </div>
+                </div>
+                <svg class="accordion-icon w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="accordion-brazil" class="accordion-content px-5">
+                <div class="pb-5 pt-2 border-t border-gray-100">
+                  <p class="text-xs text-gray-600 leading-relaxed mb-3">If you are located in Brazil, the processing of your personal data is also governed by the Lei Geral de Protecao de Dados (LGPD), Law No. 13,709/2018. Under the LGPD, you have the following additional rights:</p>
+                  <ul class="list-disc list-inside text-xs text-gray-600 space-y-2 pl-2 mb-3">
+                    <li>Confirmation of the existence of processing activities</li>
+                    <li>Access to your personal data</li>
+                    <li>Correction of incomplete, inaccurate, or outdated data</li>
+                    <li>Anonymization, blocking, or deletion of unnecessary or excessive data</li>
+                    <li>Portability of data to another service provider</li>
+                    <li>Deletion of data processed with consent</li>
+                    <li>Information about public and private entities with which your data is shared</li>
+                    <li>Information about the possibility of denying consent and the consequences thereof</li>
+                    <li>Revocation of consent</li>
+                  </ul>
+                  <p class="text-xs text-gray-600 leading-relaxed"><strong>Brazil Contact:</strong> Makana Health Brasil Ltda., Avenida Brigadeiro Faria Lima, 3477, Sao Paulo, SP 04538-133. Contact: brasil-privacidade@makanahealth.com. Supervisory Authority: Autoridade Nacional de Protecao de Dados (ANPD).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== SECTION 14: CONTACT DPO ==================== -->
+        <div id="contact-dpo" class="policy-section scroll-mt-24 mb-8 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="section-number">14</span>
+            <h2 class="text-2xl font-bold text-slate-brand">Contact the Data Protection Officer</h2>
+          </div>
+
+          <p class="text-sm text-gray-600 leading-relaxed mb-6">If you have questions, concerns, or requests regarding this Privacy Policy or the processing of your personal data, you may contact our Data Protection Officer directly.</p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-warm rounded-2xl p-6 border border-gray-100">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-xl flex items-center justify-center text-white font-bold text-lg">HR</div>
+                <div>
+                  <h4 class="text-sm font-semibold text-slate-brand">Dr. Hannah Richter</h4>
+                  <p class="text-xs text-gray-400">Chief Privacy Officer &amp; Data Protection Officer</p>
+                </div>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3 text-xs text-gray-600">
+                  <svg class="w-4 h-4 text-secondary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                  <a href="mailto:privacy@makanahealth.com" class="text-secondary hover:underline">privacy@makanahealth.com</a>
+                </div>
+                <div class="flex items-start gap-3 text-xs text-gray-600">
+                  <svg class="w-4 h-4 text-secondary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                  <span>Makana Health AG<br>Laupenstrasse 27<br>3008 Bern, Switzerland</span>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-gray-600">
+                  <svg class="w-4 h-4 text-secondary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                  <span>+41 31 555 01 00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-warm rounded-2xl p-6 border border-gray-100">
+              <h4 class="text-sm font-semibold text-slate-brand mb-4">EU Representative</h4>
+              <div class="space-y-3 mb-6">
+                <p class="text-xs text-gray-600">Makana Health EU B.V.<br>Strawinskylaan 3051<br>1077 ZX Amsterdam, Netherlands</p>
+                <div class="flex items-center gap-3 text-xs text-gray-600">
+                  <svg class="w-4 h-4 text-secondary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                  <a href="mailto:eu-representative@makanahealth.com" class="text-secondary hover:underline">eu-representative@makanahealth.com</a>
+                </div>
+              </div>
+
+              <h4 class="text-sm font-semibold text-slate-brand mb-3">Supervisory Authority</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">You have the right to lodge a complaint with your local data protection supervisory authority if you believe our processing of your personal data violates applicable law. In Switzerland, the relevant authority is the Federal Data Protection and Information Commissioner (FDPIC).</p>
+            </div>
+          </div>
+
+          <div class="bg-primary/5 rounded-xl p-5 border border-primary/10">
+            <p class="text-xs text-gray-600 leading-relaxed"><strong>Changes to This Policy:</strong> We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or industry standards. When we make material changes, we will notify you through a prominent notice on our Sites or by email (if you have provided your email address). We encourage you to review this policy periodically. The "Last Updated" date at the top of this page indicates when this policy was last revised.</p>
+          </div>
+        </div>
+
+      </div><!-- /flex-1 content -->
+    </div><!-- /flex row -->
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-slate-brand text-white">
+  <div class="max-w-[1200px] mx-auto px-6 py-16 lg:py-20">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
+      <div class="col-span-2 md:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
+        <img src="https://assets.meshmesh.io/tenants/org_01KDY098Y468ZK9Q6DFDZXJBG6/task-assets/95645f58-c79e-4376-a175-7568cb440cd2/cff9b8d6-6d09-403d-b756-dc20327a00d4.png" alt="Makana Health" class="h-8 brightness-0 invert opacity-60 mb-4">
+        <p class="text-xs text-white/30 leading-relaxed max-w-xs">Reimagining medicine to improve and extend people's lives.</p>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Company</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/about'>About</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/about#leadership'>Leadership</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/manufacturing'>Manufacturing</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/quality'>Quality</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Science</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/research'>R&amp;D</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/pipeline'>Pipeline</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/products'>Products</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/clinical-trials'>Clinical Trials</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/technology'>Technology</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Disease Areas</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/cardiovascular'>Cardiovascular</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/immunology'>Immunology</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/neuroscience'>Neuroscience</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/oncology'>Oncology</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Resources</h4>
+        <div class="space-y-2.5"><a class='block text-xs text-white/50 hover:text-secondary transition' href='/patients'>Patients</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/hcp'>HCPs</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/careers'>Careers</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/investors'>Investors</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/news'>News</a><a class='block text-xs text-white/50 hover:text-secondary transition' href='/contact'>Contact</a></div>
+      </div>
+      <div>
+        <h4 class="text-[10px] font-semibold uppercase tracking-widest text-white/40 mb-4">Connect</h4>
+        <div class="flex flex-wrap gap-2">
+          <a href="https://linkedin.com/company/makana-health" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://twitter.com/MakanaHealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://instagram.com/makanahealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+          <a href="https://youtube.com/@MakanaHealth" class="w-9 h-9 bg-white/8 rounded-lg flex items-center justify-center hover:bg-secondary/80 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#1D1D1F"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/8">
+    <div class="max-w-[1200px] mx-auto px-6 py-5">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-3 text-[11px] text-white/25">
+          <span class="text-white/40">Privacy</span>
+          <span>|</span>
+          <a href="/terms" class="hover:text-white/50 transition">Terms</a>
+          <span>|</span>
+          <button id="footerCookieBtn" class="hover:text-white/50 transition cursor-pointer">Cookie Settings</button>
+          <span>|</span>
+          <a href="/accessibility" class="hover:text-white/50 transition">Accessibility</a>
+          <span>|</span>
+          <a href="/sitemap-page" class="hover:text-white/50 transition">Sitemap</a>
+        </div>
+        <p class="text-[11px] text-white/20">&copy; 2026 Makana Health. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== COOKIE CONSENT BANNER ==================== -->
+<div id="cookieConsent" class="cookie-banner fixed bottom-0 left-0 right-0 z-[9999] p-4" style="pointer-events:auto">
+  <div class="max-w-5xl mx-auto bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 p-6 md:p-8">
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+      <div class="flex-1">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <h3 class="font-semibold text-slate-brand text-base">Your Privacy Matters</h3>
+        </div>
+        <p class="text-sm text-gray-500 leading-relaxed">We use cookies and similar technologies to provide you with the best experience, analyze traffic, and personalize content. By clicking "Accept All," you consent to our use of cookies. You can customize your preferences or learn more in our <a href="#cookie-policy" class="text-secondary hover:underline">Cookie Policy</a> above.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0 w-full md:w-auto">
+        <button onclick="document.getElementById('cookieSettingsPanel').classList.toggle('hidden')" class="pill-btn px-5 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 transition text-center cursor-pointer">Manage Preferences</button>
+        <button onclick="acceptCookies('essential')" class="pill-btn px-5 py-2.5 rounded-full border border-gray-200 text-sm font-medium text-gray-600 hover:bg-gray-50 transition text-center cursor-pointer">Essential Only</button>
+        <button onclick="acceptCookies('all')" class="pill-btn px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition text-center cursor-pointer">Accept All</button>
+      </div>
+    </div>
+    <!-- Cookie Settings Panel -->
+    <div id="cookieSettingsPanel" class="hidden mt-6 pt-6 border-t border-gray-100">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" checked disabled class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Essential Cookies</p><p class="text-xs text-gray-400">Required for site functionality</p></div>
+        </label>
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" id="functionalCookies" checked class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Functional Cookies</p><p class="text-xs text-gray-400">Enhanced features and personalization</p></div>
+        </label>
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" id="analyticsCookies" checked class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Analytics Cookies</p><p class="text-xs text-gray-400">Help us improve our website</p></div>
+        </label>
+        <label class="flex items-center gap-3 p-4 bg-warm-dark rounded-xl cursor-pointer">
+          <input type="checkbox" id="marketingCookies" class="w-5 h-5 rounded accent-primary">
+          <div><p class="font-medium text-sm text-slate-brand">Marketing Cookies</p><p class="text-xs text-gray-400">Personalized ads and content</p></div>
+        </label>
+      </div>
+      <div class="flex justify-end mt-4">
+        <button onclick="acceptCookies('custom')" class="pill-btn px-6 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition cursor-pointer">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  // ===== Mobile menu toggle =====
+  document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // ===== Glass nav scroll effect =====
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // ===== Reveal on scroll =====
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ===== Sticky TOC with active section highlighting =====
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const policySections = document.querySelectorAll('.policy-section');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0
+  });
+
+  policySections.forEach(section => sectionObserver.observe(section));
+
+  // ===== Smooth scroll for TOC links =====
+  tocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close mobile TOC if open
+        const mobileTocContent = document.getElementById('mobileTocContent');
+        if (mobileTocContent && !mobileTocContent.classList.contains('hidden')) {
+          mobileTocContent.classList.add('hidden');
+          document.getElementById('mobileTocIcon').style.transform = '';
+        }
+      }
+    });
+  });
+
+  // ===== Mobile TOC toggle =====
+  document.getElementById('mobileTocBtn')?.addEventListener('click', () => {
+    const content = document.getElementById('mobileTocContent');
+    const icon = document.getElementById('mobileTocIcon');
+    content.classList.toggle('hidden');
+    icon.style.transform = content.classList.contains('hidden') ? '' : 'rotate(180deg)';
+  });
+
+  // ===== Accordion expand/collapse =====
+  document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const targetId = trigger.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+
+      // Close other accordions
+      document.querySelectorAll('.accordion-content.open').forEach(openContent => {
+        if (openContent.id !== targetId) {
+          openContent.classList.remove('open');
+          const otherTrigger = document.querySelector(`[data-target="${openContent.id}"]`);
+          if (otherTrigger) otherTrigger.classList.remove('open');
+        }
+      });
+
+      // Toggle current
+      content.classList.toggle('open');
+      trigger.classList.toggle('open');
+    });
+  });
+
+  // ===== DSR Form validation and submission =====
+  document.getElementById('dsrForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitSpinner = document.getElementById('submitSpinner');
+    const formSuccess = document.getElementById('formSuccess');
+
+    // Validate required fields
+    const requiredFields = this.querySelectorAll('[required]');
+    let isValid = true;
+    requiredFields.forEach(field => {
+      if (!field.value || (field.type === 'checkbox' && !field.checked)) {
+        field.classList.add('border-red-300');
+        isValid = false;
+      } else {
+        field.classList.remove('border-red-300');
+      }
+    });
+
+    if (!isValid) return;
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitText.textContent = 'Submitting...';
+    submitSpinner.classList.remove('hidden');
+
+    var fullName = document.getElementById('fullName').value || '';
+    var nameParts = fullName.trim().split(/\s+/);
+    var firstName = nameParts[0] || '';
+    var lastName = nameParts.slice(1).join(' ') || '';
+    var email = document.getElementById('email').value || '';
+    var phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
+    var requestType = document.getElementById('requestType').value || '';
+    var relationship = document.getElementById('relationship').value || '';
+    var country = document.getElementById('country').value || '';
+    var description = document.getElementById('description') ? document.getElementById('description').value : '';
+    var payload = { firstName: firstName, lastName: lastName, email: email, phone: phone, source: 'Privacy Request', interest: requestType, description: 'Request Type: ' + requestType + ' | Relationship: ' + relationship + ' | Country: ' + country + ' | Details: ' + description };
+
+    try {
+      var res = await fetch('/api/lead-create', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      if (!res.ok) throw new Error('Server error: ' + res.status);
+      var data = await res.json();
+      if (window.makanaDataLayer) {
+        window.makanaDataLayer.push({ event: 'lead', action: 'form_submit', label: 'Privacy Request', metadata: { leadId: data.leadId, source: 'Privacy Request' } });
+        window.makanaDataLayer.push({ event: 'identity', action: 'identity_stitch', label: 'Privacy Request', user: { attributes: { eventType: 'identity', firstName: firstName, lastName: lastName, email: email, isAnonymous: false } } });
+      }
+      if (window.makanaMarkFormSubmitted) window.makanaMarkFormSubmitted('dsrForm');
+      submitBtn.disabled = false;
+      submitText.textContent = 'Submit Request';
+      submitSpinner.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function() { e.target.reset(); }, 1000);
+    } catch(err) {
+      console.error('Privacy request submission error:', err);
+      submitSpinner.classList.add('hidden');
+      submitText.textContent = 'Error \u2014 Try Again';
+      submitBtn.disabled = false;
+      submitBtn.classList.add('!bg-red-500');
+      setTimeout(function(){ submitText.textContent = 'Submit Request'; submitBtn.classList.remove('!bg-red-500'); }, 3000);
+    }
+  });
+
+  // Remove red borders on input
+  document.querySelectorAll('#dsrForm [required]').forEach(field => {
+    field.addEventListener('input', () => field.classList.remove('border-red-300'));
+    field.addEventListener('change', () => field.classList.remove('border-red-300'));
+  });
+
+  // ===== Cookie preference button handler =====
+  document.getElementById('cookiePrefBtn')?.addEventListener('click', () => {
+    const banner = document.getElementById('cookieConsent');
+    banner.style.display = '';
+    banner.style.animation = 'slideUp 0.3s ease both';
+    document.getElementById('cookieSettingsPanel')?.classList.remove('hidden');
+  });
+
+  // ===== Footer cookie settings button =====
+  document.getElementById('footerCookieBtn')?.addEventListener('click', () => {
+    const banner = document.getElementById('cookieConsent');
+    banner.style.display = '';
+    banner.style.animation = 'slideUp 0.3s ease both';
+  });
+
+  // Cookie consent with 365-day expiration
+  function acceptCookies(type) {
+    document.getElementById('cookieConsent').style.display = 'none';
+    localStorage.setItem('makana_cookies', JSON.stringify({ type: type, timestamp: Date.now() }));
+  }
+  function reopenCookies() {
+    const banner = document.getElementById('cookieConsent');
+    banner.style.display = '';
+    banner.style.animation = 'slideUp 0.3s ease both';
+  }
+  // Auto-hide if accepted within 365 days
+  (function() {
+    var stored = localStorage.getItem('makana_cookies');
+    if (stored) {
+      try {
+        var data = JSON.parse(stored);
+        if (data.timestamp && (Date.now() - data.timestamp < 365 * 24 * 60 * 60 * 1000)) {
+          document.getElementById('cookieConsent').style.display = 'none';
+        } else {
+          localStorage.removeItem('makana_cookies');
+        }
+      } catch(e) {
+        // Legacy string value — remove and re-show banner
+        localStorage.removeItem('makana_cookies');
+      }
+    }
+  })();
+
+  // ===== Print-friendly button =====
+  // Already handled in hero section via window.print()
+
+
+// ── Chat panel ──
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chatPanel').classList.toggle('open', chatOpen);
+  document.getElementById('chatFab').classList.toggle('hidden', chatOpen);
+}
+function chatAction(text) {
+  const msgs = document.getElementById('chatMsgs');
+  const u = document.createElement('div');
+  u.className = 'msg-bubble user';
+  u.textContent = text;
+  msgs.appendChild(u);
+  document.getElementById('quickActions').style.display = 'none';
+  const t = document.createElement('div');
+  t.className = 'typing-dots';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(t);
+  msgs.scrollTop = msgs.scrollHeight;
+  const replies = {
+    'Learn about IMMUNEXIS': 'IMMUNEXIS\u00ae is our breakthrough IL-31 receptor antagonist approved for pediatric atopic dermatitis. In the CLARITY Phase III trial, 72% of patients achieved EASI-75 at Week 16. Would you like to see the full prescribing information?',
+    'Find clinical trials': 'We have 15 active clinical trials across immunology, cardiovascular, neuroscience, and oncology. I can help you find trials based on your condition and location. What therapeutic area interests you?',
+    'Talk to a representative': "I'd be happy to connect you with a Makana Health representative. You can reach our medical information team at 1-800-MAKANA or I can have someone contact you. Would you like to provide your email?",
+    'View product safety info': 'I can provide safety information for any of our approved products: IMMUNEXIS\u00ae, CARDIOGUARD\u00ae, or any pipeline compound. Which product are you interested in?'
+  };
+  setTimeout(() => {
+    t.remove();
+    const b = document.createElement('div');
+    b.className = 'msg-bubble bot';
+    b.textContent = replies[text] || "I'd be happy to help with that. Let me look into it for you.";
+    msgs.appendChild(b);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1500);
+}
+
+
+// ── Gateway portal ──
+function openGateway() {
+  document.getElementById('gatewayOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function closeGateway() {
+  document.getElementById('gatewayOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showHcpLogin() {
+  document.getElementById('gwMain').style.display = 'none';
+  document.getElementById('gwHcpLogin').classList.add('active');
+}
+function backToGateway() {
+  document.getElementById('gwMain').style.display = '';
+  document.getElementById('gwHcpLogin').classList.remove('active');
+}
+function handleHcpLogin(e) {
+  e.preventDefault();
+  var email = document.getElementById('hcpEmail').value;
+  if (email) { e.target.classList.add('hidden'); document.getElementById('hcpLoginSuccess').classList.remove('hidden'); setTimeout(function(){ window.location.href='hcp-portal.html'; }, 2500); }
+}
+</script>
+
+<!-- ═══════════ AGENTFORCE CHAT FAB ═══════════ -->
+<button id="chatFab" class="fab-orb" onclick="toggleChat()" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+</button>
+
+<!-- ═══════════ CHAT PANEL ═══════════ -->
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-hdr">
+    <div class="chat-avatar">M</div>
+    <div>
+      <h4 class="text-[15px] font-semibold text-white leading-tight">Makana Assistant</h4>
+      <p class="text-[11px] text-white/50">Powered by Agentforce</p>
+    </div>
+    <div class="online-dot"></div>
+    <button onclick="toggleChat()" class="ml-3 text-white/50 hover:text-white transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="msg-bubble bot">Hello! I'm Makana's AI assistant, powered by Agentforce. How can I help you today?</div>
+  </div>
+  <div class="quick-actions" id="quickActions">
+    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Quick Actions</p>
+    <button class="q-action" onclick="chatAction('Learn about IMMUNEXIS')">Learn about IMMUNEXIS&reg;</button>
+    <button class="q-action" onclick="chatAction('Find clinical trials')">Find clinical trials</button>
+    <button class="q-action" onclick="chatAction('Talk to a representative')">Talk to a representative</button>
+    <button class="q-action" onclick="chatAction('View product safety info')">View product safety info</button>
+  </div>
+</div>
+
+
+</body>
+</html>
