@@ -155,59 +155,9 @@
 .gw-img-thumb:hover { transform:scale(1.03); border-color:rgba(107,191,171,.3); box-shadow:0 8px 24px rgba(0,0,0,.1); }
 .gw-img-thumb img { width:100%; height:100%; object-fit:cover; }
 
-/* ═══ FAB ORB (Agentforce-style) ═══ */
-.fab-orb {
-  position:fixed; bottom:32px; right:32px; width:64px; height:64px; border-radius:50%;
-  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  z-index:600; background:#0b0818;
-  box-shadow: inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08),
-    0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35),
-    0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08);
-  animation:orb-pulse 2.8s ease-out infinite;
-  transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s;
-}
-.fab-orb::before { content:''; position:absolute; top:8px; left:10px; width:20px; height:12px; background:radial-gradient(ellipse,rgba(255,255,255,.4) 0%,transparent 100%); border-radius:50%; pointer-events:none; z-index:2; }
-.fab-orb:hover { transform:scale(1.12) translateY(-3px); box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 16px 44px rgba(124,111,160,.75),0 4px 14px rgba(76,170,143,.5),0 5px 14px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.15),0 0 70px rgba(124,111,160,.3); }
-.fab-orb svg { width:24px; height:24px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
-@keyframes orb-pulse {
-  0%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,.6);}
-  70%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 22px rgba(124,111,160,0);}
-  100%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,0);}
-}
-.fab-orb.hidden { opacity:0; pointer-events:none; animation:none; }
 
-/* ═══ CHAT PANEL ═══ */
-.chat-panel { position:fixed; bottom:32px; right:32px; width:380px; max-height:580px; z-index:700;
-  background:rgba(255,255,255,.92); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
-  border-radius:24px; box-shadow:0 32px 80px rgba(0,0,0,.18),0 0 0 1px rgba(255,255,255,.5);
-  display:flex; flex-direction:column; overflow:hidden;
-  transform:scale(.92) translateY(20px); opacity:0; pointer-events:none;
-  transition:transform .35s cubic-bezier(.22,1,.36,1), opacity .25s ease;
-}
-.chat-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
 
-.chat-hdr { background:linear-gradient(135deg,#4A4063,#352D47); padding:20px 22px; display:flex; align-items:center; gap:12px; }
-.chat-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#9B8EC4,#6BBFAB); display:flex; align-items:center; justify-content:center; font-size:15px; color:#fff; font-weight:700; }
-.online-dot { width:9px; height:9px; background:#6BBFAB; border-radius:50%; margin-left:auto; animation:blink 2s ease-in-out infinite; }
-@keyframes blink { 0%,100%{box-shadow:0 0 0 0 rgba(107,191,171,.5)} 50%{box-shadow:0 0 0 5px rgba(107,191,171,0)} }
 
-.chat-msgs { flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:14px; max-height:320px; }
-.msg-bubble { max-width:85%; padding:12px 16px; border-radius:18px; font-size:13px; line-height:1.6; animation:bubble-in .3s cubic-bezier(.22,1,.36,1) both; }
-.msg-bubble.bot { background:#f0f0f5; color:#1D1D1F; border-bottom-left-radius:4px; align-self:flex-start; }
-.msg-bubble.user { background:#4A4063; color:#fff; border-bottom-right-radius:4px; align-self:flex-end; }
-@keyframes bubble-in { from{opacity:0;transform:translateY(10px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
-
-.typing-dots { display:flex; gap:5px; padding:8px 14px; }
-.typing-dots span { width:7px; height:7px; border-radius:50%; background:#9B8EC4; animation:dot-pulse 1s ease-in-out infinite; }
-.typing-dots span:nth-child(2) { animation-delay:.18s; background:#7FAAB4; }
-.typing-dots span:nth-child(3) { animation-delay:.36s; background:#6BBFAB; }
-@keyframes dot-pulse { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
-
-.quick-actions { padding:14px 18px; border-top:1px solid rgba(0,0,0,.04); display:flex; flex-direction:column; gap:8px; }
-.q-action { background:#fff; border:1px solid #e5e7eb; border-radius:14px; padding:10px 16px; font-size:13px; color:#4A4063; cursor:pointer; font-weight:500; text-align:left; transition:all .2s; display:flex; justify-content:space-between; align-items:center; }
-.q-action::after { content:'\2192'; color:#9B8EC4; opacity:0; transform:translateX(-6px); transition:all .2s; }
-.q-action:hover { border-color:#9B8EC4; background:#faf9ff; transform:translateX(3px); box-shadow:0 2px 12px rgba(155,142,196,.12); }
-.q-action:hover::after { opacity:1; transform:translateX(0); }
 
 </style>
 
@@ -220,6 +170,14 @@
 <script src="js/makana-personalization.js"></script>
 <script src="js/makana-leadgen.js"></script>
 <!-- ═══ End Salesforce Personalization ═══ -->
+<!-- Qualified -->
+<script>
+(function(w,q){w['QualifiedObject']=q;w[q]=w[q]||function(){
+(w[q].q=w[q].q||[]).push(arguments)};})(window,'qualified')
+</script>
+<script async src="https://js.qualified.com/qualified.js?token=hq3Yb4HGJv229SCs"></script>
+<!-- End Qualified -->
+
 </head>
 <body class="font-sans text-slate-brand bg-white antialiased">
 
@@ -1529,40 +1487,7 @@
   });
 
 
-// ── Chat panel ──
-let chatOpen = false;
-function toggleChat() {
-  chatOpen = !chatOpen;
-  document.getElementById('chatPanel').classList.toggle('open', chatOpen);
-  document.getElementById('chatFab').classList.toggle('hidden', chatOpen);
-}
-function chatAction(text) {
-  const msgs = document.getElementById('chatMsgs');
-  const u = document.createElement('div');
-  u.className = 'msg-bubble user';
-  u.textContent = text;
-  msgs.appendChild(u);
-  document.getElementById('quickActions').style.display = 'none';
-  const t = document.createElement('div');
-  t.className = 'typing-dots';
-  t.innerHTML = '<span></span><span></span><span></span>';
-  msgs.appendChild(t);
-  msgs.scrollTop = msgs.scrollHeight;
-  const replies = {
-    'Learn about IMMUNEXIS': 'IMMUNEXIS\u00ae is our breakthrough IL-31 receptor antagonist approved for pediatric atopic dermatitis. In the CLARITY Phase III trial, 72% of patients achieved EASI-75 at Week 16. Would you like to see the full prescribing information?',
-    'Find clinical trials': 'We have 15 active clinical trials across immunology, cardiovascular, neuroscience, and oncology. I can help you find trials based on your condition and location. What therapeutic area interests you?',
-    'Talk to a representative': "I'd be happy to connect you with a Makana Health representative. You can reach our medical information team at 1-800-MAKANA or I can have someone contact you. Would you like to provide your email?",
-    'View product safety info': 'I can provide safety information for any of our approved products: IMMUNEXIS\u00ae, CARDIOGUARD\u00ae, or any pipeline compound. Which product are you interested in?'
-  };
-  setTimeout(() => {
-    t.remove();
-    const b = document.createElement('div');
-    b.className = 'msg-bubble bot';
-    b.textContent = replies[text] || "I'd be happy to help with that. Let me look into it for you.";
-    msgs.appendChild(b);
-    msgs.scrollTop = msgs.scrollHeight;
-  }, 1500);
-}
+
 
 
 // ── Gateway portal ──
@@ -1591,27 +1516,9 @@ function handleHcpLogin(e) {
 }
 </script>
 
-<!-- ═══════════ AGENTFORCE CHAT FAB ═══════════ -->
-<button id="chatFab" class="fab-orb" onclick="toggleChat()" aria-label="Open chat assistant">
-  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
-</button>
 
-<!-- ═══════════ CHAT PANEL ═══════════ -->
-<div id="chatPanel" class="chat-panel">
-  <div class="chat-hdr">
-    <div class="chat-avatar">M</div>
-    <div>
-      <h4 class="text-[15px] font-semibold text-white leading-tight">Makana Assistant</h4>
-      <p class="text-[11px] text-white/50">Powered by Agentforce</p>
-    </div>
-    <div class="online-dot"></div>
-    <button onclick="toggleChat()" class="ml-3 text-white/50 hover:text-white transition">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <div class="chat-msgs" id="chatMsgs">
-    <div class="msg-bubble bot">Hello! I'm Makana's AI assistant, powered by Agentforce. How can I help you today?</div>
-  </div>
+
+
   <div class="quick-actions" id="quickActions">
     <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Quick Actions</p>
     <button class="q-action" onclick="chatAction('Learn about IMMUNEXIS')">Learn about IMMUNEXIS&reg;</button>
