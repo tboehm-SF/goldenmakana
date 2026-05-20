@@ -2,13 +2,18 @@
   "name": "goldenmakana",
   "version": "1.0.0",
   "description": "Makana Health Website - Integrated clinical ecosystem for healthcare professionals and patients",
-  "scripts": {
-    "dev": "netlify dev",
-    "build": "echo 'Static site - no build required'",
-    "deploy": "netlify deploy --prod"
+  "main": "server.js",
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
   },
-  "devDependencies": {
-    "netlify-cli": "^24.11.1"
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   },
   "keywords": [
     "healthcare",
