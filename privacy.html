@@ -171,30 +171,43 @@
 <script>
 // ── Open Qualified chat ──
 function openQualifiedChat() {
-  console.log('Button clicked! Qualified:', window.qualified);
+  console.log('Opening Qualified chat...');
 
-  // Qualified uses different API methods - try them all
   try {
+    // Method 1: Use the correct Qualified API - 'startConversation'
     if (window.qualified && typeof window.qualified === 'function') {
-      // Try common methods
-      window.qualified('openMessenger');
-      window.qualified('open');
-      window.qualified('show');
-      window.qualified('showMessenger');
+      window.qualified('startConversation');
+      console.log('✓ Called qualified("startConversation")');
+      return;
     }
 
-    // Check for qualified-widget element and click it
-    const qualifiedWidget = document.querySelector('#qualified-widget, [data-qualified], .qualified-messenger-launcher, .qualified-chat-launcher');
-    if (qualifiedWidget) {
-      console.log('Found Qualified widget, clicking it');
-      qualifiedWidget.click();
+    // Method 2: Find and click the Qualified launcher button in the iframe
+    const qualifiedIframe = document.querySelector('iframe[src*="qualified"]');
+    if (qualifiedIframe && qualifiedIframe.contentWindow) {
+      console.log('Found Qualified iframe, trying to click launcher...');
+      try {
+        const launcherButton = qualifiedIframe.contentWindow.document.querySelector('button, [role="button"]');
+        if (launcherButton) {
+          launcherButton.click();
+          console.log('✓ Clicked launcher button in iframe');
+          return;
+        }
+      } catch (e) {
+        console.log('Cannot access iframe content (CORS)');
+      }
     }
 
-    // Try to find and click any Qualified button
-    const qualifiedButton = document.querySelector('iframe[src*="qualified"]');
-    if (qualifiedButton) {
-      console.log('Found Qualified iframe');
+    // Method 3: Simulate click on the iframe itself
+    if (qualifiedIframe) {
+      const clickEvent = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+      });
+      qualifiedIframe.dispatchEvent(clickEvent);
+      console.log('✓ Dispatched click event on iframe');
     }
+
   } catch (e) {
     console.error('Error opening Qualified:', e);
   }
