@@ -86,34 +86,7 @@ html { scroll-behavior: smooth; }
 .pill-btn { transition:all .3s cubic-bezier(.25,.46,.45,.94); }
 .pill-btn:hover { transform:scale(1.03); }
 
-/* ═══ QUALIFIED FAB BUTTON ═══ */
-.qualified-fab {
-  position:fixed; bottom:32px; right:32px; width:64px; height:64px; border-radius:50%;
-  border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
-  z-index:600; background:#0b0818;
-  box-shadow: inset -3px -4px 10px rgba(0,0,0,.6), inset 2px 3px 8px rgba(255,255,255,.08),
-    0 8px 28px rgba(124,111,160,.55), 0 2px 10px rgba(76,170,143,.35),
-    0 3px 10px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.08);
-  animation:orb-pulse 2.8s ease-out infinite;
-  transition:transform .25s cubic-bezier(.34,1.56,.64,1), opacity .3s;
-}
-.qualified-fab::before {
-  content:''; position:absolute; top:8px; left:10px; width:20px; height:12px;
-  background:radial-gradient(ellipse,rgba(255,255,255,.4) 0%,transparent 100%);
-  border-radius:50%; pointer-events:none; z-index:2;
-}
-.qualified-fab:hover {
-  transform:scale(1.12) translateY(-3px);
-  box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),
-    0 16px 44px rgba(124,111,160,.75),0 4px 14px rgba(76,170,143,.5),
-    0 5px 14px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.15),
-    0 0 70px rgba(124,111,160,.3);
-}
-.qualified-fab svg { width:24px; height:24px; fill:#fff; filter:drop-shadow(0 1px 4px rgba(0,0,0,.6)); }
-@keyframes orb-pulse {
-  0%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),
-    0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),
-    0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,.6);}
+
   70%{box-shadow:inset -3px -4px 10px rgba(0,0,0,.6),inset 2px 3px 8px rgba(255,255,255,.08),
     0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),
     0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 22px rgba(124,111,160,0);}
@@ -121,10 +94,6 @@ html { scroll-behavior: smooth; }
     0 8px 28px rgba(124,111,160,.55),0 2px 10px rgba(76,170,143,.35),
     0 3px 10px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08),0 0 0 0 rgba(124,111,160,0);}
 }
-
-
-
-
 
 
 /* ═══ PRODUCT GRID (wireframe-inspired) ═══ */
@@ -909,62 +878,12 @@ html { scroll-behavior: smooth; }
   </div>
 </footer>
 
-<!-- ═══════════ QUALIFIED CHAT FAB ═══════════ -->
-<button id="qualifiedFab" class="qualified-fab" onclick="openQualifiedChat()" aria-label="Open chat">
-  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
-</button>
-
-
-
-
 
   
 
 <!-- ═══════════ SCRIPTS ═══════════ -->
 <script>
-// ── Open Qualified chat ──
-function openQualifiedChat() {
-  console.log('Opening Qualified chat...');
 
-  try {
-    // Method 1: Use the correct Qualified API - 'startConversation'
-    if (window.qualified && typeof window.qualified === 'function') {
-      window.qualified('startConversation');
-      console.log('✓ Called qualified("startConversation")');
-      return;
-    }
-
-    // Method 2: Find and click the Qualified launcher button in the iframe
-    const qualifiedIframe = document.querySelector('iframe[src*="qualified"]');
-    if (qualifiedIframe && qualifiedIframe.contentWindow) {
-      console.log('Found Qualified iframe, trying to click launcher...');
-      try {
-        const launcherButton = qualifiedIframe.contentWindow.document.querySelector('button, [role="button"]');
-        if (launcherButton) {
-          launcherButton.click();
-          console.log('✓ Clicked launcher button in iframe');
-          return;
-        }
-      } catch (e) {
-        console.log('Cannot access iframe content (CORS)');
-      }
-    }
-
-    // Method 3: Simulate click on the iframe itself
-    if (qualifiedIframe) {
-      const clickEvent = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-      });
-      qualifiedIframe.dispatchEvent(clickEvent);
-      console.log('✓ Dispatched click event on iframe');
-    }
-
-  } catch (e) {
-    console.error('Error opening Qualified:', e);
-  }
-}
 // ── Mobile menu ──
 document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
   document.getElementById('mobileMenu').classList.toggle('hidden');

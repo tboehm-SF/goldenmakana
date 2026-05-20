@@ -140,9 +140,6 @@
 .gw-img-thumb img { width:100%; height:100%; object-fit:cover; }
 
 
-
-
-
 </style>
 
 <!-- ═══ Salesforce Personalization — Data Cloud Web SDK ═══ -->
@@ -156,49 +153,7 @@
 <!-- ═══ End Salesforce Personalization ═══ -->
 <!-- Qualified -->
 <script>
-// ── Open Qualified chat ──
-function openQualifiedChat() {
-  console.log('Opening Qualified chat...');
-
-  try {
-    // Method 1: Use the correct Qualified API - 'startConversation'
-    if (window.qualified && typeof window.qualified === 'function') {
-      window.qualified('startConversation');
-      console.log('✓ Called qualified("startConversation")');
-      return;
-    }
-
-    // Method 2: Find and click the Qualified launcher button in the iframe
-    const qualifiedIframe = document.querySelector('iframe[src*="qualified"]');
-    if (qualifiedIframe && qualifiedIframe.contentWindow) {
-      console.log('Found Qualified iframe, trying to click launcher...');
-      try {
-        const launcherButton = qualifiedIframe.contentWindow.document.querySelector('button, [role="button"]');
-        if (launcherButton) {
-          launcherButton.click();
-          console.log('✓ Clicked launcher button in iframe');
-          return;
-        }
-      } catch (e) {
-        console.log('Cannot access iframe content (CORS)');
-      }
-    }
-
-    // Method 3: Simulate click on the iframe itself
-    if (qualifiedIframe) {
-      const clickEvent = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-      });
-      qualifiedIframe.dispatchEvent(clickEvent);
-      console.log('✓ Dispatched click event on iframe');
-    }
-
-  } catch (e) {
-    console.error('Error opening Qualified:', e);
-  }
-}</script>
+</script>
 <script async src="https://js.qualified.com/qualified.js?token=hq3Yb4HGJv229SCs"></script>
 <!-- End Qualified -->
 
@@ -1283,11 +1238,6 @@ function openQualifiedChat() {
   </div>
 </footer>
 
-<!-- ═══════════ QUALIFIED CHAT FAB ═══════════ -->
-<button id="qualifiedFab" class="qualified-fab" onclick="openQualifiedChat()" aria-label="Open chat">
-  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
-</button>
-
 
 <!-- ==================== SCRIPTS ==================== -->
 <script>
@@ -1368,9 +1318,6 @@ function openQualifiedChat() {
   }
 
 
-
-
-
 // ── Gateway portal ──
 function openGateway() {
   document.getElementById('gatewayOverlay').classList.add('open');
@@ -1396,8 +1343,6 @@ function handleHcpLogin(e) {
   if (email) { e.target.classList.add('hidden'); document.getElementById('hcpLoginSuccess').classList.remove('hidden'); setTimeout(function(){ window.location.href='hcp-portal.html'; }, 2500); }
 }
 </script>
-
-
 
 
   
